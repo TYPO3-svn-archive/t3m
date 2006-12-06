@@ -1,0 +1,119 @@
+<!DOCTYPE webproject>
+<webproject>
+  <project type="Local" name="t3m" encoding="utf8" enableEvents="true" >
+    <upload/>
+    <defaultDTD>-//w3c//dtd xhtml 1.0 transitional//en</defaultDTD>
+    <item url="home/" uploadstatus="1" />
+    <item url="home/koch/" uploadstatus="1" />
+    <item url="home/koch/typo3-web/" uploadstatus="1" />
+    <item url="home/koch/typo3-web/typo3conf/" uploadstatus="1" />
+    <item url="home/koch/typo3-web/typo3conf/ext/" uploadstatus="1" />
+    <item url="home/koch/typo3-web/typo3conf/ext/t3m/" uploadstatus="1" />
+    <item url="home/koch/typo3-web/typo3conf/ext/t3m/t3m" uploadstatus="1" />
+    <item url="" uploadstatus="1" />
+    <templates>file:///home/sk/workspace/</templates>
+    <toolbars>file:///home/sk/workspace/</toolbars>
+    <item url="doc/" uploadstatus="1" />
+    <item url="doc/manual.sxw" uploadstatus="1" />
+    <item url="doc/wizard_form.dat" uploadstatus="1" />
+    <item url="doc/wizard_form.html" uploadstatus="1" />
+    <item url="mod0/" uploadstatus="1" />
+    <item url="mod0/conf.php" uploadstatus="1" />
+    <item url="mod0/index.php" uploadstatus="1" />
+    <item url="mod0/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod0/moduleicon.gif" uploadstatus="1" />
+    <item url="mod0/Thumbs.db" uploadstatus="1" />
+    <item url="mod1/" uploadstatus="1" />
+    <item url="mod1/conf.php" uploadstatus="1" />
+    <item url="mod1/index.php" uploadstatus="1" />
+    <item url="mod1/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod1/moduleicon.png" uploadstatus="1" />
+    <item url="mod2/" uploadstatus="1" />
+    <item url="mod2/conf.php" uploadstatus="1" />
+    <item url="mod2/index.php" uploadstatus="1" />
+    <item url="mod2/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod2/moduleicon.png" uploadstatus="1" />
+    <item url="mod3/" uploadstatus="1" />
+    <item url="mod3/conf.php" uploadstatus="1" />
+    <item url="mod3/index.php" uploadstatus="1" />
+    <item url="mod3/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod3/moduleicon.png" uploadstatus="1" />
+    <item url="mod4/" uploadstatus="1" />
+    <item url="mod4/conf.php" uploadstatus="1" />
+    <item url="mod4/index.php" uploadstatus="1" />
+    <item url="mod4/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod4/moduleicon.png" uploadstatus="1" />
+    <item url="mod5/" uploadstatus="1" />
+    <item url="mod5/conf.php" uploadstatus="1" />
+    <item url="mod5/icon_fatalerror.gif" uploadstatus="1" />
+    <item url="mod5/icon_ok.gif" uploadstatus="1" />
+    <item url="mod5/index.php" uploadstatus="1" />
+    <item url="mod5/locallang_mod.xml" uploadstatus="1" />
+    <item url="mod5/moduleicon.png" uploadstatus="1" />
+    <item url="CHANGELOG" uploadstatus="1" />
+    <item url="class.tx_t3m_main.php" uploadstatus="1" />
+    <item url="clear.gif" uploadstatus="1" />
+    <item url="COPYING" uploadstatus="1" />
+    <item url="ext_conf_template.txt" uploadstatus="1" />
+    <item url="ext_emconf.php" uploadstatus="1" />
+    <item url="ext_icon.gif" uploadstatus="1" />
+    <item url="ext_tables.php" uploadstatus="1" />
+    <item url="ext_tables.sql" uploadstatus="1" />
+    <item url="icon_tx_t3m_campaigns.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_categories.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_directmails.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_salutations.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_targetgroups_campaigns_mm.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_targetgroups_categories_mm.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_targetgroups_fe_groups_mm.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_targetgroups_fe_users_mm.gif" uploadstatus="1" />
+    <item url="icon_tx_t3m_targetgroups.gif" uploadstatus="1" />
+    <item url="locallang_db.xml" uploadstatus="1" />
+    <item url="locallang_db.xml.iso15" uploadstatus="1" />
+    <item url="locallang_db.xml.sec" uploadstatus="1" />
+    <item url="locallang_db.xml.utf8" uploadstatus="1" />
+    <item url="locallang.xml" uploadstatus="1" />
+    <item url="README" uploadstatus="1" />
+    <item url="t3m.session" uploadstatus="1" />
+    <item url="t3m.webprj" uploadstatus="1" />
+    <item url="tca.php" uploadstatus="1" />
+    <item url="umbrello-uml.xmi" uploadstatus="1" />
+    <annotations/>
+    <item url="styles.css" uploadstatus="1" />
+    <item url="ext_localconf.php" uploadstatus="1" />
+    <item url="t3m_logo_star_medium.png" uploadstatus="1" />
+    <item url="t3m_logo_star_small.png" uploadstatus="1" />
+    <item url="class.tx_tcdirectmail_sysstat.php" uploadstatus="1" />
+    <item url="class.tx_t3m_target1.php" uploadstatus="1" />
+    <item url="class.tx_t3m_postinstall.php" uploadstatus="1" />
+    <item url="mailer.php" uploadstatus="1" />
+    <author>Stefan Koch</author>
+    <email>typo3@stefkoch.de</email>
+    <debuggerclient persistentWatches="1" persistentBreakpoints="1" >Kein Debugger</debuggerclient>
+    <exclude cvsignore="false" />
+    <teamdata>
+      <taskleaders/>
+      <subprojectleaders/>
+      <mailinglist address="" />
+    </teamdata>
+    <events/>
+    <item url="static/" uploadstatus="1" />
+    <item url="static/pbimagegraph/" uploadstatus="1" />
+    <item url="static/pbimagegraph/constants.txt" uploadstatus="1" />
+    <item url="static/pbimagegraph/setup.txt" uploadstatus="1" />
+    <item url="plot_pie.txt" uploadstatus="1" />
+    <item url="gfx/" uploadstatus="1" />
+    <item url="gfx/calendar.gif" uploadstatus="1" />
+    <item url="class.tx_t3m_bounce.php" uploadstatus="1" />
+    <item url="class.tx_t3m_stats.php" uploadstatus="1" />
+    <item url="class.tx_t3m_spam.php" uploadstatus="1" />
+    <item url="gfx/icon_fatalerror.gif" uploadstatus="1" />
+    <item url="gfx/icon_ok.gif" uploadstatus="1" />
+    <item url="gfx/icon_warning.gif" uploadstatus="1" />
+    <item url="static/pbimagegraph/pie.txt" uploadstatus="1" />
+    <item url="static/pbimagegraph/plotarea.txt" uploadstatus="1" />
+    <item url="static/t3m-example-cvs.txt" uploadstatus="1" />
+    <item url="class.tx_t3m_settings.php" uploadstatus="1" />
+    <item url="class.tx_srfeuserregister_hook1.php" uploadstatus="1" />
+  </project>
+</webproject>

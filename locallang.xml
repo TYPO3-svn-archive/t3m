@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!--
+	Simple translations should have Capital in front and in between e.g. Title = "Title"
+	Content should have
+	long text should have description in front
+
+-->
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;txt3mM1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+
+			<label index="title">T3M Mail</label>
+
+			<label index="Title">Title</label>
+			<label index="Header">Header</label>
+			<label index="Overview">Overview</label>
+			<label index="Subtitle">Subtitle</label>
+			<label index="Description">Description</label>
+			<label index="Name">Name</label>
+			<label index="New">New</label>
+			<label index="Create">Create</label>
+			<label index="View">View</label>
+			<label index="Edit">Edit</label>
+			<label index="EditDelete">Edit / Delete</label>
+			<label index="Delete">Delete</label>
+			<label index="Group">Group</label>
+			<label index="Groups">Groups</label>
+			<label index="Receivers">Receivers</label>
+			<label index="Receivergroup">Receiver group</label>
+			<label index="descriptionReceivers">Here you can view and edit the Receivers groups. They are build by selecting a dynamic targetgroup or users from the backend, frontend or a different source.</label>
+			<label index="Type">Type</label>
+			<label index="User">User</label>
+			<label index="Users">Users</label>
+			<label index="noUsers">No users</label>
+			<label index="disabledUsers">Disabled users</label>
+			<label index="countUsers">User count</label>
+
+			<label index="ExtensionSettings">Global extension settings</label>
+
+			<label index="addresses">Addresses</label>
+
+			<label index="import">Import</label>
+			<label index="importusers">CSV user import</label>
+			<label index="importfeusers">Import of website users</label>
+			<label index="importreceivers">Import of receivers</label>
+			<label index="descriptionImport">Import users directly. No Double Opt-In process here!</label>
+			<label index="descriptionImportReceivers">Import users into a separate receiver group. Users do not become users of the website.</label>
+			<label index="descriptionImportFeusers">Import users into a website user group.</label>
+			<label index="csvfile">CSV file upload</label>
+			<label index="csvlist">CSV direct input</label>
+			<label index="csvurl">CSV file from URL</label>
+
+			<label index="descriptionCreate">Here you can create new users for the groups.</label>
+			<label index="createfeuser">Create a user</label>
+			<label index="descriptionCreateFeuser">Create a user who can be used in targetgroups and who can login on the website.</label>
+			<label index="createfegroup">Create a user group</label>
+			<label index="descriptionCreateFegroup">Create a group for the website users</label>
+
+			<label index="NewUser">New User</label>
+			<label index="NewGroup">New Group</label>
+
+			<label index="export">Export</label>
+			<label index="Export">Export</label>
+			<label index="descriptionExportUsers">Export all pending, confirmed and manually created users as a csv file.</label>
+
+			<label index="errorSubscriptionExtension">Error: Extension EXT:sr_feuser_register seems not to be configured correctly. (follow configuration steps in manual: insert static sr_feuser_register-css-template on your site-template, create sysfolder, registrationpage, editpage and usergroups for pending and registered users und configure these 5 values in the template constants!)</label>
+
+			<label index="subscriptionforms">Subscription forms</label>
+			<label index="descriptionSubscriptionforms">Here you can view and edit the TYPO3 pages which are responsible for the subscription process. If you do not see any content in the tables please refer to the manual of the extension EXT:sr_feuser_register.</label>
+
+			<label index="subscriptionformtemplate">Subscription form template</label>
+			<label index="descriptionSubscriptionformTemplate">Here you can change the Template responsible for the created e-mails.</label>
+
+			<label index="subscriptionpage">Subscription page</label>
+			<label index="descriptionSubscriptionPage">The page on which interested users can fill out a form and register in order to receiver information.</label>
+
+			<label index="confirmationpage">Subscription confirmation page</label>
+			<label index="descriptionConfirmationPage">The page shown when the subscription process is completed by the user.</label>
+
+			<label index="loginpage">Frontend user login page</label>
+			<label index="descriptionLoginPage">The page on which the user can login and then e.g. edit his Profuile or get exclusive information.</label>
+
+			<label index="profileeditpage">User profile edit page</label>
+			<label index="descriptionProfileEditPage">The page on which the users can edit their profile. This page normally allows users to "complete their profile" and give more information.</label>
+
+			<label index="editSubscriptionTemplate">Edit subscription template</label>
+
+			<label index="subscriptions">Subscriptions</label>
+			<label index="descriptionSubscriptions">Here you can view and edit the group which holds the users of subscription process which are not confirmed yet. If you do not see any content in the tables please refer to the manual of the extension EXT:sr_feuser_register.</label>
+
+
+			<label index="descriptionGroups">An overview about the most important user groups: pending subscriptions, completed subscriptions, test group, soft bounces, hard bounces and blocked users.</label>
+			<label index="testGroup">Test group</label>
+			<label index="deregistrations">Deregistrations</label>
+
+			<label index="pending">Pending</label>
+			<label index="descriptionPending">Here you can view and edit the group which holds the users of subscription process which are not confirmed yet. If you do not see any content in the tables please refer to the manual of the extension EXT:sr_feuser_register.</label>
+			<label index="createSysfolder">Create a new sysfolder page</label>
+
+			<label index="blocked">Blocked</label>
+
+			<label index="bounced">Bounced</label>
+			<label index="bounces">Bounces</label>
+			<label index="bouncesettings">Bounce settings</label>
+			<label index="softbounces">Soft bounces</label>
+			<label index="descriptionsoftbounce">A Soft Bounce is a user whose email account is temporarily full or cannot be reached for a while.</label>
+			<label index="hardbounces">Hard bounces</label>
+			<label index="descriptionhardbounce">A Hard Bounce is a user whose email account or email server does not exist or is permanently unavailable.</label>
+			<label index="descriptionNewMail">Here you can create an e-mail directly for a receiver group. After you created a mailing, have a look into "newsletters", "one-off-mailings" or "campaing mails" in order to add the content,</label>
+
+			<label index="targetgroupdefinitions">Target groups definitions</label>
+			<label index="descriptionTargetgroupDefinitions">Target groups are dynamic groups whose users can be chosen by their attributes. E.g. sex, age, zip code or their interests. If you chose an attribute, the user must fit into that schema. For interest groups, he must at least have chosen one of the categories. Depending on the quality of the userbase these groups are automatically put together.</label>
+			<label index="createTargetgroupdefinition">Create target group definition</label>
+			<label index="newTargetgroupdefinition">New target group</label>
+			<label index="getTargetgroupdefinitions">List Targetgroups</label>
+
+			<label index="createReceivergroup">Create a receiver group</label>
+			<label index="newReceivergroup">New receiver group</label>
+			<label index="getReceivergroups">List receiver groups</label>
+
+			<label index="tx_t3m_target1">T3M Target group</label>
+			<label index="tx_tcdirectmail_target_fegroups">Frontend groups</label>
+			<label index="tx_tcdirectmail_target_fepages">Frontend user from pages</label>
+			<label index="tx_tcdirectmail_target_beusers">Backend users</label>
+			<label index="tx_tcdirectmail_target_csvfile">CSV File</label>
+			<label index="tx_tcdirectmail_target_csvlist">CSV List</label>
+			<label index="tx_tcdirectmail_target_csvurl">CSV URL</label>
+			<label index="notsupported">n.a.</label>
+
+
+			<label index="uid">Unique ID</label>
+			<label index="gender">Gender</label>
+			<label index="age_range">Age</label>
+			<label index="country">Country</label>
+			<label index="zone">State</label>
+			<label index="zip">Zip</label>
+			<label index="date_of_birth">Date of birth</label>
+
+
+			<label index="targetgroups">Target groups</label>
+			<label index="targetgroupusers">Target group users</label>
+			<label index="errorNoAdmin">Error: Only system admins are allowed to use this.</label>
+			<label index="errorNoGroup">Error: No group found.</label>
+			<label index="errorNoPage">Error: No page found.</label>
+			<label index="errorNoMail">Error: No e-mail found.</label>
+			<label index="errorNoFile">Error: File not found.</label>
+			<label index="errorSrfeuserregister">Error: Extension sr_feuser_register not configured correctly. Please define constants in the root template.</label>
+			<label index="editGroup">Edit group</label>
+
+
+			<label index="category">Category</label>
+			<label index="categories">Categories</label>
+			<label index="descriptionCategories">Here you can define categories of interests which users can later choose when they edit their profile. Or you can let them choose when they register.</label>
+
+			<label index="getCategories">List categories</label>
+
+			<label index="campaign">Campaign</label>
+			<label index="campaigns">Campaigns</label>
+			<label index="descriptionCampaigns">Campaigns can be used to group single e-mails together thematically.</label>
+			<label index="getCampaigns">List campaigns</label>
+			<label index="selectCampaign">Please select a campaign.</label>
+
+			<label index="page">Page</label>
+			<label index="pages">Pages</label>
+			<label index="getPages">List e-mails</label>
+			<label index="email">E-mail</label>
+			<label index="testemail">Test e-mail</label>
+			<label index="emails">E-mails</label>
+			<label index="nomails">No e-mails</label>
+			<label index="getEmails">List e-mails</label>
+			<label index="countEmails">E-mail count</label>
+
+			<label index="content">Content</label>
+			<label index="contents">Contents</label>
+			<label index="getContents">List contents</label>
+			<label index="countContents">Content count</label>
+
+			<label index="salutation">Salutation</label>
+			<label index="salutations">Salutations</label>
+			<label index="getSalutations">List Salutations</label>
+
+
+			<label index="directmail">Direct Mail</label>
+			<label index="directmails">Direct Mails</label>
+
+
+			<label index="contents">Contents</label>
+			<label index="content">Content</label>
+			<label index="createCategory">Create a new category</label>
+			<label index="NewCategory">New category</label>
+
+
+			<label index="createCampaign">Create a new campaign</label>
+			<label index="NewCampaign">New campaign</label>
+
+			<label index="createPage">Create a new page</label>
+			<label index="NewPage">New page</label>
+
+			<label index="createEmail">Create e-mail</label>
+			<label index="NewMail">New e-mail</label>
+
+			<label index="Repeat">Repeat</label>
+
+			<label index="newsletters">Newsletters</label>
+			<label index="Newsletters">Newsletters</label>
+			<label index="descriptionNewsletters">Newsletters are regularly updated and sent on a periodical basis. E.g. weekly, monthly, quarterly or yearly.</label>
+			<label index="createNewsletter">Create newsletter</label>
+
+			<label index="oneoffmailings">One-Off-Mailings</label>
+			<label index="OneOffMailings">One-Off-Mailings</label>
+			<label index="descriptionOneOffMailings">One-Off-Mailings are sent only once and normally used for special purposes, e.g. a launch of a new product. Once a send date is defined and a receiver group is chosen the mail will be sent at that time.</label>
+			<label index="createOneOffMailing">Create One-Off-Mailing</label>
+
+			<label index="MailsForCampaigns">Mails for campaigns (unsent)</label>
+
+			<label index="NewNewsletter">New periodical newsletter</label>
+			<label index="NewOneOffMailing">New "One-Off-Mailing"</label>
+			<label index="NewMailForCampaign">New "campaign" e-mail</label>
+
+			<label index="createContent">Create new e-mail content</label>
+			<label index="NewContent">New e-mail content</label>
+			<label index="createSalutation">Create a salutation</label>
+			<label index="NewSalutation">New salutation</label>
+			<label index="editCategory">Edit categories</label>
+			<label index="editCampaign">Edit campaigns</label>
+			<label index="editPage">Edit pages</label>
+			<label index="editContent">Edit contents</label>
+			<label index="editSalutations">Edit a salutation</label>
+			<label index=""></label>
+
+			<label index="deleteCampaign">Delete campaign</label>
+			<label index="deletePage">Delete page</label>
+			<label index="deleteContent">Delete content</label>
+			<label index="directmails">Direct Mails</label>
+
+			<label index="send">Send</label>
+			<label index="sendtestmail">Send test-e-mail</label>
+			<label index="sendmails">Send e-mails</label>
+			<label index="resendmails">Re-Send e-mails</label>
+			<label index="descriptionResendmails">Here you can send the mails again.</label>
+			<label index="Sent">Sent</label>
+			<label index="sentmails">Sent e-mails</label>
+			<label index="SentMails">Sent e-mails</label>
+
+
+			<label index="unsentmails">Unsent e-mails</label>
+			<label index="scheduledmails">Scheduled e-mails</label>
+			<label index="unscheduledmails">Unscheduled e-mails</label>
+			<label index="currentlysendingmails">Currently sending e-mails</label>
+
+
+			<label index="schedule">Schedule</label>
+
+			<label index="sendtestcampaign">Send test campaign</label>
+			<label index="sendcampaign">Send campaign</label>
+			<label index="automaticsend">Automatic send</label>
+
+			<label index="statistics">Statistics</label>
+			<label index="campaignstatistics">Campaign statistics</label>
+			<label index="campaignfinishedornot">Status</label>
+			<label index="campaignfinished">all sent</label>
+			<label index="campaignunfinished">still e-mails left</label>
+			<label index="newsletterstatistics">Newsletter statistics</label>
+			<label index="oneoffstatistics">Single-mailing statistics</label>
+			<label index="mailstatistics">Mail statistics</label>
+			<label index="sendstatistics">Send statistics</label>
+			<label index="descriptionsendstatistics">See how many e-mails have been sent.</label>
+			<label index="openstatistics">Open statistics</label>
+			<label index="descriptionopenstatistics">A statistic about all sent e-mails and the percentage they were registered as being opened. As most e-mail client's do not allow the loading of external references, this figure is not representative and can only be interpreted as the lower limit of the opened e-mails.</label>
+			<label index="clickstatistics">Click statistics</label>
+			<label index="descriptionclickstatistics">A statistic about all sent e-mails and the percentage of registered clicks they were responsible for. As the links placed in text e-mails are not always registered on the server the figure is only the lower end of the actual referrers.</label>
+			<label index="contentstatistics">Content statistics</label>
+			<label index="PageView">Page view</label>
+			<label index="PageViewRatio">Page view ratio</label>
+			<label index="PageSends">Page deliveries</label>
+			<label index="TotalPageSends">Total page deliveries (single e-mails)</label>
+			<label index="PageClicks">Page clicks</label>
+			<label index="TotalPageClicks">Overall page clicks</label>
+			<label index="PageClickRatio">Page click ratio</label>
+			<label index="LinksClicked">Links clicked</label>
+			<label index="ClickedMails">Clicked e-mails</label>
+			<label index="OpenedMails">Opened e-mails</label>
+			<label index="NotOpenedMails">Not opened e-mails</label>
+			<label index="NotClickedMails">E-mails without clicks</label>
+			<label index="clicks">Click count</label>
+			<label index="descriptionTotalClicks">Here you can see the all-time favourite clicks of all your e-mailings.</label>
+
+			<label index="checkForSpam">Spamcheck</label>
+			<label index="spamOrNot">Spam?</label>
+			<label index="spamScore">Spam score</label>
+			<label index="thisisspam">Spam!!</label>
+			<label index="thisisnotspam">Not Spam.</label>
+			<label index="thisisnearlyspam">Nearly Spam!</label>
+
+			<label index="bouncestatistics">Bounce statistics</label>
+			<label index="userstatistics">User statistics</label>
+			<label index="Visited">Visitor count</label>
+
+			<label index="settings">Settings</label>
+			<label index="descriptionSettings">Here users can view and admins can also change important extension's and system settings.</label>
+
+			<label index="OK">OK.</label>
+			<label index="Warning">Warning.</label>
+			<label index="notOK">not OK.</label>
+			<label index="CheckingSettings">Cecking settings ...</label>
+			<label index="checkExternalSettings">Other extension's settings</label>
+			<label index="checkOwnSettings">Own extension settings</label>
+			<label index="checkSystemSettings">System settings</label>
+			<label index="checkForSpamProgram">Spam check CLI server+client</label>
+
+			<label index="actions">Actions</label>
+			<label index="infos">Infos</label>
+
+			<label index="attachments">Attachments</label>
+			<label index="createAttachment">Create new attachment</label>
+			<label index="editAttachments">Edit attachments</label>
+
+			<label index="infos">Information</label>
+			<label index="SendDate">Send date</label>
+			<label index="SendDatePlanned">Planned send date</label>
+			<label index="SentDate">Actual sent date</label>
+
+			<label index="status">Status</label>
+			<label index="stats">Statistics</label>
+			<label index="statsMostReceivers">E-mails with the most receivers</label>
+			<label index="descriptionStatsMostReceivers">E-mails sorted by receiver count. Shows the popularity of the mailings.</label>
+			<label index="yearlystatistics">Yearly statistics</label>
+
+
+			<label index="createStuff">Create sysfolders, fe_groups, fe_users, be_users, targetgroups, pages and content !!!</label>
+
+		</languageKey>
+		<languageKey index="de" type="array">
+
+			<label index="title">T3M Mail</label>
+
+			<label index="Title">Titel</label>
+			<label index="Header">Titel</label>
+			<label index="Overview">Übersicht</label>
+			<label index="Subtitle">Untertitel</label>
+			<label index="Description">Beschreibung</label>
+			<label index="Name">Name</label>
+			<label index="New">Neu</label>
+			<label index="Create">Erstellen</label>
+			<label index="View">Ansehen</label>
+			<label index="Edit">Bearbeiten</label>
+			<label index="EditDelete">Bearbeiten / Löschen</label>
+			<label index="Delete">Löschen</label>
+			<label index="Group">Gruppe</label>
+			<label index="Groups">Gruppen</label>
+			<label index="Receivers">Empfänger</label>
+			<label index="Receivergroup">Receiver group</label>
+			<label index="descriptionReceivers">Hier können Sie die Empfängergruppen bearbeiten. Sie können aus einer Zielgruppe gebildet werden oder aus Benutzern des Backends, Frontends oder aus anderen Quellen.</label>
+			<label index="Type">Typ</label>
+			<label index="User">Benutzer</label>
+			<label index="Users">Benutzer</label>
+			<label index="noUsers">Keine Benutzer</label>
+			<label index="disabledUsers">Deaktivierte Benutzer</label>
+			<label index="countUsers">Anzahl Benutzer</label>
+			<label index="ExtensionSettings">Globale Extension Einstellungen</label>
+
+
+			<label index="addresses">Adressen</label>
+			<label index="import">Import</label>
+			<label index="importusers">CSV Benutzerimport</label>
+			<label index="importfeusers">Import von Webseitenbenutzern</label>
+			<label index="importreceivers">Import einer Empfängerliste</label>
+			<label index="descriptionImport">Importieren von Benutzern ohne Double-Opt-In-Verfahren. Benutzerdaten liegen als CSV-Datei vor.</label>
+			<label index="descriptionImportReceivers">Benutzerimport in eine separate Empfängerliste. Die Benutzer werden keine Benutzer der Webseite.</label>
+			<label index="descriptionImportUsers">Benutzerimport in bestehende Frontendgruppen. Die Benutzer können sich z.B. einloggen und Zielgruppen zugeordnet werden.</label>
+
+			<label index="csvlist">CSV Direkt-Eingabefeld (copy paste)</label>
+			<label index="csvfile">CSV Datei hochladen</label>
+			<label index="csvurl">CSV Datei URL angeben</label>
+
+
+			<label index="descriptionCreate">Hier können Sie Gruppen erstellen und neue Benutzer für die Gruppen erstellen.</label>
+			<label index="descriptionCreate">Hier können Sie einzeln neue Benutzer anlegen.</label>
+
+			<label index="createfeuser">Erstelle einen neuen Benutzer</label>
+			<label index="descriptionCreateFeuser">Erstelle einen Benutzer, der in Zielgruppen verwendet werden kann und der sich einloggen kann auf der Webseite.</label>
+			<label index="createfegroup">Erstelle eine Benutzergruppe</label>
+			<label index="descriptionCreateFegroup">Erstelle eine Gruppe für die Webseitenbenutzer</label>
+
+			<label index="NewUser">Neuer Benutzer</label>
+			<label index="NewGroup">Neue Benutzergruppe</label>
+
+
+			<label index="errorSubscriptionExtension">Fehler: Extension EXT:sr_feuser_register scheint nicht korrekt konfiguriert zu sein.</label>
+
+			<label index="subscriptionforms">Anmeldeformulare</label>
+			<label index="descriptionSubscriptionforms">Der Anmeldeprozess erfolgt nach dem Double-Opt-In-Prinzip. Die Webseite stellt Besuchern ein Formular zum Anmelden bereit. Der Benutzer bekommt eine E-Mail mit einem Bestätigungslink. Erst nach Klick auf den Link ist der Benutzer angemeldet. Es wird hier auf die Extension sr_feuser_register zurückgefriffen. Diese Übersicht bietet einen Überblick über die wichtigsten Bestandteile des Prozesses und einige wenige Einstellmöglichkeiten. Bei Problemen sehen Sie bitte in der Anleitung der Extension nach.</label>
+
+			<label index="subscriptionformtemplate">Template für das Anmeldeformular</label>
+			<label index="descriptionSubscriptionformTemplate">Über das Editieren des Templates können Sie die generierten Bestätigungs-E-Mails anpassen.</label>
+
+			<label index="subscriptionpage">Anmeldeseite </label>
+			<label index="descriptionSubscriptionPage">Die Seite mit dem Anmeldeformular.</label>
+
+			<label index="confirmationpage">Bestätigungsseite des Anmeldeprozesses</label>
+			<label index="descriptionConfirmationPage">Die Seite, die nach erfolgreichem Anmelden durch den Benutzer, also nach Abschluss des Double-Opt-Ins, angezeigt wird.</label>
+
+			<label index="loginpage">Frontend User Login Seite</label>
+			<label index="descriptionLoginPage">Die Seite auf der sich ein angemeldeter Benutzer anmelden und in einen Benutzerbereich gelangt um bspw. exklusive Informationen zu erhalten oder sein Profil zu ändern.</label>
+
+			<label index="profileeditpage">Bearbeitungseite für das Profil</label>
+			<label index="descriptionProfileEditPage">Die Seite auf der eingeloggter Benutzer sein Profil ändern kann. Die Seite gibt normalerweise die Möglichkeit, das Profil zu vervollständigen, Interessenskategorien zu wählen oder andere Newsletter zu bestellen.</label>
+
+			<label index="editSubscriptionTemplate">Subscription Template bearbeiten</label>
+
+
+
+			<label index="subscriptions">Anmeldungen</label>
+			<label index="descriptionSubscriptions">Hier können Sie die Gruppe editieren welche für den Registrierungsprozess verwendet wird und die die bereits bestätigten Benutzer enthält. Falls in den Tabellen unten keine Einträge sind schauen Sie bitte in der Anleitung von der Extension EXT:sr_feuser_register nach.</label>
+
+			<label index="descriptionGroups">Eine Übersicht der wichtigsten Benutzergruppen und ihrer Benutzer: Anmeldungen, Pending, Testgruppe, Softbounces, Hardbounces und deaktivierte Benutzer</label>
+
+			<label index="testGroup">Testgruppe</label>
+			<label index="deregistrations">Abmeldungen</label>
+
+			<label index="pending">Pending</label>
+			<label index="descriptionPending">Hier können Sie die Gruppe editieren welche für den Registrierungsprozess verwendet wird und die die noch nicht bestätigten Benutzer enthält. Falls in den Tabellen unten keine Einträge sind schauen Sie bitte in der Anleitung von der Extension EXT:sr_feuser_register nach.</label>
+			<label index="createSysfolder">Sysfolder-Seite erstellen</label>
+
+			<label index="blocked">Blocked</label>
+			<label index="bounced">Bounced</label>
+			<label index="bounces">Bounces</label>
+			<label index="bouncesettings">Bounce Einstellungen</label>
+			<label index="softbounces">Soft bounces</label>
+			<label index="descriptionsoftbounce">Ein Soft Bounce ist ein Benutzer dessen E-Mail Account or E-Mail Server voll ist und vorübergehend nicht erreichbar ist.</label>
+			<label index="hardbounces">Hard bounces</label>
+			<label index="descriptionhardbounce">Ein Hard Bounce ist ein Benutzer dessen E-Mail Account or E-Mail Server nicht existiert oder permanent nicht erreichbar ist.</label>
+			<label index="descriptionNewMail">Hier können Sie für eine Versandgruppe eine E-Mail erstellen. Nach dem Erstellen können Sie unter "Einzelmailings", "Newsletter" oder "Kampagnen" Inhalte hinzufügen.</label>
+
+			<label index="targetgroupdefinitions">Zielgruppendefinitionen</label>
+			<label index="createTargetgroupdefinition">Zielgruppendefinition erstellen</label>
+			<label index="descriptionTargetgroupDefinitions">Zielgruppen sind dynamische Gruppen von Webseitenbenutzern, die anhand ihrer Eigenschaften ausgewählt werden können. Z.B. Geschlecht, Alter oder PLZ. Wenn Sie in der Zeilgruppendefinition eins der Merkmale hinzufügen muss der Benutzer diesem entsprechen, um dazugezählt zu werden. Bei den Kategorien muss er mindestens eine ausgewählt haben. Entsprechend der Qualität der Datenbasis sollten mehr oder weniger Attribute verwendet werden.</label>
+			<label index="newTargetgroupdefinition">Neue Zielgruppendefinition</label>
+			<label index="getTargetgroupdefinitions">Auflistung von Zielgruppendefinitionen</label>
+
+			<label index="createReceivergroup">Empfängerliste erstellen</label>
+			<label index="newReceivergroup">Neue Empfängerliste</label>
+			<label index="getReceivergroups">Auflistung der Empfängerlisten</label>
+
+			<label index="tx_t3m_target1">T3M Zielgruppe</label>
+			<label index="tx_tcdirectmail_target_fegroups">Frontend Gruppen</label>
+			<label index="tx_tcdirectmail_target_fepages">Frontend Benutzer von Seiten</label>
+			<label index="tx_tcdirectmail_target_beusers">Backend Benutzer</label>
+			<label index="tx_tcdirectmail_target_csvfile">CSV Datei</label>
+			<label index="tx_tcdirectmail_target_csvlist">CSV Liste</label>
+			<label index="tx_tcdirectmail_target_csvurl">CSV URL</label>
+			<label index="notsupported">n.a.</label>
+
+			<label index="tx_tcdirectmail_targets.title">Name der Empfängerliste</label>
+
+
+			<label index="uid">Unique ID</label>
+			<label index="gender">Geschlecht</label>
+			<label index="age_range">Altersspanne</label>
+			<label index="country">Land</label>
+			<label index="zone">Bundesland</label>
+			<label index="zip">PLZ</label>
+			<label index="date_of_birth">Geburtstag</label>
+
+			<label index="export">Export</label>
+			<label index="Export">Export</label>
+			<label index="descriptionExportUsers">Exportiere alle pending, angemeldeten und manuell erstellte Benutzer als CSV- Datei.</label>
+
+			<label index="targetgroups">Zielgruppen</label>
+			<label index="targetgroupusers">Zielgruppenbenutzer</label>
+
+			<label index="errorNoAdmin">Fehler: Nur Zugriff für System-Admins.</label>
+			<label index="errorNoGroup">Fehler: Keine Gruppe gefunden.</label>
+			<label index="errorNoPage">Fehler: Seite nicht gefunden.</label>
+			<label index="errorNoMail">Fehler: Keine E-Mail gefunden.</label>
+			<label index="errorNoFile">Fehler: Datei nicht gefunden.</label>
+			<label index="errorSrfeuserregister">Fehler: Extension sr_feuser_register nicht korrekt Konfiguriert. Bitte definieren Sie die Konstanten in Ihrem Root-Template.</label>
+
+
+			<label index="editGroup">Gruppe bearbeiten</label>
+			<label index="categories">Kategorien</label>
+			<label index="descriptionCategories">Hier können Sie Interessenskategorien angeben, die ein Benutzer auswählen kann wenn er sein Profil bearbeitet. Oder Sie geben das Feld im Anmeldeformular bereits an.</label>
+
+
+			<label index="viewPage">Seite ansehen</label>
+			<label index="editPage">Seite bearbeiten</label>
+			<label index="deletePage">Seite löschen</label>
+
+
+			<label index="category">Kategorie</label>
+			<label index="categories">Kategorien</label>
+			<label index="getCategories">Auflistung der Kategorien</label>
+
+			<label index="campaign">Kampagne</label>
+			<label index="campaigns">Kampagnen</label>
+			<label index="descriptionCampaigns">Kampagnen fassen Einzel-Mailings zusammen und können eine thematische Abfolge darstellen. Über sie können Einzelmails gruppiert werden.</label>
+			<label index="getCampaigns">Auflistung der Kampagnen</label>
+			<label index="selectCampaign">Bitte wählen Sie eine Kampagne aus.</label>
+
+
+			<label index="page">Seite</label>
+			<label index="pages">Seiten</label>
+			<label index="getPages">Auflistung der Seiten</label>
+			<label index="email">E-Mail</label>
+			<label index="testemail">Test E-Mail</label>
+			<label index="emails">E-Mails</label>
+			<label index="nomails">No E-Mails</label>
+			<label index="getEmails">Auflistung der E-Mails</label>
+			<label index="countEmails">Anzahl an E-Mails</label>
+
+			<label index="content">Inhalt</label>
+			<label index="contents">Inhalte</label>
+			<label index="getContents">Auflistung der Inhalte</label>
+			<label index="countContents">Anzahl an Inhalten</label>
+
+			<label index="salutation">Begrüßung</label>
+			<label index="salutations">Begrüßungen</label>
+			<label index="getSalutations">Auflistung der Begrüßungen</label>
+
+			<label index="directmail">Direct Mail</label>
+			<label index="directmails">Direct Mails</label>
+
+			<label index="createCategory">Kategorien erstellen</label>
+			<label index="newCategory">Neue Kategorie</label>
+			<label index="createCampaign">Kampagne erstellen</label>
+			<label index="NewCampaign">Neue Kampagne</label>
+			<label index="createPage">Seite erstellen</label>
+			<label index="NewPage">Neue Seite</label>
+			<label index="createEmail">E-Mail erstellen</label>
+			<label index="NewMail">Neue E-Mail</label>
+
+
+			<label index="Repeat">Wiederholung</label>
+
+			<label index="newsletters">Newsletter</label>
+			<label index="Newsletters">Newsletter</label>
+			<label index="descriptionNewsletters">Newsletter werden regelmässig versendet, z.B. wöchentlich, monatlich oder quartalsweise.</label>
+			<label index="createNewsletter">Newsletter erstellen</label>
+
+			<label index="oneoffmailings">Einzel-Mailings</label>
+			<label index="OneOffMailings">Einzel-Mailings</label>
+			<label index="descriptionOneOffMailings">Einzel-Mailings werden nur einmal versendet. Sobald Sendedatum und Empfängerliste definiert sind ist die E-Mail bereit zum Versand!</label>
+			<label index="createOneOffMailing">Einzel-Mailing erstellen</label>
+
+			<label index="MailsForCampaigns">Kampagnen-E-Mails (ungesendete)</label>
+			<label index="NewNewsletter">Neuer regelmäßiger Newsletter</label>
+			<label index="NewOneOffMailing">Neue einmalige "One-Off-Mail"</label>
+			<label index="NewMailForCampaign">Neue Kampagnen-E-Mail</label>
+
+
+			<label index="createContent">E-Mail-Inhalt erstellen</label>
+			<label index="NewContent">Neuer E-Mail-Inhalt</label>
+			<label index="createSalutation">Begrüßung erstellen</label>
+			<label index="NewSalutation">Neue Begrüßung</label>
+			<label index="editCategory">Kategorien bearbeiten</label>
+			<label index="editCampaign">Kampagnen bearbeiten</label>
+			<label index="editPage">Seite bearbeiten</label>
+			<label index="editContent">Inhalte bearbeiten</label>
+			<label index="editSalutations">Begrüßung bearbeiten</label>
+			<label index=""></label>
+			<label index="deleteCampaign">Kampagne löschen</label>
+			<label index="deletePage">Seite löschen</label>
+			<label index="deleteContent">Inhaltsblock löschen</label>
+
+
+			<label index="send">Versand</label>
+			<label index="sendtestmail">Test-E-Mail senden</label>
+			<label index="sendmails">E-Mails senden</label>
+			<label index="resendmails">Erneut senden</label>
+			<label index="descriptionResendmails">Hier können Sie den E-Mail-Versand noch einmal anstossen.</label>
+			<label index="Sent">Gesendet</label>
+			<label index="sentmails">Gesendete E-Mails</label>
+			<label index="SentMails">Gesendete E-Mails</label>
+			<label index="unsentmails">Ungesendete E-Mails</label>
+			<label index="scheduledmails">Geplante Aussendungen</label>
+			<label index="unscheduledmails">Noch nicht geplante Aussendungen</label>
+			<label index="currentlysendingmails">Currently sending E-Mails</label>
+
+
+			<label index="schedule">Sendezeitpunkt festlegen</label>
+			<label index="sendtestcampaign">Testkampagne senden</label>
+			<label index="sendcampaign">Kampagne senden</label>
+			<label index="automaticsend">Automatischer Versand</label>
+
+			<label index="campaignstatistics">Kampagnen-Statistiken</label>
+			<label index="campaignfinishedornot">Status</label>
+			<label index="campaignfinished">alle E-Mails gesendet</label>
+			<label index="campaignunfinished">noch E-Mails ausstehend</label>
+			<label index="newsletterstatistics">Newsletter-Statistiken</label>
+			<label index="oneoffstatistics">Einzel-Mailing-Statistiken</label>
+			<label index="mailstatistics">Mail-Statistiken</label>
+			<label index="sendstatistics">Sende-Statistiken</label>
+			<label index="descriptionsendstatistics">Wieviele E-Mails wurden versendet?</label>
+			<label index="openstatistics">Öffnungs-Statistiken</label>
+			<label index="descriptionopenstatistics">Eine Statistik über alle gesendeten E-Mails und den Prozentsatz an registrierten Öffnungen. Da die meisten E-Mail-Client-Programme das Laden exterer Referenzen nicht erlauben, kann die Zahl allerdings nur als Untergrenze aller geöffneten E-Mails verstanden werden.</label>
+			<label index="clickstatistics">Klick-Statistiken</label>
+			<label index="descriptionclickstatistics">Eine Statistik über alle gesendeten E-Mails und den Prozentsatz an registrierten Klicks auf darin enthaltenen Links. Da bei Text-E-Mails das Aufrufen der hinterlegten URLs nicht in allen Fällen vom Server registriert wird, stellt die Anzahl lediglich eine Untergrenze dar.</label>
+			<label index="contentstatistics">Inhalts-Statistiken</label>
+			<label index="PageView">Page view</label>
+			<label index="PageViewRatio">Page-View Rate</label>
+			<label index="PageSends">Aussendungen</label>
+			<label index="TotalPageSends">Gesamte Aussendungen (einzelne E-Mails)</label>
+			<label index="PageClicks">Klicks in E-Mails</label>
+			<label index="TotalPageClicks">Gesamt Klicks</label>
+			<label index="PageClickRatio">Page-Klick Rate</label>
+			<label index="ClickedMails">E-Mails mit Klicks</label>
+			<label index="OpenedMails">Geöffnete E-Mails</label>
+			<label index="descriptionOpenedMails">Von den Aussendungen (den 'E-Mailings') geöffnete einzelne E-Mails</label>
+
+			<label index="NotOpenedMails">Nicht geöffnete E-Mails</label>
+			<label index="NotClickedMails">E-Mails ohne Klicks</label>
+			<label index="LinksClicked">Geklickte Links</label>
+			<label index="clicks">Anzahl Klicks</label>
+			<label index="descriptionTotalClicks">Hier sehen Sie das "All-Time-Ranking" d.h. die Hitparade aller Ihrer versendeten Links aus allen  E-Mailings.</label>
+
+
+			<label index="checkForSpam">Spamcheck</label>
+			<label index="spamOrNot">Spam?</label>
+			<label index="spamScore">Spam score</label>
+			<label index="thisisspam">Spam!!</label>
+			<label index="thisisnotspam">Kein Spam.</label>
+			<label index="thisisnearlyspam">Fast Spam!</label>
+
+			<label index="bouncestatistics">Bounce-Statistiken</label>
+			<label index="userstatistics">Benutzer-Statistiken</label>
+			<label index="Visited">Besucherzahl</label>
+
+			<label index="settings">Einstellungen</label>
+			<label index="descriptionSettings">Hier können Benutzer Systeminformationen einsehen und Admins Einstellungen für Extensions oder am System vornehmen.</label>
+			<label index="OK">OK.</label>
+			<label index="Warning">Warning.</label>
+			<label index="notOK">nicht OK.</label>
+			<label index="CheckingSettings">Überprüfe Einstellungen ...</label>
+			<label index="checkExternalSettings">Andere Extensions</label>
+			<label index="checkOwnSettings">T3M Einstellungen</label>
+			<label index="checkSystemSettings">Systemeinstellungen</label>
+			<label index="checkForSpamProgram">Spam-Check Server- und Client-Programme</label>
+
+			<label index="actions">Actions</label>
+			<label index="infos">Infos</label>
+
+			<label index="attachments">E-Mail-Anhänge</label>
+			<label index="createAttachment">Neuen E-Mail-Anhang erstellen</label>
+			<label index="editAttachments">E-Mail-Anhänge bearbeiten</label>
+
+			<label index=""></label>
+
+			<label index="statistics">Statistiken</label>
+			<label index="infos">Informationen</label>
+			<label index="SendDate">Sendedatum</label>
+			<label index="SendDatePlanned">Geplantes Sendedatum</label>
+			<label index="SentDate">Versand am</label>
+
+			<label index="status">Status</label>
+			<label index="stats">Statistiken</label>
+			<label index="statsMostReceivers">E-Mails mit den meisten Empfängern</label>
+			<label index="descriptionStatsMostReceivers">E-Mails sortiert nach der Anzahl der Aussendungen. Zeigt die Popularität von E-Mailings an.</label>
+			<label index="yearlystatistics">Jahresstatistiken</label>
+
+			<label index="createStuff">Erstellee sysfolders, fe_groups, fe_users, be_users, targetgroups, pages und content !!!</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

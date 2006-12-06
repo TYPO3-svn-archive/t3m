@@ -1,0 +1,209 @@
+lib.pbimagegraph < plugin.tx_pbimagegraph_pi1
+lib.pbimagegraph {
+	factory = png
+	width = 400
+	height = 300
+	borderColor = black
+	10 = VERTICAL
+	10 {
+		percentage = 5
+		10 = TITLE
+		10 {
+			text = Gradient Filled Donut/Pie Chart
+			font {
+				size = 12
+			}
+		}
+		20 = HORIZONTAL
+		20 {
+			percentage = 60
+			10 = PLOTAREA
+			10 {
+				id = plotarea1
+				hideAxis = 0
+				10 = PIE
+				10 {
+					lineColor = lightgrey
+					dataset {
+						10 = trivial
+						10 {
+							10 = point
+							10 {
+								x = Beef
+								y = 4
+								id = beef
+							}
+							20 = point
+							20 {
+								x = Pork
+								y = 7
+								id = pork
+							}
+							30 = point
+							30 {
+								x = Poultry
+								y = 10
+								id = poultry
+							}
+							40 = point
+							40 {
+								x = Camels
+								y = 2
+								id = camels
+							}
+							50 = point
+							50 {
+								x = Other
+								y = 3
+								id = other
+							}
+						}
+						20 = trivial
+						20 {
+							10 = point
+							10 {
+								x = Beer
+								y = 4
+								id = beer
+							}
+							20 = point
+							20 {
+								x = Wine
+								y = 7
+								id = wine
+							}
+							30 = point
+							30 {
+								x = Alcohol
+								y = 10
+								id = alcohol
+							}
+							40 = point
+							40 {
+								x = Coffee
+								y = 2
+								id = coffee
+							}
+							50 = point
+							50 {
+								x = Milk
+								y = 3
+								id = milk
+							}
+							50 = point
+							50 {
+								x = Water
+								y = 3
+								id = water
+							}
+						}
+					}
+					fillStyle = fill_array
+					fillStyle {
+						1 = gradient
+						1 {
+							direction = radial
+							startColor = white
+							endColor = green
+							id = beef
+						}
+						2 = gradient
+						2 {
+							direction = radial
+							startColor = white
+							endColor = blue
+							id = pork
+						}
+						3 = gradient
+						3 {
+							direction = radial
+							startColor = white
+							endColor = yellow
+							id = poultry
+						}
+						4 = gradient
+						4 {
+							direction = radial
+							startColor = white
+							endColor = red
+							id = camels
+						}
+						5 = gradient
+						5 {
+							direction = radial
+							startColor = white
+							endColor = orange
+							id = other
+						}
+						6 = gradient
+						6 {
+							direction = radial
+							startColor = dimgray
+							endColor = white
+							id = beer
+						}
+						7 = gradient
+						7 {
+							direction = radial
+							startColor = sandybrown
+							endColor = white
+							id = wine
+						}
+						8 = gradient
+						8 {
+							direction = radial
+							startColor = sienna
+							endColor = white
+							id = alcohol
+						}
+						9 = gradient
+						9 {
+							direction = radial
+							startColor = powderblue
+							endColor = white
+							id = coffee
+						}
+						10 = gradient
+						10 {
+							direction = radial
+							startColor = purple
+							endColor = white
+							id = milk
+						}
+						11 = gradient
+						11 {
+							direction = radial
+							startColor = thistle
+							endColor = white
+							id = water
+						}
+					}
+					marker = value
+					marker {
+						fillColor = white
+						borderColor = black
+						fontSize = 7
+						useValue = pct_y_total
+						pointing = angular
+						pointing {
+							radius = 20
+						}
+						dataPreProcessor = formatted
+						dataPreProcessor {
+							format = %0.1f%%
+						}
+					}
+					explode {
+						radius = 20
+						id = Beer
+					}
+				}
+			}
+			20 = LEGEND
+			20 {
+				plotarea.1 = plotarea1
+				alignment = vertical
+			}
+		}
+	}
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 't3m'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_t3m_campaigns">Campaigns</label>
+			<label index="tx_t3m_campaigns.name">Campaign name</label>
+			<label index="tx_t3m_campaigns.description">Description of the campaign</label>
+			<label index="tx_t3m_targetgroups">Target groups</label>
+			<label index="tx_t3m_targetgroups.name">Name of the targetgroup</label>
+			<label index="tx_t3m_targetgroups.description">Description for the target group</label>
+			<label index="tx_t3m_targetgroups.gender.I.0">male</label>
+			<label index="tx_t3m_targetgroups.gender.I.1">female</label>
+			<label index="tx_t3m_targetgroups.gender.I.2">both</label>
+			<label index="tx_t3m_targetgroups.gender">Gender</label>
+			<label index="tx_t3m_targetgroups.age_from">Age &quot;from&quot;</label>
+			<label index="tx_t3m_targetgroups.age_to">Age &quot;to&quot;</label>
+			<label index="tx_t3m_targetgroups.country">Country</label>
+			<label index="tx_t3m_targetgroups.zone">Zone</label>
+			<label index="tx_t3m_targetgroups.zip">Zip code area (e.g. 50 or 506)</label>
+			<label index="tx_t3m_targetgroups.salutations_uid">Salutation</label>
+			<label index="tx_t3m_targetgroups.categories_uid">Categories</label>
+			<label index="tx_t3m_targetgroups.calculated_receivers">Calculated receivers</label>
+			<label index="tx_t3m_directmails">Direct mails</label>
+			<label index="tx_t3m_directmails.name">Name</label>
+			<label index="tx_t3m_directmails.directmail">Directmail</label>
+			<label index="tx_t3m_categories">Categories of interests</label>
+			<label index="tx_t3m_categories.name">Name</label>
+			<label index="tx_t3m_categories.description">Description</label>
+			<label index="tx_t3m_categories.calculated_receivers">Calculated Receivers</label>
+			<label index="tx_t3m_salutations">Salutations</label>
+			<label index="tx_t3m_salutations.name">Name of the salutation</label>
+			<label index="tx_t3m_salutations.single_female">Female version</label>
+			<label index="tx_t3m_salutations.single_male">Male version</label>
+			<label index="tx_t3m_salutations.plural">Plural version</label>
+			<label index="fe_users.tx_t3m_categories">Categories of interests</label>
+			<label index="fe_users.tx_t3m_softbounces">Softbounces</label>
+			<label index="fe_users.tx_t3m_hardbounces">Hardbounces</label>
+			<label index="fe_users.tx_t3m_country">Country</label>
+			<label index="pages.tx_t3m_campaign">t3m Campaign</label>
+			<label index="pages.tx_t3m_spam_score">Spam score</label>
+			<label index="tx_tcdirectmail_targets.tx_t3m_target">target group</label>
+			<label index="tx_tcdirectmail_targets.optt3m_target1">Receivers from tx_t3m_targetgroups</label>
+			<label index="tx_tcdirectmail_targets.title">Receiver group</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_t3m_campaigns">Kampagnen</label>
+			<label index="tx_t3m_campaigns.name">Kampagnenname</label>
+			<label index="tx_t3m_campaigns.description">Beschreibung der Kampagne</label>
+			<label index="tx_t3m_targetgroups">Target groups</label>
+			<label index="tx_t3m_targetgroups.name">Name der Zielgruppe</label>
+			<label index="tx_t3m_targetgroups.description">Beschreibung für die Zielgruppe</label>
+			<label index="tx_t3m_targetgroups.gender.I.0">männlich</label>
+			<label index="tx_t3m_targetgroups.gender.I.1">weiblich</label>
+			<label index="tx_t3m_targetgroups.gender.I.2">beide</label>
+			<label index="tx_t3m_targetgroups.gender">Geschlecht</label>
+			<label index="tx_t3m_targetgroups.age_from">Altersuntergrenze</label>
+			<label index="tx_t3m_targetgroups.age_to">Altersobergrenze</label>
+			<label index="tx_t3m_targetgroups.country">Land</label>
+			<label index="tx_t3m_targetgroups.zone">Bundesland</label>
+			<label index="tx_t3m_targetgroups.zip">PLZ-Bereich (z.B. &quot;50&quot; oder &quot;5067&quot;)</label>
+			<label index="tx_t3m_targetgroups.salutations_uid">Begrüßung</label>
+			<label index="tx_t3m_targetgroups.categories_uid">Kategorien</label>
+			<label index="tx_t3m_targetgroups.calculated_receivers">Anzahl Benutzer</label>
+			<label index="tx_t3m_directmails">Direct mails</label>
+			<label index="tx_t3m_directmails.name">Name</label>
+			<label index="tx_t3m_directmails.directmail">Directmail</label>
+			<label index="tx_t3m_categories">Kategorien für Interessen</label>
+			<label index="tx_t3m_categories.name">Name</label>
+			<label index="tx_t3m_categories.description">Beschreibung</label>
+			<label index="tx_t3m_categories.calculated_receivers">Anzahl Empfänger</label>
+			<label index="tx_t3m_salutations">Begrüßungen, Anreden</label>
+			<label index="tx_t3m_salutations.name">Bezeichnung der Anrede</label>
+			<label index="tx_t3m_salutations.single_female">Weibliche Version</label>
+			<label index="tx_t3m_salutations.single_male">Männliche Version</label>
+			<label index="tx_t3m_salutations.plural">Plural version</label>
+			<label index="fe_users.tx_t3m_categories">Interessenskategorien</label>
+			<label index="fe_users.tx_t3m_softbounces">Softbounces</label>
+			<label index="fe_users.tx_t3m_hardbounces">Hardbounces</label>
+			<label index="fe_users.tx_t3m_country">Land</label>
+			<label index="pages.tx_t3m_campaign">t3m Kampagne</label>
+			<label index="pages.tx_t3m_spam_score">Spam score</label>
+			<label index="tx_tcdirectmail_targets.tx_t3m_target">Zielgruppe</label>
+			<label index="tx_tcdirectmail_targets.title">Name der Empfängergruppe</label>
+		</languageKey>
+	</data>
+</T3locallang>
