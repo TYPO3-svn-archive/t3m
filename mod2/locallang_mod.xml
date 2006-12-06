@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;txt3mM1&quot; - header, description</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_tabs_tab">E-Mailings</label>
+			<label index="mlang_labels_tablabel">Content management</label>
+			<label index="mlang_labels_tabdescr">Here you can create new campaigns and pages to be sent by mail.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">E-Mailings</label>
+			<label index="mlang_labels_tablabel">Inhalte erstellen</label>
+			<label index="mlang_labels_tabdescr">Hier können sie Einzel-E-Mails, Newsletter oder Kampagnen erstellen.</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;txt3mM1&quot; - header, description</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_tabs_tab">T3M Mail</label>
+			<label index="mlang_labels_tabdescr">T3M E-Mail Marketing Management Tool</label>
+			<label index="mlang_labels_tablabel">E-Mail Marketing</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">T3M Mail</label>
+			<label index="mlang_labels_tabdescr">T3M E-Mail Marketing Management Tool</label>
+			<label index="mlang_labels_tablabel">E-Mail Marketing</label>
+		</languageKey>
+	</data>
+</T3locallang>

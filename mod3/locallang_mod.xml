@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;txt3mM1&quot; - header, description</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_tabs_tab">Send</label>
+			<label index="mlang_labels_tablabel">Send e-mails</label>
+			<label index="mlang_labels_tabdescr">Send the mails and set the dates</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">Versand</label>
+			<label index="mlang_labels_tablabel">Versandoptionen</label>
+			<label index="mlang_labels_tabdescr">Hier können sie die Versandoptionen einstellen und die Zeitpunkte des Versands bestimmen.</label>
+		</languageKey>
+	</data>
+</T3locallang>

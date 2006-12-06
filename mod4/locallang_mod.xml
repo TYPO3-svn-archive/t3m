@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;txt3mM1&quot; - header, description</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_tabs_tab">Statistics</label>
+			<label index="mlang_labels_tablabel">E-mail statistics</label>
+			<label index="mlang_labels_tabdescr">View statistics for the sent E-Mails and target groups.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">Statistiken</label>
+			<label index="mlang_labels_tablabel">E-Mail- und Gruppen-Statistiken</label>
+			<label index="mlang_labels_tabdescr">Hier können sie Statistiken über die Benutzer, den Versand sowie über Öffnungs- und Klickraten einsehen.</label>
+		</languageKey>
+	</data>
+</T3locallang>
