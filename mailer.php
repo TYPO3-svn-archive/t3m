@@ -24,16 +24,14 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-// print("T3M sending at ".date("Y-m-d_H:i:s")."\n");
+// print("Tcdirectmail script sending at ".date("Y-m-d_H:i:s")."\n");
 
 if (isset($_SERVER['argv'][1])) {
 	if ($_SERVER['argv'][1] == '--test') { // ? (isset($_SERVER['argv'][1]) && ($_SERVER['argv'][1] == '--test'))
 		print "Ok\n";
 		exit(0);
-	} else {
 	}
 }
-print 'Script running at'.time()."\n";
 
 define("PATH_typo3conf", dirname(dirname(dirname(__FILE__)))."/");
 define("PATH_site", dirname(PATH_typo3conf)."/");

@@ -75,7 +75,6 @@ class  tx_t3m_module2 extends t3lib_SCbase {
 				'campaigns' => $LANG->getLL('campaigns'),
 // 				'emails' => $LANG->getLL('emails'),
 // 				'content' => $LANG->getLL('content'),
-// 				'salutations' => $LANG->getLL('salutations'),
 				'categories' => $LANG->getLL('categories'),
 /*				'createCategory' => $LANG->getLL('createCategory'),
 				'createCampaign' => $LANG->getLL('createCampaign'),
@@ -134,16 +133,16 @@ class  tx_t3m_module2 extends t3lib_SCbase {
 				$content='<h2>'.$LANG->getLL('oneoffmailings').'</h2>';
 				$content.=$LANG->getLL('descriptionOneOffMailings');
 				$content.='<h3>'.$LANG->getLL('NewOneOffMailing').'</h3>';
-				$content.=tx_t3m_main::createTCDirectmailOneOffMailing();
-				$content.='<br />'.tx_t3m_main::getTCDirectmailsOneOffMailings();
+				$content.=tx_t3m_main::createOneOffMailing();
+				$content.='<br />'.tx_t3m_main::oneOffMailings();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case newsletter:
 				$content='<h2>'.$LANG->getLL('newsletters').'</h2>';
 				$content.=$LANG->getLL('descriptionNewsletters');
 				$content.='<h3>'.$LANG->getLL('NewNewsletter').'</h3>';
-				$content.=tx_t3m_main::createTCDirectmailNewsletter();
-				$content.='<br />'.tx_t3m_main::getTCDirectmailsNewsletters();
+				$content.=tx_t3m_main::createNewsletter();
+				$content.='<br />'.tx_t3m_main::newsletters();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case campaigns:
@@ -152,80 +151,11 @@ class  tx_t3m_module2 extends t3lib_SCbase {
 				$content.='<br /><h3>'.$LANG->getLL('NewCampaign').'</h3>';
 				$content.=tx_t3m_main::createCampaign();
 				$content.='<br /><h3>'.$LANG->getLL('getCampaigns').'</h3>';
-				$content.=tx_t3m_main::tableForCampaigns();
+				$content.=tx_t3m_main::campaigns();
 				$content.='<br /><h3>'.$GLOBALS['LANG']->getLL('MailsForCampaigns').'</h3>';
 // 				$content.=tx_t3m_main::createTCDirectmailForCampaign();
-				$content.=tx_t3m_main::getTCDirectmailsForCampaigns();
-				$this->content.=$this->doc->section('',$content,0,1);
-			break;
-			case emails:
-				$content='<h2>'.$LANG->getLL('emails').'</h2>';
-				$content.='<br /><h3>'.$LANG->getLL('createEmail').'</h3>';
-				$content.=tx_t3m_main::createTCDirectmail();
-				$content.='<br /><h3>'.$LANG->getLL('getEmails').'</h3>';
-				$content.=tx_t3m_main::getTCDirectmails();
-				$this->content.=$this->doc->section('',$content,0,1);
-			break;
-// 			case content:
-// 				$content='<h2>'.$LANG->getLL('content').'</h2>';
-// 				$content.='<br /><h3>'.$LANG->getLL('createContent').'</h3>';
-// 				$content.=tx_t3m_main::createContent();
-// 				$content.='<br /><h3>'.$LANG->getLL('getContents').'</h3>';
-// 				$content.=tx_t3m_main::getContents();
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-			case salutations:
-				$content='<h2>'.$LANG->getLL('salutations').'</h2>';
-				$content.='<br /><h3>'.$LANG->getLL('createSalutation').'</h3>';
-				$content.=tx_t3m_main::createSalutation();
-				$content.='<br /><h3>'.$LANG->getLL('getSalutations').'</h3>';
-				$content.=tx_t3m_main::getSalutations();
-				$this->content.=$this->doc->section('',$content,0,1);
-			break;
-// 			case createCategory:
-// 				$content=$LANG->getLL('createCategory');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case createCampaign:
-// 				$content=$LANG->getLL('createCampaign');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case createPage:
-// 				$content=$LANG->getLL('createPage');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case createContent:
-// 				$content=$LANG->getLL('createContent');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case createSalutations:
-// 				$content=$LANG->getLL('createSalutations');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case editCategory:
-// 				$content=$LANG->getLL('editCategory');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case editCampaign:
-// 				$content=$LANG->getLL('editCampaign');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case editPage:
-// 				$content=$LANG->getLL('editPage');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case editContent:
-// 				$content=$LANG->getLL('editContent');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-// 			case editSalutations:
-// 				$content=$LANG->getLL('editSalutations');
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
-			case directmails: //show legacy stuff from directmail and tcdirectmail
-				$content=$LANG->getLL('directmails');
-				$content.='<br /><br />'.tx_t3m_main::getDirectMailFolders();
-				$content.='<br /><br />'.tx_t3m_main::getDirectMails();
+				$content.=tx_t3m_main::campaignMailings();
+// 				$content.=tx_t3m_main::getTCDirectmailsForCampaigns();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case categories:// recipients choose themselves (at some subscriptionform)
@@ -236,9 +166,10 @@ class  tx_t3m_module2 extends t3lib_SCbase {
 				$content.='<br /><h3>'.$LANG->getLL('createCategory').'</h3>';
 				$content.=tx_t3m_main::createCategory();
 				$content.='<br /><h3>'.$LANG->getLL('getCategories').'</h3>';
-				$content.=tx_t3m_main::getCategories();
+				$content.=tx_t3m_main::categories();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
+
 		}
 	}
 }

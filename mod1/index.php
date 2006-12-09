@@ -76,6 +76,7 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 		$this->MOD_MENU['function'] += Array (
 				'create' => $LANG->getLL('Create'),
 				'subscriptionforms' => $LANG->getLL('subscriptionforms'),
+				'salutations' => $LANG->getLL('salutations'),
 				'groups'  => $LANG->getLL('Groups'),
 				'targetgroups' => $LANG->getLL('targetgroups'),
 				'receivers' => $LANG->getLL('Receivers'),
@@ -186,6 +187,15 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 				$content.=$LANG->getLL('descriptionProfileEditPage').'<br />';
 				$content.=tx_t3m_main::getSubscriptionEditPage();
 
+				$this->content.=$this->doc->section('',$content,0,1);
+			break;
+			case salutations:
+				$content='<h2>'.$LANG->getLL('salutations').'</h2>';
+				$content.=$LANG->getLL('descriptionSalutations');
+				$content.='<h3>'.$LANG->getLL('createSalutation').'</h3>';
+				$content.=tx_t3m_main::createSalutation();
+				$content.='<h3>'.$LANG->getLL('getSalutations').'</h3>';
+				$content.=tx_t3m_main::getSalutations();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case groups:

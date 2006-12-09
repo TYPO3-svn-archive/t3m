@@ -69,7 +69,8 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 		global $LANG;
 		$this->MOD_MENU = Array (
 			'function' => Array (
-				'settings' => $LANG->getLL('settings')
+				'settings' => $LANG->getLL('settings'),
+				'maintenance' => $LANG->getLL('maintenance')
 // 				'bounces' => $LANG->getLL('bounces')
 // 				'actions' => $LANG->getLL('actions'),
 			)
@@ -106,11 +107,12 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 	* Generates the module content
 	*
 	* @return	void
+	* @todo 	create alternative form for entering most important extension values directly, 1. for non admins, 2. multilang enabled
 	*/
 	function moduleContent()	{
 		global $LANG;
 		switch((string)$this->MOD_SETTINGS['function'])	{
-			case settings: // bouncehandling set here
+			case settings:
 				require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_tools.php');
 				require_once(t3lib_extMgm::extPath('t3m').'class.tx_tcdirectmail_sysstat.php');
 				require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_settings.php');
@@ -119,11 +121,15 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 				$content.=$LANG->getLL('descriptionSettings');
 				$content.='<br />'.$LANG->getLL('CheckingSettings');
 
+				//EXTERNAL
+				//other extensions
 				$content.='<h3>'.$LANG->getLL('checkExternalSettings').'</h3>';
 				$content.=tx_t3m_settings::checkExternalSettings();
 				if ($GLOBALS['BE_USER']->isAdmin()) {
 					$content.='<br />'.tx_t3m_settings::editExternalExtensionConfig();
 				}
+
+				//system
 // 				$content.='<h3>'.$LANG->getLL('checkSystemSettings').'</h3>';
 				$content.=tx_tcdirectmail_sysstat::viewSysStatus(); //lynx, fetchmail, cronjobs
 // 				$content.='<br />'.tx_t3m_settings::checkForLynx();
@@ -132,27 +138,33 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 				$content.='<h3>'.$GLOBALS['LANG']->getLL('checkForSpamProgram').'</h3>';
 				$content.=tx_t3m_settings::checkForSpamProgram();
 
+				//INTERNAL
 				$content.='<h3>'.$LANG->getLL('checkOwnSettings').'</h3>';
 				$content.=tx_t3m_settings::checkOwnSettings();
 				if ($GLOBALS['BE_USER']->isAdmin()) {
 					$content.='<br />'.tx_t3m_settings::editOwnExtensionConfig();
-					$content.='<br />'.tx_t3m_postinstall::postinstallActions();
+					$content.='<h3>'.$GLOBALS['LANG']->getLL('Postinstalls').'</h3>';
+					$content.='<br />'.tx_t3m_postinstall::main();
 				}
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
-// 			case actions:
-// 				$content=$LANG->getLL('actions');
-//
-// 				$this->content.=$this->doc->section('',$content,0,1);
-// 			break;
 			case infos:
 				$content=$LANG->getLL('infos');
 				$content.='just some debug testing stuff here...<br />'.tx_t3m_main::testSomeStuff();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
+			case maintenance:
+				require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_tools.php');
+				require_once(t3lib_extMgm::extPath('t3m').'class.tx_tcdirectmail_sysstat.php');
+				require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_settings.php');
+				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/sys_action.gif" />'.$LANG->getLL('maintenance').'</h2>';
+				$content.=$LANG->getLL('descriptionMaintenance');
+				$content.=tx_t3m_settings::maintenance();
+				$this->content.=$this->doc->section('',$content,0,1);
+			break;
 			case bounces:
 				$content=$LANG->getLL('bounces');
-				$content.='<br /><h3>'.$LANG->getLL('bouncesettings').'</h3>';
+				$content.='<br />just testing ATM<h3>'.$LANG->getLL('bouncesettings').'</h3>';
 				$content.='<br />'.tx_t3m_bounce::checkForBounceMail();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
