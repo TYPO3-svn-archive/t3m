@@ -1,0 +1,54 @@
+<!--
+/**
+* Base colors from typo3-macher.de
+* orange: COLOR:#dd5113;
+* bright-orange: COLOR: #FF8700;
+* grey: COLOR: #333333; COLOR: #666666;
+* blue: COLOR: #40627b;
+*/
+
+H2 {
+	background-image:url('../t3m_logo_star_small.png');
+	background-repeat:no-repeat;
+ 	padding-left: 20px;
+	text-align:center !important;
+
+/*	margin-left: 20px;
+	background:url(../pics/navi-active.gif) no-repeat 0px 0px;
+*/
+}
+
+H2, H3 {
+	font-weight: bold;
+}
+
+A {
+	TEXT-DECORATION: underline; font-weight:bold;
+}
+
+TD.c-headLineTable {
+	white-space: nowrap;
+}
+
+* html #contentarea .contBox{
+	background-color:#F5F5F5;
+	width:530px;
+	padding:15px;
+	margin:0 0 5px 0;
+}
+
+label, input, select { /* Alle Labels UND Formularelemente ausw�len */
+  display: block;
+  float: right;
+}
+
+form br { /* Alle Zeilenumbrche in Formularen ausw�len */
+  clear: left; /* das floating der labels und inputs aufheben */
+}
+
+input#submit { /* den Submit-Button */
+  float: none;
+  width: auto;
+}
+
+-->
