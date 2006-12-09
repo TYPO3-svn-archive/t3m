@@ -1,2 +1,0 @@
-cvsfile1,cvsfile1@localhost
-cvsfile2,cvsfile2@localhost
