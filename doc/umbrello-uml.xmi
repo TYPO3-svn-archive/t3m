@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmlns:UML="http://schema.omg.org/spec/UML/1.3" verified="false" timestamp="2006-10-03T06:23:45" xmi.version="1.2" >
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
+   <XMI.exporterVersion>1.5.4</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.metamodel xmi.name="UML" href="UML.xml" xmi.version="1.3" />
+ </XMI.header>
+ <XMI.content>
+  <UML:Model isSpecification="false" isLeaf="false" isRoot="false" xmi.id="m1" isAbstract="false" name="UML-Modell" >
+   <UML:Namespace.ownedElement>
+    <UML:Stereotype isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="3" isRoot="false" isAbstract="false" name="datatype" />
+    <UML:Stereotype isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="133" isRoot="false" isAbstract="false" name="interface" />
+    <UML:Stereotype isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="168" isRoot="false" isAbstract="false" name="enum" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="4" isRoot="false" isAbstract="false" name="char" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="5" isRoot="false" isAbstract="false" name="bool" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="6" isRoot="false" isAbstract="false" name="float" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="7" isRoot="false" isAbstract="false" name="double" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="8" isRoot="false" isAbstract="false" name="short" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="9" isRoot="false" isAbstract="false" name="long" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="10" isRoot="false" isAbstract="false" name="unsigned int" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="11" isRoot="false" isAbstract="false" name="unsigned short" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="12" isRoot="false" isAbstract="false" name="unsigned long" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="13" isRoot="false" isAbstract="false" name="string" />
+    <UML:DataType stereotype="3" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="2" isRoot="false" isAbstract="false" name="int" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="14" isRoot="false" isAbstract="false" name="Newsletter versenden" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="15" isRoot="false" isAbstract="false" name="Newsletter erstellen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="16" isRoot="false" isAbstract="false" name="Empfänger auswählen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="17" isRoot="false" isAbstract="false" name="Empfänger importieren" />
+    <UML:Actor isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="21" isRoot="false" isAbstract="false" name="Kunde / Interessent" />
+    <UML:Actor isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="22" isRoot="false" isAbstract="false" name="IT" />
+    <UML:Actor isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="23" isRoot="false" isAbstract="false" name="Marketing" />
+    <UML:Actor isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="24" isRoot="false" isAbstract="false" name="Controlling" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="25" isRoot="false" isAbstract="false" name="Erfolg der Kampagne auswerten" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="26" isRoot="false" isAbstract="false" name="Kampagne vorbereiten" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="28" isRoot="false" isAbstract="false" name="TYPO3-Funktionalitäten bereitstellen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="35" isRoot="false" isAbstract="false" name="Kampagne durchführen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="39" isRoot="false" isAbstract="false" name="Newslettertemplate erstellen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="73" isRoot="false" isAbstract="false" name="Bounce-E-Mails verarbeiten" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="74" isRoot="false" isAbstract="false" name="AdViews + AdClicks zählen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="80" isRoot="false" isAbstract="false" name="neuer_anwendungsfall" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="82" isRoot="false" isAbstract="false" name="Inhaltselemente kategorisieren" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="83" isRoot="false" isAbstract="false" name="Direct Mail erstellen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="84" isRoot="false" isAbstract="false" name="Empfängerliste erstellen" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="85" isRoot="false" isAbstract="false" name="Test-E-Mail senden" />
+    <UML:UseCase isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="86" isRoot="false" isAbstract="false" name="Status der Aussendung beobachten" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="109" isRoot="false" isAbstract="false" name="tt_address" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="109" auto_increment="0" xmi.id="188" isRoot="false" initialValue="" type="2" isAbstract="false" name="tx_dfdmailer_gender " />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="109" auto_increment="0" xmi.id="221" isRoot="false" initialValue="" type="2" isAbstract="false" name="module_sys_dmail_html" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="109" auto_increment="0" xmi.id="285" isRoot="false" initialValue="" type="2" isAbstract="false" name="tx_addressgroups_group" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="112" isRoot="false" isAbstract="false" name="EXT:direct_mail" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="113" isRoot="false" isAbstract="false" name="EXT:direct_mail_subscription" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="114" isRoot="false" isAbstract="false" name="EXT:tcdirectmail" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="115" isRoot="false" isAbstract="false" name="EXT:dmaddredit" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="116" isRoot="false" isAbstract="false" name="EXT:df_dmailer" />
+    <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="120" isRoot="false" isAbstract="false" name="t3lib_htmlmail.php" />
+    <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="121" isRoot="false" isAbstract="false" name="t3lib_readmail.php" />
+    <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="129" isRoot="false" isAbstract="false" name="tx_directmail_pi1" />
+    <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="130" isRoot="false" isAbstract="false" name="Browser" />
+    <UML:Interface stereotype="133" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="132" isRoot="false" isAbstract="true" name="tcp-ip" />
+    <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="145" isRoot="false" isAbstract="false" name="Server" >
+     <UML:Namespace.ownedElement>
+      <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="145" xmi.id="142" isRoot="false" isAbstract="false" name="MySQL" />
+      <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="145" xmi.id="144" isRoot="false" isAbstract="false" name="Linux" />
+      <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="145" xmi.id="140" isRoot="false" isAbstract="false" name="Apache" />
+      <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="145" xmi.id="143" isRoot="false" isAbstract="false" name="PHP" >
+       <UML:Namespace.ownedElement>
+        <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="143" xmi.id="141" isRoot="false" isAbstract="false" name="TYPO3" >
+         <UML:Namespace.ownedElement>
+          <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="141" xmi.id="155" isRoot="false" isAbstract="false" name="Extensions" >
+           <UML:Namespace.ownedElement>
+            <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="155" xmi.id="164" isRoot="false" isAbstract="false" name="sys_actions" />
+            <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="155" xmi.id="165" isRoot="false" isAbstract="false" name="direct_mail" />
+            <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="155" xmi.id="166" isRoot="false" isAbstract="false" name="tt_products" />
+            <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="155" xmi.id="195" isRoot="false" isAbstract="false" name="dmaddredit" />
+            <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="155" xmi.id="319" isRoot="false" isAbstract="false" name="u.v.m." />
+           </UML:Namespace.ownedElement>
+          </UML:Component>
+          <UML:Component executable="0" isSpecification="false" isLeaf="false" visibility="public" namespace="141" xmi.id="301" isRoot="false" isAbstract="false" name="Core" />
+         </UML:Namespace.ownedElement>
+        </UML:Component>
+       </UML:Namespace.ownedElement>
+      </UML:Component>
+     </UML:Namespace.ownedElement>
+    </UML:Component>
+    <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="163" isRoot="false" isAbstract="false" name="tx_sysaction" />
+    <UML:Enumeration stereotype="168" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="167" isRoot="false" isAbstract="false" name="Extensions" >
+     <UML:EnumerationLiteral isSpecification="false" isLeaf="false" visibility="public" namespace="167" xmi.id="170" isRoot="false" isAbstract="false" name="sys_action" />
+     <UML:EnumerationLiteral isSpecification="false" isLeaf="false" visibility="public" namespace="167" xmi.id="169" isRoot="false" isAbstract="false" name="direct_mail" />
+    </UML:Enumeration>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="174" isRoot="false" isAbstract="false" name="fe_users" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="175" isRoot="false" initialValue="" type="13" isAbstract="false" name="tx_dmaddredit_addrfolder" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="176" isRoot="false" initialValue="" type="13" isAbstract="false" name="tx_dmaddredit_hidefields" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="177" isRoot="false" initialValue="" type="13" isAbstract="false" name="tx_dmaddredit_csvfields" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="216" isRoot="false" initialValue="" type="2" isAbstract="false" name="module_sys_dmail_category" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="217" isRoot="false" initialValue="" type="2" isAbstract="false" name="module_sys_dmail_html" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="350" isRoot="false" initialValue="" type="2" isAbstract="false" name="gender" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="351" isRoot="false" initialValue="" type="2" isAbstract="false" name="zone" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="352" isRoot="false" initialValue="" type="2" isAbstract="false" name="date_of_birth" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="174" auto_increment="0" xmi.id="353" isRoot="false" initialValue="" type="2" isAbstract="false" name="telephone" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="199" isRoot="false" isAbstract="false" name="EXT:tt_address" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="204" isRoot="false" isAbstract="false" name="cache_sys_dmail_stat" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="208" isRoot="false" isAbstract="false" name="sys_dmail" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="208" auto_increment="0" xmi.id="416" isRoot="false" initialValue="" type="2" isAbstract="false" name="page" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="209" isRoot="false" isAbstract="false" name="sys_dmail_group" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="210" isRoot="false" isAbstract="false" name="sys_dmail_group_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="211" isRoot="false" isAbstract="false" name="sys_dmail_maillog" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="212" isRoot="false" isAbstract="false" name="sys_dmail_category" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="213" isRoot="false" isAbstract="false" name="sys_dmail_group_category_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="214" isRoot="false" isAbstract="false" name="sys_dmail_ttaddress_category_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="215" isRoot="false" isAbstract="false" name="sys_dmail_ttcontent_category_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="218" isRoot="false" isAbstract="false" name="tt_content" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="218" auto_increment="0" xmi.id="331" isRoot="false" initialValue="" type="2" isAbstract="false" name="uid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="218" auto_increment="0" xmi.id="332" isRoot="false" initialValue="" type="2" isAbstract="false" name="pid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="218" auto_increment="0" xmi.id="337" isRoot="false" initialValue="" type="13" isAbstract="false" name="CType" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="218" auto_increment="0" xmi.id="219" isRoot="false" initialValue="" type="2" isAbstract="false" name="module_sys_dmail_category" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="261" isRoot="false" isAbstract="false" name="pages" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="261" auto_increment="0" xmi.id="328" isRoot="false" initialValue="" type="2" isAbstract="false" name="uid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="261" auto_increment="0" xmi.id="329" isRoot="false" initialValue="" type="2" isAbstract="false" name="pid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="261" auto_increment="0" xmi.id="327" isRoot="false" initialValue="" type="2" isAbstract="false" name="doktype" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="261" auto_increment="0" xmi.id="336" isRoot="false" initialValue="" type="13" isAbstract="false" name="module" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="265" isRoot="false" isAbstract="false" name="tx_tcdirectmail_sentlog" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="266" isRoot="false" isAbstract="false" name="tx_tcdirectmail_lock" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="267" isRoot="false" isAbstract="false" name="tx_tcdirectmail_targets" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="431" isRoot="false" initialValue="" type="13" isAbstract="false" name="beusers" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="425" isRoot="false" initialValue="" type="13" isAbstract="false" name="fegroups" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="426" isRoot="false" initialValue="" type="13" isAbstract="false" name="fepages" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="427" isRoot="false" initialValue="" type="13" isAbstract="false" name="ttaddress" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="428" isRoot="false" initialValue="" type="13" isAbstract="false" name="csvfields" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="429" isRoot="false" initialValue="" type="13" isAbstract="false" name="csvseparator" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="430" isRoot="false" initialValue="" type="13" isAbstract="false" name="csvurl" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="432" isRoot="false" initialValue="" type="13" isAbstract="false" name="csvfilename" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="267" auto_increment="0" xmi.id="433" isRoot="false" initialValue="" type="13" isAbstract="false" name="rawsql" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="268" isRoot="false" isAbstract="false" name="tx_tcdirectmail_clicklinks" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="269" isRoot="false" isAbstract="false" name="tt_news_cat" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="270" isRoot="false" isAbstract="false" name="EXT:tt_news" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="271" isRoot="false" isAbstract="false" name="be_users" />
+    <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="274" isRoot="false" isAbstract="false" name="tx_directmail_select_categories" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="279" isRoot="false" isAbstract="false" name="EXT:addressgroups" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="280" isRoot="false" isAbstract="false" name="tx_addressgroups_group" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="282" isRoot="false" isAbstract="false" name="EXT:extdeveval" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="283" isRoot="false" isAbstract="false" name="EXT:kickstarter" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="284" isRoot="false" isAbstract="false" name="EXT:cc_awstats" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="291" isRoot="false" isAbstract="false" name="EXT:sr_feuser_register" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="306" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_directmails" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="306" auto_increment="0" xmi.id="435" isRoot="false" initialValue="" type="2" isAbstract="false" name="pageid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="306" auto_increment="0" xmi.id="436" isRoot="false" initialValue="" type="9" isAbstract="false" name="senddate" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="307" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_campaigns" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="307" auto_increment="0" xmi.id="313" isRoot="false" initialValue="" type="2" isAbstract="false" name="pages_uid" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="308" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_users" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="308" auto_increment="0" xmi.id="366" isRoot="false" initialValue="" type="2" isAbstract="false" name="tt_address_uid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="308" auto_increment="0" xmi.id="367" isRoot="false" initialValue="" type="2" isAbstract="false" name="fe_users_uid" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="308" auto_increment="0" xmi.id="439" isRoot="false" initialValue="" type="2" isAbstract="false" name="formofaddressid" />
+    </UML:Entity>
+    <UML:Enumeration stereotype="168" isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="315" isRoot="false" isAbstract="false" name="Menu" >
+     <UML:EnumerationLiteral isSpecification="false" isLeaf="false" visibility="public" namespace="315" xmi.id="316" isRoot="false" isAbstract="false" name="Subscription form" />
+    </UML:Enumeration>
+    <UML:Package isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="324" isRoot="false" isAbstract="false" name="Addresses" >
+     <UML:Namespace.ownedElement>
+      <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="324" xmi.id="275" isRoot="false" isAbstract="false" name="tx_dmaddredit_pi1" />
+      <UML:Class isSpecification="false" isLeaf="false" visibility="public" namespace="324" xmi.id="273" isRoot="false" isAbstract="false" name="user_dmailsubscribe" />
+     </UML:Namespace.ownedElement>
+    </UML:Package>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="338" isRoot="false" isAbstract="false" name="tt_address_tx_addressgroups_group_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="348" isRoot="false" isAbstract="false" name="EXT:static_info_tables" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="349" isRoot="false" isAbstract="false" name="EXT:static_info_tables_de" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="368" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_groups" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="417" isRoot="false" isAbstract="false" name="sys_dmail_feuser_category_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="434" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_salutations" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="438" isRoot="false" isAbstract="false" name="EXT:t3mdirectmail" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="441" isRoot="false" isAbstract="false" name="be_groups" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="442" isRoot="false" isAbstract="false" name="fe_groups" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="443" isRoot="false" isAbstract="false" name="EXT:feuser_admin" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="444" isRoot="false" isAbstract="false" name="EXT:germandates" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="451" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_targetgroup_feusers_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="464" isRoot="false" isAbstract="false" name="EXT:nl_listman" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="466" isRoot="false" isAbstract="false" name="EXT:rs_userimp" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="471" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_categories" >
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="471" auto_increment="0" xmi.id="531" isRoot="false" initialValue="" type="13" isAbstract="false" name="name" />
+     <UML:EntityAttribute attributes="" values="" dbindex_type="1100" isSpecification="false" allow_null="0" isLeaf="false" visibility="public" namespace="471" auto_increment="0" xmi.id="532" isRoot="false" initialValue="" type="2" isAbstract="false" name="subcategory" />
+    </UML:Entity>
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="478" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_targetgroups" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="494" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_targetgroups_fe_groups_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="504" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_targetgroups_campaigns_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="511" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_targetgroups_categories_mm" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="520" isRoot="false" isAbstract="false" name="static_countries" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="521" isRoot="false" isAbstract="false" name="static_country_zones" />
+    <UML:Entity isSpecification="false" isLeaf="false" visibility="public" namespace="m1" xmi.id="533" isRoot="false" isAbstract="false" name="tx_t3mdirectmail_campaigns_pages_mm" />
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="29" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="30" aggregation="none" type="22" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="31" aggregation="none" type="26" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="32" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="33" aggregation="none" type="21" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="34" aggregation="none" type="24" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="36" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="37" aggregation="none" type="22" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="38" aggregation="none" type="17" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="40" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="41" aggregation="none" type="22" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="42" aggregation="none" type="26" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="43" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="44" aggregation="none" type="26" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="45" aggregation="none" type="35" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="46" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="47" aggregation="none" type="35" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="48" aggregation="none" type="25" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="49" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="50" aggregation="none" type="23" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="51" aggregation="none" type="35" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="52" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="53" aggregation="none" type="24" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="54" aggregation="none" type="25" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="67" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="68" aggregation="none" type="26" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="69" aggregation="none" type="35" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="70" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="71" aggregation="none" type="35" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="72" aggregation="none" type="25" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="87" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="88" aggregation="none" type="15" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="89" aggregation="none" type="82" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="90" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="91" aggregation="none" type="82" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="92" aggregation="none" type="83" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="93" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="94" aggregation="none" type="83" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="95" aggregation="none" type="84" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="96" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="97" aggregation="none" type="84" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="98" aggregation="none" type="85" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="99" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="100" aggregation="none" type="85" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="101" aggregation="none" type="14" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="102" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="false" xmi.id="103" aggregation="none" type="14" name="" />
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="104" aggregation="none" type="86" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="134" client="131" name="" supplier="130" />
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="137" client="131" name="" supplier="130" />
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="146" client="141" name="" supplier="142" />
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="149" client="141" name="" supplier="143" />
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="152" client="130" name="" supplier="145" />
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="178" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="179" aggregation="none" type="115" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="180" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="182" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="183" aggregation="none" type="174" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="184" aggregation="none" type="116" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="185" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="186" aggregation="none" type="116" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="187" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="189" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="190" aggregation="none" type="109" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="191" aggregation="none" type="116" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="192" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="193" aggregation="none" type="116" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="194" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="201" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="202" aggregation="none" type="199" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="203" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="205" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="206" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="207" aggregation="none" type="204" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="222" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="223" aggregation="none" type="109" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="224" aggregation="none" type="112" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="225" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="226" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="227" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="228" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="229" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="230" aggregation="none" type="218" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="231" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="232" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="233" aggregation="none" type="208" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="234" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="235" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="236" aggregation="none" type="209" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="237" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="238" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="239" aggregation="none" type="210" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="240" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="241" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="242" aggregation="none" type="210" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="243" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="244" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="245" aggregation="none" type="210" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="246" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="247" aggregation="none" type="115" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="248" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="249" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="250" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="251" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="252" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="253" aggregation="none" type="112" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="254" aggregation="none" type="218" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="258" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="259" aggregation="none" type="116" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="260" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="262" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="263" aggregation="none" type="114" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="264" aggregation="none" type="261" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="286" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="287" aggregation="none" type="279" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="288" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="293" client="143" name="" supplier="142" />
+    <UML:Dependency isSpecification="false" visibility="public" namespace="m1" xmi.id="296" client="141" name="" supplier="143" />
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="333" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="334" aggregation="none" type="261" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="335" aggregation="none" type="218" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="339" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="340" aggregation="none" type="280" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="341" aggregation="none" type="338" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="342" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="343" aggregation="none" type="109" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="344" aggregation="none" type="338" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="345" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="346" aggregation="none" type="308" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="347" aggregation="none" type="280" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="354" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="355" aggregation="none" type="348" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="356" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="357" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="358" aggregation="none" type="291" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="359" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="360" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="361" aggregation="none" type="348" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="362" aggregation="none" type="291" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="363" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="364" aggregation="none" type="113" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="365" aggregation="none" type="109" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="371" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="372" aggregation="none" type="308" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="373" aggregation="none" type="368" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="374" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="375" aggregation="none" type="368" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="376" aggregation="none" type="308" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="377" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="378" aggregation="none" type="280" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="379" aggregation="none" type="368" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="380" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="381" aggregation="none" type="306" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="382" aggregation="none" type="307" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="383" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="384" aggregation="none" type="307" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="385" aggregation="none" type="306" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="386" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="387" aggregation="none" type="212" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="388" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="389" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="390" aggregation="none" type="212" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="391" aggregation="none" type="214" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="392" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="393" aggregation="none" type="109" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="394" aggregation="none" type="214" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="395" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="396" aggregation="none" type="209" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="397" aggregation="none" type="213" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="398" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="399" aggregation="none" type="212" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="400" aggregation="none" type="213" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="401" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="402" aggregation="none" type="208" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="403" aggregation="none" type="210" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="404" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="405" aggregation="none" type="209" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="406" aggregation="none" type="210" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="407" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="408" aggregation="none" type="212" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="409" aggregation="none" type="215" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="410" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="411" aggregation="none" type="218" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="412" aggregation="none" type="215" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="413" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="414" aggregation="none" type="208" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="415" aggregation="none" type="261" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="418" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="419" aggregation="none" type="174" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="420" aggregation="none" type="417" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="421" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="422" aggregation="none" type="212" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="423" aggregation="none" type="417" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="445" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="446" aggregation="none" type="209" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="447" aggregation="none" type="368" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="448" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="449" aggregation="none" type="174" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="450" aggregation="none" type="368" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="452" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="453" aggregation="none" type="368" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="454" aggregation="none" type="451" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="455" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="456" aggregation="none" type="434" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="457" aggregation="none" type="451" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="458" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="459" aggregation="none" type="451" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="460" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="467" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="468" aggregation="none" type="466" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="469" aggregation="none" type="174" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="472" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="473" aggregation="none" type="471" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="474" aggregation="none" type="218" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="475" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="476" aggregation="none" type="306" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="477" aggregation="none" type="261" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="479" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="480" aggregation="none" type="174" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="481" aggregation="none" type="442" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="482" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="483" aggregation="none" type="174" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="484" aggregation="none" type="451" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="485" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="486" aggregation="none" type="434" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="487" aggregation="none" type="478" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="488" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="489" aggregation="none" type="451" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="490" aggregation="none" type="478" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="491" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="492" aggregation="none" type="478" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="493" aggregation="none" type="451" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="495" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="496" aggregation="none" type="478" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="497" aggregation="none" type="494" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="498" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="499" aggregation="none" type="442" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="500" aggregation="none" type="494" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="501" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="502" aggregation="none" type="471" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="503" aggregation="none" type="478" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="505" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="506" aggregation="none" type="307" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="507" aggregation="none" type="504" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="508" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="509" aggregation="none" type="478" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="510" aggregation="none" type="504" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="512" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="513" aggregation="none" type="471" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="514" aggregation="none" type="511" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="515" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="516" aggregation="none" type="478" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="517" aggregation="none" type="511" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="522" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="523" aggregation="none" type="349" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="524" aggregation="none" type="348" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="534" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="535" aggregation="none" type="307" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="536" aggregation="none" type="533" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+    <UML:Association isSpecification="false" visibility="public" namespace="m1" xmi.id="537" name="" >
+     <UML:Association.connection>
+      <UML:AssociationEnd isSpecification="false" visibility="public" changeability="changeable" isNavigable="true" xmi.id="538" aggregation="none" type="261" name="" />
+      <UML:AssociationEnd isSpecification="false" relationship="true" visibility="public" changeability="changeable" isNavigable="true" xmi.id="539" aggregation="none" type="533" name="" />
+     </UML:Association.connection>
+    </UML:Association>
+   </UML:Namespace.ownedElement>
+  </UML:Model>
+ </XMI.content>
+ <XMI.extensions xmi.extender="umbrello" >
+  <docsettings viewid="108" documentation="" uniqueid="539" />
+  <diagrams>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#cccccc" linewidth="1" zoom="100" showgrid="0" showopsig="1" usefillcolor="0" snapx="10" canvaswidth="713" snapy="10" showatts="1" xmi.id="18" documentation="" type="400" showops="1" showpackage="1" name="UC with roles (german)" localid="900000" showstereotype="1" showscope="1" snapcsgrid="0" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="1012" >
+    <widgets>
+     <boxwidget usesdiagramfillcolour="1" width="391" usesdiagramusefillcolour="1" x="198" y="35" linewidth="none" fillcolour="none" height="512" usefillcolor="1" isinstance="0" xmi.id="19" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="146" usesdiagramusefillcolour="1" x="205" y="32" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="1" pretext="" isinstance="0" xmi.id="27" text="E-Mail-Marketing-Kampagne" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="0" width="380" usesdiagramusefillcolour="0" x="205" y="49" linewidth="none" fillcolour="#ffffff" height="164" usefillcolor="0" isinstance="0" xmi.id="26" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <usecasewidget usesdiagramfillcolour="1" width="132" usesdiagramusefillcolour="0" x="242" y="139" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="17" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="114" usesdiagramusefillcolour="0" x="220" y="267" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="15" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <actorwidget usesdiagramfillcolour="0" width="58" usesdiagramusefillcolour="0" x="133" y="271" linewidth="none" fillcolour="#ffffc0" height="64" usefillcolor="0" isinstance="0" xmi.id="23" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <actorwidget usesdiagramfillcolour="0" width="30" usesdiagramusefillcolour="0" x="150" y="99" linewidth="none" fillcolour="#ffffc0" height="64" usefillcolor="0" isinstance="0" xmi.id="22" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <actorwidget usesdiagramfillcolour="0" width="61" usesdiagramusefillcolour="0" x="128" y="433" linewidth="none" fillcolour="#ffffc0" height="64" usefillcolor="0" isinstance="0" xmi.id="24" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <usecasewidget usesdiagramfillcolour="0" width="377" usesdiagramusefillcolour="0" x="207" y="392" linewidth="none" fillcolour="#ffffff" height="146" usefillcolor="0" isinstance="0" xmi.id="25" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <usecasewidget usesdiagramfillcolour="0" width="377" usesdiagramusefillcolour="0" x="207" y="232" linewidth="none" fillcolour="#ffffff" height="142" usefillcolor="0" isinstance="0" xmi.id="35" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <usecasewidget usesdiagramfillcolour="1" width="160" usesdiagramusefillcolour="0" x="385" y="142" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="39" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="124" usesdiagramusefillcolour="1" x="351" y="315" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="14" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="205" usesdiagramusefillcolour="1" x="292" y="63" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="28" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="155" usesdiagramusefillcolour="1" x="316" y="398" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="73" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="0" width="153" usesdiagramusefillcolour="0" x="317" y="477" linewidth="none" fillcolour="#ffffc0" height="54" usefillcolor="0" isinstance="0" xmi.id="74" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <usecasewidget usesdiagramfillcolour="1" width="128" usesdiagramusefillcolour="1" x="371" y="240" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="16" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+    </widgets>
+    <messages/>
+    <associations>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="26" widgetaid="22" xmi.id="40" linecolor="none" >
+      <linepath>
+       <startpoint startx="180" starty="131" />
+       <endpoint endx="205" endy="131" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="35" widgetaid="23" xmi.id="49" linecolor="none" >
+      <linepath>
+       <startpoint startx="191" starty="303" />
+       <endpoint endx="207" endy="303" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="25" widgetaid="24" xmi.id="52" linecolor="none" >
+      <linepath>
+       <startpoint startx="189" starty="465" />
+       <endpoint endx="207" endy="465" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="35" widgetaid="26" xmi.id="67" linecolor="none" >
+      <linepath>
+       <startpoint startx="395" starty="213" />
+       <endpoint endx="395" endy="232" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="25" widgetaid="35" xmi.id="70" linecolor="none" >
+      <linepath>
+       <startpoint startx="395" starty="374" />
+       <endpoint endx="395" endy="392" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="1" showattsig="1" fillcolor="#cccccc" linewidth="1" zoom="200" showgrid="0" showopsig="1" usefillcolor="0" snapx="10" canvaswidth="357" snapy="10" showatts="1" xmi.id="81" documentation="" type="400" showops="1" showpackage="1" name="DM process (german)" localid="900000" showstereotype="1" showscope="1" snapcsgrid="0" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="506" >
+    <widgets>
+     <usecasewidget usesdiagramfillcolour="1" width="114" usesdiagramusefillcolour="1" x="70" y="10" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="15" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="172" usesdiagramusefillcolour="1" x="40" y="80" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="82" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="113" usesdiagramusefillcolour="1" x="70" y="150" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="83" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="138" usesdiagramusefillcolour="1" x="60" y="220" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="84" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="111" usesdiagramusefillcolour="1" x="70" y="290" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="85" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="124" usesdiagramusefillcolour="1" x="70" y="360" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="14" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <usecasewidget usesdiagramfillcolour="1" width="201" usesdiagramusefillcolour="1" x="30" y="430" linewidth="none" fillcolour="none" height="54" usefillcolor="0" isinstance="0" xmi.id="86" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+    </widgets>
+    <messages/>
+    <associations>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="82" widgetaid="15" xmi.id="87" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="64" />
+       <endpoint endx="130" endy="80" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="83" widgetaid="82" xmi.id="90" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="134" />
+       <endpoint endx="130" endy="150" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="84" widgetaid="83" xmi.id="93" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="204" />
+       <endpoint endx="130" endy="220" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="85" widgetaid="84" xmi.id="96" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="274" />
+       <endpoint endx="130" endy="290" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="14" widgetaid="85" xmi.id="99" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="344" />
+       <endpoint endx="130" endy="360" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="86" widgetaid="14" xmi.id="102" linecolor="none" >
+      <linepath>
+       <startpoint startx="130" starty="414" />
+       <endpoint endx="130" endy="430" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#cccccc" linewidth="1" zoom="100" showgrid="0" showopsig="1" usefillcolor="0" snapx="10" canvaswidth="2075" snapy="10" showatts="1" xmi.id="108" documentation="" type="408" showops="1" showpackage="1" name="ER tables core-own-extensions" localid="900000" showstereotype="1" showscope="1" snapcsgrid="0" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="1315" >
+    <widgets>
+     <entitywidget usesdiagramfillcolour="0" width="133" usesdiagramusefillcolour="0" x="1395" y="231" linewidth="none" fillcolour="#ffffc0" height="76" usefillcolor="0" isinstance="0" xmi.id="109" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1719" y="421" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="112" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="169" usesdiagramusefillcolour="0" x="1626" y="358" linewidth="none" fillcolour="none" height="28" usefillcolor="1" isinstance="0" xmi.id="113" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="101" usesdiagramusefillcolour="0" x="1685" y="794" linewidth="none" fillcolour="#cccccc" height="28" usefillcolor="1" isinstance="0" xmi.id="114" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1648" y="145" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="115" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1645" y="183" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="116" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="158" usesdiagramusefillcolour="1" x="992" y="-7" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="157" text="Required (primary) extensions" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="81" usesdiagramusefillcolour="1" x="53" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="158" showstereotype="1" text="TYPO3 tables" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="149" usesdiagramusefillcolour="0" x="38" y="40" linewidth="none" fillcolour="#ffffc0" height="190" usefillcolor="0" isinstance="0" xmi.id="174" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1649" y="235" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="199" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="93" usesdiagramusefillcolour="1" x="880" y="-7" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="200" showstereotype="1" text="Extension tables" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="130" usesdiagramusefillcolour="1" x="1496" y="720" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="204" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="67" usesdiagramusefillcolour="0" x="1325" y="702" linewidth="none" fillcolour="#ffffc0" height="38" usefillcolor="0" isinstance="0" xmi.id="208" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="104" usesdiagramusefillcolour="1" x="1679" y="512" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="209" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="130" usesdiagramusefillcolour="1" x="1676" y="670" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="210" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="112" usesdiagramusefillcolour="1" x="1667" y="717" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="211" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="120" usesdiagramusefillcolour="1" x="1462" y="520" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="212" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="182" usesdiagramusefillcolour="1" x="1530" y="622" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="213" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="200" usesdiagramusefillcolour="1" x="1497" y="450" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="214" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="199" usesdiagramusefillcolour="1" x="1370" y="660" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="215" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="149" usesdiagramusefillcolour="0" x="32" y="430" linewidth="none" fillcolour="#ffffc0" height="95" usefillcolor="0" isinstance="0" xmi.id="218" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="551" usesdiagramusefillcolour="1" x="1279" y="412" linewidth="none" fillcolour="none" height="350" usefillcolor="0" isinstance="0" xmi.id="255" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="424" usesdiagramusefillcolour="1" x="1375" y="774" linewidth="none" fillcolour="none" height="283" usefillcolor="0" isinstance="0" xmi.id="256" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="426" usesdiagramusefillcolour="1" x="1331" y="221" linewidth="none" fillcolour="none" height="110" usefillcolor="0" isinstance="0" xmi.id="257" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="49" usesdiagramusefillcolour="0" x="85" y="775" linewidth="none" fillcolour="#ffffc0" height="95" usefillcolor="0" isinstance="0" xmi.id="261" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="138" usesdiagramusefillcolour="1" x="1631" y="956" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="265" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="121" usesdiagramusefillcolour="1" x="1641" y="886" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="266" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="135" usesdiagramusefillcolour="0" x="1401" y="839" linewidth="none" fillcolour="#cccccc" height="190" usefillcolor="0" isinstance="0" xmi.id="267" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="147" usesdiagramusefillcolour="1" x="1626" y="1009" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="268" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="1" x="1402" y="1165" linewidth="none" fillcolour="none" height="30" usefillcolor="0" isinstance="0" xmi.id="269" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1682" y="1156" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="270" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="246" y="619" linewidth="none" fillcolour="#ffffc0" height="30" usefillcolor="0" isinstance="0" xmi.id="271" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="426" usesdiagramusefillcolour="1" x="1370" y="1136" linewidth="none" fillcolour="none" height="93" usefillcolor="0" isinstance="0" xmi.id="276" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="119" usesdiagramusefillcolour="0" x="1627" y="46" linewidth="none" fillcolour="#cccccc" height="28" usefillcolor="1" isinstance="0" xmi.id="279" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="147" usesdiagramusefillcolour="1" x="1384" y="35" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="280" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <boxwidget usesdiagramfillcolour="1" width="428" usesdiagramusefillcolour="1" x="1333" y="30" linewidth="none" fillcolour="none" height="109" usefillcolor="0" isinstance="0" xmi.id="281" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="0" x="1947" y="82" linewidth="none" fillcolour="none" height="30" usefillcolor="1" isinstance="0" xmi.id="282" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="100" usesdiagramusefillcolour="0" x="1946" y="34" linewidth="none" fillcolour="#cccccc" height="30" usefillcolor="1" isinstance="0" xmi.id="283" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="0" x="1693" y="1281" linewidth="none" fillcolour="none" height="30" usefillcolor="1" isinstance="0" xmi.id="284" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="135" usesdiagramusefillcolour="0" x="1017" y="194" linewidth="none" fillcolour="#cccccc" height="28" usefillcolor="1" isinstance="0" xmi.id="291" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="200" usesdiagramusefillcolour="1" x="1871" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="292" text="Not required (secondary) extensions" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="63" usesdiagramusefillcolour="1" x="618" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="303" showstereotype="1" text="Own tables" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="166" usesdiagramusefillcolour="0" x="607" y="905" linewidth="none" fillcolour="#ffffc0" height="57" usefillcolor="0" isinstance="0" xmi.id="306" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="166" usesdiagramusefillcolour="0" x="583" y="720" linewidth="none" fillcolour="#9bcc86" height="76" usefillcolor="1" isinstance="0" xmi.id="307" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="235" usesdiagramusefillcolour="1" x="1343" y="85" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="338" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="133" usesdiagramusefillcolour="0" x="1043" y="333" linewidth="none" fillcolour="#cccccc" height="28" usefillcolor="1" isinstance="0" xmi.id="348" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="152" usesdiagramusefillcolour="0" x="1032" y="499" linewidth="none" fillcolour="none" height="28" usefillcolor="1" isinstance="0" xmi.id="349" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="183" usesdiagramusefillcolour="1" x="1296" y="452" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="417" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="186" usesdiagramusefillcolour="0" x="541" y="91" linewidth="none" fillcolour="#9bcc86" height="28" usefillcolor="1" isinstance="0" xmi.id="434" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="314" usesdiagramusefillcolour="1" x="504" y="31" linewidth="none" fillcolour="none" height="1088" usefillcolor="0" isinstance="0" xmi.id="437" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="111" usesdiagramusefillcolour="0" x="600" y="38" linewidth="none" fillcolour="none" height="28" usefillcolor="1" isinstance="0" xmi.id="438" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="1" x="244" y="670" linewidth="none" fillcolour="none" height="30" usefillcolor="0" isinstance="0" xmi.id="441" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="1" x="37" y="318" linewidth="none" fillcolour="none" height="30" usefillcolor="0" isinstance="0" xmi.id="442" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="108" usesdiagramusefillcolour="0" x="1937" y="394" linewidth="none" fillcolour="#cccccc" height="28" usefillcolor="1" isinstance="0" xmi.id="444" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="241" usesdiagramusefillcolour="0" x="536" y="224" linewidth="none" fillcolour="#cc8889" height="28" usefillcolor="1" isinstance="0" xmi.id="451" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="0" x="1943" y="470" linewidth="none" fillcolour="none" height="30" usefillcolor="1" isinstance="0" xmi.id="464" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="0" x="1038" y="71" linewidth="none" fillcolour="none" height="30" usefillcolor="1" isinstance="0" xmi.id="466" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="163" usesdiagramusefillcolour="0" x="542" y="556" linewidth="none" fillcolour="#9bcc86" height="57" usefillcolor="1" isinstance="0" xmi.id="471" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="177" usesdiagramusefillcolour="0" x="554" y="305" linewidth="none" fillcolour="#ccc03f" height="28" usefillcolor="1" isinstance="0" xmi.id="478" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="262" usesdiagramusefillcolour="0" x="534" y="391" linewidth="none" fillcolour="#cc8889" height="28" usefillcolor="1" isinstance="0" xmi.id="494" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="266" usesdiagramusefillcolour="0" x="555" y="635" linewidth="none" fillcolour="#cc8889" height="28" usefillcolor="1" isinstance="0" xmi.id="504" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="263" usesdiagramusefillcolour="0" x="534" y="470" linewidth="none" fillcolour="#cc8889" height="28" usefillcolor="1" isinstance="0" xmi.id="511" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="146" usesdiagramusefillcolour="0" x="320" y="319" linewidth="none" fillcolour="#e9e9e9" height="28" usefillcolor="1" isinstance="0" xmi.id="368" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="0" width="137" usesdiagramusefillcolour="0" x="325" y="52" linewidth="none" fillcolour="#e9e9e9" height="76" usefillcolor="1" isinstance="0" xmi.id="308" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="164" usesdiagramusefillcolour="1" x="1455" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="518" text="Maybe later required extensions" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <boxwidget usesdiagramfillcolour="1" width="349" usesdiagramusefillcolour="1" x="858" y="323" linewidth="none" fillcolour="none" height="85" usefillcolor="0" isinstance="0" xmi.id="519" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="1" x="900" y="330" linewidth="none" fillcolour="none" height="30" usefillcolor="0" isinstance="0" xmi.id="520" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <entitywidget usesdiagramfillcolour="1" width="128" usesdiagramusefillcolour="1" x="897" y="369" linewidth="none" fillcolour="none" height="28" usefillcolor="0" isinstance="0" xmi.id="521" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="125" usesdiagramusefillcolour="1" x="288" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="525" showstereotype="1" text="Dont know yet if needed" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <boxwidget usesdiagramfillcolour="1" width="245" usesdiagramusefillcolour="1" x="231" y="39" linewidth="none" fillcolour="none" height="875" usefillcolor="0" isinstance="0" xmi.id="526" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="197" usesdiagramusefillcolour="1" x="21" y="33" linewidth="none" fillcolour="none" height="921" usefillcolor="0" isinstance="0" xmi.id="527" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <boxwidget usesdiagramfillcolour="1" width="378" usesdiagramusefillcolour="1" x="851" y="35" linewidth="none" fillcolour="none" height="514" usefillcolor="0" isinstance="0" xmi.id="528" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <entitywidget usesdiagramfillcolour="0" width="229" usesdiagramusefillcolour="0" x="534" y="837" linewidth="none" fillcolour="#cc8889" height="28" usefillcolor="1" isinstance="0" xmi.id="533" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="#000000" />
+    </widgets>
+    <messages/>
+    <associations>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="6" indexb="2" linewidth="none" widgetbid="174" widgetaid="115" xmi.id="246" linecolor="none" >
+      <linepath>
+       <startpoint startx="1648" starty="160" />
+       <endpoint endx="187" endy="103" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="4" indexb="3" linewidth="none" widgetbid="109" widgetaid="112" xmi.id="249" linecolor="none" >
+      <linepath>
+       <startpoint startx="1769" starty="421" />
+       <endpoint endx="1528" endy="288" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="4" indexb="1" linewidth="none" widgetbid="218" widgetaid="112" xmi.id="252" linecolor="none" >
+      <linepath>
+       <startpoint startx="1719" starty="436" />
+       <endpoint endx="181" endy="453" />
+       <point x="1578" y="438" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="4" indexb="1" linewidth="none" widgetbid="109" widgetaid="116" xmi.id="258" linecolor="none" >
+      <linepath>
+       <startpoint startx="1695" starty="213" />
+       <endpoint endx="1528" endy="250" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="5" indexb="2" linewidth="none" widgetbid="261" widgetaid="114" xmi.id="262" linecolor="none" >
+      <linepath>
+       <startpoint startx="1685" starty="808" />
+       <endpoint endx="134" endy="813" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="3" indexb="2" linewidth="none" widgetbid="109" widgetaid="279" xmi.id="286" linecolor="none" >
+      <linepath>
+       <startpoint startx="1686" starty="74" />
+       <endpoint endx="1483" endy="231" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="218" widgetaid="261" xmi.id="333" linecolor="none" >
+      <linepath>
+       <startpoint startx="109" starty="775" />
+       <endpoint endx="106" endy="525" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="338" widgetaid="280" xmi.id="339" linecolor="none" >
+      <linepath>
+       <startpoint startx="1457" starty="63" />
+       <endpoint endx="1460" endy="85" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="338" widgetaid="109" xmi.id="342" linecolor="none" >
+      <linepath>
+       <startpoint startx="1439" starty="231" />
+       <endpoint endx="1460" endy="113" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="6" indexb="5" linewidth="none" widgetbid="174" widgetaid="291" xmi.id="357" linecolor="none" >
+      <linepath>
+       <startpoint startx="1062" starty="222" />
+       <endpoint endx="187" endy="198" />
+       <point x="869" y="310" />
+       <point x="619" y="407" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="3" indexb="2" linewidth="none" widgetbid="291" widgetaid="348" xmi.id="360" linecolor="none" >
+      <linepath>
+       <startpoint startx="1109" starty="333" />
+       <endpoint endx="1107" endy="222" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="4" indexb="2" linewidth="none" widgetbid="109" widgetaid="113" xmi.id="363" linecolor="none" >
+      <linepath>
+       <startpoint startx="1710" starty="358" />
+       <endpoint endx="1528" endy="269" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="306" widgetaid="307" xmi.id="383" linecolor="none" >
+      <linepath>
+       <startpoint startx="693" starty="796" />
+       <endpoint endx="690" endy="905" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="214" widgetaid="212" xmi.id="389" linecolor="none" >
+      <linepath>
+       <startpoint startx="1542" starty="520" />
+       <endpoint endx="1597" endy="478" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="214" widgetaid="109" xmi.id="392" linecolor="none" >
+      <linepath>
+       <startpoint startx="1461" starty="307" />
+       <endpoint endx="1597" endy="450" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="3" indexb="2" linewidth="none" widgetbid="213" widgetaid="209" xmi.id="395" linecolor="none" >
+      <linepath>
+       <startpoint startx="1713" starty="540" />
+       <endpoint endx="1651" endy="622" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="3" indexb="1" linewidth="none" widgetbid="213" widgetaid="212" xmi.id="398" linecolor="none" >
+      <linepath>
+       <startpoint startx="1542" starty="548" />
+       <endpoint endx="1590" endy="622" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="210" widgetaid="209" xmi.id="404" linecolor="none" >
+      <linepath>
+       <startpoint startx="1748" starty="540" />
+       <endpoint endx="1741" endy="670" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="3" indexb="2" linewidth="none" widgetbid="215" widgetaid="212" xmi.id="407" linecolor="none" >
+      <linepath>
+       <startpoint startx="1502" starty="548" />
+       <endpoint endx="1502" endy="660" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="4" indexa="2" totalcountb="3" indexb="1" linewidth="none" widgetbid="215" widgetaid="218" xmi.id="410" linecolor="none" >
+      <linepath>
+       <startpoint startx="181" starty="477" />
+       <endpoint endx="1436" endy="660" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="5" indexb="1" linewidth="none" widgetbid="261" widgetaid="208" xmi.id="413" linecolor="none" >
+      <linepath>
+       <startpoint startx="1325" starty="721" />
+       <endpoint endx="134" endy="794" />
+       <point x="562" y="768" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="6" indexa="4" totalcountb="2" indexb="1" linewidth="none" widgetbid="417" widgetaid="174" xmi.id="418" linecolor="none" >
+      <linepath>
+       <startpoint startx="187" starty="166" />
+       <endpoint endx="1387" endy="452" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="417" widgetaid="212" xmi.id="421" linecolor="none" >
+      <linepath>
+       <startpoint startx="1502" starty="520" />
+       <endpoint endx="1387" endy="480" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="6" indexb="1" linewidth="none" widgetbid="174" widgetaid="466" xmi.id="467" linecolor="none" >
+      <linepath>
+       <startpoint startx="1038" starty="86" />
+       <endpoint endx="187" endy="71" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="4" indexb="3" linewidth="none" widgetbid="218" widgetaid="471" xmi.id="472" linecolor="none" >
+      <linepath>
+       <startpoint startx="542" starty="584" />
+       <endpoint endx="181" endy="501" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="5" indexb="4" linewidth="none" widgetbid="261" widgetaid="306" xmi.id="475" linecolor="none" >
+      <linepath>
+       <startpoint startx="607" starty="933" />
+       <endpoint endx="134" endy="851" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="442" widgetaid="174" xmi.id="479" linecolor="none" >
+      <linepath>
+       <startpoint startx="112" starty="230" />
+       <endpoint endx="87" endy="318" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="6" indexa="3" totalcountb="2" indexb="1" linewidth="none" widgetbid="451" widgetaid="174" xmi.id="482" linecolor="none" >
+      <linepath>
+       <startpoint startx="187" starty="135" />
+       <endpoint endx="656" endy="224" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="3" indexb="1" linewidth="none" widgetbid="478" widgetaid="434" xmi.id="485" linecolor="none" >
+      <linepath>
+       <startpoint startx="634" starty="119" />
+       <endpoint endx="613" endy="305" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="451" widgetaid="478" xmi.id="491" linecolor="none" >
+      <linepath>
+       <startpoint startx="672" starty="305" />
+       <endpoint endx="656" endy="252" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="4" totalcountb="3" indexb="2" linewidth="none" widgetbid="494" widgetaid="478" xmi.id="495" linecolor="none" >
+      <linepath>
+       <startpoint startx="695" starty="333" />
+       <endpoint endx="708" endy="391" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="3" indexb="1" linewidth="none" widgetbid="494" widgetaid="442" xmi.id="498" linecolor="none" >
+      <linepath>
+       <startpoint startx="137" starty="333" />
+       <endpoint endx="621" endy="391" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="5" indexb="1" linewidth="none" widgetbid="478" widgetaid="471" xmi.id="501" linecolor="none" >
+      <linepath>
+       <startpoint startx="596" starty="556" />
+       <endpoint endx="589" endy="333" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="504" widgetaid="307" xmi.id="505" linecolor="none" >
+      <linepath>
+       <startpoint startx="666" starty="720" />
+       <endpoint endx="688" endy="663" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="504" widgetaid="478" xmi.id="508" linecolor="none" >
+      <linepath>
+       <startpoint startx="624" starty="333" />
+       <endpoint endx="688" endy="635" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" totalcountb="2" indexb="1" linewidth="none" widgetbid="511" widgetaid="471" xmi.id="512" linecolor="none" >
+      <linepath>
+       <startpoint startx="650" starty="556" />
+       <endpoint endx="665" endy="498" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="3" totalcountb="2" indexb="1" linewidth="none" widgetbid="511" widgetaid="478" xmi.id="515" linecolor="none" >
+      <linepath>
+       <startpoint startx="660" starty="333" />
+       <endpoint endx="665" endy="470" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="348" widgetaid="349" xmi.id="522" linecolor="none" >
+      <linepath>
+       <startpoint startx="1108" starty="499" />
+       <endpoint endx="1109" endy="361" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="533" widgetaid="307" xmi.id="534" linecolor="none" >
+      <linepath>
+       <startpoint startx="638" starty="796" />
+       <endpoint endx="648" endy="837" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="3" totalcountb="2" indexb="1" linewidth="none" widgetbid="533" widgetaid="261" xmi.id="537" linecolor="none" >
+      <linepath>
+       <startpoint startx="134" starty="832" />
+       <endpoint endx="534" endy="851" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#cccccc" linewidth="1" zoom="100" showgrid="0" showopsig="1" usefillcolor="0" snapx="10" canvaswidth="713" snapy="10" showatts="1" xmi.id="118" documentation="" type="406" showops="1" showpackage="1" name="Server Components" localid="900000" showstereotype="1" showscope="1" snapcsgrid="0" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="1012" >
+    <widgets>
+     <componentwidget usesdiagramfillcolour="1" width="104" usesdiagramusefillcolour="1" x="7" y="15" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="130" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="100" usesdiagramusefillcolour="1" x="266" y="150" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="140" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="96" usesdiagramusefillcolour="1" x="471" y="251" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="141" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="98" usesdiagramusefillcolour="1" x="371" y="150" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="142" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="82" usesdiagramusefillcolour="1" x="478" y="151" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="143" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="90" usesdiagramusefillcolour="0" x="170" y="150" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="144" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="93" usesdiagramusefillcolour="1" x="321" y="15" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="145" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="119" usesdiagramusefillcolour="1" x="348" y="351" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="155" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="118" usesdiagramusefillcolour="1" x="164" y="469" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="165" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="123" usesdiagramusefillcolour="1" x="410" y="471" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="164" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="122" usesdiagramusefillcolour="1" x="285" y="471" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="166" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <boxwidget usesdiagramfillcolour="1" width="488" usesdiagramusefillcolour="1" x="157" y="6" linewidth="none" fillcolour="none" height="543" usefillcolor="0" isinstance="0" xmi.id="171" showstereotype="1" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="115" usesdiagramusefillcolour="1" x="509" y="42" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="299" showstereotype="1" text="Example configuration" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="85" usesdiagramusefillcolour="1" x="550" y="352" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="301" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+     <componentwidget usesdiagramfillcolour="1" width="92" usesdiagramusefillcolour="1" x="547" y="471" linewidth="none" fillcolour="none" height="68" usefillcolor="0" isinstance="0" xmi.id="319" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="none" />
+    </widgets>
+    <messages/>
+    <associations>
+     <assocwidget totalcounta="5" indexa="3" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="142" widgetaid="145" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="376" starty="83" />
+       <endpoint endx="420" endy="150" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="1" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="144" widgetaid="145" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="339" starty="83" />
+       <endpoint endx="215" endy="150" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="2" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="140" widgetaid="145" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="358" starty="83" />
+       <endpoint endx="316" endy="150" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="145" widgetaid="130" xmi.id="152" linecolor="none" >
+      <linepath>
+       <startpoint startx="111" starty="49" />
+       <endpoint endx="321" endy="49" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="1" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="155" widgetaid="141" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="503" starty="319" />
+       <endpoint endx="407" endy="351" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="4" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="143" widgetaid="145" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="395" starty="83" />
+       <endpoint endx="519" endy="151" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="1" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="165" widgetaid="155" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="371" starty="419" />
+       <endpoint endx="223" endy="469" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="3" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="164" widgetaid="155" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="419" starty="419" />
+       <endpoint endx="471" endy="471" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="2" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="166" widgetaid="155" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="395" starty="419" />
+       <endpoint endx="346" endy="471" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" totalcountb="2" indexb="1" linewidth="none" widgetbid="143" widgetaid="141" xmi.id="296" linecolor="none" >
+      <linepath>
+       <startpoint startx="519" starty="251" />
+       <endpoint endx="519" endy="219" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="3" indexa="2" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="301" widgetaid="141" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="535" starty="319" />
+       <endpoint endx="592" endy="352" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="5" indexa="4" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="319" widgetaid="155" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="443" starty="419" />
+       <endpoint endx="547" endy="505" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#cccccc" linewidth="1" zoom="100" showgrid="0" showopsig="1" usefillcolor="0" snapx="10" canvaswidth="867" snapy="10" showatts="1" xmi.id="119" documentation="" type="402" showops="1" showpackage="1" name="Classes core-own-extensions" localid="900000" showstereotype="1" showscope="1" snapcsgrid="0" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="#000000" canvasheight="967" >
+    <widgets>
+     <classwidget usesdiagramfillcolour="0" width="140" showattsigs="601" usesdiagramusefillcolour="0" x="46" y="41" showopsigs="601" linewidth="none" fillcolour="#ffffc0" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="120" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <classwidget usesdiagramfillcolour="0" width="139" showattsigs="601" usesdiagramusefillcolour="0" x="45" y="87" showopsigs="601" linewidth="none" fillcolour="#ffffc0" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="121" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <classwidget usesdiagramfillcolour="0" width="242" showattsigs="601" usesdiagramusefillcolour="0" x="607" y="787" showopsigs="601" linewidth="none" fillcolour="#ffffc0" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="129" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <floatingtext usesdiagramfillcolour="1" width="62" usesdiagramusefillcolour="1" x="696" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="160" text="Extensions" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="44" usesdiagramusefillcolour="1" x="85" y="1" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="161" showstereotype="1" text="TYPO3" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <classwidget usesdiagramfillcolour="0" width="114" showattsigs="601" usesdiagramusefillcolour="0" x="683" y="505" showopsigs="601" linewidth="none" fillcolour="#ffffc0" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="163" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="#000000" />
+     <classwidget usesdiagramfillcolour="1" width="185" showattsigs="601" usesdiagramusefillcolour="1" x="643" y="234" showopsigs="601" linewidth="none" fillcolour="none" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="273" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <classwidget usesdiagramfillcolour="1" width="177" showattsigs="601" usesdiagramusefillcolour="1" x="645" y="683" showopsigs="601" linewidth="none" fillcolour="none" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="274" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <classwidget usesdiagramfillcolour="1" width="174" showattsigs="601" usesdiagramusefillcolour="1" x="648" y="282" showopsigs="601" linewidth="none" fillcolour="none" height="37" usefillcolor="0" showpubliconly="0" showattributes="1" isinstance="0" xmi.id="275" showoperations="1" showpackage="1" showscope="1" showstereotype="1" font="Sans,8,-1,5,75,0,0,0,0,0" linecolor="none" />
+     <floatingtext usesdiagramfillcolour="1" width="81" usesdiagramusefillcolour="1" x="342" y="0" linewidth="none" posttext="" role="700" fillcolour="none" height="23" usefillcolor="0" pretext="" isinstance="0" xmi.id="302" showstereotype="1" text="Own extension" font="Sans,8,-1,5,50,0,0,0,0,0" linecolor="none" />
+     <packagewidget usesdiagramfillcolour="0" width="264" usesdiagramusefillcolour="0" x="599" y="151" linewidth="none" fillcolour="#ffffc0" height="219" usefillcolor="0" isinstance="0" xmi.id="324" showstereotype="1" font="Sans,8,-1,5,75,1,0,0,0,0" linecolor="#000000" />
+    </widgets>
+    <messages/>
+    <associations>
+     <assocwidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="275" widgetaid="324" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="731" starty="370" />
+       <endpoint endx="735" endy="282" />
+      </linepath>
+     </assocwidget>
+     <assocwidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" linewidth="none" widgetbid="273" widgetaid="324" roleBdoc="" documentation="" roleAdoc="" type="509" changeabilityA="900" changeabilityB="900" linecolor="none" visibilityA="200" >
+      <linepath>
+       <startpoint startx="731" starty="151" />
+       <endpoint endx="735" endy="271" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+  </diagrams>
+  <listview>
+   <listitem open="1" type="800" label="Ansichten" >
+    <listitem open="1" type="801" label="Logische Ansicht" >
+     <listitem open="1" type="813" id="120" />
+     <listitem open="1" type="813" id="121" />
+     <listitem open="1" type="813" id="129" />
+     <listitem open="1" type="813" id="274" />
+     <listitem open="1" type="813" id="163" />
+     <listitem open="1" type="817" id="132" />
+     <listitem open="1" type="818" id="324" >
+      <listitem open="0" type="813" id="275" />
+      <listitem open="0" type="813" id="273" />
+     </listitem>
+     <listitem open="0" type="830" label="Datentypen" >
+      <listitem open="1" type="829" id="5" />
+      <listitem open="1" type="829" id="4" />
+      <listitem open="1" type="829" id="7" />
+      <listitem open="1" type="829" id="6" />
+      <listitem open="1" type="829" id="2" />
+      <listitem open="1" type="829" id="9" />
+      <listitem open="1" type="829" id="8" />
+      <listitem open="1" type="829" id="13" />
+      <listitem open="1" type="829" id="10" />
+      <listitem open="1" type="829" id="12" />
+      <listitem open="1" type="829" id="11" />
+     </listitem>
+     <listitem open="1" type="831" id="167" >
+      <listitem open="0" type="839" id="170" />
+      <listitem open="0" type="839" id="169" />
+     </listitem>
+     <listitem open="1" type="831" id="315" >
+      <listitem open="0" type="839" id="316" />
+     </listitem>
+    </listitem>
+    <listitem open="1" type="802" label="Anwendungsfallansicht" >
+     <listitem open="1" type="804" id="79" label="DirectMail-Prozess" >
+      <listitem open="1" type="812" id="80" />
+     </listitem>
+     <listitem open="1" type="811" id="24" />
+     <listitem open="1" type="811" id="22" />
+     <listitem open="1" type="811" id="21" />
+     <listitem open="1" type="811" id="23" />
+     <listitem open="1" type="812" id="74" />
+     <listitem open="1" type="812" id="73" />
+     <listitem open="1" type="812" id="83" />
+     <listitem open="1" type="812" id="16" />
+     <listitem open="1" type="812" id="17" />
+     <listitem open="1" type="812" id="84" />
+     <listitem open="1" type="812" id="25" />
+     <listitem open="1" type="812" id="82" />
+     <listitem open="1" type="812" id="35" />
+     <listitem open="1" type="812" id="26" />
+     <listitem open="1" type="812" id="15" />
+     <listitem open="1" type="812" id="14" />
+     <listitem open="1" type="812" id="39" />
+     <listitem open="1" type="812" id="86" />
+     <listitem open="1" type="812" id="28" />
+     <listitem open="1" type="812" id="85" />
+    </listitem>
+    <listitem open="1" type="821" label="Komponentenansicht" >
+     <listitem open="1" type="822" id="130" />
+     <listitem open="1" type="822" id="145" >
+      <listitem open="0" type="822" id="140" />
+      <listitem open="0" type="822" id="144" />
+      <listitem open="0" type="822" id="142" />
+      <listitem open="1" type="822" id="143" >
+       <listitem open="1" type="822" id="141" >
+        <listitem open="0" type="822" id="301" />
+        <listitem open="1" type="822" id="155" >
+         <listitem open="1" type="822" id="165" />
+         <listitem open="1" type="822" id="195" />
+         <listitem open="1" type="822" id="164" />
+         <listitem open="0" type="822" id="166" />
+         <listitem open="1" type="822" id="319" />
+        </listitem>
+       </listitem>
+      </listitem>
+     </listitem>
+    </listitem>
+    <listitem open="1" type="827" label="Verteilungsansicht" />
+    <listitem open="1" type="836" label="Entity-Relationship-Modell" >
+     <listitem open="1" type="832" id="279" />
+     <listitem open="1" type="832" id="284" />
+     <listitem open="1" type="832" id="116" />
+     <listitem open="1" type="832" id="112" />
+     <listitem open="1" type="832" id="113" />
+     <listitem open="1" type="832" id="115" />
+     <listitem open="1" type="832" id="282" />
+     <listitem open="1" type="832" id="443" />
+     <listitem open="1" type="832" id="444" />
+     <listitem open="1" type="832" id="283" />
+     <listitem open="1" type="832" id="464" />
+     <listitem open="1" type="832" id="466" />
+     <listitem open="1" type="832" id="291" />
+     <listitem open="1" type="832" id="348" />
+     <listitem open="1" type="832" id="349" />
+     <listitem open="1" type="832" id="438" />
+     <listitem open="1" type="832" id="114" />
+     <listitem open="1" type="832" id="199" />
+     <listitem open="1" type="832" id="270" />
+     <listitem open="1" type="832" id="441" />
+     <listitem open="1" type="832" id="271" />
+     <listitem open="1" type="832" id="204" />
+     <listitem open="1" type="832" id="442" />
+     <listitem open="1" type="832" id="174" >
+      <listitem open="0" type="833" id="175" />
+      <listitem open="0" type="833" id="176" />
+      <listitem open="0" type="833" id="177" />
+      <listitem open="0" type="833" id="216" />
+      <listitem open="0" type="833" id="217" />
+      <listitem open="0" type="833" id="350" />
+      <listitem open="0" type="833" id="351" />
+      <listitem open="0" type="833" id="352" />
+      <listitem open="0" type="833" id="353" />
+     </listitem>
+     <listitem open="1" type="832" id="261" >
+      <listitem open="0" type="833" id="328" />
+      <listitem open="0" type="833" id="329" />
+      <listitem open="0" type="833" id="327" />
+      <listitem open="0" type="833" id="336" />
+     </listitem>
+     <listitem open="1" type="832" id="520" />
+     <listitem open="1" type="832" id="521" />
+     <listitem open="1" type="832" id="208" >
+      <listitem open="0" type="833" id="416" />
+     </listitem>
+     <listitem open="1" type="832" id="212" />
+     <listitem open="1" type="832" id="417" />
+     <listitem open="1" type="832" id="209" />
+     <listitem open="1" type="832" id="213" />
+     <listitem open="1" type="832" id="210" />
+     <listitem open="1" type="832" id="211" />
+     <listitem open="1" type="832" id="214" />
+     <listitem open="1" type="832" id="215" />
+     <listitem open="1" type="832" id="109" >
+      <listitem open="0" type="833" id="188" />
+      <listitem open="0" type="833" id="221" />
+      <listitem open="0" type="833" id="285" />
+     </listitem>
+     <listitem open="1" type="832" id="338" />
+     <listitem open="1" type="832" id="218" >
+      <listitem open="0" type="833" id="331" />
+      <listitem open="0" type="833" id="332" />
+      <listitem open="0" type="833" id="337" />
+      <listitem open="0" type="833" id="219" />
+     </listitem>
+     <listitem open="1" type="832" id="269" />
+     <listitem open="1" type="832" id="280" />
+     <listitem open="1" type="832" id="307" >
+      <listitem open="0" type="833" id="313" />
+     </listitem>
+     <listitem open="1" type="832" id="533" />
+     <listitem open="1" type="832" id="471" >
+      <listitem open="0" type="833" id="531" />
+      <listitem open="0" type="833" id="532" />
+     </listitem>
+     <listitem open="1" type="832" id="306" >
+      <listitem open="0" type="833" id="435" />
+      <listitem open="0" type="833" id="436" />
+     </listitem>
+     <listitem open="1" type="832" id="368" />
+     <listitem open="1" type="832" id="434" />
+     <listitem open="1" type="832" id="451" />
+     <listitem open="1" type="832" id="478" />
+     <listitem open="1" type="832" id="504" />
+     <listitem open="1" type="832" id="511" />
+     <listitem open="1" type="832" id="494" />
+     <listitem open="1" type="832" id="308" >
+      <listitem open="0" type="833" id="366" />
+      <listitem open="0" type="833" id="367" />
+      <listitem open="0" type="833" id="439" />
+     </listitem>
+     <listitem open="1" type="832" id="268" />
+     <listitem open="1" type="832" id="266" />
+     <listitem open="1" type="832" id="265" />
+     <listitem open="1" type="832" id="267" >
+      <listitem open="0" type="833" id="431" />
+      <listitem open="0" type="833" id="425" />
+      <listitem open="0" type="833" id="426" />
+      <listitem open="0" type="833" id="427" />
+      <listitem open="0" type="833" id="428" />
+      <listitem open="0" type="833" id="429" />
+      <listitem open="0" type="833" id="430" />
+      <listitem open="0" type="833" id="432" />
+      <listitem open="0" type="833" id="433" />
+     </listitem>
+    </listitem>
+   </listitem>
+  </listview>
+  <codegeneration>
+   <codegenerator language="PHP5" />
+  </codegeneration>
+ </XMI.extensions>
+</XMI>
