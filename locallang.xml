@@ -113,7 +113,7 @@
 			<label index="descriptionNewMail">Here you can create an e-mail directly for a receiver group. After you created a mailing, have a look into "newsletters", "one-off-mailings" or "campaing mails" in order to add the content,</label>
 
 			<label index="targetgroupdefinitions">Target groups definitions</label>
-			<label index="descriptionTargetgroupDefinitions">Target groups are dynamic groups whose users can be chosen by their attributes. E.g. sex, age, zip code or their interests. If you chose an attribute, the user must fit into that schema. For interest groups, he must at least have chosen one of the categories. Depending on the quality of the userbase these groups are automatically put together.</label>
+			<label index="descriptionTargetgroupDefinitions">Target groups are dynamic groups whose users can be chosen by their attributes. E.g. sex, age, zip code or their interests. If you chose an attribute, the user must fit into that schema. For interest groups, he must at least have chosen one of the categories. Depending on the quality of the userbase these groups are automatically put together. If you click on the name of a targetgroup the users of that group will be shown below.</label>
 			<label index="createTargetgroupdefinition">Create target group definition</label>
 			<label index="newTargetgroupdefinition">New target group</label>
 			<label index="getTargetgroupdefinitions">List Targetgroups</label>
@@ -181,8 +181,8 @@
 
 			<label index="salutation">Salutation</label>
 			<label index="salutations">Salutations</label>
+			<label index="descriptionSalutations">Create a salutation here and add it to a mailing by chosing the header type "salutaion". If the frontend user has first name, surname, sex and the salutation defined, the e-mail will be personalized.</label>
 			<label index="getSalutations">List Salutations</label>
-
 
 			<label index="directmail">Direct Mail</label>
 			<label index="directmails">Direct Mails</label>
@@ -330,8 +330,29 @@
 			<label index="descriptionStatsMostReceivers">E-mails sorted by receiver count. Shows the popularity of the mailings.</label>
 			<label index="yearlystatistics">Yearly statistics</label>
 
+			<label index="Postinstalls">Postinstall actions</label>
+			<label index="descriptionPostinstalls">After installation you can use these to help you set up the most basic folders, users and contents. Please do this only once at the beginning. It writes to typo3conf/localconf.php and alters our config line there.</label>
+			<label index="performingPostinstalls">Performing postinstall actions...</label>
 
-			<label index="createStuff">Create sysfolders, fe_groups, fe_users, be_users, targetgroups, pages and content !!!</label>
+			<label index="createSysfolders">Create Sysfolder structure where to store campaigns, mailings, users, salutations and targetgroups.</label>
+			<label index="createFegroups">Create frontend usergroups needed for registrations, tests and bounce handling
+				and the test targetgroup.</label>
+			<label index="createBegroupsAndUsers">Create backend usergroups and users with predefined rights.</label>
+			<label index="createDemocontent">Create demo content (newsletter, campaign, oneoffmail, salutations).</label>
+			<label index="createReceivers">Create test receiver list.</label>
+
+			<label index="createAll">Do all the above!!!</label>
+			<label index="Created">created</label>
+
+			<label index="maintenance">Maintenance</label>
+			<label index="descriptionMaintenance">Check the validity of user, e-mail and log data.</label>
+			<label index="maintenanceUsers">User data maintenance</label>
+			<label index="descriptionMaintenanceUsers">Users with no e-mail address.</label>
+			<label index="maintenanceMails">E-Mail maintenance</label>
+			<label index="descriptionMaintenanceMails">E-Mails with errors or warnings when parsed.</label>
+			<label index="maintenanceLogdata">Logdata maintenance</label>
+			<label index="descriptionMaintenanceLogdata">Mails which produced invalid logdata.</label>
+
 
 		</languageKey>
 		<languageKey index="de" type="array">
@@ -438,7 +459,7 @@
 
 			<label index="targetgroupdefinitions">Zielgruppendefinitionen</label>
 			<label index="createTargetgroupdefinition">Zielgruppendefinition erstellen</label>
-			<label index="descriptionTargetgroupDefinitions">Zielgruppen sind dynamische Gruppen von Webseitenbenutzern, die anhand ihrer Eigenschaften ausgewählt werden können. Z.B. Geschlecht, Alter oder PLZ. Wenn Sie in der Zeilgruppendefinition eins der Merkmale hinzufügen muss der Benutzer diesem entsprechen, um dazugezählt zu werden. Bei den Kategorien muss er mindestens eine ausgewählt haben. Entsprechend der Qualität der Datenbasis sollten mehr oder weniger Attribute verwendet werden.</label>
+			<label index="descriptionTargetgroupDefinitions">Zielgruppen sind dynamische Gruppen von Webseitenbenutzern, die anhand ihrer Eigenschaften ausgewählt werden können. Z.B. Geschlecht, Alter oder PLZ. Wenn Sie in der Zeilgruppendefinition eins der Merkmale hinzufügen muss der Benutzer diesem entsprechen, um dazugezählt zu werden. Bei den Kategorien muss er mindestens eine ausgewählt haben. Entsprechend der Qualität der Datenbasis sollten mehr oder weniger Attribute verwendet werden. Beim Klicken auf den Namen der Zielgruppe werden die betroffenen Benutzer in einer eigenen Tabelle angezeigt.</label>
 			<label index="newTargetgroupdefinition">Neue Zielgruppendefinition</label>
 			<label index="getTargetgroupdefinitions">Auflistung von Zielgruppendefinitionen</label>
 
@@ -519,6 +540,7 @@
 
 			<label index="salutation">Begrüßung</label>
 			<label index="salutations">Begrüßungen</label>
+			<label index="descriptionSalutations">Erstellen Sie eine Anrede und wählen Sie "Begrüßung" als Überschriftstyp beim erstellen eines E-Mail-Inhaltes aus. Die Begrüßung wird dann nach der Überschrift eingebaut. Sind für den Benutzern Vorname, Nachname und Geschlecht und eine Begrüßung definiert, wird die E-Mail personalisiert nach diesen Merkmalen.</label>
 			<label index="getSalutations">Auflistung der Begrüßungen</label>
 
 			<label index="directmail">Direct Mail</label>
@@ -661,7 +683,27 @@
 			<label index="descriptionStatsMostReceivers">E-Mails sortiert nach der Anzahl der Aussendungen. Zeigt die Popularität von E-Mailings an.</label>
 			<label index="yearlystatistics">Jahresstatistiken</label>
 
-			<label index="createStuff">Erstellee sysfolders, fe_groups, fe_users, be_users, targetgroups, pages und content !!!</label>
+			<label index="Postinstalls">Postinstall-Aktionen</label>
+			<label index="descriptionPostinstalls">Nach der Installation kann die Konfiguration durch folgende Aktionen erleichtert werden. Es verändert unsere Konfiguration in typo3conf/localconf.php. Bitte nur einmal am Anfang durchführen.</label>
+			<label index="performingPostinstalls">Führe Postinstall-Aktionen durch...</label>
+
+			<label index="createSysfolders">Erstelle Sysfolder Struktur um Kampagnen, Mailings, Benutzer, Zielgruppen und Begrüßungencampaigns zu speichern.</label>
+			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces) und eine Testzielgruppe.</label>
+			<label index="createBegroupsAndUsers">Erselle Backend Benutzergruppen und Benutzer.</label>
+			<label index="createDemocontent">Erstelle Demo-Inhalte (Newsletter, Kampagnen, Oneoffmails, Begrüßungen).</label>
+			<label index="createReceivers">Erstelle eine Test-Empfängerliste.</label>
+
+			<label index="createAll">Tu alles o.g.!!!</label>
+			<label index="Created">erstellt</label>
+
+			<label index="maintenance">Datenpflege</label>
+			<label index="descriptionMaintenance">Überprüfen sie die Daten der Benutzer, die Gültigkeit von E-Mails und der Logdaten.</label>
+			<label index="maintenanceUsers">Benutzerdaten</label>
+			<label index="descriptionMaintenanceUsers">Users ohne E-Mail Addresse.</label>
+			<label index="maintenanceMails">E-Mail Validität</label>
+			<label index="descriptionMaintenanceMails">E-Mails, die Fehler oder Warnungen beim Parsen hervorufen.</label>
+			<label index="maintenanceLogdata">Logdaten Validität</label>
+			<label index="descriptionMaintenanceLogdata">E-Mails, die ungültige Log-Einträge verursachten.</label>
 
 		</languageKey>
 	</data>

@@ -26,13 +26,12 @@
  * Module 'Directmail' for the 'tcdirectmail' extension.
  *
  * @author	Daniel Schledermann <daniel@typoconsult.dk>
+ * @package TYPO3
+ * @subpackage tx_t3m
  */
 
 
 class tx_tcdirectmail_sysstat {
-
-
-
 
    function viewSysStatus () {
        global $LANG;

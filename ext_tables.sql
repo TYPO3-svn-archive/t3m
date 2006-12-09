@@ -121,6 +121,9 @@ CREATE TABLE tx_t3m_salutations (
 	single_female text NOT NULL,
 	single_male text NOT NULL,
 	plural text NOT NULL,
+	include_first_name tinyint(3) DEFAULT '0' NOT NULL,
+	include_last_name tinyint(3) DEFAULT '0' NOT NULL,
+	append tinytext NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -132,10 +135,11 @@ CREATE TABLE tx_t3m_salutations (
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
-	tx_t3m_categories blob NOT NULL,
+	tx_t3m_country int(11) DEFAULT '0' NOT NULL,
 	tx_t3m_softbounces int(11) DEFAULT '0' NOT NULL,
 	tx_t3m_hardbounces int(11) DEFAULT '0' NOT NULL,
-	tx_t3m_country int(11) DEFAULT '0' NOT NULL
+	tx_t3m_categories blob NOT NULL,
+	tx_t3m_salutation int(11) DEFAULT '0' NOT NULL
 );
 
 

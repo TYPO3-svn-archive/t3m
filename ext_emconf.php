@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext: "t3m"
 #
-# Auto generated 14-11-2006 14:25
+# Auto generated 07-12-2006 05:26
 #
 # Manual updates:
 # Only the data in the array - anything else is removed by next write.
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'typo3-macher',
-	'version' => '0.1.6',
+	'version' => '0.1.8',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '4.0.0-',
@@ -64,6 +64,5 @@ $EM_CONF[$_EXTKEY] = array(
 	),
 	'_md5_values_when_last_written' => '',
 );
-
 
 ?>

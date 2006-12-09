@@ -24,9 +24,10 @@
 ***************************************************************/
 /**
  * This function is a dummy test class
+ *
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package TYPO3
- * @subpackage t3m
+ * @subpackage tx_t3m
  */
 class tx_t3m_bounce	{
 	var $extKey, $rootTS, $myConf, $INTERNAL, $EXTERNAL;
@@ -51,24 +52,27 @@ class tx_t3m_bounce	{
 // 	}
 
 	/**
-	* Main function for the submodules. Write the content to $this->content
-	*
-	* @return	void	nothing to be returned
-	*/
+	 * Main function for the submodules. Write the content to $this->content
+	 *
+	 * @return	void		nothing to be returned
+	 */
 	function main()	{
 	}
 
 	/**
-	* Initialize some variables
-	*/
+	 * Initialize some variables
+	 *
+	 * @return	[type]		...
+	 */
 	function init()	{
 	}
 
 	/**
-	* Returns an evaluation for bounce mails
-	*
-	* @return	string	an evaluation for spam
-	*/
+	 * Returns an evaluation for bounce mails
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		an evaluation for spam
+	 */
 	function checkForBounceMail($pid)	{
 		$out = '<br />Checking for bounce mails:'.$pid.' <br />';
 		$sender_email = explode('@',$this->myConf['sender_email']);
@@ -183,11 +187,11 @@ class tx_t3m_bounce	{
 
 
 	/**
-	* Returns users soft bounce record
-	*
-	* @param int uid of fe_users
-	* @return int bounce count
-	*/
+	 * Returns users soft bounce record
+	 *
+	 * @param	int		uid of fe_users
+	 * @return	int		bounce count
+	 */
 	function getPreviousSoftBounces($uid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'tx_t3m_softbounces',
@@ -201,11 +205,11 @@ class tx_t3m_bounce	{
 	}
 
 	/**
-	* Returns users hard bounce record
-	*
-	* @param int uid of fe_users
-	* @return int bounce count
-	*/
+	 * Returns users hard bounce record
+	 *
+	 * @param	int		uid of fe_users
+	 * @return	int		bounce count
+	 */
 	function getPreviousHardBounces($uid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'tx_t3m_hardbounces',
@@ -219,10 +223,10 @@ class tx_t3m_bounce	{
 	}
 
 	/**
-	* Lets users define bounce management rules
-	*
-	* @return array bounce config
-	*/
+	 * Lets users define bounce management rules
+	 *
+	 * @return	array		bounce config
+	 */
 	function getBounceRules()	{
 // 		$out = '<form>How many returns should be allowed befor users get disabeld?<br/><input type="text" name="bouncecount" /></form><br/>';
 // 		$reason_text = array(

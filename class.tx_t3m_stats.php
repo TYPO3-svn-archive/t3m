@@ -29,9 +29,10 @@ require_once(t3lib_extMgm::extPath('pbimagegraph').'Image/Graph/Datapreprocessor
 
 /**
  * This class is for stats
+ *
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package TYPO3
- * @subpackage t3m
+ * @subpackage tx_t3m
  */
 class tx_t3m_stats	{
 
@@ -55,25 +56,27 @@ class tx_t3m_stats	{
 // 	}
 
 	/**
-	* Main function for the submodules. Write the content to $this->content
-	*
-	* @return	void	nothing to be returned
-	*/
+	 * Main function for the submodules. Write the content to $this->content
+	 *
+	 * @return	void		nothing to be returned
+	 */
 	function main()	{
 	}
 
 	/**
-	* Initialize some variables
-	*/
+	 * Initialize some variables
+	 *
+	 * @return	[type]		...
+	 */
 	function init()	{
 	}
 
 	/**
-	* Returns boolean value indicating if mail was sent or not
-	*
-	* @param	pid of the mail
-	* @return	boolean	value indicating if mail was sent or not
-	*/
+	 * Returns boolean value indicating if mail was sent or not
+	 *
+	 * @param	pid		of the mail
+	 * @return	boolean		value indicating if mail was sent or not
+	 */
 	function checkMailSent($pid)	{
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'COUNT(*) AS icount',
@@ -90,10 +93,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns boolean value indicating if mail has been opened at least once or not
-	*
-	* @return	boolean value indicating if mail has been opened at least once or not
-	*/
+	 * Returns boolean value indicating if mail has been opened at least once or not
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	boolean		value indicating if mail has been opened at least once or not
+	 */
 	function checkMailOpened($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'SUM(beenthere) AS ibeenthere',
@@ -110,11 +114,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns boolean value indicating if all campaign mail were sent or not
-	*
-	* @param	uid of the campaign
-	* @return	string	value indicating if the campaign is finished or not
-	*/
+	 * Returns boolean value indicating if all campaign mail were sent or not
+	 *
+	 * @param	uid		of the campaign
+	 * @return	string		value indicating if the campaign is finished or not
+	 */
 	function checkCampaignFinished($uid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid',
@@ -144,11 +148,11 @@ class tx_t3m_stats	{
 // 	}
 
 	/**
-	* Returns int value how often links in that mail were clicked
-	*
-	* @param	pid of the mail
-	* @return	int value how often links in that mail were clicked
-	*/
+	 * Returns int value how often links in that mail were clicked
+	 *
+	 * @param	pid		of the mail
+	 * @return	int		value how often links in that mail were clicked
+	 */
 	function mailClicks($pid) {
 		$out = '';
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -174,11 +178,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns string value which links in that mail were clicked
-	*
-	* @param	pid of the mail
-	* @return	string value which links in that mail were clicked
-	*/
+	 * Returns string value which links in that mail were clicked
+	 *
+	 * @param	pid		of the mail
+	 * @return	string		value which links in that mail were clicked
+	 */
 	function mailClickedLinks($pid) {
 		$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
 			<td class="c-headLineTable">URL</td>
@@ -216,19 +220,20 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for one tcdirectmail
-	*
-	* @return	string stats for one tcdirectmail
-	*/
+	 * Returns stats for one tcdirectmail
+	 *
+	 * @return	string		stats for one tcdirectmail
+	 */
 	function getStatsForTCDirectmail() {
 		// get details from tcstats ext
 	}
 
 	/**
-	* Returns stats for all tcdirectmail
-	*
-	* @return	string stats for all tcdirectmail
-	*/
+	 * Returns stats for all tcdirectmail
+	 *
+	 * @param	[type]		$uids: ...
+	 * @return	string		stats for all tcdirectmail
+	 */
 	function getStatsForTCDirectmails($uids)	{
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'pid, COUNT(receiver) as ireceiver', //, MAX(sendtime) as maxsendtime
@@ -284,10 +289,10 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for campaigns
-	*
-	* @return	string a table with stats for campaigns
-	*/
+	 * Returns stats for campaigns
+	 *
+	 * @return	string		a table with stats for campaigns
+	 */
 	function getStatsForCampaigns()	{
 		if (!$_REQUEST['campaign']) {
 			$_REQUEST['campaign'] = tx_t3m_main::getFirstCampaign();
@@ -359,10 +364,10 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for newsletter
-	*
-	* @return	string a table with stats for newsletter
-	*/
+	 * Returns stats for newsletter
+	 *
+	 * @return	string		a table with stats for newsletter
+	 */
 	function getStatsForNewsletters() {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('SentMails').'</h3>';
 		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
@@ -460,10 +465,10 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for single mailings
-	*
-	* @return	string a table with stats for single mailings
-	*/
+	 * Returns stats for single mailings
+	 *
+	 * @return	string		a table with stats for single mailings
+	 */
 	function getStatsForOneOffMailings() {
 		// get one off mailings
 		$pids = '';
@@ -497,15 +502,16 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns yearly stats gfx
-	*
-	* @return	string an image for all mails of that year
-	*/
+	 * Returns yearly stats gfx
+	 *
+	 * @param	[type]		$year: ...
+	 * @return	string		an image for all mails of that year
+	 */
 	function getYearlyStatsForMails($year) {
 
 		// STATIC DATA:
 		// PLOTAREA
-		$filename = t3lib_extMgm::extPath('t3m').'static/pbimagegraph/plotarea.txt';
+		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/plotarea.txt';
 		$handle = fopen($filename, "r");
 		$contents = fread($handle, filesize($filename));
 		$ts = t3lib_div::makeInstance("t3lib_tsparser");
@@ -565,15 +571,15 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for users
-	*
-	* @return	string a table with stats for users
-	*/
+	 * Returns stats for users
+	 *
+	 * @return	string		a table with stats for users
+	 */
 	function getStatsForUsers()	{
 
 		// STATIC DATA:
 		// PIE
-		$filename = t3lib_extMgm::extPath('t3m').'static/pbimagegraph/pie.txt';
+		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/pie.txt';
 		$handle = fopen($filename, "r");
 		$contents = fread($handle, filesize($filename));
 		$ts = t3lib_div::makeInstance("t3lib_tsparser");
@@ -663,10 +669,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns last sent time
-	*
-	* @return	string time of last sent time for a page
-	*/
+	 * Returns last sent time
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		time of last sent time for a page
+	 */
 	function getLastSentTime($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'MAX(sendtime) as isendtime',
@@ -682,10 +689,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns last sent time
-	*
-	* @return	string time of last sent time for a page
-	*/
+	 * Returns last sent time
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		time of last sent time for a page
+	 */
 	function getOpenedSentTime($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'MAX(sendtime) as isendtime',
@@ -701,10 +709,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns last sent time
-	*
-	* @return	string time of last sent time for a page
-	*/
+	 * Returns last sent time
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		time of last sent time for a page
+	 */
 	function getNotOpenedSentTime($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'MIN(sendtime) as isendtime',
@@ -721,10 +730,10 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for opened mails
-	*
-	* @return	string a table with stats for opened mails
-	*/
+	 * Returns stats for opened mails
+	 *
+	 * @return	string		a table with stats for opened mails
+	 */
 	function getStatsForOpenedMails()	{
 
 		$sentMailsCount = tx_t3m_stats::getSentMailsSingle();
@@ -743,7 +752,7 @@ class tx_t3m_stats	{
 
 		// STATIC DATA:
 		// PIE
-		$filename = t3lib_extMgm::extPath('t3m').'static/pbimagegraph/pie.txt';
+		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/pie.txt';
 		$handle = fopen($filename, "r");
 		$contents = fread($handle, filesize($filename));
 		$ts = t3lib_div::makeInstance("t3lib_tsparser");
@@ -779,10 +788,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns count for sent mails
-	*
-	* @return	int count for sent mails
-	*/
+	 * Returns count for sent mails
+	 *
+	 * @return	int		count for sent mails
+	 */
 	function getSentMailsSingle() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'COUNT(*) as icount',
@@ -794,10 +803,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns array of all sent mails
-	*
-	* @return	array of all sent mails
-	*/
+	 * Returns array of all sent mails
+	 *
+	 * @return	array		of all sent mails
+	 */
 	function getSentMails() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'pid',
@@ -813,10 +822,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns stats for sent mails
-	*
-	* @return	string a table with stats for sent mails
-	*/
+	 * Returns stats for sent mails
+	 *
+	 * @param	[type]		$pids: ...
+	 * @return	string		a table with stats for sent mails
+	 */
 	function getSentMailsTable($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('SentMails').'</h3>';
 // 		if ($pids) {
@@ -848,10 +858,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns stats for opened mails
-	*
-	* @return	string a table with stats for opened mails
-	*/
+	 * Returns stats for opened mails
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		a table with stats for opened mails
+	 */
 	function getPlannedSentTime($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'tx_tcdirectmail_senttime',
@@ -866,10 +877,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns count for single opened mails
-	*
-	* @return	int count for single opened mails
-	*/
+	 * Returns count for single opened mails
+	 *
+	 * @return	int		count for single opened mails
+	 */
 	function getOpenedMailsSingle() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'COUNT(*) as icount', //,uid,beenthere
@@ -882,10 +893,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns array of opened mails
-	*
-	* @return	array of opened mails
-	*/
+	 * Returns array of opened mails
+	 *
+	 * @return	array		of opened mails
+	 */
 	function getOpenedMails() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'pid,SUM(beenthere) as ibeenthere', //,uid,beenthere
@@ -902,10 +913,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns array of not opened mails
-	*
-	* @return	array of not opened mails
-	*/
+	 * Returns array of not opened mails
+	 *
+	 * @return	array		of not opened mails
+	 */
 	function getNotOpenedMails() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'pid',
@@ -923,11 +934,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns how many users that page was opened
-	*
-	* @param	int	pid of page
-	* @return	int	send count how often the page was opened (how many recipients got the page)
-	*/
+	 * Returns how many users that page was opened
+	 *
+	 * @param	int		pid of page
+	 * @return	int		send count how often the page was opened (how many recipients got the page)
+	 */
 	function getOpenedCountForPage($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'SUM(beenthere) as isum',
@@ -941,11 +952,11 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns how many users that page was clicked in
-	*
-	* @param	int	pid of page
-	* @return	int	send count how often the page was clicked in
-	*/
+	 * Returns how many users that page was clicked in
+	 *
+	 * @param	int		pid of page
+	 * @return	int		send count how often the page was clicked in
+	 */
 	function getClickedCountForPage($pid) {
 		$clickCount = 0;
 		// get the sentlogs where clicks happened
@@ -972,10 +983,11 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for opened mails
-	*
-	* @return	string a table with stats for opened mails
-	*/
+	 * Returns stats for opened mails
+	 *
+	 * @param	[type]		$pids: ...
+	 * @return	string		a table with stats for opened mails
+	 */
 	function getOpenedMailsTable($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('OpenedMails').'</h3>';
 		if ($pids) {
@@ -1005,10 +1017,11 @@ class tx_t3m_stats	{
 
 
 	/**
-	* Returns stats for not opened mails
-	*
-	* @return	string a table with stats for not opened mails
-	*/
+	 * Returns stats for not opened mails
+	 *
+	 * @param	[type]		$pids: ...
+	 * @return	string		a table with stats for not opened mails
+	 */
 	function getNotOpenedMailsTable($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('NotOpenedMails').'</h3>';
 		if ($pids) {
@@ -1033,10 +1046,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns count of how many deliveries resulted in at least one click
-	*
-	* @return	int count of how many deliveries resulted in at least one click
-	*/
+	 * Returns count of how many deliveries resulted in at least one click
+	 *
+	 * @return	int		count of how many deliveries resulted in at least one click
+	 */
 	function getClickedMailsSingle() {
 		// get the sentlogs where clicks happened
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -1051,10 +1064,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns array of clicked mails
-	*
-	* @return	array with clicked mails
-	*/
+	 * Returns array of clicked mails
+	 *
+	 * @return	array		with clicked mails
+	 */
 	function getClickedMails() {
 		// get the sentlogs where clicks happened
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -1081,20 +1094,21 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns stats for sent but not clicked mails
-	*
-	* @return	array with sent but not clicked mails
-	*/
+	 * Returns stats for sent but not clicked mails
+	 *
+	 * @return	array		with sent but not clicked mails
+	 */
 	function getNotClickedMails() {
 		$out = array_diff(tx_t3m_stats::getSentMails(),tx_t3m_stats::getClickedMails());
 		return $out;
 	}
 
 	/**
-	* Returns stats for clicked mails
-	*
-	* @return	string a table with stats for clicked mails
-	*/
+	 * Returns stats for clicked mails
+	 *
+	 * @param	[type]		$pids: ...
+	 * @return	string		a table with stats for clicked mails
+	 */
 	function getClickedMailsTable($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('ClickedMails').'</h3>';
 		if ($pids) {
@@ -1182,10 +1196,11 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns stats for clicked mails
-	*
-	* @return	string a table with stats for clicked mails
-	*/
+	 * Returns stats for clicked mails
+	 *
+	 * @param	[type]		$pids: ...
+	 * @return	string		a table with stats for clicked mails
+	 */
 	function getNotClickedMailsTable($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('NotClickedMails').'</h3>';
 		if ($pids) {
@@ -1208,10 +1223,10 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns stats for clicked mails
-	*
-	* @return	string a table with stats for clicked mails
-	*/
+	 * Returns stats for clicked mails
+	 *
+	 * @return	string		a table with stats for clicked mails
+	 */
 	function getStatsForClickedMails() {
 
 		// get all urls and clicks
@@ -1240,7 +1255,7 @@ class tx_t3m_stats	{
 
 		// STATIC DATA:
 		// PIE
-		$filename = t3lib_extMgm::extPath('t3m').'static/pbimagegraph/pie.txt';
+		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/pie.txt';
 		$handle = fopen($filename, "r");
 		$contents = fread($handle, filesize($filename));
 		$ts = t3lib_div::makeInstance("t3lib_tsparser");
@@ -1295,14 +1310,12 @@ class tx_t3m_stats	{
 		return $out;
 	}
 
-
-
 	/**
-	* Returns how many users that page was sent to
-	*
-	* @param	int	pid of page
-	* @return	int	send count how often the page was sent (how many recipients got the page)
-	*/
+	 * Returns how many users that page was sent to
+	 *
+	 * @param	int		pid of page
+	 * @return	int		send count how often the page was sent (how many recipients got the page)
+	 */
 	function getSendCountForPage($pid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'COUNT(*) as icount',
@@ -1318,58 +1331,14 @@ class tx_t3m_stats	{
 	}
 
 	/**
-	* Returns a Typoscript config for a statistic image about pending and subscribed users
-	*
-	* @return	array	the tsconfig
-	*/
-	function getStatImageUsersTS()	{
-		// parse TS from pbimagegraph/examples/misc03.txt into $out
-		// plot_pie.txt:
-// 		$filename = t3lib_extMgm::extPath('pbimagegraph').'examples/plot_pie.txt';
-// 		$filename = t3lib_extMgm::extPath('pbimagegraph').'examples/plot_pie_rotate.txt';
-// 		$filename = t3lib_extMgm::extPath('pbimagegraph').'examples/misc03.txt';
-// 		$filename = t3lib_extMgm::extPath('pbimagegraph').'examples/misc02.txt';
-// 		$filename = t3lib_extMgm::extPath('pbimagegraph').'examples/gradient_pie.txt';
-		$filename = t3lib_extMgm::extPath('t3m').'gradient_pie.txt';
-
-		$handle = fopen($filename, "r");
-		$contents = fread($handle, filesize($filename));
-		$ts = t3lib_div::makeInstance("t3lib_tsparser");
-		$ts->parse($contents); // now we have it in $ts->setup
-// 		t3lib_div::debug($ts->setup);
-		$out = $ts->setup['lib.']['pbimagegraph.'];
-		return $out;
-	}
-
-	/**
-	* Returns an image tag with the user stats
-	*
-	* @return	string an image tag with the user stats
-	*/
-	function getStatImageUsers()	{
-		$arrConf = tx_t3m_stats::getStatImageUsersTS();
-// 		$arrConf['10.']['20.']['10.']['dataset.']['10'] = 'trivial';
-// 		$arrConf['10.']['20.']['10.']['dataset.']['10.']['count'] = 2;
-// 		$arrConf['10.']['20.']['10.']['dataset.']['10.']['10'] = 'point';//
-// 		$arrConf['font.']['default'] = 'fileadmin/t3m/fonts/verdana.ttf'; //somehow does not work
-// 		t3lib_div::debug($arrConf);
-		$out = tx_pbimagegraph_ts::make($arrConf);
-		return $out;
-	}
-
-
-	/**
-	* Returns stats for bounces
-	*
-	* @return	string a table with stats for bounces
-	*/
+	 * Returns stats for bounces
+	 *
+	 * @return	string		a table with stats for bounces
+	 */
 	function getStatsForBounces() {
 		$out = true;
 		return $out;
 	}
-
-
-
 
 }
 

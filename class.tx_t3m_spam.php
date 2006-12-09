@@ -24,9 +24,10 @@
 ***************************************************************/
 /**
  * This function is a dummy test class
+ *
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package TYPO3
- * @subpackage t3m
+ * @subpackage tx_t3m
  */
 class tx_t3m_spam	{
 	var $extKey, $rootTS, $myConf;
@@ -51,25 +52,28 @@ class tx_t3m_spam	{
 // 	}
 
 	/**
-	* Main function for the submodules. Write the content to $this->content
-	*
-	* @return	void	nothing to be returned
-	*/
+	 * Main function for the submodules. Write the content to $this->content
+	 *
+	 * @return	void		nothing to be returned
+	 */
 	function main()	{
 	}
 
 	/**
-	* Initialize some variables
-	*/
+	 * Initialize some variables
+	 *
+	 * @return	[type]		...
+	 */
 	function init()	{
 	}
 
 
 	/**
-	* Returns an evaluation for spam
-	*
-	* @return	string	an evaluation for spam
-	*/
+	 * Returns an evaluation for spam
+	 *
+	 * @param	[type]		$pid: ...
+	 * @return	string		an evaluation for spam
+	 */
 	function checkForSpam($pid)	{
 		$out = '<br />Checking for spam for page:'.$pid.' <br />
 			Script running: <br /> '.$this->myConf['spam_checker_script'].'<br />';
@@ -116,11 +120,12 @@ class tx_t3m_spam	{
 
 
 	/**
-	* Saves a spamscore for a page
-	*
-	* @param pid page id
-	* @param spamscore spamscore
-	*/
+	 * Saves a spamscore for a page
+	 *
+	 * @param	pid		page id
+	 * @param	spamscore		spamscore
+	 * @return	[type]		...
+	 */
 	function saveSpamScore($pid, $spamscore)	{
 		$fields_values = array(
 			'tx_t3m_spam_score' => floatval($spamscore)
@@ -156,10 +161,11 @@ class tx_t3m_spam	{
 
 
 	/**
-	* Returns image indicating if the score is spam or not
-	*
-	* @return	string image indicating if the score is spam or not
-	*/
+	 * Returns image indicating if the score is spam or not
+	 *
+	 * @param	[type]		$spamscore: ...
+	 * @return	string		image indicating if the score is spam or not
+	 */
 	function imgSpamCheck($spamscore) {
 		if ($spamscore == 0) { //not checked
 			$out .= '';

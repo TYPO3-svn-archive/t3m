@@ -1,16 +1,20 @@
 (add new changes on top of this file)
 
-Author: Stefan Koch  <t3m@stefkoch.de>
-Date: 2006-12-30
-Version: 0.2.0
-Comment: First release (beta)
 
+Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2006-11-28
+Version: 0.1.7
+Comment: first implementation of salutations
+
+Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2006-11-28
+Version: 0.1.6
+Comment: allow multiple targetgroups in receiver group
 
 Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-11-28
 Version: 0.1.4
 Comment: removed all mm_tables for simplicity reasons
-
 
 Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-09-07

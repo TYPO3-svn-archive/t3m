@@ -22,6 +22,9 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_target_array.php');
+require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
+require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_bounce.php');
 
 /**
  * Directmail target1 for t3m
@@ -30,30 +33,13 @@
  * @package	TYPO3
  * @subpackage	tx_t3m
  */
-
-// require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_target_sql.php');
-
-// class tx_t3m_target1 extends tx_tcdirectmail_target_sql {
-//     var $tableName = "tx_t3m_targetgroups";
-//
-//     function init() {
-// 	    global $TYPO3_DB;
-	    /* All field you have defined are available in $this->fields */
-	    /* Modify the below SQL, to give some meaningfull result */
-	    /* Remember that all records MUST contain a field name "email" */
-// 	    $this->data = $TYPO3_DB->sql_query('SELECT * FROM tx_t3m_targetgroups');
-//     }
-// }
-
-/* Warning: XCLASS'ing is NOT supported for tx_tcdirectmail_targets, nor will it ever be. So dont complain to me. */
-
-
-require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_target_array.php');
-require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
-require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_bounce.php');
-
 class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 
+	/**
+	 * Main function for writes content to $this->data
+	 *
+	 * @return	void		nothing to be returned
+	 */
 	function init() {
 		//multiple targetgroups enabled;
 		$targetgroups = explode(',',$this->fields['tx_t3m_target']); // (uids from our targetgroup table)
@@ -63,6 +49,7 @@ class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 			foreach ($tmpusers as $tmpuser) {
 				if(!(in_array($tmpuser,$sentusers))) { // is not already in array, so no duplicate here
 					if ($tmpuser['email']) { // do email sanity check here?
+						$this->data[$i]['uid'] = $tmpuser['uid'];
 						$this->data[$i]['email'] = $tmpuser['email'];
 						$this->data[$i]['plain_only'] = $tmpuser['plain_only'];
 					}
@@ -73,6 +60,11 @@ class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 		}
 	}
 
+	/**
+	 * Main function for disabling receivers when bounces occur
+	 *
+	 * @return	void		nothing to be returned
+	 */
 	function disableReceiver($uid, $authCode, $bouncereason) { // uid is a fe_user uid!!
 		//check bounce config
 		$bounceConfig = tx_t3m_bounce::getBounceRules();

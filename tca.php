@@ -294,7 +294,7 @@ $TCA["tx_t3m_targetgroups"] = Array (
 			)
 		),
 		"salutations_uid" => Array (		## WOP:[tables][2][fields][7][fieldname]
-			"exclude" => 0,		## WOP:[tables][2][fields][7][excludeField]
+			"exclude" => 1,		## WOP:[tables][2][fields][7][excludeField]
 			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_targetgroups.salutations_uid",		## WOP:[tables][2][fields][7][title]
 			"config" => Array (
 				"type" => "select",	## WOP:[tables][2][fields][7][conf_rel_type]
@@ -560,7 +560,7 @@ $TCA["tx_t3m_categories"] = Array (
 $TCA["tx_t3m_salutations"] = Array (
 	"ctrl" => $TCA["tx_t3m_salutations"]["ctrl"],
 	"interface" => Array (
-		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,hidden,name,single_female,single_male,plural"
+		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,hidden,name,single_female,single_male,plural,include_first_name,include_last_name,append"
 	),
 	"feInterface" => $TCA["tx_t3m_salutations"]["feInterface"],
 	"columns" => Array (
@@ -638,9 +638,33 @@ $TCA["tx_t3m_salutations"] = Array (
 				"rows" => "5",	## WOP:[tables][5][fields][4][conf_rows]
 			)
 		),
+		"include_first_name" => Array (		## WOP:[tables][5][fields][5][fieldname]
+			"exclude" => 0,		## WOP:[tables][5][fields][5][excludeField]
+			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_salutations.include_first_name",		## WOP:[tables][5][fields][5][title]
+			"config" => Array (
+				"type" => "check",
+				"default" => 1,	## WOP:[tables][5][fields][5][conf_check_default]
+			)
+		),
+		"include_last_name" => Array (		## WOP:[tables][5][fields][6][fieldname]
+			"exclude" => 0,		## WOP:[tables][5][fields][6][excludeField]
+			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_salutations.include_last_name",		## WOP:[tables][5][fields][6][title]
+			"config" => Array (
+				"type" => "check",
+				"default" => 1,	## WOP:[tables][5][fields][6][conf_check_default]
+			)
+		),
+		"append" => Array (		## WOP:[tables][5][fields][7][fieldname]
+			"exclude" => 0,		## WOP:[tables][5][fields][7][excludeField]
+			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_salutations.append",		## WOP:[tables][5][fields][7][title]
+			"config" => Array (
+				"type" => "input",	## WOP:[tables][5][fields][7][type]
+				"size" => "30",	## WOP:[tables][5][fields][7][conf_size]
+			)
+		),
 	),
 	"types" => Array (
-		"0" => Array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, hidden;;1, name, single_female, single_male, plural")
+		"0" => Array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, hidden;;1, name, single_female, single_male, plural, include_first_name, include_last_name, append")
 	),
 	"palettes" => Array (
 		"1" => Array("showitem" => "")

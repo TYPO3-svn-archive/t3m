@@ -114,11 +114,59 @@ $TCA["tx_t3m_salutations"] = Array (
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_t3m_salutations.gif",
 	),
 	"feInterface" => Array (
-		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, single_female, single_male, plural",
+		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, single_female, single_male, plural, include_first_name, include_last_name, append",
 	)
 );
 
 $tempColumns = Array (
+	"tx_t3m_country" => Array (		## WOP:[fields][2][fields][4][fieldname]
+		"exclude" => 0,		## WOP:[fields][2][fields][4][excludeField]
+		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_country",		## WOP:[fields][2][fields][4][title]
+		"config" => Array (
+			"type" => "select",	## WOP:[fields][2][fields][4][conf_rel_type]
+			## WOP:[fields][2][fields][4][conf_rel_dummyitem]
+			"items" => Array (
+				Array("",0),
+			),
+			"foreign_table" => "static_countries",	## WOP:[fields][2][fields][4][conf_rel_table]
+			"foreign_table_where" => "ORDER BY static_countries.uid",	## WOP:[fields][2][fields][4][conf_rel_type]
+			"size" => 1,	## WOP:[fields][2][fields][4][conf_relations_selsize]
+			"minitems" => 0,
+			"maxitems" => 1,	## WOP:[fields][2][fields][4][conf_relations]
+		)
+	),
+	"tx_t3m_softbounces" => Array (		## WOP:[fields][2][fields][2][fieldname]
+		"exclude" => 1,		## WOP:[fields][2][fields][2][excludeField]
+		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_softbounces",		## WOP:[fields][2][fields][2][title]
+		"config" => Array (
+			"type" => "input",
+			"size" => "4",
+			"max" => "4",
+			"eval" => "int",
+			"checkbox" => "0",
+			"range" => Array (
+				"upper" => "1000",
+				"lower" => "10"
+			),
+			"default" => 0
+		)
+	),
+	"tx_t3m_hardbounces" => Array (		## WOP:[fields][2][fields][3][fieldname]
+		"exclude" => 1,		## WOP:[fields][2][fields][3][excludeField]
+		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_hardbounces",		## WOP:[fields][2][fields][3][title]
+		"config" => Array (
+			"type" => "input",
+			"size" => "4",
+			"max" => "4",
+			"eval" => "int",
+			"checkbox" => "0",
+			"range" => Array (
+				"upper" => "1000",
+				"lower" => "10"
+			),
+			"default" => 0
+		)
+	),
 	"tx_t3m_categories" => Array (		## WOP:[fields][2][fields][1][fieldname]
 		"exclude" => 0,		## WOP:[fields][2][fields][1][excludeField]
 		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_categories",		## WOP:[fields][2][fields][1][title]
@@ -167,52 +215,56 @@ $tempColumns = Array (
 			),
 		)
 	),
-	"tx_t3m_softbounces" => Array (		## WOP:[fields][2][fields][2][fieldname]
-		"exclude" => 1,		## WOP:[fields][2][fields][2][excludeField]
-		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_softbounces",		## WOP:[fields][2][fields][2][title]
+	"tx_t3m_salutation" => Array (		## WOP:[fields][2][fields][5][fieldname]
+		"exclude" => 0,		## WOP:[fields][2][fields][5][excludeField]
+		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_salutation",		## WOP:[fields][2][fields][5][title]
 		"config" => Array (
-			"type" => "input",
-			"size" => "4",
-			"max" => "4",
-			"eval" => "int",
-			"checkbox" => "0",
-			"range" => Array (
-				"upper" => "1000",
-				"lower" => "10"
-			),
-			"default" => 0
-		)
-	),
-	"tx_t3m_hardbounces" => Array (		## WOP:[fields][2][fields][3][fieldname]
-		"exclude" => 1,		## WOP:[fields][2][fields][3][excludeField]
-		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_hardbounces",		## WOP:[fields][2][fields][3][title]
-		"config" => Array (
-			"type" => "input",
-			"size" => "4",
-			"max" => "4",
-			"eval" => "int",
-			"checkbox" => "0",
-			"range" => Array (
-				"upper" => "1000",
-				"lower" => "10"
-			),
-			"default" => 0
-		)
-	),
-	"tx_t3m_country" => Array (		## WOP:[fields][2][fields][4][fieldname]
-		"exclude" => 0,		## WOP:[fields][2][fields][4][excludeField]
-		"label" => "LLL:EXT:t3m/locallang_db.xml:fe_users.tx_t3m_country",		## WOP:[fields][2][fields][4][title]
-		"config" => Array (
-			"type" => "select",	## WOP:[fields][2][fields][4][conf_rel_type]
-			## WOP:[fields][2][fields][4][conf_rel_dummyitem]
+			"type" => "select",	## WOP:[fields][2][fields][5][conf_rel_type]
+			## WOP:[fields][2][fields][5][conf_rel_dummyitem]
 			"items" => Array (
 				Array("",0),
 			),
-			"foreign_table" => "static_countries",	## WOP:[fields][2][fields][4][conf_rel_table]
-			"foreign_table_where" => "ORDER BY static_countries.uid",	## WOP:[fields][2][fields][4][conf_rel_type]
-			"size" => 1,	## WOP:[fields][2][fields][4][conf_relations_selsize]
+			"foreign_table" => "tx_t3m_salutations",	## WOP:[fields][2][fields][5][conf_rel_table]
+			"foreign_table_where" => "ORDER BY tx_t3m_salutations.uid",	## WOP:[fields][2][fields][5][conf_rel_type]
+			"size" => 1,	## WOP:[fields][2][fields][5][conf_relations_selsize]
 			"minitems" => 0,
-			"maxitems" => 1,	## WOP:[fields][2][fields][4][conf_relations]
+			"maxitems" => 1,	## WOP:[fields][2][fields][5][conf_relations]
+			"wizards" => Array(
+				"_PADDING" => 2,
+				"_VERTICAL" => 1,
+				## WOP:[fields][2][fields][5][conf_wiz_addrec]
+				"add" => Array(
+					"type" => "script",
+					"title" => "Create new record",
+					"icon" => "add.gif",
+					"params" => Array(
+						"table"=>"tx_t3m_salutations",
+						"pid" => "###CURRENT_PID###",
+						"setValue" => "prepend"
+					),
+					"script" => "wizard_add.php",
+				),
+				## WOP:[fields][2][fields][5][conf_wiz_listrec]
+				"list" => Array(
+					"type" => "script",
+					"title" => "List",
+					"icon" => "list.gif",
+					"params" => Array(
+						"table"=>"tx_t3m_salutations",
+						"pid" => "###CURRENT_PID###",
+					),
+					"script" => "wizard_list.php",
+				),
+				## WOP:[fields][2][fields][5][conf_wiz_editrec]
+				"edit" => Array(
+					"type" => "popup",
+					"title" => "Edit",
+					"script" => "wizard_edit.php",
+					"popup_onlyOpenIfSelected" => 1,
+					"icon" => "edit2.gif",
+					"JSopenParams" => "height=350,width=580,status=0,menubar=0,scrollbars=1",
+				),
+			),
 		)
 	),
 );
@@ -220,7 +272,7 @@ $tempColumns = Array (
 
 t3lib_div::loadTCA("fe_users");
 t3lib_extMgm::addTCAcolumns("fe_users",$tempColumns,1);
-t3lib_extMgm::addToAllTCAtypes("fe_users","tx_t3m_categories;;;;1-1-1, tx_t3m_softbounces, tx_t3m_hardbounces, tx_t3m_country");
+t3lib_extMgm::addToAllTCAtypes("fe_users","tx_t3m_country;;;;1-1-1, tx_t3m_softbounces, tx_t3m_hardbounces, tx_t3m_categories, tx_t3m_salutation");
 
 $tempColumns = Array (
 	"tx_t3m_campaign" => Array (		## WOP:[fields][3][fields][1][fieldname]
@@ -341,6 +393,12 @@ $tempColumns = Array (
 	),
 );
 
+
+t3lib_div::loadTCA("tc_directmail_targets");
+t3lib_extMgm::addTCAcolumns("tx_tcdirectmail_targets",$tempColumns,1);
+$TCA["tx_tcdirectmail_targets"]["types"]["tx_t3m_target1"]["showitem"] = "hidden;;1;;1-1-1, title, plain_only, targettype, tx_t3m_target, ;;;;2-2-2, calculated_receivers;;;;1-1-1";
+$TCA["tx_tcdirectmail_targets"]["columns"]["targettype"]["config"]["items"][] = array("LLL:EXT:t3m/locallang_db.xml:tx_tcdirectmail_targets.optt3m_target1", "tx_t3m_target1");
+
 ## WOP:[module][1]
 if (TYPO3_MODE=="BE")	{
 	## 1. and 2. parameter is WOP:[module][1][position] , 3. parameter is WOP:[module][1][subpos]
@@ -353,8 +411,6 @@ if (TYPO3_MODE=="BE")	{
 // 	t3lib_extMgm::addModule("txt3mM0","txt3mM6","",t3lib_extMgm::extPath($_EXTKEY)."mod6/");
 }
 
-t3lib_div::loadTCA("tc_directmail_targets");
-t3lib_extMgm::addTCAcolumns("tx_tcdirectmail_targets",$tempColumns,1);
-$TCA["tx_tcdirectmail_targets"]["types"]["tx_t3m_target1"]["showitem"] = "hidden;;1;;1-1-1, title, plain_only, targettype, tx_t3m_target, ;;;;2-2-2, calculated_receivers;;;;1-1-1";
-$TCA["tx_tcdirectmail_targets"]["columns"]["targettype"]["config"]["items"][] = array("LLL:EXT:t3m/locallang_db.xml:tx_tcdirectmail_targets.optt3m_target1", "tx_t3m_target1");
+## WOP:[pi][1][addType]
+t3lib_extMgm::addPlugin(array('LLL:EXT:t3m/locallang_db.xml:tt_content.header_layout_pi1', $_EXTKEY.'_pi1'),'header_layout');
 ?>

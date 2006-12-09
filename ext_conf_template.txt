@@ -1,3 +1,39 @@
+# cat=basic; type=string; label=Sender Name : Name of the sender to be used for all mailings.
+sender_name = t3m_newsletter
+
+# cat=basic; type=string; label=Sender E-Mail : E-Mail address of the sender to be used for all mailings.
+sender_email = newsletter@localhost.local
+
+# cat=basic; type=string; label=Sender E-Mails password : Needed for checking the return (bounce) E-Mails. The above server will be checked (user)@(server).
+email_password = password
+
+# cat=basic; type=int+; label=T3M main folder : sysfolder or page ID used for all other main elements created by this extension.
+T3M_Sysfolder = null
+
+# cat=basic; type=int+; label=sr_feuser_register user Sysfolder : Sysfolder ID used for fe_users and fe_groups.
+registrations_Sysfolder = null
+
+# cat=basic; type=int+; label=sr_feuser_register login Sysfolder : Sysfolder ID used for login page and pages users see after login data.
+userarea_Sysfolder = null
+
+# cat=basic; type=int+; label=T3M campaigns sysfolder : Sysfolder ID used for storing all campaigns.
+campaigns_Sysfolder = null
+
+# cat=basic; type=int+; label=T3M salutations sysfolder : Sysfolder ID used for storing all salutations.
+salutations_Sysfolder = null
+
+# cat=basic; type=int+; label=T3M categories sysfolder : Sysfolder ID used for storing all categories of interests.
+categories_Sysfolder = null
+
+# cat=basic; type=int+; label=T3M targetgroups sysfolder : Sysfolder ID used for storing all T3M targetgroups.
+targetgroups_Sysfolder = null
+
+# cat=basic; type=int+; label=tcdirectmail receivers sysfolder : Sysfolder ID used for storing all tcdirectmail receivers.
+receivers_Sysfolder = null
+
+# cat=basic; type=int+; label=tcdirectmail mailings Sysfolder : Sysfolder ID used for all mail elements (newsletter, one-off-mails and campaign mails).
+mailings_Sysfolder = null
+
 # cat=basic; type=int+; label=Pending : Group ID which contains the pending users.
 groupPending = null
 
@@ -13,23 +49,14 @@ groupDeregistrations = null
 # cat=basic; type=int+; label=Testusers : Group ID (fe_group) which contains the fe_users for the testmails.
 groupTest = null
 
-# cat=basic; type=int+; label=Testuser Target group : Target ID which contains the groupTest fe_group for the testmails.
-targetTest = null
-
 # cat=basic; type=int+; label=Softbounces : Group ID which contains the softbounced users.
 groupSoftbounces = null
 
 # cat=basic; type=int+; label=Hardbounces : Group ID which contains the hardbounced users.
 groupHardbounces = null
 
-# cat=basic; type=int+; label=T3M Sysfolder : Sysfolder ID used for all elements created by this extension (e.g. categories, campaigns, targetgroups).
-T3M_Sysfolder = null
-
-# cat=basic; type=int+; label=sr_feuser_register Sysfolder : Sysfolder ID used for all elements created by sr_feuser_register (e.g. fe_users and fe_groups).
-sr_feuser_register_Sysfolder = null
-
-# cat=basic; type=int+; label=tcdirectmail Sysfolder : Sysfolder ID used for all mail elements (e.g. newsletter, pages and mails).
-tcdirectmail_Sysfolder = null
+# cat=basic; type=int+; label=Testuser receiver list : Test receiver list ID which contains the groupTest fe_group for the testmails.
+receiversTest = null
 
 # cat=basic/enable; type=boolean; label=Enable spy mode : Attempt to detect opened emails.
 tcdirectmail_spy = 1
@@ -57,14 +84,4 @@ max_softbounces = 3
 
 # cat=basic; type=string; label=Spam Checker Server : Server script which analyzes the mails and gives Spam evalutation. (needs the -c part!)
 spam_checker_script = spamc -c -d 127.0.0.1 -p 783
-
-# cat=basic; type=string; label=Sender Name : Name of the sender to be used for all mailings.
-sender_name = t3m_newsletter
-
-# cat=basic; type=string; label=Sender E-Mail : E-Mail address of the sender to be used for all mailings.
-sender_email = newsletter@localhost.local
-
-# cat=basic; type=string; label=Sender E-Mails password : Needed for checking the return (bounce) E-Mails. The above server will be checked (user)@(server).
-email_password = password
-
 

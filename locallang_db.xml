@@ -36,15 +36,19 @@
 			<label index="tx_t3m_salutations.single_female">Female version</label>
 			<label index="tx_t3m_salutations.single_male">Male version</label>
 			<label index="tx_t3m_salutations.plural">Plural version</label>
-			<label index="fe_users.tx_t3m_categories">Categories of interests</label>
+			<label index="tx_t3m_salutations.include_first_name">Include first name</label>
+			<label index="tx_t3m_salutations.include_last_name">Include surname</label>
+			<label index="tx_t3m_salutations.append">Append characters (e.g. &quot;,&quot;  or &quot;!&quot;)</label>
+			<label index="fe_users.tx_t3m_country">Country</label>
 			<label index="fe_users.tx_t3m_softbounces">Softbounces</label>
 			<label index="fe_users.tx_t3m_hardbounces">Hardbounces</label>
-			<label index="fe_users.tx_t3m_country">Country</label>
+			<label index="fe_users.tx_t3m_categories">Categories of interests</label>
+			<label index="fe_users.tx_t3m_salutation">Salutation</label>
 			<label index="pages.tx_t3m_campaign">t3m Campaign</label>
 			<label index="pages.tx_t3m_spam_score">Spam score</label>
-			<label index="tx_tcdirectmail_targets.tx_t3m_target">target group</label>
+			<label index="tx_tcdirectmail_targets.tx_t3m_target">t3m target group</label>
 			<label index="tx_tcdirectmail_targets.optt3m_target1">Receivers from tx_t3m_targetgroups</label>
-			<label index="tx_tcdirectmail_targets.title">Receiver group</label>
+			<label index="tt_content.header_layout_pi1">Salutation</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_t3m_campaigns">Kampagnen</label>
@@ -77,14 +81,18 @@
 			<label index="tx_t3m_salutations.single_female">Weibliche Version</label>
 			<label index="tx_t3m_salutations.single_male">Männliche Version</label>
 			<label index="tx_t3m_salutations.plural">Plural version</label>
-			<label index="fe_users.tx_t3m_categories">Interessenskategorien</label>
+			<label index="tx_t3m_salutations.include_first_name">Vornamen einfügen</label>
+			<label index="tx_t3m_salutations.include_last_name">Nachnamen einfügen</label>
+			<label index="tx_t3m_salutations.append">Zeichen anhängen (z.B. &quot;,&quot; oder &quot;!&quot;)</label>
+			<label index="fe_users.tx_t3m_country">Land</label>
 			<label index="fe_users.tx_t3m_softbounces">Softbounces</label>
 			<label index="fe_users.tx_t3m_hardbounces">Hardbounces</label>
-			<label index="fe_users.tx_t3m_country">Land</label>
+			<label index="fe_users.tx_t3m_categories">Interessenskategorien</label>
+			<label index="fe_users.tx_t3m_salutation">Begrüßung</label>
 			<label index="pages.tx_t3m_campaign">t3m Kampagne</label>
 			<label index="pages.tx_t3m_spam_score">Spam score</label>
-			<label index="tx_tcdirectmail_targets.tx_t3m_target">Zielgruppe</label>
-			<label index="tx_tcdirectmail_targets.title">Name der Empfängergruppe</label>
+			<label index="tx_tcdirectmail_targets.tx_t3m_target">t3m Zielgruppe</label>
+			<label index="tt_content.header_layout_pi1">Anrede</label>
 		</languageKey>
 	</data>
 </T3locallang>
