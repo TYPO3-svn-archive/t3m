@@ -24,9 +24,6 @@
 			<label index="tx_t3m_targetgroups.salutations_uid">Salutation</label>
 			<label index="tx_t3m_targetgroups.categories_uid">Categories</label>
 			<label index="tx_t3m_targetgroups.calculated_receivers">Calculated receivers</label>
-			<label index="tx_t3m_directmails">Direct mails</label>
-			<label index="tx_t3m_directmails.name">Name</label>
-			<label index="tx_t3m_directmails.directmail">Directmail</label>
 			<label index="tx_t3m_categories">Categories of interests</label>
 			<label index="tx_t3m_categories.name">Name</label>
 			<label index="tx_t3m_categories.description">Description</label>
@@ -72,9 +69,6 @@
 			<label index="tx_t3m_targetgroups.salutations_uid">Begrüßung</label>
 			<label index="tx_t3m_targetgroups.categories_uid">Kategorien</label>
 			<label index="tx_t3m_targetgroups.calculated_receivers">Anzahl Benutzer</label>
-			<label index="tx_t3m_directmails">Direct mails</label>
-			<label index="tx_t3m_directmails.name">Name</label>
-			<label index="tx_t3m_directmails.directmail">Directmail</label>
 			<label index="tx_t3m_categories">Kategorien für Interessen</label>
 			<label index="tx_t3m_categories.name">Name</label>
 			<label index="tx_t3m_categories.description">Beschreibung</label>

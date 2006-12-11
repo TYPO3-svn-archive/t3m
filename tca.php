@@ -420,52 +420,6 @@ $TCA["tx_t3m_targetgroups"] = Array (
 
 
 
-$TCA["tx_t3m_directmails"] = Array (
-	"ctrl" => $TCA["tx_t3m_directmails"]["ctrl"],
-	"interface" => Array (
-		"showRecordFieldList" => "hidden,name,directmail"
-	),
-	"feInterface" => $TCA["tx_t3m_directmails"]["feInterface"],
-	"columns" => Array (
-		"hidden" => Array (		## WOP:[tables][3][add_hidden]
-			"exclude" => 1,
-			"label" => "LLL:EXT:lang/locallang_general.xml:LGL.hidden",
-			"config" => Array (
-				"type" => "check",
-				"default" => "0"
-			)
-		),
-		"name" => Array (		## WOP:[tables][3][fields][1][fieldname]
-			"exclude" => 0,		## WOP:[tables][3][fields][1][excludeField]
-			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_directmails.name",		## WOP:[tables][3][fields][1][title]
-			"config" => Array (
-				"type" => "input",	## WOP:[tables][3][fields][1][type]
-				"size" => "30",	## WOP:[tables][3][fields][1][conf_size]
-			)
-		),
-		"directmail" => Array (		## WOP:[tables][3][fields][2][fieldname]
-			"exclude" => 0,		## WOP:[tables][3][fields][2][excludeField]
-			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_directmails.directmail",		## WOP:[tables][3][fields][2][title]
-			"config" => Array (
-				"type" => "group",	## WOP:[tables][3][fields][2][conf_rel_type]
-				"internal_type" => "db",	## WOP:[tables][3][fields][2][conf_rel_type]
-				"allowed" => "pages",	## WOP:[tables][3][fields][2][conf_rel_table]
-				"size" => 1,	## WOP:[tables][3][fields][2][conf_relations_selsize]
-				"minitems" => 0,
-				"maxitems" => 1,	## WOP:[tables][3][fields][2][conf_relations]
-			)
-		),
-	),
-	"types" => Array (
-		"0" => Array("showitem" => "hidden;;1;;1-1-1, name, directmail")
-	),
-	"palettes" => Array (
-		"1" => Array("showitem" => "")
-	)
-);
-
-
-
 $TCA["tx_t3m_categories"] = Array (
 	"ctrl" => $TCA["tx_t3m_categories"]["ctrl"],
 	"interface" => Array (
@@ -599,8 +553,8 @@ $TCA["tx_t3m_categories"] = Array (
 			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_categories.supercategory",		## WOP:[tables][4][fields][5][title]
 			"config" => Array (
 				"type" => "select",	## WOP:[tables][4][fields][5][conf_rel_type]
-				"foreign_table" => "pages",	## WOP:[tables][4][fields][5][conf_rel_table]
-				"foreign_table_where" => "ORDER BY pages.uid",	## WOP:[tables][4][fields][5][conf_rel_type]
+				"foreign_table" => "tx_t3m_categories",	## WOP:[tables][4][fields][5][conf_rel_table]
+				"foreign_table_where" => "ORDER BY tx_t3m_categories.uid",	## WOP:[tables][4][fields][5][conf_rel_type]
 				"size" => 1,	## WOP:[tables][4][fields][5][conf_relations_selsize]
 				"minitems" => 0,
 				"maxitems" => 1,	## WOP:[tables][4][fields][5][conf_relations]
@@ -613,7 +567,7 @@ $TCA["tx_t3m_categories"] = Array (
 						"title" => "Create new record",
 						"icon" => "add.gif",
 						"params" => Array(
-							"table"=>"pages",
+							"table"=>"tx_t3m_categories",
 							"pid" => "###CURRENT_PID###",
 							"setValue" => "prepend"
 						),
@@ -625,7 +579,7 @@ $TCA["tx_t3m_categories"] = Array (
 						"title" => "List",
 						"icon" => "list.gif",
 						"params" => Array(
-							"table"=>"pages",
+							"table"=>"tx_t3m_categories",
 							"pid" => "###CURRENT_PID###",
 						),
 						"script" => "wizard_list.php",

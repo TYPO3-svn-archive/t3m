@@ -48,26 +48,6 @@ $TCA["tx_t3m_targetgroups"] = Array (
 	)
 );
 
-$TCA["tx_t3m_directmails"] = Array (
-	"ctrl" => Array (
-		'title' => 'LLL:EXT:t3m/locallang_db.xml:tx_t3m_directmails',		## WOP:[tables][3][title]
-		'label' => 'name',	## WOP:[tables][3][header_field]
-		'tstamp' => 'tstamp',
-		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
-		"default_sortby" => "ORDER BY crdate",	## WOP:[tables][3][sorting] / [tables][3][sorting_field] / [tables][3][sorting_desc]
-		"delete" => "deleted",	## WOP:[tables][3][add_deleted]
-		"enablecolumns" => Array (		## WOP:[tables][3][add_hidden] / [tables][3][add_starttime] / [tables][3][add_endtime] / [tables][3][add_access]
-			"disabled" => "hidden",	## WOP:[tables][3][add_hidden]
-		),
-		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
-		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_t3m_directmails.gif",
-	),
-	"feInterface" => Array (
-		"fe_admin_fieldList" => "hidden, name, directmail",
-	)
-);
-
 $TCA["tx_t3m_categories"] = Array (
 	"ctrl" => Array (
 		'title' => 'LLL:EXT:t3m/locallang_db.xml:tx_t3m_categories',		## WOP:[tables][4][title]
