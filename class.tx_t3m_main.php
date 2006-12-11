@@ -486,7 +486,7 @@ class tx_t3m_main {
 	 *
 	 * @return	string		a table with categories and edit buttons
 	 */
-	function getCategories()	{
+	function categories()	{
 		$table = 'tx_'.$this->extKey.'_categories';
 		$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Name').'</td>
