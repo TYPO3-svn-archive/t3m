@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tx_t3m_stats</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tx_t3m_stats
+</h2> (line <span class="linenumber">37</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_class.tx_t3m_stats.php.html">/class.tx_t3m_stats.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Some statistical functions</h5>
+<ul>
+		<li><strong>author:</strong> - Stefan Koch &lt;<a href="mailto:t3m@stefkoch.de">t3m@stefkoch.de</a>&gt;</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcheckCampaignFinished" title="details" class="method-name">checkCampaignFinished</a>
+        (<span class="var-type">uid</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodcheckMailOpened" title="details" class="method-name">checkMailOpened</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodcheckMailSent" title="details" class="method-name">checkMailSent</a>
+        (<span class="var-type">pid</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodcountContents" title="details" class="method-name">countContents</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodcountDeletedUsers" title="details" class="method-name">countDeletedUsers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodcountEmails" title="details" class="method-name">countEmails</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodcountUsers" title="details" class="method-name">countUsers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$gid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetClickedCountForPage" title="details" class="method-name">getClickedCountForPage</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetClickedMails" title="details" class="method-name">getClickedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetClickedMailsSingle" title="details" class="method-name">getClickedMailsSingle</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetClickedMailsTable" title="details" class="method-name">getClickedMailsTable</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetLastSentTime" title="details" class="method-name">getLastSentTime</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetNotClickedMails" title="details" class="method-name">getNotClickedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetNotClickedMailsTable" title="details" class="method-name">getNotClickedMailsTable</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetNotOpenedMails" title="details" class="method-name">getNotOpenedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetNotOpenedMailsTable" title="details" class="method-name">getNotOpenedMailsTable</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetNotOpenedSentTime" title="details" class="method-name">getNotOpenedSentTime</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetOpenedCountForPage" title="details" class="method-name">getOpenedCountForPage</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetOpenedMails" title="details" class="method-name">getOpenedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetOpenedMailsSingle" title="details" class="method-name">getOpenedMailsSingle</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetOpenedMailsTable" title="details" class="method-name">getOpenedMailsTable</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetOpenedSentTime" title="details" class="method-name">getOpenedSentTime</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetPlannedSentTime" title="details" class="method-name">getPlannedSentTime</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetSendCountForPage" title="details" class="method-name">getSendCountForPage</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetSentMails" title="details" class="method-name">getSentMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetSentMailsSingle" title="details" class="method-name">getSentMailsSingle</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetSentMailsTable" title="details" class="method-name">getSentMailsTable</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForBounces" title="details" class="method-name">getStatsForBounces</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForCampaigns" title="details" class="method-name">getStatsForCampaigns</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForClickedMails" title="details" class="method-name">getStatsForClickedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForNewsletters" title="details" class="method-name">getStatsForNewsletters</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForOneOffMailings" title="details" class="method-name">getStatsForOneOffMailings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForOpenedMails" title="details" class="method-name">getStatsForOpenedMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForTCDirectmail" title="details" class="method-name">getStatsForTCDirectmail</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForTCDirectmails" title="details" class="method-name">getStatsForTCDirectmails</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uids</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$uids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStatsForUsers" title="details" class="method-name">getStatsForUsers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetYearlyStatsForMails" title="details" class="method-name">getYearlyStatsForMails</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$year</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$year:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">[type]</span>
+        <a href="#methodinit" title="details" class="method-name">init</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodmailClickedLinks" title="details" class="method-name">mailClickedLinks</a>
+        (<span class="var-type">pid</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodmailClicks" title="details" class="method-name">mailClicks</a>
+        (<span class="var-type">pid</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodcheckCampaignFinished" id="methodcheckCampaignFinished"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkCampaignFinished</strong> (line <span class="linenumber">195</span>)
+ </h4> 
+<h4><i>string</i> <strong>checkCampaignFinished(
+uid
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns boolean value indicating if all campaign mail were sent or not</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>uid $uid</strong>: of the campaign</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - value indicating if the campaign is finished or not</li>
+		</ul>
+</div>
+<a name="methodcheckMailOpened" id="methodcheckMailOpened"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkMailOpened</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>checkMailOpened(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns boolean value indicating if mail has been opened at least once or not</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - value indicating if mail has been opened at least once or not</li>
+		</ul>
+</div>
+<a name="methodcheckMailSent" id="methodcheckMailSent"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkMailSent</strong> (line <span class="linenumber">153</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>checkMailSent(
+pid
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns boolean value indicating if mail was sent or not</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>pid $pid</strong>: of the mail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - value indicating if mail was sent or not</li>
+		</ul>
+</div>
+<a name="methodcountContents" id="methodcountContents"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method countContents</strong> (line <span class="linenumber">136</span>)
+ </h4> 
+<h4><i>int</i> <strong>countContents(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns number contents of an email</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page uid</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - number contents of an email</li>
+		</ul>
+</div>
+<a name="methodcountDeletedUsers" id="methodcountDeletedUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method countDeletedUsers</strong> (line <span class="linenumber">102</span>)
+ </h4> 
+<h4><i>int</i> <strong>countDeletedUsers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Counts the deregistered or deleted users</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - usercount of deregistered or deleted users</li>
+		</ul>
+</div>
+<a name="methodcountEmails" id="methodcountEmails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method countEmails</strong> (line <span class="linenumber">119</span>)
+ </h4> 
+<h4><i>int</i> <strong>countEmails(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns number of emails of a campaign</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: campaign uid</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - number of emails of a campaign</li>
+		</ul>
+</div>
+<a name="methodcountUsers" id="methodcountUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method countUsers</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4><i>int</i> <strong>countUsers(
+int
+$gid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Counts the users of a fe_group</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid</strong>: uid of a fe_group</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - usercount of a fe_group</li>
+		</ul>
+</div>
+<a name="methodgetClickedCountForPage" id="methodgetClickedCountForPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClickedCountForPage</strong> (line <span class="linenumber">1033</span>)
+ </h4> 
+<h4><i>int</i> <strong>getClickedCountForPage(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns how many users that page was clicked in</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: pid of page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - send count how often the page was clicked in</li>
+		</ul>
+</div>
+<a name="methodgetClickedMails" id="methodgetClickedMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClickedMails</strong> (line <span class="linenumber">1144</span>)
+ </h4> 
+<h4><i>array</i> <strong>getClickedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array of clicked mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with clicked mails</li>
+		</ul>
+</div>
+<a name="methodgetClickedMailsSingle" id="methodgetClickedMailsSingle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClickedMailsSingle</strong> (line <span class="linenumber">1126</span>)
+ </h4> 
+<h4><i>int</i> <strong>getClickedMailsSingle(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns count of how many deliveries resulted in at least one click</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - count of how many deliveries resulted in at least one click</li>
+		</ul>
+</div>
+<a name="methodgetClickedMailsTable" id="methodgetClickedMailsTable"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClickedMailsTable</strong> (line <span class="linenumber">1185</span>)
+ </h4> 
+<h4><i>string</i> <strong>getClickedMailsTable(
+
+$pids, [type]
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for clicked mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pids:</strong>: ...</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for clicked mails</li>
+		</ul>
+</div>
+<a name="methodgetLastSentTime" id="methodgetLastSentTime"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getLastSentTime</strong> (line <span class="linenumber">750</span>)
+ </h4> 
+<h4><i>string</i> <strong>getLastSentTime(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns last sent time</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - time of last sent time for a page</li>
+		</ul>
+</div>
+<a name="methodgetNotClickedMails" id="methodgetNotClickedMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNotClickedMails</strong> (line <span class="linenumber">1174</span>)
+ </h4> 
+<h4><i>array</i> <strong>getNotClickedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for sent but not clicked mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with sent but not clicked mails</li>
+		</ul>
+</div>
+<a name="methodgetNotClickedMailsTable" id="methodgetNotClickedMailsTable"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNotClickedMailsTable</strong> (line <span class="linenumber">1277</span>)
+ </h4> 
+<h4><i>string</i> <strong>getNotClickedMailsTable(
+
+$pids, [type]
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for clicked mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pids:</strong>: ...</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for clicked mails</li>
+		</ul>
+</div>
+<a name="methodgetNotOpenedMails" id="methodgetNotOpenedMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNotOpenedMails</strong> (line <span class="linenumber">993</span>)
+ </h4> 
+<h4><i>array</i> <strong>getNotOpenedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array of not opened mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of not opened mails</li>
+		</ul>
+</div>
+<a name="methodgetNotOpenedMailsTable" id="methodgetNotOpenedMailsTable"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNotOpenedMailsTable</strong> (line <span class="linenumber">1098</span>)
+ </h4> 
+<h4><i>string</i> <strong>getNotOpenedMailsTable(
+
+$pids, [type]
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for not opened mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pids:</strong>: ...</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for not opened mails</li>
+		</ul>
+</div>
+<a name="methodgetNotOpenedSentTime" id="methodgetNotOpenedSentTime"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNotOpenedSentTime</strong> (line <span class="linenumber">790</span>)
+ </h4> 
+<h4><i>string</i> <strong>getNotOpenedSentTime(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns last sent time</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - time of last sent time for a page</li>
+		</ul>
+</div>
+<a name="methodgetOpenedCountForPage" id="methodgetOpenedCountForPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOpenedCountForPage</strong> (line <span class="linenumber">1015</span>)
+ </h4> 
+<h4><i>int</i> <strong>getOpenedCountForPage(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns how many users that page was opened</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: pid of page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - send count how often the page was opened (how many recipients got the page)</li>
+		</ul>
+</div>
+<a name="methodgetOpenedMails" id="methodgetOpenedMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOpenedMails</strong> (line <span class="linenumber">973</span>)
+ </h4> 
+<h4><i>array</i> <strong>getOpenedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array of opened mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of opened mails</li>
+		</ul>
+</div>
+<a name="methodgetOpenedMailsSingle" id="methodgetOpenedMailsSingle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOpenedMailsSingle</strong> (line <span class="linenumber">957</span>)
+ </h4> 
+<h4><i>int</i> <strong>getOpenedMailsSingle(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns count for single opened mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - count for single opened mails</li>
+		</ul>
+</div>
+<a name="methodgetOpenedMailsTable" id="methodgetOpenedMailsTable"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOpenedMailsTable</strong> (line <span class="linenumber">1064</span>)
+ </h4> 
+<h4><i>string</i> <strong>getOpenedMailsTable(
+
+$pids, [type]
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for opened mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pids:</strong>: ...</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for opened mails</li>
+		</ul>
+</div>
+<a name="methodgetOpenedSentTime" id="methodgetOpenedSentTime"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOpenedSentTime</strong> (line <span class="linenumber">770</span>)
+ </h4> 
+<h4><i>string</i> <strong>getOpenedSentTime(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns last sent time</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - time of last sent time for a page</li>
+		</ul>
+</div>
+<a name="methodgetPlannedSentTime" id="methodgetPlannedSentTime"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPlannedSentTime</strong> (line <span class="linenumber">939</span>)
+ </h4> 
+<h4><i>string</i> <strong>getPlannedSentTime(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for opened mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for opened mails</li>
+		</ul>
+</div>
+<a name="methodgetSendCountForPage" id="methodgetSendCountForPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSendCountForPage</strong> (line <span class="linenumber">1392</span>)
+ </h4> 
+<h4><i>int</i> <strong>getSendCountForPage(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns how many users that page was sent to</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: pid of page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - send count how often the page was sent (how many recipients got the page)</li>
+		</ul>
+</div>
+<a name="methodgetSentMails" id="methodgetSentMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSentMails</strong> (line <span class="linenumber">883</span>)
+ </h4> 
+<h4><i>array</i> <strong>getSentMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array of all sent mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of all sent mails</li>
+		</ul>
+</div>
+<a name="methodgetSentMailsSingle" id="methodgetSentMailsSingle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSentMailsSingle</strong> (line <span class="linenumber">868</span>)
+ </h4> 
+<h4><i>int</i> <strong>getSentMailsSingle(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns count for sent mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - count for sent mails</li>
+		</ul>
+</div>
+<a name="methodgetSentMailsTable" id="methodgetSentMailsTable"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSentMailsTable</strong> (line <span class="linenumber">903</span>)
+ </h4> 
+<h4><i>string</i> <strong>getSentMailsTable(
+
+$pids, [type]
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for sent mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pids:</strong>: ...</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for sent mails</li>
+		</ul>
+</div>
+<a name="methodgetStatsForBounces" id="methodgetStatsForBounces"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForBounces</strong> (line <span class="linenumber">1411</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForBounces(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for bounces</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for bounces</li>
+		</ul>
+</div>
+<a name="methodgetStatsForCampaigns" id="methodgetStatsForCampaigns"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForCampaigns</strong> (line <span class="linenumber">369</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForCampaigns(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for campaigns</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for campaigns</li>
+		</ul>
+</div>
+<a name="methodgetStatsForClickedMails" id="methodgetStatsForClickedMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForClickedMails</strong> (line <span class="linenumber">1303</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForClickedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for clicked mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for clicked mails</li>
+		</ul>
+</div>
+<a name="methodgetStatsForNewsletters" id="methodgetStatsForNewsletters"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForNewsletters</strong> (line <span class="linenumber">444</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForNewsletters(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for newsletter</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for newsletter</li>
+		</ul>
+</div>
+<a name="methodgetStatsForOneOffMailings" id="methodgetStatsForOneOffMailings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForOneOffMailings</strong> (line <span class="linenumber">545</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForOneOffMailings(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for single mailings</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for single mailings</li>
+		</ul>
+</div>
+<a name="methodgetStatsForOpenedMails" id="methodgetStatsForOpenedMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForOpenedMails</strong> (line <span class="linenumber">810</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForOpenedMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for opened mails</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for opened mails</li>
+		</ul>
+</div>
+<a name="methodgetStatsForTCDirectmail" id="methodgetStatsForTCDirectmail"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForTCDirectmail</strong> (line <span class="linenumber">300</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForTCDirectmail(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for one tcdirectmail</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - stats for one tcdirectmail</li>
+		</ul>
+</div>
+<a name="methodgetStatsForTCDirectmails" id="methodgetStatsForTCDirectmails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForTCDirectmails</strong> (line <span class="linenumber">310</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForTCDirectmails(
+
+$uids, [type]
+$uids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for all tcdirectmail</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $uids:</strong>: ...</li>
+			<li><strong> $uids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - stats for all tcdirectmail</li>
+		</ul>
+</div>
+<a name="methodgetStatsForUsers" id="methodgetStatsForUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStatsForUsers</strong> (line <span class="linenumber">651</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStatsForUsers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for users</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for users</li>
+		</ul>
+</div>
+<a name="methodgetYearlyStatsForMails" id="methodgetYearlyStatsForMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getYearlyStatsForMails</strong> (line <span class="linenumber">583</span>)
+ </h4> 
+<h4><i>string</i> <strong>getYearlyStatsForMails(
+
+$year, [type]
+$year:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns yearly stats gfx</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $year:</strong>: ...</li>
+			<li><strong> $year</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - an image for all mails of that year</li>
+		</ul>
+</div>
+<a name="methodinit" id="methodinit"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method init</strong> (line <span class="linenumber">71</span>)
+ </h4> 
+<h4><i>[type]</i> <strong>init(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize some variables</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - ...</li>
+		</ul>
+</div>
+<a name="methodmailClickedLinks" id="methodmailClickedLinks"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mailClickedLinks</strong> (line <span class="linenumber">259</span>)
+ </h4> 
+<h4><i>string</i> <strong>mailClickedLinks(
+pid
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns string value which links in that mail were clicked</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>pid $pid</strong>: of the mail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - value which links in that mail were clicked</li>
+		</ul>
+</div>
+<a name="methodmailClicks" id="methodmailClicks"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mailClicks</strong> (line <span class="linenumber">229</span>)
+ </h4> 
+<h4><i>int</i> <strong>mailClicks(
+pid
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns int value how often links in that mail were clicked</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>pid $pid</strong>: of the mail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - value how often links in that mail were clicked</li>
+		</ul>
+</div>
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method main</strong> (line <span class="linenumber">63</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Main function for the submodules. Write the content to $this-&gt;content</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - nothing to be returned</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Mon, 11 Dec 2006 13:34:20 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>

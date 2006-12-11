@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tx_t3m_bounce</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tx_t3m_bounce
+</h2> (line <span class="linenumber">32</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_class.tx_t3m_bounce.php.html">/class.tx_t3m_bounce.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Bounce handling class</h5>
+<ul>
+		<li><strong>author:</strong> - Stefan Koch &lt;<a href="mailto:t3m@stefkoch.de">t3m@stefkoch.de</a>&gt;</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$EXTERNAL" title="details" class="property"><strong>$EXTERNAL</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$extKey" title="details" class="property"><strong>$extKey</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$INTERNAL" title="details" class="property"><strong>$INTERNAL</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$myConf" title="details" class="property"><strong>$myConf</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$rootTS" title="details" class="property"><strong>$rootTS</strong></a>
+</div>
+<hr />
+<a name="var$EXTERNAL" id="var$EXTERNAL"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$EXTERNAL</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$extKey" id="var$extKey"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$extKey</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$INTERNAL" id="var$INTERNAL"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$INTERNAL</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$myConf" id="var$myConf"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$myConf</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$rootTS" id="var$rootTS"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$rootTS</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcheckForBounceMail" title="details" class="method-name">checkForBounceMail</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetBounceRules" title="details" class="method-name">getBounceRules</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetPreviousHardBounces" title="details" class="method-name">getPreviousHardBounces</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetPreviousSoftBounces" title="details" class="method-name">getPreviousSoftBounces</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">[type]</span>
+        <a href="#methodinit" title="details" class="method-name">init</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodcheckForBounceMail" id="methodcheckForBounceMail"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkForBounceMail</strong> (line <span class="linenumber">76</span>)
+ </h4> 
+<h4><i>string</i> <strong>checkForBounceMail(
+
+$pid, [type]
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an evaluation for bounce mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>[type] $pid:</strong>: ...</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - an evaluation for spam</li>
+		</ul>
+</div>
+<a name="methodgetBounceRules" id="methodgetBounceRules"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getBounceRules</strong> (line <span class="linenumber">230</span>)
+ </h4> 
+<h4><i>array</i> <strong>getBounceRules(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Lets users define bounce management rules</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - bounce config</li>
+		</ul>
+</div>
+<a name="methodgetPreviousHardBounces" id="methodgetPreviousHardBounces"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPreviousHardBounces</strong> (line <span class="linenumber">213</span>)
+ </h4> 
+<h4><i>int</i> <strong>getPreviousHardBounces(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns users hard bounce record</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of fe_users</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - bounce count</li>
+		</ul>
+</div>
+<a name="methodgetPreviousSoftBounces" id="methodgetPreviousSoftBounces"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPreviousSoftBounces</strong> (line <span class="linenumber">195</span>)
+ </h4> 
+<h4><i>int</i> <strong>getPreviousSoftBounces(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns users soft bounce record</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of fe_users</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - bounce count</li>
+		</ul>
+</div>
+<a name="methodinit" id="methodinit"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method init</strong> (line <span class="linenumber">67</span>)
+ </h4> 
+<h4><i>[type]</i> <strong>init(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize some variables</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - ...</li>
+		</ul>
+</div>
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method main</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Main function for the submodules. Write the content to $this-&gt;content</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - nothing to be returned</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Mon, 11 Dec 2006 13:34:16 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>
