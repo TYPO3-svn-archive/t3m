@@ -148,6 +148,7 @@
 			<label index="errorNoPage">Error: No page found.</label>
 			<label index="errorNoMail">Error: No e-mail found.</label>
 			<label index="errorNoFile">Error: File not found.</label>
+			<label index="errorNotSent">Error: E-mail not sent. Maybe no receiver chosen?</label>
 			<label index="errorSrfeuserregister">Error: Extension sr_feuser_register not configured correctly. Please define constants in the root template.</label>
 			<label index="editGroup">Edit group</label>
 
@@ -336,8 +337,9 @@
 
 			<label index="createSysfolders">Create Sysfolder structure where to store campaigns, mailings, users, salutations and targetgroups.</label>
 			<label index="createFegroups">Create frontend usergroups needed for registrations, tests and bounce handling
-				and the test targetgroup.</label>
+				and a test receiver list.</label>
 			<label index="createBegroupsAndUsers">Create backend usergroups and users with predefined rights.</label>
+			<label index="createTargetgroups">Create test receiver list.</label>
 			<label index="createDemocontent">Create demo content (newsletter, campaign, oneoffmail, salutations).</label>
 			<label index="createReceivers">Create test receiver list.</label>
 
@@ -499,6 +501,7 @@
 			<label index="errorNoPage">Fehler: Seite nicht gefunden.</label>
 			<label index="errorNoMail">Fehler: Keine E-Mail gefunden.</label>
 			<label index="errorNoFile">Fehler: Datei nicht gefunden.</label>
+			<label index="errorNotSent">Error: E-mail nicht gesendet. Evt. keine Empfänger ausgewählt?</label>
 			<label index="errorSrfeuserregister">Fehler: Extension sr_feuser_register nicht korrekt Konfiguriert. Bitte definieren Sie die Konstanten in Ihrem Root-Template.</label>
 
 
@@ -688,9 +691,10 @@
 			<label index="performingPostinstalls">Führe Postinstall-Aktionen durch...</label>
 
 			<label index="createSysfolders">Erstelle Sysfolder Struktur um Kampagnen, Mailings, Benutzer, Zielgruppen und Begrüßungencampaigns zu speichern.</label>
-			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces) und eine Testzielgruppe.</label>
-			<label index="createBegroupsAndUsers">Erselle Backend Benutzergruppen und Benutzer.</label>
-			<label index="createDemocontent">Erstelle Demo-Inhalte (Newsletter, Kampagnen, Oneoffmails, Begrüßungen).</label>
+			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces) und eine Test-Empfängerliste.</label>
+			<label index="createBegroupsAndUsers">Erstelle Backend Benutzergruppen und Benutzer.</label>
+			<label index="createTargetgroups">Erstelle Test-Empfängerliste.</label>
+			<label index="createDemocontent">Erstelle Demo-Inhalte (Newsletter, Kampagnen, One-off-mails, Begrüßungen).</label>
 			<label index="createReceivers">Erstelle eine Test-Empfängerliste.</label>
 
 			<label index="createAll">Tu alles o.g.!!!</label>

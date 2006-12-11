@@ -2,6 +2,11 @@
 
 
 Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2006-12-08
+Version: 0.1.9
+Comment: personalized mails (gender, salutations))
+
+Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-11-28
 Version: 0.1.7
 Comment: first implementation of salutations

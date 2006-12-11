@@ -22,11 +22,11 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * This function is for doing some initialization stuff
+ * Check and set some settings of our and other extensions
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
- * @subpackage t3m
+ * @package	TYPO3
+ * @subpackage	tx_t3m
  */
 class tx_t3m_settings	{
 
@@ -182,42 +182,56 @@ class tx_t3m_settings	{
 	}
 
 	/**
-	 * Main function for creation task beusers
+	 * Main function for changing an extensions setting in localconf file, BTW should work for all other extensions (similar t3lib_function please!)
 	 *
-	 * @param	[type]		$settings: ...
+	 * @param	string		$extension: extension key
+	 * @param	array		$settings: key-value array of settings
 	 * @return	string		status about the creation task
 	 */
-	function changeExtensionSettings($settings) {
-		$out = 'Changing extensions settings...<br/>';
-	// read in new values from created stuff:
+	function changeExtensionSettings($extKey, $settings) {
+
+		// read old values
+		if (!($extKey)) {
+			$extKey = $this->extKey; //t3m
+		}
+		$this->myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$extKey]);
+
+		$out = 'Changing '.$extKey.'\'s extensions settings...<br/>';
+
+		// read in new values from created stuff:
 		if (!($settings)) {
 			$out = 'No settings found to change..<br/>';
 			return $out;
 		}
+
 		foreach ($settings as $key => $val) {
 			$this->myConf[$key] = $val;
 		}
 
-	// get it as a serialized array:
-		$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m'] = serialize($this->myConf);
-		$newConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']);
-		$newConfigString = '$TYPO3_CONF_VARS[\'EXT\'][\'extConf\'][\'t3m\'] = \''.serialize($this->myConf).'\';';
+		// get it as a serialized array:
+		//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m'] = serialize($this->myConf);
+		// put it back into the serialized array
+		//$newConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']);
+
+		// create a string for the config file
+		$newConfigString = '$TYPO3_CONF_VARS[\'EXT\'][\'extConf\'][\''.$extKey.'\'] = \''.serialize($this->myConf).'\';';
 		$newConfigStringConfigOnly = serialize($this->myConf);
-	// write the config into the conf file:
+
+		// write the config into the conf file:
 // 		$filename = t3lib_extMgm::extPath($this->extKey).'ext_localconf.php'; // not used anymore because it creates a conflict with EM, EM does not read the values!!
-		$filename = constant('PATH_typo3conf').'localconf.php'; // sensible stuff, i know!
+		$filename = constant('PATH_typo3conf').'localconf.php'; // sensible stuff!
 		$handle = fopen($filename, "r");
 		$contents = fread($handle, filesize($filename));
 
-	// first do a simple check if we have a config
-		$needle = '$TYPO3_CONF_VARS[\'EXT\'][\'extConf\'][\'t3m\']';
+		// first do a simple check if we have a config
+		$needle = '$TYPO3_CONF_VARS[\'EXT\'][\'extConf\'][\''.$extKey.'\']';
 		if (!strstr($contents,$needle)) { // if its the first time and nothing is found just append the config
 // 			tx_t3m_postinstall::createLocalExtensionSettings();
  			$newContents = str_replace('?>',$newConfigString."\n?>",$contents);
 			$out .= 'Config not found! appending!';
 		} else { // config was found and has to be altered
 	// do a search and replace:
-			$pattern = '/(\$TYPO3_CONF_VARS\[\'EXT\'\]\[\'extConf\'\]\[\'t3m\'\] = \')(.*)(\';)(.*)/'; // $2 will be old config
+			$pattern = '/(\$TYPO3_CONF_VARS\[\'EXT\'\]\[\'extConf\'\]\[\''.$extKey.'\'\] = \')(.*)(\';)(.*)/'; // $2 will be old config
 			$subject = $contents;
 
 			preg_match($pattern,substr($subject,strlen($pattern)), $matches); // find our config
@@ -363,14 +377,12 @@ class tx_t3m_settings	{
 	/**
 	 * Function for clearing invalig logs
 	 *
-	 * @param	[type]		$pid: ...
+	 * @param	array		$pids: array with uids of pages
 	 * @return	boolean		if clearing invalig logs went ok
 	 */
 	function clearInvalidLogdata($pid) { //rewrite of tcdirectmail?
 		if ($pid) { //
-
 		} else { // clear all log data
-
 		}
 	}
 

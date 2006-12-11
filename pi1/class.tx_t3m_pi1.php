@@ -65,6 +65,10 @@ class tx_t3m_pi1 extends tslib_pibase {
 			);
 			$user = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res1);
 
+			if (!($user['tx_t3m_salutation'])) {
+				$this->myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
+				$user['tx_t3m_salutation'] = intval($this->myConf['salutationDefault']);
+			}
 			// get the salutation
 			$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 				'*',

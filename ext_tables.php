@@ -87,7 +87,7 @@ $TCA["tx_t3m_categories"] = Array (
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_t3m_categories.gif",
 	),
 	"feInterface" => Array (
-		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, description, calculated_receivers",
+		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, description, calculated_receivers, subcategories, supercategory",
 	)
 );
 
@@ -335,12 +335,20 @@ $tempColumns = Array (
 			"size" => "10",	## WOP:[fields][3][fields][2][conf_size]
 		)
 	),
+	"tx_t3m_personalized" => Array (		## WOP:[fields][3][fields][3][fieldname]
+		"exclude" => 1,		## WOP:[fields][3][fields][3][excludeField]
+		"label" => "LLL:EXT:t3m/locallang_db.xml:pages.tx_t3m_personalized",		## WOP:[fields][3][fields][3][title]
+		"config" => Array (
+			"type" => "check",
+			"default" => 1,	## WOP:[fields][3][fields][3][conf_check_default]
+		)
+	),
 );
 
 
 t3lib_div::loadTCA("pages");
 t3lib_extMgm::addTCAcolumns("pages",$tempColumns,1);
-t3lib_extMgm::addToAllTCAtypes("pages","tx_t3m_campaign;;;;1-1-1, tx_t3m_spam_score");
+t3lib_extMgm::addToAllTCAtypes("pages","tx_t3m_campaign;;;;1-1-1, tx_t3m_spam_score, tx_t3m_personalized");
 
 $tempColumns = Array (
 	"tx_t3m_target" => Array (		## WOP:[fields][1][fields][1][fieldname]
@@ -393,12 +401,6 @@ $tempColumns = Array (
 	),
 );
 
-
-t3lib_div::loadTCA("tc_directmail_targets");
-t3lib_extMgm::addTCAcolumns("tx_tcdirectmail_targets",$tempColumns,1);
-$TCA["tx_tcdirectmail_targets"]["types"]["tx_t3m_target1"]["showitem"] = "hidden;;1;;1-1-1, title, plain_only, targettype, tx_t3m_target, ;;;;2-2-2, calculated_receivers;;;;1-1-1";
-$TCA["tx_tcdirectmail_targets"]["columns"]["targettype"]["config"]["items"][] = array("LLL:EXT:t3m/locallang_db.xml:tx_tcdirectmail_targets.optt3m_target1", "tx_t3m_target1");
-
 ## WOP:[module][1]
 if (TYPO3_MODE=="BE")	{
 	## 1. and 2. parameter is WOP:[module][1][position] , 3. parameter is WOP:[module][1][subpos]
@@ -410,6 +412,12 @@ if (TYPO3_MODE=="BE")	{
 	t3lib_extMgm::addModule("txt3mM0","txt3mM5","",t3lib_extMgm::extPath($_EXTKEY)."mod5/");
 // 	t3lib_extMgm::addModule("txt3mM0","txt3mM6","",t3lib_extMgm::extPath($_EXTKEY)."mod6/");
 }
+
+t3lib_div::loadTCA("tc_directmail_targets");
+t3lib_extMgm::addTCAcolumns("tx_tcdirectmail_targets",$tempColumns,1);
+$TCA["tx_tcdirectmail_targets"]["types"]["tx_t3m_target1"]["showitem"] = "hidden;;1;;1-1-1, title, plain_only, targettype, tx_t3m_target, ;;;;2-2-2, calculated_receivers;;;;1-1-1";
+$TCA["tx_tcdirectmail_targets"]["columns"]["targettype"]["config"]["items"][] = array("LLL:EXT:t3m/locallang_db.xml:tx_tcdirectmail_targets.optt3m_target1", "tx_t3m_target1");
+
 
 ## WOP:[pi][1][addType]
 t3lib_extMgm::addPlugin(array('LLL:EXT:t3m/locallang_db.xml:tt_content.header_layout_pi1', $_EXTKEY.'_pi1'),'header_layout');

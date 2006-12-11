@@ -28,10 +28,10 @@ require_once(t3lib_extMgm::extPath('pbimagegraph').'class.tx_pbimagegraph_ts.php
 require_once(t3lib_extMgm::extPath('pbimagegraph').'Image/Graph/Datapreprocessor/class.tx_pbimagegraph_datapreprocessor_formatted.php');
 
 /**
- * This class is for stats
+ * Some statistical functions
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
+ * @package	TYPO3
  * @subpackage tx_t3m
  */
 class tx_t3m_stats	{
@@ -69,6 +69,79 @@ class tx_t3m_stats	{
 	 * @return	[type]		...
 	 */
 	function init()	{
+	}
+
+	/**
+	 * Counts the users of a fe_group
+	 *
+	 * @param	int		uid of a fe_group
+	 * @return	int		usercount of a fe_group
+	 */
+	function countUsers($gid)	{
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'uid,username,usergroup', //COUNT(*) AS icount ONLY WORKS alone - alternative $GLOBALS['TYPO3_DB']->sql_query
+			'fe_users',
+			'deleted=0' // AND disable=0'
+			);
+		$out = 0;
+		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
+			$userArrayAll[$row['uid']] = explode(',',$row['usergroup']);
+			if (in_array(intval($gid), $userArrayAll[$row['uid']])) {
+				$userArray[] = $row['uid'];
+				$out += 1;
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Counts the deregistered or deleted users
+	 *
+	 * @return	int		usercount of deregistered or deleted users
+	 */
+	function countDeletedUsers() {
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'COUNT(*) AS icount',
+			'fe_users',
+			'deleted=1'
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$out = $row['icount'];
+		return $out;
+	}
+
+	/**
+	 * Returns number of emails of a campaign
+	 *
+	 * @param	int		campaign uid
+	 * @return	int		number of emails of a campaign
+	 */
+	function countEmails($uid)	{
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'COUNT(*) AS icount',
+			'pages',
+			'tx_'.$this->extKey.'_campaign = '.intval($uid).' AND deleted=0 AND hidden=0'
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$out = $row['icount'];
+		return $out;
+	}
+
+	/**
+	 * Returns number contents of an email
+	 *
+	 * @param	int		page uid
+	 * @return	int		number contents of an email
+	 */
+	function countContents($pid)	{
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'COUNT(*) AS icount',
+			'tt_content',
+			'pid = '.intval($pid).' AND deleted=0 AND hidden=0'
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$out = $row['icount'];
+		return $out;
 	}
 
 	/**
@@ -598,9 +671,9 @@ class tx_t3m_stats	{
 		);
 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 		$usercountAll = $row['icount'];
-		$usercountPending = tx_t3m_main::countUsers($this->rootTS['plugin.tx_srfeuserregister_pi1.userGroupUponRegistration']['value']);
-		$usercountRegistered = tx_t3m_main::countUsers($this->rootTS['plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation']['value']);
-		$usercountDeleted = tx_t3m_main::countDeletedUsers();
+		$usercountPending = tx_t3m_stats::countUsers($this->rootTS['plugin.tx_srfeuserregister_pi1.userGroupUponRegistration']['value']);
+		$usercountRegistered = tx_t3m_stats::countUsers($this->rootTS['plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation']['value']);
+		$usercountDeleted = tx_t3m_stats::countDeletedUsers();
 		// fe_users.crdate    fe_users.tstamp
 		$usercountOthers = $usercountAll - $usercountPending - $usercountRegistered;
 		$confirmedratio = round((($usercountRegistered/$usercountPending) * 100),2);
@@ -641,8 +714,8 @@ class tx_t3m_stats	{
 
 		// BOUNCES - softbounce / hardbounces
 		$out .= '<h3>'.$GLOBALS['LANG']->getLL('bounces').'</h3>';
-		$usercountSoftbounces = tx_t3m_main::countUsers($this->myConf['groupSoftbounces']); //tx_t3m_bounce::getPreviousBounces();
-		$usercountHardbounces = tx_t3m_main::countUsers($this->myConf['groupHardbounces']);
+		$usercountSoftbounces = tx_t3m_stats::countUsers($this->myConf['groupSoftbounces']); //tx_t3m_bounce::getPreviousBounces();
+		$usercountHardbounces = tx_t3m_stats::countUsers($this->myConf['groupHardbounces']);
 		$bounceratio = round((($usercountSoftbounces/$usercountHardbounces) * 100),2);
 
 		$out .= '<b>'.$usercountAll.'</b> total frontend users.<br />

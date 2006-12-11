@@ -95,6 +95,8 @@ CREATE TABLE tx_t3m_categories (
 	name tinytext NOT NULL,
 	description text NOT NULL,
 	calculated_receivers int(11) DEFAULT '0' NOT NULL,
+	subcategories blob NOT NULL,
+	supercategory int(11) DEFAULT '0' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -149,7 +151,8 @@ CREATE TABLE fe_users (
 #
 CREATE TABLE pages (
 	tx_t3m_campaign int(11) DEFAULT '0' NOT NULL,
-	tx_t3m_spam_score tinytext NOT NULL
+	tx_t3m_spam_score tinytext NOT NULL,
+	tx_t3m_personalized tinyint(3) DEFAULT '0' NOT NULL
 );
 
 

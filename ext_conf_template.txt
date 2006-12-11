@@ -58,6 +58,9 @@ groupHardbounces = null
 # cat=basic; type=int+; label=Testuser receiver list : Test receiver list ID which contains the groupTest fe_group for the testmails.
 receiversTest = null
 
+# cat=basic; type=int+; label=Default salutation : UID of salutation to use if there is none defined for a user.
+salutationDefault = 0
+
 # cat=basic/enable; type=boolean; label=Enable spy mode : Attempt to detect opened emails.
 tcdirectmail_spy = 1
 

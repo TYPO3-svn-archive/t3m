@@ -23,17 +23,20 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * Module 'Directmail' for the 'tcdirectmail' extension.
+ * Unaltered export of viewSysStatus() function 'tcdirectmail' so it can be used outside.
  *
  * @author	Daniel Schledermann <daniel@typoconsult.dk>
- * @package TYPO3
- * @subpackage tx_t3m
+ * @package	TYPO3
+ * @subpackage	tx_t3m
  */
-
-
 class tx_tcdirectmail_sysstat {
 
-   function viewSysStatus () {
+   /**
+   * Show some system settings
+   *
+   * @return	string	some system settings
+   */
+   function viewSysStatus() {
        global $LANG;
        global $TYPO3_DB;
        global $TYPO3_CONF_VARS;
@@ -136,116 +139,6 @@ class tx_tcdirectmail_sysstat {
 
       return $content;
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 	function viewSysStatusold () {
-// 	    global $LANG;
-// 	    global $TYPO3_DB;
-// 	    global $TYPO3_CONF_VARS;
-// // 	    global $ICON_PATH;
-// 		$ICON_PATH = $GLOBALS['BACK_PATH'].t3lib_extMgm::extRelPath('t3m').'gfx';
-//
-// 	    /* Check if we're in safemode. If we are, these checks are better done manually */
-// 	    if( ini_get('safe_mode') ){
-// 		return $LANG->getLL('system_status_safemode');
-// 	    }
-//
-// 	    /* Check if the mailer.php is executable */
-// 	    $content .= '<h4>'.$LANG->getLL('mailer_php').'</h4>';
-// 	    //$mailer_php = dirname(dirname(__FILE__)).'/mailer.php';
-// 	    $mailer_php = PATH_typo3conf.t3lib_extMgm::extRelPath('tcdirectmail').'/mailer.php';
-// 	    $mailer_lines = file($mailer_php);
-// 	    $current_php = trim(str_replace('#!', '', $mailer_lines[0]));
-// 	    $new_php = trim($TYPO3_CONF_VARS['EXTCONF']['tcdirectmail']['pathToPHP']);
-//
-// 	    if ($_REQUEST['try_correct_path']) {
-// 		/* Correct the sh-bang */
-// 		$mailer_lines[0] = "#!$new_php\n";
-// 		$fd = fopen($mailer_php, 'w');
-// 		fwrite($fd, implode("", $mailer_lines));
-// 		fclose ($fd);
-//
-// 		/* Reload file */
-// 		$mailer_lines = file($mailer_php);
-// 		$current_php = trim(str_replace('#!', '', $mailer_lines[0]));
-// 	    }
-//
-//
-// 	    if ($_REQUEST['try_make_exe']) {
-//
-// 		/* Set exe-bit */
-// 		list(,,$mode) = stat($mailer_php);
-// 		$mode |= 0110;
-// 		chmod($mailer_php, $mode);
-// 		clearstatcache();
-// 	    }
-//
-// 	    exec("$mailer_php --test", $dummy, $return_status);
-//
-// 	    if (!$return_status && $new_php == $current_php) {
-// 		$content .= '<p><img src="'.$ICON_PATH.'icon_ok.gif" />'.$LANG->getLL('mailer_exe_ok').'</p>';
-// 		$content .= '<p>'.str_replace('###MAILERPATH###', $mailer_php, $LANG->getLL('crontab_explain')).'</p>';
-//
-// 	    } else {
-// 		$content .= '<form>';
-// 		$content .= '<input type="hidden" name="id" value="'.$_REQUEST['id'].'" />';
-//
-//
-// 		if ($new_php != $current_php) {
-// 		    $content .= '<p><img src="'.$ICON_PATH.'icon_fatalerror.gif" />'.
-// 									    str_replace('###CONFIGURED_PHP###', $new_php,
-// 										str_replace('###CURRENT_PHP###', $current_php,
-// 										$LANG->getLL('php_wrong_path'))).'</p>';
-// 		    $content .= '<p><input type="submit" name="try_correct_path" value="'.$LANG->getLL('try_correct_path').'" /></p>';
-// 		} else {
-// 		    $content .= '<p><img src="'.$ICON_PATH.'icon_fatalerror.gif" />'.$LANG->getLL('mailer_exe_notok').'</p>';
-// 		    if (!is_executable($current_php)) {
-// 			$content .= '<p>'.$LANG->getLL('php_not_executable').'</p>';
-// 		    } else {
-// 			$content .= '<p><input type="submit" name="try_make_exe" value="'.$LANG->getLL('try_make_exe').'" /></p>';
-// 		    }
-// 		}
-//
-// 		$content .= '</form>';
-// 	    }
-//
-//
-//
-//
-//
-// 	    /* Check if we have a Lynx-executable */
-// 	    $content .= '<h4>'.$LANG->getLL('lynx_browser').'</h4>';
-//
-// 	    exec ($TYPO3_CONF_VARS['EXTCONF']['tcdirectmail']['pathToLynx'].' -version', $lynxoutput);
-// 	    list ($lynxversion) = $lynxoutput;
-//
-// 	    if (preg_match ('|^Lynx|', $lynxversion)) {
-// 		$content .= '<p><img src="'.$ICON_PATH.'icon_ok.gif" />'.str_replace('###LYNX_VERSION###', $lynxversion, $LANG->getLL('lynx_found')).'</p>';
-// 	    } else {
-// 		$content .= '<p><img src="'.$ICON_PATH.'icon_warning.gif" />'.
-// 						str_replace('###LYNX_PATH###', $GLOBALS['TYPO3_CONF_VARS']['tcdirectmail']['pathToLynx'],
-// 					    $LANG->getLL('lynx_not_found')).'</p>';
-// 	    }
-//
-//
-// 	    return $content;
-// 	}
 
 }
 

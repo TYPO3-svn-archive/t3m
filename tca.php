@@ -469,7 +469,7 @@ $TCA["tx_t3m_directmails"] = Array (
 $TCA["tx_t3m_categories"] = Array (
 	"ctrl" => $TCA["tx_t3m_categories"]["ctrl"],
 	"interface" => Array (
-		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,hidden,name,description,calculated_receivers"
+		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,hidden,name,description,calculated_receivers,subcategories,supercategory"
 	),
 	"feInterface" => $TCA["tx_t3m_categories"]["feInterface"],
 	"columns" => Array (
@@ -546,9 +546,105 @@ $TCA["tx_t3m_categories"] = Array (
 				"default" => 0
 			)
 		),
+		"subcategories" => Array (		## WOP:[tables][4][fields][4][fieldname]
+			"exclude" => 1,		## WOP:[tables][4][fields][4][excludeField]
+			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_categories.subcategories",		## WOP:[tables][4][fields][4][title]
+			"config" => Array (
+				"type" => "select",	## WOP:[tables][4][fields][4][conf_rel_type]
+				"foreign_table" => "tx_t3m_categories",	## WOP:[tables][4][fields][4][conf_rel_table]
+				"foreign_table_where" => "ORDER BY tx_t3m_categories.uid",	## WOP:[tables][4][fields][4][conf_rel_type]
+				"size" => 3,	## WOP:[tables][4][fields][4][conf_relations_selsize]
+				"minitems" => 0,
+				"maxitems" => 10,	## WOP:[tables][4][fields][4][conf_relations]
+				"wizards" => Array(
+					"_PADDING" => 2,
+					"_VERTICAL" => 1,
+					## WOP:[tables][4][fields][4][conf_wiz_addrec]
+					"add" => Array(
+						"type" => "script",
+						"title" => "Create new record",
+						"icon" => "add.gif",
+						"params" => Array(
+							"table"=>"tx_t3m_categories",
+							"pid" => "###CURRENT_PID###",
+							"setValue" => "prepend"
+						),
+						"script" => "wizard_add.php",
+					),
+					## WOP:[tables][4][fields][4][conf_wiz_listrec]
+					"list" => Array(
+						"type" => "script",
+						"title" => "List",
+						"icon" => "list.gif",
+						"params" => Array(
+							"table"=>"tx_t3m_categories",
+							"pid" => "###CURRENT_PID###",
+						),
+						"script" => "wizard_list.php",
+					),
+					## WOP:[tables][4][fields][4][conf_wiz_editrec]
+					"edit" => Array(
+						"type" => "popup",
+						"title" => "Edit",
+						"script" => "wizard_edit.php",
+						"popup_onlyOpenIfSelected" => 1,
+						"icon" => "edit2.gif",
+						"JSopenParams" => "height=350,width=580,status=0,menubar=0,scrollbars=1",
+					),
+				),
+			)
+		),
+		"supercategory" => Array (		## WOP:[tables][4][fields][5][fieldname]
+			"exclude" => 1,		## WOP:[tables][4][fields][5][excludeField]
+			"label" => "LLL:EXT:t3m/locallang_db.xml:tx_t3m_categories.supercategory",		## WOP:[tables][4][fields][5][title]
+			"config" => Array (
+				"type" => "select",	## WOP:[tables][4][fields][5][conf_rel_type]
+				"foreign_table" => "pages",	## WOP:[tables][4][fields][5][conf_rel_table]
+				"foreign_table_where" => "ORDER BY pages.uid",	## WOP:[tables][4][fields][5][conf_rel_type]
+				"size" => 1,	## WOP:[tables][4][fields][5][conf_relations_selsize]
+				"minitems" => 0,
+				"maxitems" => 1,	## WOP:[tables][4][fields][5][conf_relations]
+				"wizards" => Array(
+					"_PADDING" => 2,
+					"_VERTICAL" => 1,
+					## WOP:[tables][4][fields][5][conf_wiz_addrec]
+					"add" => Array(
+						"type" => "script",
+						"title" => "Create new record",
+						"icon" => "add.gif",
+						"params" => Array(
+							"table"=>"pages",
+							"pid" => "###CURRENT_PID###",
+							"setValue" => "prepend"
+						),
+						"script" => "wizard_add.php",
+					),
+					## WOP:[tables][4][fields][5][conf_wiz_listrec]
+					"list" => Array(
+						"type" => "script",
+						"title" => "List",
+						"icon" => "list.gif",
+						"params" => Array(
+							"table"=>"pages",
+							"pid" => "###CURRENT_PID###",
+						),
+						"script" => "wizard_list.php",
+					),
+					## WOP:[tables][4][fields][5][conf_wiz_editrec]
+					"edit" => Array(
+						"type" => "popup",
+						"title" => "Edit",
+						"script" => "wizard_edit.php",
+						"popup_onlyOpenIfSelected" => 1,
+						"icon" => "edit2.gif",
+						"JSopenParams" => "height=350,width=580,status=0,menubar=0,scrollbars=1",
+					),
+				),
+			)
+		),
 	),
 	"types" => Array (
-		"0" => Array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, hidden;;1, name, description, calculated_receivers")
+		"0" => Array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, hidden;;1, name, description, calculated_receivers, subcategories, supercategory")
 	),
 	"palettes" => Array (
 		"1" => Array("showitem" => "")

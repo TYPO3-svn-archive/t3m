@@ -27,7 +27,7 @@ require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
 require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_bounce.php');
 
 /**
- * Directmail target1 for t3m
+ * TCDirectmail target1 for t3m
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package	TYPO3

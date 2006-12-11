@@ -31,6 +31,8 @@
 			<label index="tx_t3m_categories.name">Name</label>
 			<label index="tx_t3m_categories.description">Description</label>
 			<label index="tx_t3m_categories.calculated_receivers">Calculated Receivers</label>
+			<label index="tx_t3m_categories.subcategories">Subcategories</label>
+			<label index="tx_t3m_categories.supercategory">Super category</label>
 			<label index="tx_t3m_salutations">Salutations</label>
 			<label index="tx_t3m_salutations.name">Name of the salutation</label>
 			<label index="tx_t3m_salutations.single_female">Female version</label>
@@ -46,6 +48,7 @@
 			<label index="fe_users.tx_t3m_salutation">Salutation</label>
 			<label index="pages.tx_t3m_campaign">t3m Campaign</label>
 			<label index="pages.tx_t3m_spam_score">Spam score</label>
+			<label index="pages.tx_t3m_personalized">Personalized</label>
 			<label index="tx_tcdirectmail_targets.tx_t3m_target">t3m target group</label>
 			<label index="tx_tcdirectmail_targets.optt3m_target1">Receivers from tx_t3m_targetgroups</label>
 			<label index="tt_content.header_layout_pi1">Salutation</label>
@@ -76,6 +79,8 @@
 			<label index="tx_t3m_categories.name">Name</label>
 			<label index="tx_t3m_categories.description">Beschreibung</label>
 			<label index="tx_t3m_categories.calculated_receivers">Anzahl Empfänger</label>
+			<label index="tx_t3m_categories.subcategories">Unterkategorien</label>
+			<label index="tx_t3m_categories.supercategory">Überkategorie</label>
 			<label index="tx_t3m_salutations">Begrüßungen, Anreden</label>
 			<label index="tx_t3m_salutations.name">Bezeichnung der Anrede</label>
 			<label index="tx_t3m_salutations.single_female">Weibliche Version</label>
@@ -91,6 +96,7 @@
 			<label index="fe_users.tx_t3m_salutation">Begrüßung</label>
 			<label index="pages.tx_t3m_campaign">t3m Kampagne</label>
 			<label index="pages.tx_t3m_spam_score">Spam score</label>
+			<label index="pages.tx_t3m_personalized">Personalisiert</label>
 			<label index="tx_tcdirectmail_targets.tx_t3m_target">t3m Zielgruppe</label>
 			<label index="tt_content.header_layout_pi1">Anrede</label>
 		</languageKey>

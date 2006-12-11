@@ -23,11 +23,11 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * This function is a dummy test class
+ * Actions for spam evalutation (e.g. runs spam checks and saves spam values)
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
- * @subpackage tx_t3m
+ * @package	TYPO3
+ * @subpackage	tx_t3m
  */
 class tx_t3m_spam	{
 	var $extKey, $rootTS, $myConf;
@@ -143,20 +143,21 @@ class tx_t3m_spam	{
 	* @param pid page id
 	* @return float spamscore
 	*/
-// 	function getSpamScore($pid) {
-// 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-// 			'tx_t3m_spam_score',
-// 			'pages',
-// 			'uid = '.intval($pid)
-// 			);
-// 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+	function getSpamScore($pid) {
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'tx_t3m_spam_score',
+			'pages',
+			'uid = '.intval($pid)
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$out = $row['tx_t3m_spam_score'];
 // 		if (floatval($row['tx_t3m_spam_score']) > 1) { //spam
 // 			$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif" title="'.$GLOBALS['LANG']->getLL('thisisspam').'" />';
 // 		} else { //nospam
 // 			$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif" title="'.$GLOBALS['LANG']->getLL('thisisnotspam').'" />';
 // 		}
-// 		return $out;
-// 	}
+		return $out;
+	}
 
 
 

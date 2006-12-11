@@ -29,16 +29,16 @@
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package	TYPO3
  * @subpackage	tx_t3m
+ * @todo	not implemented yet
  */
-
-
 class tx_srfeuserregister_hook1 {
 
 	/**
 	* Saves delete-reason in fe_users
 	*/
 	function registrationProcess_beforeSaveDelete($recordArray, &$invokingObj) { // does not happen!
-		thismakesnosense();
+// 		thisisatestcalltoseeifhookworks();
+
 // 		foreach ($recordArray as $key => $val) {
 // 			$content .= ' --- '.$key.' : '.$val;
 // 		}
@@ -49,6 +49,7 @@ class tx_srfeuserregister_hook1 {
 // 			'fe_users',
 // 			$insertFields
 // 		);
+
 // 		t3lib_div::debug($recordArray); // do we have uid of fe_users?
 		// update fe_users set tx_t3m_deletereason = 'deregistration' where uid = $recordArray['uid']
 	}

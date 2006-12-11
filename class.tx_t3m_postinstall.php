@@ -22,9 +22,10 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * This function is for doing some initialization stuff
+ * Do some actions after installation which the extension manager does not provide funtions for, yet. (like $GLOBALS['TYPO3_DB']->sql_insert_id(); )
+ *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
+ * @package	TYPO3
  * @subpackage tx_t3m
  */
 class tx_t3m_postinstall	{
@@ -54,7 +55,7 @@ class tx_t3m_postinstall	{
 		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createFegroups').'</td><td><input type="submit" name="createFegroups" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
 		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createBegroupsAndUsers').'</td><td><input type="submit" name="createBegroupsAndUsers" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
 // 		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createDemocontent').'</td><td><input type="submit" name="createDemocontent" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
-		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createTargetgroups').'</td><td><input type="submit" name="createTargetgroups" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
+// 		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createTargetgroups').'</td><td><input type="submit" name="createTargetgroups" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
 		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('createAll').'</td><td><input type="submit" name="createAll" value="'.$GLOBALS['LANG']->getLL('Create').'" /></td></tr>';
 		$out .= '</table><input type="hidden" name="postinstall" value="1" /></form>';
 		return $out;
@@ -79,14 +80,15 @@ class tx_t3m_postinstall	{
 		if (t3lib_div::_GP('createFegroups')) {
 			$out .= tx_t3m_postinstall::createFegroups(); // check srfeuserregister for 'pending' 'subscriptions', others: 'tests','deregistrations', 'blocked, 'softbounces', 'hardbounces'
 		// 	$out .= tx_t3m_postinstall::createFeUsers(); //none so far
+			$out .= tx_t3m_postinstall::createTargetgroups();
 		}
 		if (t3lib_div::_GP('createBeUsers')) {
 			$out .= tx_t3m_postinstall::createBeGroups();
 			$out .= tx_t3m_postinstall::createBeUsers(); //"admin, controller, author"
 		}
-		if (t3lib_div::_GP('createTargetgroups')) {
-			$out .= tx_t3m_postinstall::createTargetgroups();
-		}
+// 		if (t3lib_div::_GP('createTargetgroups')) {
+//
+// 		}
 		if (t3lib_div::_GP('createAll')) {
 			$out = tx_t3m_postinstall::createSysfolders();
 			$out .= tx_t3m_postinstall::createFegroups();
@@ -96,7 +98,7 @@ class tx_t3m_postinstall	{
 
 		//now $settings has new values
 		//write settings
-		$out .= tx_t3m_settings::changeExtensionSettings($settings);
+		$out .= tx_t3m_settings::changeExtensionSettings('t3m', $settings);
 
 		return $out;
 	}

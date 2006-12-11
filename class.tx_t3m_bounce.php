@@ -23,10 +23,10 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * This function is a dummy test class
+ * Bounce handling class
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
+ * @package	TYPO3
  * @subpackage tx_t3m
  */
 class tx_t3m_bounce	{

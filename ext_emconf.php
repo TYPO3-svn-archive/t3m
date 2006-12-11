@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'typo3-macher',
-	'version' => '0.1.8',
+	'version' => '0.1.10',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '4.0.0-',
@@ -40,17 +40,17 @@ $EM_CONF[$_EXTKEY] = array(
 			'static_info_tables' => '2.0.0-',
 			'static_info_tables_de' => '2.0.0-',
 			'erotea_date2cal' => '1.2.0-',
-//@todo: test these for calendars:
+/** @todo: test these extensions for calendars */
 // 			'kj_becalendar'  => '1.0.2',
 // 			'date2cal' => '1.1.1-',
 // 			'rlmp_dateselectlib' => '0.1.4-', //comment; this one needs programmers intervention if to be used
-//@todo: test these for statistics: maybe even cc_awstats or ics_awstats?
+/** @todo: test if the cc_awstats or ics_awstats extensions can be used for statistics */
 // 			'datachart'  =>  '0.1.2-',
 // 			'jpgraph' => '0.3.10-',
 // 			'mh_omdbchart' => '0.9.6-',
-// 			'pbimagegraph' => '1.0.1-',
+			'pbimagegraph' => '1.0.1-',
 			'tcdirectmail' => '1.1.1-',
-			'tcdmailstats' => '0.0.1-',
+// 			'tcdmailstats' => '0.0.1-',
 		),
 		'conflicts' => array(
 		),

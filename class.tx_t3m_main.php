@@ -23,11 +23,11 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * This function is a dummy test class
+ * Main static class with most central functions for creating and editing pages, users, targetgroups, salutations, ... (includes main function for all modules, too)
  *
  * @author	Stefan Koch <t3m@stefkoch.de>
- * @package TYPO3
- * @subpackage t3m
+ * @package	TYPO3
+ * @subpackage	tx_t3m
  */
 class tx_t3m_main {
 	var $extKey, $rootTS, $myConf, $INTERNAL, $EXTERNAL;
@@ -77,7 +77,7 @@ class tx_t3m_main {
 				}
 			</script>
 		';
-		$this->doc->postCode='
+		$this->doc->postCode= '
 			<script language="javascript" type="text/javascript">
 				script_ended = 1;
 				if (top.fsMod) top.fsMod.recentIds["web"] = 0;
@@ -113,7 +113,7 @@ class tx_t3m_main {
 	/**
 	 * Initialize some variables
 	 *
-	 * @return	[type]		...
+	 * @return	void		nothing
 	 */
 	function init()	{
 
@@ -138,7 +138,7 @@ class tx_t3m_main {
 
 		$this->tcColumnsOnly = '&columnsOnly=title,tx_tcdirectmail_senttime,doktype,hidden,tx_tcdirectmail_repeat,tx_tcdirectmail_sendername,tx_tcdirectmail_senderemail,tx_tcdirectmail_test_target,tx_tcdirectmail_real_target,tx_tcdirectmail_spy,tx_tcdirectmail_register_clicks,tx_tcdirectmail_dotestsend,tx_tcdirectmail_attachfiles,tx_tcdirectmail_plainconvert';
 		$this->tcDefVals =  '&defVals[pages][doktype]=189&defVals[pages][hidden]=0&defVals[pages][tx_tcdirectmail_sendername]='.$this->myConf['sender_name'].'&defVals[pages][tx_tcdirectmail_senderemail]='.$this->myConf['sender_email'].'&defVals[pages][tx_tcdirectmail_test_target]=tx_tcdirectmail_targets_'.$this->myConf['targetTest'].'&defVals[pages][tx_tcdirectmail_spy]='.$this->myConf['tcdirectmail_spy'].'&defVals[pages][tx_tcdirectmail_register_clicks]='.$this->myConf['tcdirectmail_register_clicks'].'&defVals[pages][tx_tcdirectmail_dotestsend]='.$this->myConf['tx_tcdirectmail_dotestsend'].'&defVals[pages][tx_tcdirectmail_plainconvert]='.$this->myConf['tcdirectmail_plain'];
-		//todo: make lynx only default if it is installed (linux), otherwise  'tx_tcdirectmail_plain_simple' , type99 is not a good choice, i got errors
+		/** @todo: make lynx only default if it is installed (linux), otherwise  'tx_tcdirectmail_plain_simple' , type99 is not a good choice, i got errors, lynx seems to have troubles with umlauts? */
 		$this->tcOverrideVals =  '&overrideVals[pages][doktype]=189&overrideVals[pages][hidden]=0&overrideVals[pages][tx_tcdirectmail_sendername]='.$this->myConf['sender_name'].'&overrideVals[pages][tx_tcdirectmail_senderemail]='.$this->myConf['sender_email'].'&overrideVals[pages][tx_tcdirectmail_test_target]=tx_tcdirectmail_targets_'.$this->myConf['targetTest'].'&overrideVals[pages][tx_tcdirectmail_dotestsend]='.$this->myConf['tx_tcdirectmail_dotestsend'].'&overrideVals[pages][tx_tcdirectmail_plainconvert]='.$this->myConf['tcdirectmail_plain'];
 
 		$this->columnsOnlyFeuser = '&columnsOnly=gender,first_name,last_name,telephone,fax,email,company,address,zip,city,tx_t3m_country,date_of_birth,username,password,usergroup,tx_t3m_categories,module_sys_dmail_html,disable,deleted,tx_t3m_salutation';
@@ -198,7 +198,8 @@ class tx_t3m_main {
 	 * Integrates rs_userimp extension for superadmins
 	 *
 	 * @return	string		content for csv import from EXT:rs_userimp for superadmins
-	 * @todo	 	get it to work for normal beusers!
+	 * @todo	 get it to work for normal beusers
+	 * @todo 	create a profile (demo cvs included, but e.g. outlook profile would be cool)
 	 */
 	function importFeusers() {
 
@@ -246,20 +247,22 @@ class tx_t3m_main {
 	*
 	* @return	string	table with the sr_feuser_register profile creation page
 	*/
-	function getSubscriptionPageTemplate()	{ // @todo: in standard config we dont have a path but : EXT:sr_feuser_register/pi1/tx_srfeuserregister_pi1_css_tmpl.html
-// 		$this->templateCode = $this->cObj->fileResource($this->conf['templateFile']);
-// 		$this->templateCode = $this->cObj->fileResource($this->rootTS['plugin.tx_srfeuserregister_pi1.file.templateFile']['value']);
-// 		$out = tx_t3m_main::tableForFile($this->cObj->fileResource($this->rootTS['plugin.tx_srfeuserregister_pi1.file.templateFile']['value']));
-		$out = tx_t3m_main::tableForFile($this->rootTS['plugin.tx_srfeuserregister_pi1.file.templateFile']['value']);
+	function getSubscriptionPageTemplate()	{
+		if (!($this->rootTS['plugin.tx_srfeuserregister_pi1.file.templateFile']['value'])) {
+			$file = 'EXT:sr_feuser_register/pi1/tx_srfeuserregister_pi1_css_tmpl.html'; // standard config file path
+		} else {
+			$file = $this->rootTS['plugin.tx_srfeuserregister_pi1.file.templateFile']['value'];
+		}
+		$out = tx_t3m_main::tableForFile($file);
 		return $out;
 	}
 
 
 	/**
-	 * Returns a table with the sr_feuser_register profile creation confirmation page
+	 * Returns a table for a page
 	 *
-	 * @param	[type]		$uid: ...
-	 * @return	array		table with the sr_feuser_register profile creation confirmation page
+	 * @param	int		$uid: page uid
+	 * @return	array		table for a page
 	 */
 	function getPage($uid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -332,7 +335,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a group and an edit button
 	 *
-	 * @param	[type]		$gid: ...
+	 * @param	int		$gid: frontend group uid
 	 * @return	string		a table for a group and an edit button
 	 */
 	function tableForFeGroup($gid)	{
@@ -345,7 +348,7 @@ class tx_t3m_main {
 		} else {
 			$out .= '<tr><td>'.tx_t3m_main::getGroupName($gid).'</td>';
 			$out .= '<td>'.tx_t3m_main::editGroup($gid).'</td>';
-			$out .= '<td>'.tx_t3m_main::countUsers($gid).'</td></tr>';
+			$out .= '<td>'.tx_t3m_stats::countUsers($gid).'</td></tr>';
 		}
 		$out .= '</table>';
 		return $out;
@@ -354,7 +357,7 @@ class tx_t3m_main {
 	/**
 	 * Returns array with uids of the fe_users of a fe_group
 	 *
-	 * @param	[type]		$gid: ...
+	 * @param	int		$gid: frontend group uid
 	 * @return	array		with uids of the fe_users
 	 */
 	function getFeGroupUsers($gid)	{
@@ -378,7 +381,7 @@ class tx_t3m_main {
 	/**
 	 * Returns array with uids of the be_users of a be_group
 	 *
-	 * @param	[type]		$gid: ...
+	 * @param	int		$gid: backend group uid
 	 * @return	array		with uids of the be_users
 	 */
 	function getBeGroupUsers($gid) {
@@ -402,7 +405,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a name (title) for a group
 	 *
-	 * @param	[type]		$gid: ...
+	 * @param	int		$gid: backend group uid
 	 * @return	string		a name (title) for a group (e.g. the group name sr_feuser_register uses for pending users)
 	 */
 	function getGroupName($gid)	{
@@ -422,9 +425,9 @@ class tx_t3m_main {
 
 
 	/**
-	 * Returns a name (title) for a group
+	 * Returns a name (title) for a targetgroup
 	 *
-	 * @param	[type]		$gid: ...
+	 * @param	int		$gid: targetgroup uid
 	 * @return	string		a name (title) for a group (e.g. the group name sr_feuser_register uses for pending users)
 	 */
 	function getTargetGroupName($gid)	{
@@ -447,7 +450,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a name (title) for a page
 	 *
-	 * @param	[type]		$pid: ...
+	 * @param	int		$pid: page uid
 	 * @return	string		a name (title) for a page
 	 */
 	function getPageName($pid)	{
@@ -618,7 +621,7 @@ class tx_t3m_main {
 	/**
 	 * Returns campaigns and edit buttons
 	 *
-	 * @param	[type]		$cids: ...
+	* @param	int		$cids: campaign uids
 	 * @return	string		a table with campaigns and edit buttons
 	 */
 	function tableForCampaigns($cids)	{
@@ -633,7 +636,7 @@ class tx_t3m_main {
 			$out .= '<tr><td>'.$cid['name'].'</td>
 				<td>'.$cid['description'].'</td>
 				<td>'.tx_t3m_main::editCampaign($cid['uid']).'</td>
-				<td>'.tx_t3m_main::countEmails($cid['uid']).'</td>
+				<td>'.tx_t3m_stats::countEmails($cid['uid']).'</td>
 				<td>'.tx_t3m_main::createCampaignMailing($cid['uid']).'</td>
 				<td>'.tx_t3m_stats::checkCampaignFinished($cid['uid']).'</td>
 				</tr>';
@@ -696,41 +699,6 @@ class tx_t3m_main {
 	}
 
 	/**
-	 * Returns number of emails of a campaign
-	 *
-	 * @param	int		campaign uid
-	 * @return	int		number of emails of a campaign
-	 */
-	function countEmails($uid)	{
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'COUNT(*) AS icount',
-			'pages',
-			'tx_'.$this->extKey.'_campaign = '.intval($uid).' AND deleted=0 AND hidden=0'
-			);
-		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
-		$out = $row['icount'];
-		return $out;
-	}
-
-	/**
-	 * Returns number contents of an email
-	 *
-	 * @param	int		page uid
-	 * @return	int		number contents of an email
-	 */
-	function countContents($pid)	{
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'COUNT(*) AS icount',
-			'tt_content',
-			'pid = '.intval($pid).' AND deleted=0 AND hidden=0'
-			);
-		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
-		$out = $row['icount'];
-		return $out;
-	}
-
-
-	/**
 	 * Returns created directmails and edit buttons
 	 *
 	 * @return	string		a table with created directmails and edit buttons
@@ -783,7 +751,7 @@ class tx_t3m_main {
 	/**
 	 * Returns created directmails and edit buttons
 	 *
-	 * @param	[type]		$pids: ...
+	 * @param	array		$pids pages
 	 * @return	string		a table with created directmails and edit buttons
 	 */
 	function tableForNewsletters($pids)	{
@@ -802,7 +770,7 @@ class tx_t3m_main {
 			$out .= '<tr><td>'.$row['title'].'</td>
 				<td>'.tx_t3m_main::viewPage($row['uid']).'</td>
 				<td>'.tx_t3m_main::editNewsletter($row['uid']).'</td>
-				<td>'.tx_t3m_main::countContents($row['uid']).'</td>
+				<td>'.tx_t3m_stats::countContents($row['uid']).'</td>
 				<td>'.tx_t3m_main::createContent($row['uid']).'</td>
 				<td>'.tx_t3m_main::editContents($row['uid']).'</td>
 				<td>';
@@ -859,7 +827,7 @@ class tx_t3m_main {
 	/**
 	 * Returns created directmails and edit buttons
 	 *
-	 * @param	[type]		$pids: ...
+	 * @param	array		$pids: pages
 	 * @return	string		a table with created directmails and edit buttons
 	 */
 	function tableForOneOffMailings($pids)	{
@@ -877,7 +845,7 @@ class tx_t3m_main {
 			$out .= '<tr><td>'.$row['title'].'</td>
 				<td>'.tx_t3m_main::viewPage($row['uid']).'</td>
 				<td>'.tx_t3m_main::editOneOffMailing($row['uid']).'</td>
-				<td>'.tx_t3m_main::countContents($row['uid']).'</td>
+				<td>'.tx_t3m_stats::countContents($row['uid']).'</td>
 				<td>'.tx_t3m_main::createContent($row['uid']).'</td>
 				<td>'.tx_t3m_main::editContents($row['uid']).'</td>
 				<td>';
@@ -896,7 +864,7 @@ class tx_t3m_main {
 	/**
 	 * Returns array with uids of pages of that campaign
 	 *
-	 * @param	[type]		$cid: ...
+	 * @param	int		$cid: campaign id
 	 * @return	array		with uids of pages of that campaign
 	 */
 	function getCampaignMailings($cid)	{
@@ -939,7 +907,7 @@ class tx_t3m_main {
 	/**
 	 * Returns created directmails and edit buttons
 	 *
-	 * @param	[type]		$pids: ...
+	 * @param	array		$pids: pages
 	 * @return	string		a table with created directmails and edit buttons
 	 */
 	function tableForCampaignMailings($pids)	{
@@ -959,7 +927,7 @@ class tx_t3m_main {
 				<td>'.$row['title'].'</td>
 				<td>'.tx_t3m_main::viewPage($row['uid']).'</td>
 				<td>'.tx_t3m_main::editCampaignMailing($row['uid']).'</td>
-				<td>'.tx_t3m_main::countContents($row['uid']).'</td>
+				<td>'.tx_t3m_stats::countContents($row['uid']).'</td>
 				<td>'.tx_t3m_main::createContent($row['uid']).'</td>
 				<td>'.tx_t3m_main::editContents($row['uid']).'</td>
 				<td>';
@@ -1006,7 +974,7 @@ class tx_t3m_main {
 	/**
 	 * Returns group selector
 	 *
-	 * @param	[type]		$tid: ...
+	 * @param	int		$tid: targetgroup id
 	 * @return	string		group selector link
 	 */
 	function formTargetgroupSelector($tid)	{
@@ -1017,7 +985,7 @@ class tx_t3m_main {
 	/**
 	 * Returns campaign selector
 	 *
-	 * @param	[type]		$cid: ...
+	 * @param	int		$cid: campaing id
 	 * @return	string		campaign selector link
 	 */
 	function formCampaignSelector($cid)	{
@@ -1039,7 +1007,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a button for spamcheck
 	 *
-	 * @param	[type]		$pid: ...
+	 * @param	int		$pid: page uid
 	 * @return	string		button for spamcheck
 	 */
 	function formSpamCheck($pid)	{
@@ -1084,7 +1052,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a link for editing a group
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: fegroup uid
 	 * @return	string		a link for editing a group (e.g. the group sr_feuser_register uses for pending users)
 	 */
 	function editGroup($uid)	{
@@ -1097,7 +1065,7 @@ class tx_t3m_main {
 	/**
 	 * Creates a link for editing a fe_user
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: user uid
 	 * @return	string		form for editing a fe_user
 	 */
 	function editUser($uid)	{
@@ -1136,7 +1104,7 @@ class tx_t3m_main {
 	/**
 	 * Returns a link for editing a targetgroup
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: targetgroup uid
 	 * @return	string		a link for editing a group (e.g. the group sr_feuser_register uses for pending users)
 	 */
 	function editTargetgroup($uid)	{
@@ -1180,48 +1148,10 @@ class tx_t3m_main {
 // 	}
 
 	/**
-	 * Counts the users of a fe_group
-	 *
-	 * @param	int		uid of a fe_group
-	 * @return	int		usercount of a fe_group
-	 */
-	function countUsers($gid)	{
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'uid,username,usergroup', //COUNT(*) AS icount ONLY WORKS alone - alternative $GLOBALS['TYPO3_DB']->sql_query
-			'fe_users',
-			'deleted=0' // AND disable=0'
-			);
-		$out = 0;
-		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-			$userArrayAll[$row['uid']] = explode(',',$row['usergroup']);
-			if (in_array(intval($gid), $userArrayAll[$row['uid']])) {
-				$userArray[] = $row['uid'];
-				$out += 1;
-			}
-		}
-		return $out;
-	}
-
-	/**
-	 * Counts the deregistered or deleted users
-	 *
-	 * @return	int		usercount of deregistered or deleted users
-	 */
-	function countDeletedUsers() {
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'COUNT(*) AS icount',
-			'fe_users',
-			'deleted=1'
-			);
-		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
-		$out = $row['icount'];
-		return $out;
-	}
-
-	/**
 	 * Shows the receiver group definitions, a table with gender(fe_users:gender), age range(fe_users:date_of_birth), fe_users:zone (e.g. bundesland, state), fe_users:zip (plz), selectorbox for fe_groups, big selectorbox for fe_users
 	 *
 	 * @return	string		table with receiver group definitions
+	 * @todo zone support (challenges: keep consistent with zip, reduce selection corresponding to selected country-code!)
 	 */
 	function getTargetgroupDefinitions()	{
 		$out = '<table class="typo3-dblist">';
@@ -1416,7 +1346,7 @@ class tx_t3m_main {
 	/**
 	 * Returns an epoch timestamp as birthdate for an integer age
 	 *
-	 * @param	[type]		$age: ...
+	 * @param	int		$age: unix timestamp
 	 * @return	int		epoch timestamp as birthdate for an integer age
 	 */
 	function getTimestampFromAge($age) {
@@ -1798,7 +1728,7 @@ class tx_t3m_main {
 	/**
 	 * Update usercount for a targetgroup
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: targetgrup uid
 	 * @return	boolean		true if it went ok
 	 */
 	function updateCalculatedTargetgroupUsers($uid) {
@@ -1811,7 +1741,7 @@ class tx_t3m_main {
 	/**
 	 * Update usercount for all targetgroups
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: category uid
 	 * @return	boolean		true if it went ok
 	 */
 	function updateCalculatedCategory($uid) {
@@ -1946,8 +1876,6 @@ class tx_t3m_main {
 		return $out;
 	}
 
-
-// CREATION-RELATED FUNCTIONS:
 	/**
 	 * Creates a form to enter a new receiver group definition
 	 *
@@ -1955,7 +1883,7 @@ class tx_t3m_main {
 	 */
 	function createTargetgroupDefinition()	{
 		$table = 'tx_'.$this->extKey.'_targetgroups';
-		$columnsOnly = '&columnsOnly=name,gender,age_from,age_to,zip,country,categories_uid,description';
+		$columnsOnly = '&columnsOnly=name,gender,age_from,age_to,zip,country,categories_uid,description'; /** @todo add zone */
 		$defVals = '&defVals['.$table.'][country]='.$this->myConf['static_countries_uid'].'&defVals['.$table.'][zone]='.$this->myConf['static_country_zones_uid'];
 		$params = '&edit['.$table.']['.$this->myConf['targetgroups_Sysfolder'].']=new'.$defVals.$overrideVals.$columnsOnly;
 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'"><img '.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'].t3lib_extMgm::extRelPath($this->extKey).'icon_tx_'.$this->extKey.'_targetgroups.gif', '').'" title="'.$GLOBALS['LANG']->getLL('Create').'"/>'.$GLOBALS['LANG']->getLL('newTargetgroupdefinition').'</a><br/>';
@@ -2033,7 +1961,7 @@ class tx_t3m_main {
 		}
 		$columnsOnly = $this->columnsOnlyFeuser;
 		$defVals = $this->defValsFeuser.'&defVals=[fe_users][usergroup]='.$this->rootTS['plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation'].'&defVals[fe_users][tx_t3m_country]='.$this->myConf['static_countries_uid'];				;
-		$params = '&edit[fe_users]['.intval($pid).']=new'.$defVals.$columnsOnly.$overrideVals; // @todo: define default values
+		$params = '&edit[fe_users]['.intval($pid).']=new'.$defVals.$columnsOnly.$overrideVals; /** @todo: define default values */
 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'"><img src="'.$GLOBALS['BACK_PATH'].'gfx/new_el.gif" title="'.$GLOBALS['LANG']->getLL('New').'"/>&nbsp;'.$GLOBALS['LANG']->getLL('NewUser').'</a><br/>';
 		return $out;
 	}
@@ -2048,7 +1976,7 @@ class tx_t3m_main {
 		if (!intval($pid)) {
 			$pid = $this->rootTS['plugin.tx_srfeuserregister_pi1.pid']['value'];
 		}
-		$params = '&edit[fe_groups]['.intval($pid).']=new'.$defVals.$columnsOnly.$overrideVals; // @todo: define default values
+		$params = '&edit[fe_groups]['.intval($pid).']=new'.$defVals.$columnsOnly.$overrideVals; /** @todo: define default values */
 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'"><img src="'.$GLOBALS['BACK_PATH'].'gfx/new_el.gif" title="'.$GLOBALS['LANG']->getLL('New').'"/>&nbsp;'.$GLOBALS['LANG']->getLL('NewGroup').'</a><br/>';
 		return $out;
 	}
@@ -2143,7 +2071,7 @@ class tx_t3m_main {
 	 * Creates a new directmail "ForCampaign"
 	 *
 	 * @param	int		page oder sysfolder on which to create the directmail "ForCampaign"
-	 * @param	[type]		$pid: ...
+	 * @param	int		$pid: page id in which to create the new page
 	 * @return	string		form for entering a new campaign
 	 */
 	function createCampaignMailing($cid, $pid)	{
@@ -2163,7 +2091,7 @@ class tx_t3m_main {
 	*
 	* @return	string	form for editing a directmail
 	*/
-// 	function editTCDirectmail($uid)	{ //[0] @todo blend out
+// 	function editTCDirectmail($uid)	{
 // 		$columnsOnly = '&columnsOnly=title,tx_tcdirectmail_senttime,tx_'.$this->extKey.'_campaign,tx_'.$this->extKey.'_targetgroups,tx_tcdirectmail_spy,tx_tcdirectmail_register_clicks';
 // 		$params = '&edit[pages]['.intval($uid).']=edit&defVals[pages][doktype]=189'.$columnsOnly;
 // 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'"><img src="'.$GLOBALS['BACK_PATH'].'gfx/edit2.gif" title="'.$GLOBALS['LANG']->getLL('Edit').'"/></a><br/>';
@@ -2203,7 +2131,7 @@ class tx_t3m_main {
 	* @param	int	page to alter
 	* @return	string	form for editing a campaign mailing
 	*/
-	function editCampaignMailing($uid)	{ //[0] @todo blend out
+	function editCampaignMailing($uid)	{
 		$columnsOnly = '&columnsOnly=title,tx_tcdirectmail_senttime,tx_'.$this->extKey.'_campaign,tx_tcdirectmail_real_target,tx_tcdirectmail_plainconvert';
 		$defVals = '&defVals[pages][doktype]=189';
 		$params = '&edit[pages]['.intval($uid).']=edit'.$defVals.$columnsOnly;
@@ -2218,7 +2146,7 @@ class tx_t3m_main {
 	* @param	int	page to alter
 	* @return	string	form for editing a campaign mailing
 	*/
-	function editTCDirectmailSendtime($uid)	{ //[0] @todo blend out
+	function editTCDirectmailSendtime($uid)	{
 		$columnsOnly = '&columnsOnly=tx_tcdirectmail_senttime';
 		$params = '&edit[pages]['.intval($uid).']=edit'.$columnsOnly;
 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'"><img src="'.$GLOBALS['BACK_PATH'].t3lib_extMgm::extRelPath($this->extKey).'gfx/calendar.gif" title="'.$GLOBALS['LANG']->getLL('Edit').'"/></a>';
@@ -2229,7 +2157,7 @@ class tx_t3m_main {
 	/**
 	 * Creates a link for editing a content category
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: category uid
 	 * @return	string		form for editing a content category
 	 */
 	function editCategory($uid)	{
@@ -2241,7 +2169,7 @@ class tx_t3m_main {
 	/**
 	 * Creates a link for editing a content category
 	 *
-	 * @param	[type]		$uid: ...
+	 * @param	int		$uid: campaign uid
 	 * @return	string		form for editing a content category
 	 */
 	function editCampaign($uid)	{
@@ -2316,12 +2244,12 @@ class tx_t3m_main {
 	/**
 	 * Creates a link for editing a content's category
 	 *
-	 * @param	[type]		$tt_content_uid: ...
+	 * @param	int		$tt_content_uid: id
 	 * @return	string		form for editing a content's category
 	 */
-	function editContentCategory($tt_content_uid)	{
-		return true;
-	}
+// 	function editContentCategory($tt_content_uid)	{
+// 		return true;
+// 	}
 
 	/**
 	* Creates a form to enter a new mail
@@ -2442,8 +2370,12 @@ class tx_t3m_main {
 			foreach($pids as $mail) {
 				$out .= '<tr><td>'.$mail['title'].'</td>
 					<td><form><input type="submit" name="send_now" value="'.$GLOBALS['LANG']->getLL('send_now').'" />
-					<input type="hidden" name="id" value="'.$mail['uid'].'" /></form></td>
-					<td>'.strftime('%Y-%m-%d %H:%M:%S',intval($mail['sendtime'])).'</td>
+					<input type="hidden" name="id" value="'.$mail['uid'].'" /></form></td>';
+				$out .= '<td';
+				if ($mail['tx_tcdirectmail_senttime'] < time()) {
+					$out .= ' bgcolor="red" title="'.$GLOBALS['LANG']->getLL('errorNotSent').'"';
+				}
+				$out .= '>'.strftime('%Y-%m-%d %H:%M:%S',intval($mail['tx_tcdirectmail_senttime'])).'</td>
 					<td>'.tx_t3m_main::editTCDirectmailSendtime($mail['uid']).'</td></tr>';
 			}
 			$out .= '</table';
@@ -2540,7 +2472,7 @@ class tx_t3m_main {
 	/**
 	 * Creates a set of links for viewing, editing and deleting a file
 	 *
-	 * @param	[type]		$fileURL: ...
+	 * @param	string		$fileURL: where to find the file
 	 * @return	string		table which include links to view, edit and delete the file
 	 */
 	function tableForFile($fileURL)	{
@@ -2728,10 +2660,10 @@ class tx_t3m_main {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid,pid,title,tx_tcdirectmail_senttime',
 			'pages',
-			'deleted=0 AND hidden=0 AND doktype=189 AND tx_tcdirectmail_senttime > 0'
+			'deleted=0 AND hidden=0 AND doktype=189 AND tx_tcdirectmail_senttime > 0',
+			'',
+			'tx_tcdirectmail_senttime'
 		); // AND tx_tcdirectmail_senttime < '.time()
-		$out = '';
-		$i = 0;
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
 			// check if page has been sent:;
 			$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -2741,10 +2673,7 @@ class tx_t3m_main {
 			);
 			$timessent = $GLOBALS['TYPO3_DB']->sql_num_rows($res2);
 			if ($timessent == 0) {
-				$out[$i]['uid'] = $row['uid'];
-				$out[$i]['title'] = $row['title'];
-				$out[$i]['sendtime'] = $row['tx_tcdirectmail_senttime'];
-				$i++;
+				$out[] = $row;
 			}
 		}
 		return $out;
