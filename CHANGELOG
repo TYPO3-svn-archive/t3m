@@ -1,5 +1,12 @@
-(add new changes on top of this file)
+Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2006-12-24
+Version: 0.1.13
+Comment: code restructure - moved functions out of main	into separate smaller class files
 
+Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2006-12-08
+Version: 0.1.12
+Comment: view receiver list users
 
 Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-12-08

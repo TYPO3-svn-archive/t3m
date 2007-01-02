@@ -1,7 +1,7 @@
 lib.pbimagegraph < plugin.tx_pbimagegraph_pi1
 lib.pbimagegraph {
 	factory = png
-	width = 400
+	width = 600
 	height = 300
 	10 = VERTICAL
 	10 {

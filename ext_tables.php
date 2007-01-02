@@ -67,7 +67,7 @@ $TCA["tx_t3m_categories"] = Array (
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_t3m_categories.gif",
 	),
 	"feInterface" => Array (
-		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, description, calculated_receivers, subcategories, supercategory",
+		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, name, description, calculated_receivers, subcategories",
 	)
 );
 

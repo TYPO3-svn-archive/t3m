@@ -30,7 +30,10 @@
 			<label index="Group">Group</label>
 			<label index="Groups">Groups</label>
 			<label index="Receivers">Receivers</label>
+			<label index="Receiverlist">Receiver list</label>
 			<label index="Receivergroup">Receiver group</label>
+			<label index="receiverlistusers">Receiver list users</label>
+			<label index="receivergroupusers">Receiver group users</label>
 			<label index="descriptionReceivers">Here you can view and edit the Receivers groups. They are build by selecting a dynamic targetgroup or users from the backend, frontend or a different source.</label>
 			<label index="Type">Type</label>
 			<label index="User">User</label>
@@ -38,6 +41,7 @@
 			<label index="noUsers">No users</label>
 			<label index="disabledUsers">Disabled users</label>
 			<label index="countUsers">User count</label>
+			<label index="userBehavior">User behavior</label>
 
 			<label index="ExtensionSettings">Global extension settings</label>
 
@@ -48,7 +52,7 @@
 			<label index="importfeusers">Import of website users</label>
 			<label index="importreceivers">Import of receivers</label>
 			<label index="descriptionImport">Import users directly. No Double Opt-In process here!</label>
-			<label index="descriptionImportReceivers">Import users into a separate receiver group. Users do not become users of the website.</label>
+			<label index="descriptionImportReceivers">Import users into a separate receiver group. Users do not become users of the website. Theri only purpose is to be used in that receiver list. No target group definitions or redundancy check possible here.</label>
 			<label index="descriptionImportFeusers">Import users into a website user group.</label>
 			<label index="csvfile">CSV file upload</label>
 			<label index="csvlist">CSV direct input</label>
@@ -121,6 +125,9 @@
 			<label index="createReceivergroup">Create a receiver group</label>
 			<label index="newReceivergroup">New receiver group</label>
 			<label index="getReceivergroups">List receiver groups</label>
+			<label index="createReceiverlist">Create a receiver list</label>
+			<label index="newReceiverlist">New receiver list</label>
+			<label index="getReceiverlist">Show receiver lists</label>
 
 			<label index="tx_t3m_target1">T3M Target group</label>
 			<label index="tx_tcdirectmail_target_fegroups">Frontend groups</label>
@@ -143,8 +150,10 @@
 
 			<label index="targetgroups">Target groups</label>
 			<label index="targetgroupusers">Target group users</label>
+
 			<label index="errorNoAdmin">Error: Only system admins are allowed to use this.</label>
 			<label index="errorNoGroup">Error: No group found.</label>
+			<label index="errorNoReceiverlist">Error: No receiverlist found.</label>
 			<label index="errorNoPage">Error: No page found.</label>
 			<label index="errorNoMail">Error: No e-mail found.</label>
 			<label index="errorNoFile">Error: File not found.</label>
@@ -277,6 +286,7 @@
 			<label index="contentstatistics">Content statistics</label>
 			<label index="PageView">Page view</label>
 			<label index="PageViewRatio">Page view ratio</label>
+			<label index="pageViewRatio">Page view ratio (Opened / not opened E-Mails)</label>
 			<label index="PageSends">Page deliveries</label>
 			<label index="TotalPageSends">Total page deliveries (single e-mails)</label>
 			<label index="PageClicks">Page clicks</label>
@@ -291,14 +301,28 @@
 			<label index="descriptionTotalClicks">Here you can see the all-time favourite clicks of all your e-mailings.</label>
 
 			<label index="checkForSpam">Spamcheck</label>
+			<label index="checkingForSpam">Checking for spam...</label>
+			<label index="runningScript">Running script</label>
+			<label index="spamProbability">Calculated spam probability</label>
+			<label index="errorSpamc">Error: Configured spam client program does not respond as suspected. Please configure client script correctly!</label>
+			<label index="errorSpamd">Error: Configured spam daemon program does not respond as suspected. Please configure the server script correctly!</label>
 			<label index="spamOrNot">Spam?</label>
 			<label index="spamScore">Spam score</label>
-			<label index="thisisspam">Spam!!</label>
-			<label index="thisisnotspam">Not Spam.</label>
-			<label index="thisisnearlyspam">Nearly Spam!</label>
+			<label index="thisisspam">The spam checker classified this E-Mail as Spam! Please review the contents of your E-Mail. </label>
+			<label index="thisisnotspam">The spam checker did not find any hints that this E-Mail might be Spam.</label>
+			<label index="thisisnearlyspam">The spam checker found suspicious parts in the E-Mail but it did not yet classify it as Spam.</label>
 
 			<label index="bouncestatistics">Bounce statistics</label>
 			<label index="userstatistics">User statistics</label>
+			<label index="descriptionyearlyuserstatistics">	The graph shows what happened each month. Given the last date the user account was changed in the database, it can be seen if the user was added as a subscribed user, if he still got the stats "pending" or if he was blocked in that month.</label>
+			<label index="TotalUsers">Total users</label>
+			<label index="registered">Registered</label>
+			<label index="deleted">Deleted</label>
+			<label index="confirmationRatio">Confirmation ratio (confirmed compared to pending)</label>
+			<label index="confirmationPie">Ratio of registered, pending and deregistered</label>
+			<label index="bouncePie">Hard and soft bounce ratio</label>
+			<label index="bounceRatio">Bounce ratio (soft / hard bounces)</label>
+			<label index="descriptionuserstatistics">Here you can see the development of user occurences of a yearly timeframe and a snapshot of the current situation.</label>
 			<label index="Visited">Visitor count</label>
 
 			<label index="settings">Settings</label>
@@ -307,11 +331,16 @@
 			<label index="OK">OK.</label>
 			<label index="Warning">Warning.</label>
 			<label index="notOK">not OK.</label>
+			<label index="Note">Note.</label>
+			<label index="Error">Error.</label>
 			<label index="CheckingSettings">Cecking settings ...</label>
 			<label index="checkExternalSettings">Other extension's settings</label>
 			<label index="checkOwnSettings">Own extension settings</label>
 			<label index="checkSystemSettings">System settings</label>
 			<label index="checkForSpamProgram">Spam check CLI server+client</label>
+			<label index="checkForBounceAccount">Bounce account check</label>
+			<label index="checkForCronjobs">Cronjob check</label>
+
 
 			<label index="actions">Actions</label>
 			<label index="infos">Infos</label>
@@ -376,7 +405,10 @@
 			<label index="Group">Gruppe</label>
 			<label index="Groups">Gruppen</label>
 			<label index="Receivers">Empfänger</label>
-			<label index="Receivergroup">Receiver group</label>
+			<label index="Receivergroup">Empfängergruppe</label>
+			<label index="Receiverlist">Empfängerliste</label>
+			<label index="receiverlistusers">Empfänger</label>
+			<label index="receivergroupusers">Empfänger</label>
 			<label index="descriptionReceivers">Hier können Sie die Empfängergruppen bearbeiten. Sie können aus einer Zielgruppe gebildet werden oder aus Benutzern des Backends, Frontends oder aus anderen Quellen.</label>
 			<label index="Type">Typ</label>
 			<label index="User">Benutzer</label>
@@ -384,6 +416,8 @@
 			<label index="noUsers">Keine Benutzer</label>
 			<label index="disabledUsers">Deaktivierte Benutzer</label>
 			<label index="countUsers">Anzahl Benutzer</label>
+			<label index="userBehavior">Benutzerverhalten</label>
+
 			<label index="ExtensionSettings">Globale Extension Einstellungen</label>
 
 
@@ -393,7 +427,7 @@
 			<label index="importfeusers">Import von Webseitenbenutzern</label>
 			<label index="importreceivers">Import einer Empfängerliste</label>
 			<label index="descriptionImport">Importieren von Benutzern ohne Double-Opt-In-Verfahren. Benutzerdaten liegen als CSV-Datei vor.</label>
-			<label index="descriptionImportReceivers">Benutzerimport in eine separate Empfängerliste. Die Benutzer werden keine Benutzer der Webseite.</label>
+			<label index="descriptionImportReceivers">Benutzerimport in eine separate Empfängerliste. Die Benutzer werden keine Benutzer der Webseite. Ihr einzieger Zweck ist die Verwendung als eigene Versandliste. Keine Zielgruppen und keine Dublettencheck möglich.</label>
 			<label index="descriptionImportUsers">Benutzerimport in bestehende Frontendgruppen. Die Benutzer können sich z.B. einloggen und Zielgruppen zugeordnet werden.</label>
 
 			<label index="csvlist">CSV Direkt-Eingabefeld (copy paste)</label>
@@ -465,9 +499,13 @@
 			<label index="newTargetgroupdefinition">Neue Zielgruppendefinition</label>
 			<label index="getTargetgroupdefinitions">Auflistung von Zielgruppendefinitionen</label>
 
-			<label index="createReceivergroup">Empfängerliste erstellen</label>
-			<label index="newReceivergroup">Neue Empfängerliste</label>
-			<label index="getReceivergroups">Auflistung der Empfängerlisten</label>
+			<label index="createReceivergroup">Empfängergruppe erstellen</label>
+			<label index="newReceivergroup">Neue Empfängergruppe</label>
+			<label index="getReceivergroups">Auflistung der Empfängergruppen</label>
+			<label index="createReceiverlist">Empfängerliste erstellen</label>
+			<label index="newReceiverlist">Neue Empfängerliste</label>
+			<label index="getReceiverlist">Auflistung der Empfängerlisten</label>
+
 
 			<label index="tx_t3m_target1">T3M Zielgruppe</label>
 			<label index="tx_tcdirectmail_target_fegroups">Frontend Gruppen</label>
@@ -498,6 +536,7 @@
 
 			<label index="errorNoAdmin">Fehler: Nur Zugriff für System-Admins.</label>
 			<label index="errorNoGroup">Fehler: Keine Gruppe gefunden.</label>
+			<label index="errorNoReceiverlist">Fehler: Keine Empfängerliste gefunden.</label>
 			<label index="errorNoPage">Fehler: Seite nicht gefunden.</label>
 			<label index="errorNoMail">Fehler: Keine E-Mail gefunden.</label>
 			<label index="errorNoFile">Fehler: Datei nicht gefunden.</label>
@@ -627,6 +666,7 @@
 			<label index="contentstatistics">Inhalts-Statistiken</label>
 			<label index="PageView">Page view</label>
 			<label index="PageViewRatio">Page-View Rate</label>
+			<label index="pageViewRatio">Page-View Rate (geöffnete / nicht geöffnete E-Mails)</label>
 			<label index="PageSends">Aussendungen</label>
 			<label index="TotalPageSends">Gesamte Aussendungen (einzelne E-Mails)</label>
 			<label index="PageClicks">Klicks in E-Mails</label>
@@ -644,26 +684,46 @@
 
 
 			<label index="checkForSpam">Spamcheck</label>
+			<label index="checkingForSpam">Überprüfe nach Spam...</label>
+			<label index="runningScript">Führe Script aus</label>
+			<label index="spamProbability">Errechnete Spam-Wahrscheinlichkeit</label>
+			<label index="errorSpamc">Fehler: Eingestelltes Spam-Client-Program funktioniert nicht wie erwartet. Bitte richten Sie das Spam Clientscript richtig ein!</label>
+			<label index="errorSpamd">Fehler: Eingestelltes Spam-Daemon-Program funktioniert nicht wie erwartet. Bitte richten Sie das Spam Daemonscript richtig ein bzw. benutzen einen korekt funktionierenden Server!</label>
 			<label index="spamOrNot">Spam?</label>
 			<label index="spamScore">Spam score</label>
-			<label index="thisisspam">Spam!!</label>
-			<label index="thisisnotspam">Kein Spam.</label>
-			<label index="thisisnearlyspam">Fast Spam!</label>
+			<label index="thisisspam">Das Spamchecking-Programm fand Anzeichen in der E-Mail, die auf Spam hindeuten. Bitte überprüfen Sie den Inhalt der erstellten E-Mail!</label>
+			<label index="thisisnotspam">Das Spamchecking-Programm fand keine Anzeichen in der E-Mail, die auf Spam hindeuten.</label>
+			<label index="thisisnearlyspam">Das Spamchecking-Programm fand Anzeichen in der E-Mail, die auf Spam hindeuten. Die Grenze zu Spam wurde jedoch nicht überschritten, sodaß sie noch nicht als Spam klassifiziert wurde.</label>
 
 			<label index="bouncestatistics">Bounce-Statistiken</label>
 			<label index="userstatistics">Benutzer-Statistiken</label>
+			<label index="descriptionyearlyuserstatistics">Der Graph zeigt die Veränderungen der Benutzerbasis für jeden Monat an. Basierend auf dem Änderungsdatum in der Datenbank werden die Benutzer als angemeldet, pending, bounced oder gelöscht eingestuft. Grün: Anmeldungen (Double-Opt-In), Gelb: Pending (ausstehende Anmeldungen), Orange: Soft Bounces, Rot: Hard Bounces, Schwarz gelöschte Benutzer</label>
+			<label index="TotalUsers">Benutzer insgesamt</label>
+			<label index="registered">Angemeldet</label>
+			<label index="deleted">Gelöscht</label>
+			<label index="confirmationRatio">Anmeldungsverhältnis (bestätigt / pending)</label>
+			<label index="confirmationPie">Verhältnis von bestätigten, pending und abgemeldeten Benutzern</label>
+			<label index="bouncePie">Verhältnis von Hard and Soft Bounces</label>
+			<label index="bounceRatio">Bounceverhältnis (soft / hard bounces)</label>
+			<label index="descriptionuserstatistics">Hier sehen Sie einen Jahresverlauf über die Aktivitäten bezgl. der Nutzerdatenbasis und einen derzeitgen Stand über das Verhältnis der sich derzeit im System befindenden Benutzer.</label>
+
+
 			<label index="Visited">Besucherzahl</label>
 
 			<label index="settings">Einstellungen</label>
 			<label index="descriptionSettings">Hier können Benutzer Systeminformationen einsehen und Admins Einstellungen für Extensions oder am System vornehmen.</label>
 			<label index="OK">OK.</label>
-			<label index="Warning">Warning.</label>
+			<label index="Note">Hinweis</label>
+			<label index="Warning">Warnung</label>
 			<label index="notOK">nicht OK.</label>
+			<label index="Error">Fehler.</label>
 			<label index="CheckingSettings">Überprüfe Einstellungen ...</label>
 			<label index="checkExternalSettings">Andere Extensions</label>
 			<label index="checkOwnSettings">T3M Einstellungen</label>
 			<label index="checkSystemSettings">Systemeinstellungen</label>
 			<label index="checkForSpamProgram">Spam-Check Server- und Client-Programme</label>
+			<label index="checkForBounceAccount">Bounce-Account Einstellungen</label>
+			<label index="checkForCronjobs">Cronjob check</label>
 
 			<label index="actions">Actions</label>
 			<label index="infos">Infos</label>
@@ -691,7 +751,7 @@
 			<label index="performingPostinstalls">Führe Postinstall-Aktionen durch...</label>
 
 			<label index="createSysfolders">Erstelle Sysfolder Struktur um Kampagnen, Mailings, Benutzer, Zielgruppen und Begrüßungencampaigns zu speichern.</label>
-			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces) und eine Test-Empfängerliste.</label>
+			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces und eine Test-Empfängerliste.</label>
 			<label index="createBegroupsAndUsers">Erstelle Backend Benutzergruppen und Benutzer.</label>
 			<label index="createTargetgroups">Erstelle Test-Empfängerliste.</label>
 			<label index="createDemocontent">Erstelle Demo-Inhalte (Newsletter, Kampagnen, One-off-mails, Begrüßungen).</label>
@@ -703,7 +763,7 @@
 			<label index="maintenance">Datenpflege</label>
 			<label index="descriptionMaintenance">Überprüfen sie die Daten der Benutzer, die Gültigkeit von E-Mails und der Logdaten.</label>
 			<label index="maintenanceUsers">Benutzerdaten</label>
-			<label index="descriptionMaintenanceUsers">Users ohne E-Mail Addresse.</label>
+			<label index="descriptionMaintenanceUsers">Hier werden Benutzer ohne E-Mail Addresse aufgelistet.</label>
 			<label index="maintenanceMails">E-Mail Validität</label>
 			<label index="descriptionMaintenanceMails">E-Mails, die Fehler oder Warnungen beim Parsen hervorufen.</label>
 			<label index="maintenanceLogdata">Logdaten Validität</label>

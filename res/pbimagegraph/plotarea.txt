@@ -31,7 +31,7 @@ lib.pbimagegraph {
 							angle = 90
 							size = 10
 						}
-						forceMinimum = -4					
+						forceMinimum = -4
 					}
 					x {
 						axisIntersection = min

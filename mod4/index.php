@@ -34,7 +34,7 @@ require_once(PATH_t3lib.'class.t3lib_scbase.php');
 $BE_USER->modAccess($MCONF,1);	// This checks permissions and exits if the users has no permission for entry.
 	// DEFAULT initialization of a module [END]
 
-require_once ('../class.tx_t3m_main.php');
+require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
 
 /**
  * Module 'T3M Mail' for the 't3m' extension.
@@ -77,7 +77,8 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 				'clickstatistics' => $LANG->getLL('clickstatistics'),
 // 				'mailstatistics' => $LANG->getLL('mailstatistics'),
 // 				'contentstatistics' => $LANG->getLL('contentstatistics'),
-				'userstatistics' => $LANG->getLL('userstatistics')
+				'userstatistics' => $LANG->getLL('userstatistics'),
+// 				'maintenance' => $LANG->getLL('maintenance'),
 			)
 		);
 		parent::menuConfig();
@@ -114,17 +115,17 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 		switch((string)$this->MOD_SETTINGS['function'])	{
 			case oneoffstatistics:
 				$content='<h2>'.$LANG->getLL('oneoffstatistics').'</h2>';
-				$content.=tx_t3m_stats::getStatsForOneOffMailings();
+				$content.=tx_t3m_stats::statsForOneOffMailings();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case newsletterstatistics:
 				$content='<h2>'.$LANG->getLL('newsletterstatistics').'</h2>';
-				$content.=tx_t3m_stats::getStatsForNewsletters();
+				$content.=tx_t3m_stats::statsForNewsletters();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case campaignstatistics:
 				$content='<h2>'.$LANG->getLL('campaignstatistics').'</h2>';
-				$content.=tx_t3m_stats::getStatsForCampaigns();
+				$content.=tx_t3m_stats::statsForCampaigns();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case sendstatistics:
@@ -132,25 +133,24 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 				$content.=$LANG->getLL('descriptionsendstatistics');
 				$content.='<h3>'.$LANG->getLL('yearlystatistics').'</h3>'; // get data for last 3 years
 				$year = (date('Y')-2);
-				$content.=tx_t3m_stats::getYearlyStatsForMails($year);
+				$content.=tx_t3m_stats::yearlyStatsForMails($year);
 				$year = (date('Y')-1);
-				$content.=tx_t3m_stats::getYearlyStatsForMails($year);
-				$content.=tx_t3m_stats::getYearlyStatsForMails();
-
+				$content.=tx_t3m_stats::yearlyStatsForMails($year);
+				$content.=tx_t3m_stats::yearlyStatsForMails();
 				$content.='<h3>'.$LANG->getLL('statsMostReceivers').'</h3>';
-				$content.=tx_t3m_stats::getStatsForTCDirectmails();
+				$content.=tx_t3m_stats::statsForTCDirectmails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case openstatistics:
 				$content='<h2>'.$LANG->getLL('openstatistics').'</h2>';
 				$content.=$LANG->getLL('descriptionopenstatistics');
-				$content.=tx_t3m_stats::getStatsForOpenedMails();
+				$content.=tx_t3m_stats::statsForOpenedMails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case clickstatistics:
 				$content='<h2>'.$LANG->getLL('clickstatistics').'</h2>';
 				$content.=$LANG->getLL('descriptionclickstatistics');
-				$content.=tx_t3m_stats::getStatsForClickedMails();
+				$content.=tx_t3m_stats::statsForClickedMails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 
@@ -166,7 +166,22 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 // 			break;
 			case userstatistics:
 				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('userstatistics').'</h2>';
-				$content.=tx_t3m_stats::getStatsForUsers();
+				$content.=$LANG->getLL('descriptionuserstatistics');
+				$content.='<h3>'.$LANG->getLL('yearlystatistics').'</h3>'; // get data for last 3 years
+				$content.=$LANG->getLL('descriptionyearlyuserstatistics');
+				$year = (date('Y')-2);
+				$content.=tx_t3m_stats::yearlyStatsForUsers($year);
+				$year = (date('Y')-1);
+				$content.=tx_t3m_stats::yearlyStatsForUsers($year);
+				$content.=tx_t3m_stats::yearlyStatsForUsers();
+				$content.=tx_t3m_stats::statsForUsers();
+				$this->content.=$this->doc->section('',$content,0,1);
+			break;
+			case maintenance:
+				$content='<h2>'.$LANG->getLL('maintenance').'</h2>';
+				$content.='<h3>'.$GLOBALS['LANG']->getLL('maintenanceLogs').'</h3>';
+				$content.=$LANG->getLL('descriptionMaintenanceLogs').'<br />';
+				$content.=tx_t3m_main::maintenanceLogs();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 		}

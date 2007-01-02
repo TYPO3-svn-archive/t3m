@@ -1,0 +1,44 @@
+lib.pbimagegraph < plugin.tx_pbimagegraph_pi1
+lib.pbimagegraph {
+	factory = png
+	width = 600
+	height = 400
+	10 = VERTICAL
+	10 {
+		percentage = 5
+		10 = TITLE
+		10 {
+			text = Step Chart
+			font {
+				size = 12
+			}
+		}
+		20 = VERTICAL
+		20 {
+			percentage = 90
+			10 = PLOTAREA
+			10 {
+				id = plotarea1
+				10 = STEP
+				10 {
+					plottype = stacked
+					lineColor = gray
+					fillStyle = fill_array
+
+				}
+				1 = GRID
+				1 {
+					type = line
+					axis = y
+					lineColor = silver
+				}
+			}
+			100 = LEGEND
+			100 {
+				plotarea.1 = plotarea1
+				fillColor = white@0.7
+				shadow = 0
+			}
+		}
+	}
+}

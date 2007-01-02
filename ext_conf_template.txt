@@ -73,17 +73,20 @@ tcdirectmail_dotestsend = 1
 # cat=basic; type=string; label=Default plain text method : Method which should be used when creating the e-mail as text format, e.g. tx_tcdirectmail_plain_lynx or tx_tcdirectmail_plain_html2text. (lynx comes from 'class.tx_tcdirectmail_plain_lynx.php')
 tcdirectmail_plain = tx_tcdirectmail_plain_lynx
 
-# cat=basic; type=int+; label= Default country code : Country which is the default for targetgroups, uid from table static_countries (e.g. 54 for DE, 65 for DK, 220 for US)
-static_countries_uid = 54
-
-# cat=basic; type=int+; label= Default zone code : Zone code which is the default for targetgroups, uid from table static_country_zones (e.g. 85 for Hamburg)
-static_country_zones_uid = 85
+# cat=basic; type=string; label=Server type : Default server type for checking for bouncemails (POP3, IMAP, AUTO)
+tcdirectmail_servertype = AUTO
 
 # cat=basic; type=int+; label= Default Hardbounce setting : After how many hard bounces is an account disabled
 max_hardbounces = 1
 
 # cat=basic; type=int+; label= Default Softbounce setting : After how many soft bounces is an account disabled
 max_softbounces = 3
+
+# cat=basic; type=int+; label= Default country code : Country which is the default for targetgroups, uid from table static_countries (e.g. 54 for DE, 65 for DK, 220 for US)
+static_countries_uid = 54
+
+# cat=basic; type=int+; label= Default zone code : Zone code which is the default for targetgroups, uid from table static_country_zones (e.g. 85 for Hamburg)
+static_country_zones_uid = 85
 
 # cat=basic; type=string; label=Spam Checker Server : Server script which analyzes the mails and gives Spam evalutation. (needs the -c part!)
 spam_checker_script = spamc -c -d 127.0.0.1 -p 783

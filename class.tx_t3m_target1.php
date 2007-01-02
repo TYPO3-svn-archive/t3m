@@ -23,7 +23,8 @@
 ***************************************************************/
 
 require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_target_array.php');
-require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
+// require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
+require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_addresses.php');
 require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_bounce.php');
 
 /**
@@ -45,7 +46,7 @@ class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 		$targetgroups = explode(',',$this->fields['tx_t3m_target']); // (uids from our targetgroup table)
 		$i = 0;
 		foreach ($targetgroups as $targetgroup) {
-			$tmpusers = tx_t3m_main::getTargetgroupUsers($targetgroup);
+			$tmpusers = tx_t3m_addresses::getTargetgroupUsers($targetgroup);
 			foreach ($tmpusers as $tmpuser) {
 				if(!(in_array($tmpuser,$sentusers))) { // is not already in array, so no duplicate here
 					if ($tmpuser['email']) { // do email sanity check here?
@@ -66,34 +67,81 @@ class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 	 * @return	void		nothing to be returned
 	 */
 	function disableReceiver($uid, $authCode, $bouncereason) { // uid is a fe_user uid!!
-		//check bounce config
-		$bounceConfig = tx_t3m_bounce::getBounceRules();
-		//get bounces from table fe_users
-		$bouncereason = get_defined_constants();
+		//get extension config
+		$myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']);
+
+		//get bounce config or set hardcoded if not there
+		if (!($myConf['max_hardbounce'])) {
+			$myConf['max_hardbounce'] = 2;
+		}
+		if (!($myConf['max_softbounce'])) {
+			$myConf['max_softbounce'] = 3;
+		}
+
+		//get bounce data from table fe_users
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'tx_t3m_softbounces,tx_t3m_hardbounces,usergroup',
+			'fe_users',
+			'uid='.intval($uid)
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$previousSoftBounces = $row['tx_t3m_softbounces'];
+		$previousHardBounces = $row['tx_t3m_hardbounces'];
+		$userGroups = explode(',',$row['usergroup']);
 
 		if ($bouncereason == 'TCDIRECTMAIL_SOFTBOUNCE') {
-			$previousSoftBounces = tx_t3m_bounce::getPreviousSoftBounces($uid);
+
+			//count bounces
 			$softBounces = $previousSoftBounces + 1;
-			$GLOBALS['TYPO3_DB']->sql_query('UPDATE fe_users SET tx_t3m_softbounces = '.$softBounces.' WHERE uid = '.intval($uid));
-			//put him into special 'softbounce' group
-			if ($previousSoftBounces >= $bounceConfig['max_softbounces']) { //do action!
-				//disable user
-				$GLOBALS['TYPO3_DB']->sql_query('UPDATE fe_users SET disable = 1 WHERE uid = '.intval($uid));
+			$fields_values['tx_t3m_softbounces'] = $softBounces;
+
+			//put him into special 'softbounce' group if he is not yet in it
+			if ($myConf['groupSoftbounces']) { //we have a group to collect the users
+				if (!(in_array($myConf['groupSoftbounces'],$userGroups))) {
+					$fields_values['usergroup'] = $row['usergroup'].','.$myConf['groupSoftbounces'];
+				}
 			}
-		}
-		elseif ($bouncereason == 'TCDIRECTMAIL_HARDBOUNCE') {
-			$previousHardBounces = tx_t3m_bounce::getPreviousHardBounces($uid);
+
+			//disable if max bounces reached
+			if ($previousSoftBounces >= $myConf['max_softbounces']) {
+				$out .= 'Max softbounces reached ('.$myConf['max_softbounces'].'). Disabling user. '.intval($uid);
+				//disable user
+				$fields_values['disable'] = 1;
+			}
+
+		} elseif ($bouncereason == 'TCDIRECTMAIL_HARDBOUNCE') {
+
+			//count bounces
 			$hardBounces = $previousHardBounces + 1;
-			$GLOBALS['TYPO3_DB']->sql_query('UPDATE fe_users SET tx_t3m_hardbounces = '.$hardBounces.' WHERE uid = '.intval($uid));
-			//put him into special 'hardbounce' group
-			if ($previousHardBounces >= $bounceConfig['max_hardbounces']) { //do action!
-				//disable user
-				$GLOBALS['TYPO3_DB']->sql_query('UPDATE fe_users SET disable = 1 WHERE uid = '.intval($uid));
+			$fields_values['tx_t3m_hardbounces'] = $hardBounces;
+
+			//put him into special 'hardbounce' group if he is not yet in it
+			if ($myConf['groupHardbounces']) { //we have a group to collect the users
+				if (!(in_array($myConf['groupHardbounces'],$userGroups))) {
+					$fields_values['usergroup'] = $row['usergroup'].','.$myConf['groupHardbounces'];
+				}
 			}
+
+			//disable if max bounces reached
+			if ($previousHardBounces >= $myConf['max_hardbounces']) {
+				$out .= 'Max hardbounces reached ('.$myConf['max_hardbounces'].'). Disabling user. '.intval($uid);
+				//disable user
+				$fields_values['disable'] = 1;
+			}
+
 		} else {
 			// no bouncereason given
-			// put him into 'bounce' group
 		}
+
+		$fields_values['tstamp'] = time();
+
+		$GLOBALS['TYPO3_DB']->exec_UPDATEquery(
+			'fe_users',
+			'uid='.intval($uid),
+			$fields_values
+		);
+
+		return $out;
 	}
 
 }

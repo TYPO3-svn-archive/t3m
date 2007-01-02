@@ -58,26 +58,6 @@ CREATE TABLE tx_t3m_targetgroups (
 
 
 #
-# Table structure for table 'tx_t3m_directmails'
-#
-CREATE TABLE tx_t3m_directmails (
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-	tstamp int(11) DEFAULT '0' NOT NULL,
-	crdate int(11) DEFAULT '0' NOT NULL,
-	cruser_id int(11) DEFAULT '0' NOT NULL,
-	deleted tinyint(4) DEFAULT '0' NOT NULL,
-	hidden tinyint(4) DEFAULT '0' NOT NULL,
-	name tinytext NOT NULL,
-	directmail blob NOT NULL,
-	
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-
-
-#
 # Table structure for table 'tx_t3m_categories'
 #
 CREATE TABLE tx_t3m_categories (
@@ -96,7 +76,6 @@ CREATE TABLE tx_t3m_categories (
 	description text NOT NULL,
 	calculated_receivers int(11) DEFAULT '0' NOT NULL,
 	subcategories blob NOT NULL,
-	supercategory int(11) DEFAULT '0' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)

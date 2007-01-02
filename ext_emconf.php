@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'typo3-macher',
-	'version' => '0.1.10',
+	'version' => '0.1.13',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '4.0.0-',
@@ -48,22 +48,19 @@ $EM_CONF[$_EXTKEY] = array(
 // 			'datachart'  =>  '0.1.2-',
 // 			'jpgraph' => '0.3.10-',
 // 			'mh_omdbchart' => '0.9.6-',
-			'pbimagegraph' => '1.0.1-',
+			'pbimagegraph' => '1.0.4-',
 			'tcdirectmail' => '1.1.1-',
 // 			'tcdmailstats' => '0.0.1-',
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array( //@bug: install does not work on our test machine...
-// 			'skingreyman' => '0.1.17-',
-// 			'skincrystal' =>  '0.4.0-',
-			't3mskin' =>  '0.0.1-',
+// 			't3mskin' =>  '0.0.1-',
 // 			'germandates' => '0.1.0-', // changes all dates to german format, however it broke my register form
 // 			'tcdmaildevel'  => '0.0.1-', // only for creating a new targetgroup definition
 		),
 	),
 	'_md5_values_when_last_written' => '',
 );
-
 
 ?>

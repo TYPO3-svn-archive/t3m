@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tx_t3m_mailings</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tx_t3m_mailings
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a32">32</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_class.tx_t3m_mailings.php.html">/class.tx_t3m_mailings.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class for creating listing and editing newsletters, one-offmailings and campaigns</h5>
+<ul>
+		<li><strong>author:</strong> - Stefan Koch &lt;<a href="mailto:t3m@stefkoch.de">t3m@stefkoch.de</a>&gt;</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcampaignMailings" title="details" class="method-name">campaignMailings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcampaigns" title="details" class="method-name">campaigns</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcategories" title="details" class="method-name">categories</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateCampaign" title="details" class="method-name">createCampaign</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateCampaignMailing" title="details" class="method-name">createCampaignMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$cid</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateCategory" title="details" class="method-name">createCategory</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateContent" title="details" class="method-name">createContent</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateNewsletter" title="details" class="method-name">createNewsletter</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateOneOffMailing" title="details" class="method-name">createOneOffMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateTcdirectmail" title="details" class="method-name">createTcdirectmail</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateTCDirectmailForReceivergroup" title="details" class="method-name">createTCDirectmailForReceivergroup</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateTCDirectmailForReceivergroups" title="details" class="method-name">createTCDirectmailForReceivergroups</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditCampaign" title="details" class="method-name">editCampaign</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditCampaignMailing" title="details" class="method-name">editCampaignMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditCategory" title="details" class="method-name">editCategory</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditContent" title="details" class="method-name">editContent</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditContents" title="details" class="method-name">editContents</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditNewsletter" title="details" class="method-name">editNewsletter</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditOneOffMailing" title="details" class="method-name">editOneOffMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditPage" title="details" class="method-name">editPage</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditTCDirectmailSendtime" title="details" class="method-name">editTCDirectmailSendtime</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformCampaignSelector" title="details" class="method-name">formCampaignSelector</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetCampaignDescription" title="details" class="method-name">getCampaignDescription</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetCampaignMailings" title="details" class="method-name">getCampaignMailings</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$cid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$cid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetCampaignName" title="details" class="method-name">getCampaignName</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetCampaigns" title="details" class="method-name">getCampaigns</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">0</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetContents" title="details" class="method-name">getContents</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetFirstCampaign" title="details" class="method-name">getFirstCampaign</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetNewsletters" title="details" class="method-name">getNewsletters</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetOneOffMailings" title="details" class="method-name">getOneOffMailings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetPageName" title="details" class="method-name">getPageName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodnewsletters" title="details" class="method-name">newsletters</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodoneOffMailings" title="details" class="method-name">oneOffMailings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodpage" title="details" class="method-name">page</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForCampaignMailings" title="details" class="method-name">tableForCampaignMailings</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForCampaigns" title="details" class="method-name">tableForCampaigns</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$cids</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$cids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForMails" title="details" class="method-name">tableForMails</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForMaintenanceMails" title="details" class="method-name">tableForMaintenanceMails</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForNewsletters" title="details" class="method-name">tableForNewsletters</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForOneOffMailings" title="details" class="method-name">tableForOneOffMailings</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForPage" title="details" class="method-name">tableForPage</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtcdirectmails" title="details" class="method-name">tcdirectmails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateAllCalculatedCategories" title="details" class="method-name">updateAllCalculatedCategories</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateCalculatedCategory" title="details" class="method-name">updateCalculatedCategory</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodviewPage" title="details" class="method-name">viewPage</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodcampaignMailings" id="methodcampaignMailings"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method campaignMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a372">372</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>campaignMailings(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodcampaigns" id="methodcampaigns"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method campaigns</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a58">58</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>campaigns(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns campaigns and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with campaigns and edit buttons</li>
+		</ul>
+</div>
+<a name="methodcategories" id="methodcategories"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method categories</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a550">550</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>categories(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns categories and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with categories and edit buttons</li>
+			<li><strong>todo</strong> - Make use of other category systems like tx_commerce_categories,  sys_dmail_category,  tt_news_cat</li>
+		</ul>
+</div>
+<a name="methodcreateCampaign" id="methodcreateCampaign"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createCampaign</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a524">524</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createCampaign(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new campaign</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for entering a new campaign</li>
+		</ul>
+</div>
+<a name="methodcreateCampaignMailing" id="methodcreateCampaignMailing"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createCampaignMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a736">736</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createCampaignMailing(
+int
+$cid, 
+$pid, int
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new directmail &quot;ForCampaign&quot;</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid:</strong>: page id in which to create the new page</li>
+			<li><strong>int $cid</strong>: page oder sysfolder on which to create the directmail &quot;ForCampaign&quot;</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new campaign</li>
+		</ul>
+</div>
+<a name="methodcreateCategory" id="methodcreateCategory"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a535">535</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createCategory(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new content category</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for entering a new content category</li>
+		</ul>
+</div>
+<a name="methodcreateContent" id="methodcreateContent"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createContent</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a669">669</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createContent(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for a new content for a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page in which to create the page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for a new content for a page</li>
+		</ul>
+</div>
+<a name="methodcreateNewsletter" id="methodcreateNewsletter"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createNewsletter</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a699">699</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createNewsletter(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new directmail &quot;Newsletter&quot;</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page oder sysfolder on which to create the &quot;Newsletter&quot; directmail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new campaign</li>
+		</ul>
+</div>
+<a name="methodcreateOneOffMailing" id="methodcreateOneOffMailing"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createOneOffMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a717">717</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createOneOffMailing(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new directmail &quot;OneOffMailing&quot;</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page oder sysfolder on which to create the &quot;OneOffMailing&quot; directmail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new campaign</li>
+		</ul>
+</div>
+<a name="methodcreateTcdirectmail" id="methodcreateTcdirectmail"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createTcdirectmail</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a686">686</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createTcdirectmail(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new directmail</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page oder sysfolder on which to create the directmail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new campaign</li>
+		</ul>
+</div>
+<a name="methodcreateTCDirectmailForReceivergroup" id="methodcreateTCDirectmailForReceivergroup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createTCDirectmailForReceivergroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a647">647</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createTCDirectmailForReceivergroup(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for a receiver definition</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of receivergroup for which to create directmail</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for creating a tcdirectmail</li>
+		</ul>
+</div>
+<a name="methodcreateTCDirectmailForReceivergroups" id="methodcreateTCDirectmailForReceivergroups"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createTCDirectmailForReceivergroups</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a482">482</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createTCDirectmailForReceivergroups(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of receiver definitions</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with receiver lists</li>
+		</ul>
+</div>
+<a name="methodeditCampaign" id="methodeditCampaign"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editCampaign</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a834">834</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editCampaign(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a content category</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: campaign uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a content category</li>
+		</ul>
+</div>
+<a name="methodeditCampaignMailing" id="methodeditCampaignMailing"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editCampaignMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a793">793</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editCampaignMailing(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Edit a campaign mailing</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: page to alter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a campaign mailing</li>
+		</ul>
+</div>
+<a name="methodeditCategory" id="methodeditCategory"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a822">822</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editCategory(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a content category</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: category uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a content category</li>
+		</ul>
+</div>
+<a name="methodeditContent" id="methodeditContent"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editContent</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a861">861</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editContent(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a content element</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the content element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for editing a content element</li>
+		</ul>
+</div>
+<a name="methodeditContents" id="methodeditContents"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editContents</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a873">873</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editContents(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a content element</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the content element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for editing a content element</li>
+		</ul>
+</div>
+<a name="methodeditNewsletter" id="methodeditNewsletter"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editNewsletter</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a766">766</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editNewsletter(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Edit a newsletter</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: page to alter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a newsletter</li>
+		</ul>
+</div>
+<a name="methodeditOneOffMailing" id="methodeditOneOffMailing"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editOneOffMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a779">779</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editOneOffMailing(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Edit a OneOffMailing</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: page to alter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a OneOffMailing</li>
+		</ul>
+</div>
+<a name="methodeditPage" id="methodeditPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a848">848</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editPage(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for editing a page</li>
+		</ul>
+</div>
+<a name="methodeditTCDirectmailSendtime" id="methodeditTCDirectmailSendtime"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editTCDirectmailSendtime</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a808">808</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editTCDirectmailSendtime(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Edit a campaign mailing</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: page to alter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a campaign mailing</li>
+		</ul>
+</div>
+<a name="methodformCampaignSelector" id="methodformCampaignSelector"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formCampaignSelector</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a623">623</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formCampaignSelector(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns campaign selector</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - campaign selector box</li>
+		</ul>
+</div>
+<a name="methodgetCampaignDescription" id="methodgetCampaignDescription"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCampaignDescription</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a116">116</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getCampaignDescription(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the description of a campaign</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: campaign uid</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a description of a campaign</li>
+		</ul>
+</div>
+<a name="methodgetCampaignMailings" id="methodgetCampaignMailings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCampaignMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a351">351</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getCampaignMailings(
+
+$cid, int
+$cid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array with uids of pages of that campaign</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $cid:</strong>: campaign id</li>
+			<li><strong> $cid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with uids of pages of that campaign</li>
+		</ul>
+</div>
+<a name="methodgetCampaignName" id="methodgetCampaignName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCampaignName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a99">99</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getCampaignName(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the name of a campaign</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: campaign uid</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - name of a campaign</li>
+		</ul>
+</div>
+<a name="methodgetCampaigns" id="methodgetCampaigns"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCampaigns</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a133">133</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getCampaigns(
+int
+0)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array of campaigns with uid and name</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int 0</strong>: campaign uid</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of campaigns with uid and name</li>
+		</ul>
+</div>
+<a name="methodgetContents" id="methodgetContents"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getContents</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a577">577</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getContents(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns contents and edit buttons</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: page id</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with contents and edit buttons</li>
+		</ul>
+</div>
+<a name="methodgetFirstCampaign" id="methodgetFirstCampaign"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getFirstCampaign</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a605">605</a></span>)
+ </h4> 
+<h4><i>int</i> <strong>getFirstCampaign(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns first campaign</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - first campaign</li>
+		</ul>
+</div>
+<a name="methodgetNewsletters" id="methodgetNewsletters"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getNewsletters</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a182">182</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getNewsletters(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodgetOneOffMailings" id="methodgetOneOffMailings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getOneOffMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a277">277</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getOneOffMailings(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodgetPageName" id="methodgetPageName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPageName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a1042">1042</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getPageName(
+
+$pid, int
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a name (title) for a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid:</strong>: page uid</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a name (title) for a page</li>
+		</ul>
+</div>
+<a name="methodnewsletters" id="methodnewsletters"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method newsletters</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a163">163</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>newsletters(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodoneOffMailings" id="methodoneOffMailings"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method oneOffMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a258">258</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>oneOffMailings(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodpage" id="methodpage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method page</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a1021">1021</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>page(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: page uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table for a page</li>
+		</ul>
+</div>
+<a name="methodtableForCampaignMailings" id="methodtableForCampaignMailings"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForCampaignMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a394">394</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForCampaignMailings(
+
+$pids, array
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids:</strong>: pages</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodtableForCampaigns" id="methodtableForCampaigns"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForCampaigns</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a72">72</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForCampaigns(
+
+$cids, int
+$cids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns campaigns and edit buttons</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $cids:</strong>: campaign uids</li>
+			<li><strong> $cids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with campaigns and edit buttons</li>
+		</ul>
+</div>
+<a name="methodtableForMails" id="methodtableForMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a929">929</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForMails(
+array
+$pids)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids</strong>: mailings</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with mails</li>
+		</ul>
+</div>
+<a name="methodtableForMaintenanceMails" id="methodtableForMaintenanceMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForMaintenanceMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a983">983</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForMaintenanceMails(
+
+$pids, array
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Table for mails with problems</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids:</strong>: mail ids</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table for showing mail problems and editing mails</li>
+		</ul>
+</div>
+<a name="methodtableForNewsletters" id="methodtableForNewsletters"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForNewsletters</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a202">202</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForNewsletters(
+array
+$pids)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids</strong>: pages</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodtableForOneOffMailings" id="methodtableForOneOffMailings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForOneOffMailings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a297">297</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForOneOffMailings(
+
+$pids, array
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids:</strong>: pages</li>
+			<li><strong> $pids</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodtableForPage" id="methodtableForPage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a954">954</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForPage(
+
+$pid, int
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a set of links for viewing, editing and deleting a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid:</strong>: page id</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table which include links to view, edit and delete the page</li>
+		</ul>
+</div>
+<a name="methodtcdirectmails" id="methodtcdirectmails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tcdirectmails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a151">151</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tcdirectmails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodupdateAllCalculatedCategories" id="methodupdateAllCalculatedCategories"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateAllCalculatedCategories</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a463">463</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateAllCalculatedCategories(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all targetgroups</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateCalculatedCategory" id="methodupdateCalculatedCategory"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateCalculatedCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a451">451</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateCalculatedCategory(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all targetgroups</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: category uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodviewPage" id="methodviewPage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method viewPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_mailings.php.html#a1065">1065</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>viewPage(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for viewing a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of page</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for editing a list of the users of a group</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 02 Jan 2007 19:45:42 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>

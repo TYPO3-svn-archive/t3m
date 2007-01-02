@@ -286,6 +286,10 @@ class tx_t3m_postinstall	{
 
 		return $out;
 	}
+
+
+
+
 }
 
 ?>

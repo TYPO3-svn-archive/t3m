@@ -1,0 +1,124 @@
+lib.pbimagegraph < plugin.tx_pbimagegraph_pi1
+lib.pbimagegraph {
+	factory = png
+	width = 400
+	height = 300
+	10 = VERTICAL
+	10 {
+		percentage = 5
+		10 = TITLE
+		10 {
+			text = Step Chart Sample
+			font {
+				size = 12
+			}
+		}
+		20 = VERTICAL
+		20 {
+			percentage = 90
+			10 = PLOTAREA
+			10 {
+				id = plotarea1
+				10 = STEP
+				10 {
+					plottype = stacked
+					lineColor = gray
+					dataset {
+						10 = trivial
+						10 {
+							1 = point
+							1 {
+								x = 1
+								y = 1
+								name = noname
+								title = nottitle
+							}
+							2 = point
+							2 {
+								x = 2
+								y = 20
+							}
+							3 = point
+							3 {
+								x = 3
+								y = 3
+							}
+							4 = point
+							4 {
+								x = 4
+								y = 4
+							}
+							5 = point
+							5 {
+								x = 5
+								y = 5
+							}
+							6 = point
+							6 {
+								x = 6
+								y = 6
+							}
+							7 = point
+							7 {
+								x = 7
+								y = 7
+							}
+							8 = point
+							8 {
+								x = 8
+								y = 8
+							}
+							9 = point
+							9 {
+								x = 9
+								y = 9
+							}
+							10 = point
+							10 {
+								x = 10
+								y = 10
+							}
+							name = nonameeither
+							title = nottitleeither
+						}
+						20 = random
+						20 {
+							count = 10
+							minimum = 2
+							maximum = 5
+							includeZero = false
+							name = name2
+						}
+						30 = random
+						30 {
+							count = 10
+							minimum = 2
+							maximum = 5
+							includeZero = false
+							name = name3
+						}
+					}
+					fillStyle = fill_array
+					fillStyle {
+						1 = addColor
+						1 {
+							color = red@0.2
+						}
+						2 = addColor
+						2 {
+							color = blue@0.2
+						}
+						3 = addColor
+						3 {
+							color = green@0.2
+						}
+					}
+				}
+			}
+			20 = LEGEND
+			20 {
+				plotarea.1 = plotarea1
+			}
+		}
+	}
+}

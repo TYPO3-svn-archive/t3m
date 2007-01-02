@@ -29,7 +29,6 @@
 			<label index="tx_t3m_categories.description">Description</label>
 			<label index="tx_t3m_categories.calculated_receivers">Calculated Receivers</label>
 			<label index="tx_t3m_categories.subcategories">Subcategories</label>
-			<label index="tx_t3m_categories.supercategory">Super category</label>
 			<label index="tx_t3m_salutations">Salutations</label>
 			<label index="tx_t3m_salutations.name">Name of the salutation</label>
 			<label index="tx_t3m_salutations.single_female">Female version</label>
@@ -74,7 +73,6 @@
 			<label index="tx_t3m_categories.description">Beschreibung</label>
 			<label index="tx_t3m_categories.calculated_receivers">Anzahl Empfänger</label>
 			<label index="tx_t3m_categories.subcategories">Unterkategorien</label>
-			<label index="tx_t3m_categories.supercategory">Überkategorie</label>
 			<label index="tx_t3m_salutations">Begrüßungen, Anreden</label>
 			<label index="tx_t3m_salutations.name">Bezeichnung der Anrede</label>
 			<label index="tx_t3m_salutations.single_female">Weibliche Version</label>

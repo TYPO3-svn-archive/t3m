@@ -34,7 +34,7 @@ require_once(PATH_t3lib.'class.t3lib_scbase.php');
 $BE_USER->modAccess($MCONF,1);	// This checks permissions and exits if the users has no permission for entry.
 	// DEFAULT initialization of a module [END]
 
-require_once ('../class.tx_t3m_main.php');
+require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
 
 /**
  * Module 'T3M Mail' for the 't3m' extension.
@@ -70,7 +70,7 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 		$this->MOD_MENU = Array (
 			'function' => Array (
 				'settings' => $LANG->getLL('settings'),
-				'maintenance' => $LANG->getLL('maintenance')
+// 				'maintenance' => $LANG->getLL('maintenance')
 // 				'bounces' => $LANG->getLL('bounces')
 // 				'actions' => $LANG->getLL('actions'),
 			)
@@ -130,11 +130,15 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 				}
 
 				//system
+				$content.='<h3>'.$GLOBALS['LANG']->getLL('checkForCronjobs').'</h3>';
+				$content.=tx_t3m_settings::checkCronjobs();
 // 				$content.='<h3>'.$LANG->getLL('checkSystemSettings').'</h3>';
 				$content.=tx_tcdirectmail_sysstat::viewSysStatus(); //lynx, fetchmail, cronjobs
 // 				$content.='<br />'.tx_t3m_settings::checkForLynx();
-// 				$content.='<br />'.tx_t3m_settings::checkForMailCronjob();
-// 				$content.='<br />'.tx_t3m_settings::checkForBounceCronjob();
+
+				$content.='<h3>'.$GLOBALS['LANG']->getLL('checkForBounceAccount').'</h3>';
+				$content.=tx_t3m_settings::checkForBounceAccount();
+
 				$content.='<h3>'.$GLOBALS['LANG']->getLL('checkForSpamProgram').'</h3>';
 				$content.=tx_t3m_settings::checkForSpamProgram();
 
@@ -149,8 +153,9 @@ class  tx_t3m_module5 extends t3lib_SCbase {
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case infos:
+				require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_debug.php');
 				$content=$LANG->getLL('infos');
-				$content.='just some debug testing stuff here...<br />'.tx_t3m_main::testSomeStuff();
+				$content.='just some debug testing stuff here...<br />'.tx_t3m_debug::testSomeStuff();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case maintenance:

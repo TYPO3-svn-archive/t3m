@@ -34,7 +34,7 @@ require_once(PATH_t3lib.'class.t3lib_scbase.php');
 $BE_USER->modAccess($MCONF,1);	// This checks permissions and exits if the users has no permission for entry.
 	// DEFAULT initialization of a module [END]
 
-require_once ('../class.tx_t3m_main.php');
+require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_main.php');
 
 /**
  * Module 'T3M Mail' for the 't3m' extension.
@@ -112,7 +112,7 @@ class  tx_t3m_module3 extends t3lib_SCbase {
 			case sendtestmail: // send test mails,
 				$content='<h2>'.$LANG->getLL('sendtestmail').'</h2>';
 				$content.=$LANG->getLL('descriptionSendTestMail');
-				$content.=tx_t3m_main::sendTestMails();
+				$content.=tx_t3m_send::sendTestMails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case sendtestcampaign: // send test campaign,
@@ -123,13 +123,13 @@ class  tx_t3m_module3 extends t3lib_SCbase {
 			case sendmails: // send campaign,
 				$content='<h2>'.$LANG->getLL('sendmails').'</h2>';
 				$content.=$LANG->getLL('descriptionSendMails');
-				$content.=tx_t3m_main::sendMails();
+				$content.=tx_t3m_send::sendMails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case resendmails: // send campaign,
 				$content='<h2>'.$LANG->getLL('resendmails').'</h2>';
 				$content.=$LANG->getLL('descriptionResendmails');
-				$content.=tx_t3m_main::resendMails();
+				$content.=tx_t3m_send::resendMails();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 // 			case sendcampaign: // send campaign,

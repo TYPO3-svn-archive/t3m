@@ -44,8 +44,7 @@ require_once ('../class.tx_t3m_main.php');
  * @subpackage	tx_t3m
  */
 class  tx_t3m_module1 extends t3lib_SCbase {
-	var $pageinfo;
-	var $extensionKey;
+
 
 	/**
 	* Initializes the Module
@@ -81,6 +80,7 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 				'targetgroups' => $LANG->getLL('targetgroups'),
 				'receivers' => $LANG->getLL('Receivers'),
 				'export' => $LANG->getLL('Export'),
+				'maintenance' => $LANG->getLL('maintenance')
 				);
 
 // // 				'groups' => Array ( // this kind of menu would be nice, but multidimensional menu is not possible here.
@@ -122,7 +122,7 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 	function moduleContent()	{
 		global $LANG, $TYPO3_CONF_VARS;
 
-		$tmpl = tx_t3m_main::getTSConstants();
+		$tmpl = tx_t3m_settings::getTSConstants();
 
 		switch((string)$this->MOD_SETTINGS['function'])	{
 			case import:
@@ -133,11 +133,13 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 
 				$content.='<br /><h3>'.$LANG->getLL('importreceivers').'</h3>';
 				$content.= $LANG->getLL('descriptionImportReceivers').'<br />';
-				$content.=tx_t3m_main::importReceivers();
+				$content.=tx_t3m_addresses::importReceivers();
 
-				$content.='<br /><h3>'.$LANG->getLL('importfeusers').'</h3>';
-				$content.= $LANG->getLL('descriptionImportFeusers').'<br />';
-				$content.=tx_t3m_main::importFeusers();
+				if ($GLOBALS['BE_USER']->isAdmin()) {
+					$content.='<br /><h3>'.$LANG->getLL('importfeusers').'</h3>';
+					$content.= $LANG->getLL('descriptionImportFeusers').'<br />';
+					$content.=tx_t3m_addresses::importFeusers();
+				}
 
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
@@ -149,11 +151,11 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 
 // 				$content.='<br /><h3>'.$LANG->getLL('createfegroup').'</h3>';
 // 				$content.=$LANG->getLL('descriptionCreateFegroup').'<br />';
-// 				$content.=tx_t3m_main::createFegroup();
+// 				$content.=tx_t3m_addresses::createFegroup();
 
 				$content.='<br /><h3>'.$LANG->getLL('createfeuser').'</h3>';
 				$content.=$LANG->getLL('descriptionCreateFeuser').'<br />';
-				$content.=tx_t3m_main::createFeuser();
+				$content.=tx_t3m_addresses::createFeuser();
 
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
@@ -169,23 +171,23 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 
 				$content.='<h3>'.$LANG->getLL('subscriptionformtemplate').'</h3>';
 				$content.=$LANG->getLL('descriptionSubscriptionformTemplate').'<br />';
-				$content.=tx_t3m_main::getSubscriptionPageTemplate();
+				$content.=tx_t3m_addresses::subscriptionPageTemplate();
 
 				$content.='<br /><h3>'.$LANG->getLL('subscriptionpage').'</h3>';
 				$content.=$LANG->getLL('descriptionSubscriptionPage').'<br />';
-				$content.=tx_t3m_main::getSubscriptionPage();
+				$content.=tx_t3m_addresses::subscriptionPage();
 
 				$content.='<br /><h3>'.$LANG->getLL('confirmationpage').'</h3>';
 				$content.=$LANG->getLL('descriptionConfirmationPage').'<br />';
-				$content.=tx_t3m_main::getSubscriptionConfirmationPage();
+				$content.=tx_t3m_addresses::subscriptionConfirmationPage();
 
 				$content.='<br /><h3>'.$LANG->getLL('loginpage').'</h3>';
 				$content.=$LANG->getLL('descriptionLoginPage').'<br />';
-				$content.=tx_t3m_main::getLoginPage();
+				$content.=tx_t3m_addresses::loginPage();
 
 				$content.='<br /><h3>'.$LANG->getLL('profileeditpage').'</h3>';
 				$content.=$LANG->getLL('descriptionProfileEditPage').'<br />';
-				$content.=tx_t3m_main::getSubscriptionEditPage();
+				$content.=tx_t3m_addresses::subscriptionEditPage();
 
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
@@ -193,19 +195,19 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 				$content='<h2>'.$LANG->getLL('salutations').'</h2>';
 				$content.=$LANG->getLL('descriptionSalutations');
 				$content.='<h3>'.$LANG->getLL('createSalutation').'</h3>';
-				$content.=tx_t3m_main::createSalutation();
+				$content.=tx_t3m_addresses::createSalutation();
 				$content.='<h3>'.$LANG->getLL('getSalutations').'</h3>';
-				$content.=tx_t3m_main::getSalutations();
+				$content.=tx_t3m_addresses::getSalutations();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case groups:
 				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('Groups').'</h2>';
 				$content.=$LANG->getLL('descriptionGroups').'<br />';
-				$content.=tx_t3m_main::getGroups();
+				$content.=tx_t3m_addresses::getGroups();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case targetgroups:
-				tx_t3m_main::updateAllCalculatedTargetgroupUsers();
+				tx_t3m_addresses::updateAllCalculatedTargetgroupUsers();
 				// without recipients intervention (by age, sex, zip, ...)
 				// IDEA: show a form for creating/deleting profiles, form options: fe_users:gender, fe_users:date_of_birth, fe_users:zone (bundesland), fe_users:zip (plz), big selectorbox for fe_groups, big selectorbox for fe_users (and a tooltip to encourage to use groups rather than single users.)
 				// IDEA: show current definition names, number of users who fit into this group and delete button
@@ -214,33 +216,38 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('targetgroupdefinitions').'</h2>';
 				$content.=$LANG->getLL('descriptionTargetgroupDefinitions');
 				$content.='<br /><h3>'.$LANG->getLL('createTargetgroupdefinition').'</h3>';
-				$content.=tx_t3m_main::createTargetgroupDefinition();
+				$content.=tx_t3m_addresses::createTargetgroupDefinition();
 				$content.='<br /><h3>'.$LANG->getLL('getTargetgroupdefinitions').'</h3>';
-				$content.=tx_t3m_main::getTargetgroupDefinitions();
+				$content.=tx_t3m_addresses::getTargetgroupDefinitions();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case receivers:
-				tx_t3m_main::updateAllCalculatedReceivers();
+				tx_t3m_addresses::updateAllCalculatedReceivers();
 				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('Receivers').'</h2>';
 				$content.=$LANG->getLL('descriptionReceivers');
-				$content.='<br /><h3>'.$LANG->getLL('createReceivergroup').'</h3>';
-				$content.=tx_t3m_main::createReceivergroup();
-				$content.='<br /><h3>'.$LANG->getLL('getReceivergroups').'</h3>';
-				$content.=tx_t3m_main::getReceivergroups();
+				$content.='<br /><h3>'.$LANG->getLL('createReceiverlist').'</h3>';
+				$content.=tx_t3m_addresses::createReceiverlist();
+				$content.='<br /><h3>'.$LANG->getLL('getReceiverlist').'</h3>';
+				$content.=tx_t3m_addresses::getReceiverlists();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 			case export:
 				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('Export').'</h2>';
 				$content.='<h3>'.$LANG->getLL('User').'</h3>';
 				$content.=$LANG->getLL('descriptionExportUsers').'<br />';
-				$content.=tx_t3m_main::export();
+				$content.=tx_t3m_addresses::export();
+				$this->content.=$this->doc->section('',$content,0,1);
+			break;
+			case maintenance:
+				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('maintenance').'</h2>';
+				$content.='<h3>'.$GLOBALS['LANG']->getLL('maintenanceUsers').'</h3>';
+				$content.=$LANG->getLL('descriptionMaintenanceUsers').'<br />';
+				$content.=tx_t3m_addresses::maintenanceUsers();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
 		}
 	}
 }
-
-
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/t3m/mod1/index.php'])	{
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/t3m/mod1/index.php']);

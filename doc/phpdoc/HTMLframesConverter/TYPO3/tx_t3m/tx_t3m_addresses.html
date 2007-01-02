@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tx_t3m_addresses</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tx_t3m_addresses
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a32">32</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_class.tx_t3m_addresses.php.html">/class.tx_t3m_addresses.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class for handling addresses</h5>
+<ul>
+		<li><strong>author:</strong> - Stefan Koch &lt;<a href="mailto:t3m@stefkoch.de">t3m@stefkoch.de</a>&gt;</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodbeUserHasEmail" title="details" class="method-name">beUserHasEmail</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateCategory" title="details" class="method-name">createCategory</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateFegroup" title="details" class="method-name">createFegroup</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateFeuser" title="details" class="method-name">createFeuser</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateReceiverlist" title="details" class="method-name">createReceiverlist</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateReceiverlistForTargetgroup" title="details" class="method-name">createReceiverlistForTargetgroup</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateSalutation" title="details" class="method-name">createSalutation</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcreateTargetgroupDefinition" title="details" class="method-name">createTargetgroupDefinition</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditCategory" title="details" class="method-name">editCategory</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditGroup" title="details" class="method-name">editGroup</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditReceivergroup" title="details" class="method-name">editReceivergroup</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditSalutation" title="details" class="method-name">editSalutation</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditTargetgroup" title="details" class="method-name">editTargetgroup</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodeditUser" title="details" class="method-name">editUser</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodexport" title="details" class="method-name">export</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodfeUserHasEmail" title="details" class="method-name">feUserHasEmail</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformGroupSelector" title="details" class="method-name">formGroupSelector</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformReceivergroupSelector" title="details" class="method-name">formReceivergroupSelector</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformTargetgroupSelector" title="details" class="method-name">formTargetgroupSelector</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetBeGroupUsers" title="details" class="method-name">getBeGroupUsers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetCategoryUsers" title="details" class="method-name">getCategoryUsers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetDisabledUsers" title="details" class="method-name">getDisabledUsers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetFeGroupUsers" title="details" class="method-name">getFeGroupUsers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetGroupName" title="details" class="method-name">getGroupName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetGroups" title="details" class="method-name">getGroups</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetInvalidUsers" title="details" class="method-name">getInvalidUsers</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetReceivergroupName" title="details" class="method-name">getReceivergroupName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetReceiverlists" title="details" class="method-name">getReceiverlists</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">0</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetReceivers" title="details" class="method-name">getReceivers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetSalutations" title="details" class="method-name">getSalutations</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetSubscriptionSysfolder" title="details" class="method-name">getSubscriptionSysfolder</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetTargetgroupDefinitions" title="details" class="method-name">getTargetgroupDefinitions</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetTargetGroupName" title="details" class="method-name">getTargetGroupName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetTargetgroupUsers" title="details" class="method-name">getTargetgroupUsers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetTimestampFromAge" title="details" class="method-name">getTimestampFromAge</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$age</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$age:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodimportFeusers" title="details" class="method-name">importFeusers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodimportReceivers" title="details" class="method-name">importReceivers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodloginPage" title="details" class="method-name">loginPage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">table</span>
+        <a href="#methodmaintenanceUsers" title="details" class="method-name">maintenanceUsers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodsubscriptionConfirmationPage" title="details" class="method-name">subscriptionConfirmationPage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodsubscriptionEditPage" title="details" class="method-name">subscriptionEditPage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodsubscriptionPage" title="details" class="method-name">subscriptionPage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodsubscriptionPageTemplate" title="details" class="method-name">subscriptionPageTemplate</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForFeGroup" title="details" class="method-name">tableForFeGroup</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$gid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$gid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForFegroupUsers" title="details" class="method-name">tableForFegroupUsers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$gid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForFeusers" title="details" class="method-name">tableForFeusers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$users</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$users:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForFile" title="details" class="method-name">tableForFile</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$fileURL</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fileURL:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForReceivers" title="details" class="method-name">tableForReceivers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$tid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForSysfolder" title="details" class="method-name">tableForSysfolder</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$pid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForTargetgroupUsers" title="details" class="method-name">tableForTargetgroupUsers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$tid</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$tid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateAllCalculatedCategories" title="details" class="method-name">updateAllCalculatedCategories</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateAllCalculatedReceivers" title="details" class="method-name">updateAllCalculatedReceivers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateAllCalculatedTargetgroupUsers" title="details" class="method-name">updateAllCalculatedTargetgroupUsers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateCalculatedCategory" title="details" class="method-name">updateCalculatedCategory</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateCalculatedReceivers" title="details" class="method-name">updateCalculatedReceivers</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$uid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodupdateCalculatedTargetgroupUsers" title="details" class="method-name">updateCalculatedTargetgroupUsers</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$uid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$uid:</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodbeUserHasEmail" id="methodbeUserHasEmail"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method beUserHasEmail</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1298">1298</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>beUserHasEmail(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns if user has email (true) or not (false)</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the be user</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - has email (true) or not (false)</li>
+		</ul>
+</div>
+<a name="methodcreateCategory" id="methodcreateCategory"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1406">1406</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createCategory(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new content category</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for entering a new content category</li>
+		</ul>
+</div>
+<a name="methodcreateFegroup" id="methodcreateFegroup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createFegroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1392">1392</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createFegroup(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for a new user for a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: sysfolder in which to create the group</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for a new user for a page</li>
+		</ul>
+</div>
+<a name="methodcreateFeuser" id="methodcreateFeuser"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createFeuser</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1375">1375</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createFeuser(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for a new user for a page</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: sysfolder in which to create the user</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for a new user for a page</li>
+		</ul>
+</div>
+<a name="methodcreateReceiverlist" id="methodcreateReceiverlist"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createReceiverlist</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1331">1331</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createReceiverlist(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a form to enter a new receiver group definition</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new receiver group definition</li>
+		</ul>
+</div>
+<a name="methodcreateReceiverlistForTargetgroup" id="methodcreateReceiverlistForTargetgroup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createReceiverlistForTargetgroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1345">1345</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createReceiverlistForTargetgroup(
+
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a form to enter a new receiver group definition</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new receiver group definition</li>
+		</ul>
+</div>
+<a name="methodcreateSalutation" id="methodcreateSalutation"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createSalutation</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1419">1419</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createSalutation(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new content category</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for entering a new content category</li>
+		</ul>
+</div>
+<a name="methodcreateTargetgroupDefinition" id="methodcreateTargetgroupDefinition"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createTargetgroupDefinition</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1359">1359</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>createTargetgroupDefinition(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a form to enter a new receiver group definition</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for entering a new receiver group definition</li>
+		</ul>
+</div>
+<a name="methodeditCategory" id="methodeditCategory"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1431">1431</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editCategory(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a content category</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: category uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a content category</li>
+		</ul>
+</div>
+<a name="methodeditGroup" id="methodeditGroup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editGroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a491">491</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editGroup(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for editing a group</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: fegroup uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a link for editing a group (e.g. the group sr_feuser_register uses for pending users)</li>
+		</ul>
+</div>
+<a name="methodeditReceivergroup" id="methodeditReceivergroup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editReceivergroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1320">1320</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editReceivergroup(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for editing a  receiver definition</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the receiver group</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for editing a receiver group</li>
+		</ul>
+</div>
+<a name="methodeditSalutation" id="methodeditSalutation"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editSalutation</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1443">1443</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editSalutation(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a salutation</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the salutation</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link for editing a salutation</li>
+		</ul>
+</div>
+<a name="methodeditTargetgroup" id="methodeditTargetgroup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editTargetgroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a542">542</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editTargetgroup(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for editing a targetgroup</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: targetgroup uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a link for editing a group (e.g. the group sr_feuser_register uses for pending users)</li>
+		</ul>
+</div>
+<a name="methodeditUser" id="methodeditUser"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editUser</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a504">504</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>editUser(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a link for editing a fe_user</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: user uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - form for editing a fe_user</li>
+		</ul>
+</div>
+<a name="methodexport" id="methodexport"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method export</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a556">556</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>export(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns links for exports of users and groups</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for exports of users and groups</li>
+			<li><strong>todo</strong> - Create individual CSV-file exports for targetgroups</li>
+		</ul>
+</div>
+<a name="methodfeUserHasEmail" id="methodfeUserHasEmail"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method feUserHasEmail</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1276">1276</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>feUserHasEmail(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns if user has email (true) or not (false)</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the fe user</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - has email (true) or not (false)</li>
+		</ul>
+</div>
+<a name="methodformGroupSelector" id="methodformGroupSelector"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formGroupSelector</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a407">407</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formGroupSelector(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns group selector</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - group selector</li>
+		</ul>
+</div>
+<a name="methodformReceivergroupSelector" id="methodformReceivergroupSelector"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formReceivergroupSelector</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a448">448</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formReceivergroupSelector(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns receivergroup selector</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: targetgroup id</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - receivergroup selector link</li>
+		</ul>
+</div>
+<a name="methodformTargetgroupSelector" id="methodformTargetgroupSelector"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formTargetgroupSelector</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a437">437</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formTargetgroupSelector(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns targetgroup selector</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: targetgroup id</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - targetgroup selector link</li>
+		</ul>
+</div>
+<a name="methodgetBeGroupUsers" id="methodgetBeGroupUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getBeGroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a267">267</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getBeGroupUsers(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array with uids of the be_users of a be_group</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: backend group uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with uids of the be_users</li>
+		</ul>
+</div>
+<a name="methodgetCategoryUsers" id="methodgetCategoryUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCategoryUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a900">900</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getCategoryUsers(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns user ids who chose a category</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of category</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - user ids who chose a category</li>
+			<li><strong>todo</strong> - Traversal through subcategories</li>
+		</ul>
+</div>
+<a name="methodgetDisabledUsers" id="methodgetDisabledUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getDisabledUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1012">1012</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getDisabledUsers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of users who are disabled</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for editing a list of the users of a group</li>
+		</ul>
+</div>
+<a name="methodgetFeGroupUsers" id="methodgetFeGroupUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getFeGroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a243">243</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getFeGroupUsers(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns array with uids of the fe_users of a fe_group</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: frontend group uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with uids of the fe_users</li>
+		</ul>
+</div>
+<a name="methodgetGroupName" id="methodgetGroupName"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getGroupName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a291">291</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getGroupName(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a name (title) for a group</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: backend group uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a name (title) for a group (e.g. the group name sr_feuser_register uses for pending users)</li>
+		</ul>
+</div>
+<a name="methodgetGroups" id="methodgetGroups"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getGroups</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a356">356</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getGroups(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns stats for users</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with stats for users</li>
+			<li><strong>todo</strong> - Move actions to the more global &quot;handler&quot; function</li>
+		</ul>
+</div>
+<a name="methodgetInvalidUsers" id="methodgetInvalidUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getInvalidUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1639">1639</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getInvalidUsers(
+array
+$pids:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns users with invalid data</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids:</strong>: mail ids</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - invalid users</li>
+		</ul>
+</div>
+<a name="methodgetReceivergroupName" id="methodgetReceivergroupName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getReceivergroupName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a335">335</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getReceivergroupName(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a name (title) for a Receivergroup</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: Receivergroup uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a name (title) for a group (e.g. the group name sr_feuser_register uses for pending users)</li>
+		</ul>
+</div>
+<a name="methodgetReceiverlists" id="methodgetReceiverlists"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getReceiverlists</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1057">1057</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getReceiverlists(
+int
+0)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of receiver definitions</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int 0</strong>: uid of page where to find the receivers (not used yet)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with receiver lists</li>
+		</ul>
+</div>
+<a name="methodgetReceivers" id="methodgetReceivers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getReceivers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a775">775</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getReceivers(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get users for a receivergroup</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the receivergroup</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - user array</li>
+			<li><strong>todo</strong> - Integrate original tcdirectmail classes in order to stay compatible rather than work on DB directly</li>
+		</ul>
+</div>
+<a name="methodgetSalutations" id="methodgetSalutations"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSalutations</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a458">458</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getSalutations(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns created directmails and edit buttons</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table with created directmails and edit buttons</li>
+		</ul>
+</div>
+<a name="methodgetSubscriptionSysfolder" id="methodgetSubscriptionSysfolder"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSubscriptionSysfolder</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a115">115</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getSubscriptionSysfolder(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a string with the sr_feuser_register's sysfolder where users are saved</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the sr_feuser_register sysfolder where users are saved</li>
+		</ul>
+</div>
+<a name="methodgetTargetgroupDefinitions" id="methodgetTargetgroupDefinitions"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTargetgroupDefinitions</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a576">576</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getTargetgroupDefinitions(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows the receiver group definitions, a table with gender(fe_users:gender), age range(fe_users:date_of_birth), fe_users:zone (e.g. bundesland, state), fe_users:zip (plz), selectorbox for fe_groups, big selectorbox for fe_users</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with receiver group definitions</li>
+			<li><strong>todo</strong> - Add zone support and keep it consistent with zip-codes (tricky!) as well as reduce the possible selection corresponding to a selected country-code (tricky, too)!)</li>
+		</ul>
+</div>
+<a name="methodgetTargetGroupName" id="methodgetTargetGroupName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTargetGroupName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a313">313</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getTargetGroupName(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a name (title) for a targetgroup</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: targetgroup uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a name (title) for a group (e.g. the group name sr_feuser_register uses for pending users)</li>
+		</ul>
+</div>
+<a name="methodgetTargetgroupUsers" id="methodgetTargetgroupUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTargetgroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a692">692</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getTargetgroupUsers(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows the users</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of targetgroup</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - list of receivers</li>
+		</ul>
+</div>
+<a name="methodgetTimestampFromAge" id="methodgetTimestampFromAge"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTimestampFromAge</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a872">872</a></span>)
+ </h4> 
+<h4><i>int</i> <strong>getTimestampFromAge(
+
+$age, int
+$age:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an epoch timestamp as birthdate for an integer age</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $age:</strong>: unix timestamp</li>
+			<li><strong> $age</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - epoch timestamp as birthdate for an integer age</li>
+		</ul>
+</div>
+<a name="methodimportFeusers" id="methodimportFeusers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method importFeusers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a101">101</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>importFeusers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Integrates rs_userimp extension for superadmins</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - content for csv import from EXT:rs_userimp for superadmins</li>
+			<li><strong>todo</strong> - Integrate the extension better so it works for non-admin beusers (security?)</li>
+			<li><strong>todo</strong> - Create a profile-file for import for Oultook, Firefox adress exports (A very simple demo cvs i already included)</li>
+		</ul>
+</div>
+<a name="methodimportReceivers" id="methodimportReceivers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method importReceivers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a68">68</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>importReceivers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Integrates csv import</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - content for csv import</li>
+			<li><strong>todo</strong> - Test and implement loading of a cvs via url</li>
+		</ul>
+</div>
+<a name="methodloginPage" id="methodloginPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method loginPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a202">202</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>loginPage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table with the feuser login page</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the feuser login page</li>
+		</ul>
+</div>
+<a name="methodmaintenanceUsers" id="methodmaintenanceUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method maintenanceUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1659">1659</a></span>)
+ </h4> 
+<h4><i>table</i> <strong>maintenanceUsers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return table for editing users with no e-mail adress</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - for user data with problems like no email address</li>
+			<li><strong>todo</strong> - apart from not having email, show bounced, but not yet disabled users?</li>
+		</ul>
+</div>
+<a name="methodsubscriptionConfirmationPage" id="methodsubscriptionConfirmationPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method subscriptionConfirmationPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a162">162</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>subscriptionConfirmationPage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table with the sr_feuser_register profile creation confirmation page</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the sr_feuser_register profile creation confirmation page</li>
+		</ul>
+</div>
+<a name="methodsubscriptionEditPage" id="methodsubscriptionEditPage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method subscriptionEditPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a180">180</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>subscriptionEditPage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table with the sr_feuser_register profile creation confirmation page</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the sr_feuser_register profile creation confirmation page</li>
+		</ul>
+</div>
+<a name="methodsubscriptionPage" id="methodsubscriptionPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method subscriptionPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a125">125</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>subscriptionPage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table with the sr_feuser_register profile creation page</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the sr_feuser_register profile creation page</li>
+		</ul>
+</div>
+<a name="methodsubscriptionPageTemplate" id="methodsubscriptionPageTemplate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method subscriptionPageTemplate</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a147">147</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>subscriptionPageTemplate(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a string with the sr_feuser_register's templateFile</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table with the sr_feuser_register profile creation page</li>
+		</ul>
+</div>
+<a name="methodtableForFeGroup" id="methodtableForFeGroup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForFeGroup</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a221">221</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForFeGroup(
+
+$gid, int
+$gid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a group and an edit button</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid:</strong>: frontend group uid</li>
+			<li><strong> $gid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table for a group and an edit button</li>
+		</ul>
+</div>
+<a name="methodtableForFegroupUsers" id="methodtableForFegroupUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForFegroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a923">923</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForFegroupUsers(
+int
+$gid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of users of a fegroup and editlinks here</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $gid</strong>: uid of fe_group</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for editing a list of the users of a group</li>
+		</ul>
+</div>
+<a name="methodtableForFeusers" id="methodtableForFeusers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForFeusers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a973">973</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForFeusers(
+
+$users, array
+$users:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of users and editlinks here</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $users:</strong>: users with data</li>
+			<li><strong> $users</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - links for editing a list of the users</li>
+		</ul>
+</div>
+<a name="methodtableForFile" id="methodtableForFile"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForFile</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1583">1583</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForFile(
+
+$fileURL, string
+$fileURL:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a set of links for viewing, editing and deleting a file</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $fileURL:</strong>: where to find the file</li>
+			<li><strong> $fileURL</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table which include links to view, edit and delete the file</li>
+		</ul>
+</div>
+<a name="methodtableForReceivers" id="methodtableForReceivers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForReceivers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1511">1511</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForReceivers(
+
+$uid, array
+$tid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for Targetgroup Users</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $tid:</strong>: targetgroup id</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table for Targetgroup Users</li>
+		</ul>
+</div>
+<a name="methodtableForSysfolder" id="methodtableForSysfolder"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForSysfolder</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1607">1607</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForSysfolder(
+
+$pid, int
+$pid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a table for a sysfolder (link for editing and showing stats)</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid:</strong>: page id</li>
+			<li><strong> $pid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table data html tags which include links to view, edit and delete the page</li>
+		</ul>
+</div>
+<a name="methodtableForTargetgroupUsers" id="methodtableForTargetgroupUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForTargetgroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1455">1455</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForTargetgroupUsers(
+
+$tid, array
+$tid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for Targetgroup Users</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $tid:</strong>: targetgroup id</li>
+			<li><strong> $tid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a table for Targetgroup Users</li>
+		</ul>
+</div>
+<a name="methodupdateAllCalculatedCategories" id="methodupdateAllCalculatedCategories"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateAllCalculatedCategories</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1256">1256</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateAllCalculatedCategories(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all targetgroups</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateAllCalculatedReceivers" id="methodupdateAllCalculatedReceivers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateAllCalculatedReceivers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1220">1220</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateAllCalculatedReceivers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all receivergroups</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateAllCalculatedTargetgroupUsers" id="methodupdateAllCalculatedTargetgroupUsers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateAllCalculatedTargetgroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1238">1238</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateAllCalculatedTargetgroupUsers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all targetgroups</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateCalculatedCategory" id="methodupdateCalculatedCategory"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateCalculatedCategory</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1208">1208</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateCalculatedCategory(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for all targetgroups</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: category uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateCalculatedReceivers" id="methodupdateCalculatedReceivers"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateCalculatedReceivers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1107">1107</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateCalculatedReceivers(
+int
+$uid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for our receivergroups</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid</strong>: uid of the receivergroup to be updated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<a name="methodupdateCalculatedTargetgroupUsers" id="methodupdateCalculatedTargetgroupUsers"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method updateCalculatedTargetgroupUsers</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_addresses.php.html#a1195">1195</a></span>)
+ </h4> 
+<h4><i>boolean</i> <strong>updateCalculatedTargetgroupUsers(
+
+$uid, int
+$uid:)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Update usercount for a targetgroup</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $uid:</strong>: targetgrup uid</li>
+			<li><strong> $uid</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if it went ok</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 02 Jan 2007 19:45:32 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>

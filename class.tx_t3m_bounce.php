@@ -28,9 +28,9 @@
  * @author	Stefan Koch <t3m@stefkoch.de>
  * @package	TYPO3
  * @subpackage tx_t3m
+ * @todo	Patch tcdirectmails targetgroups code with bouncehandling (csv: remove user-row from tx_tcdirectmail_targets.csvvalues )
  */
 class tx_t3m_bounce	{
-	var $extKey, $rootTS, $myConf, $INTERNAL, $EXTERNAL;
 
 	/**
 	* php4 constructor
@@ -198,7 +198,6 @@ class tx_t3m_bounce	{
 			'fe_users',
 			'uid='.intval($uid)
 			);
-		$i = 0;
 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 		$out = $row['tx_t3m_softbounces'];
 		return $out;
@@ -216,7 +215,6 @@ class tx_t3m_bounce	{
 			'fe_users',
 			'uid='.intval($uid)
 			);
-		$i = 0;
 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 		$out = $row['tx_t3m_hardbounces'];
 		return $out;
@@ -228,6 +226,8 @@ class tx_t3m_bounce	{
 	 * @return	array		bounce config
 	 */
 	function getBounceRules()	{
+		$myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']);
+
 // 		$out = '<form>How many returns should be allowed befor users get disabeld?<br/><input type="text" name="bouncecount" /></form><br/>';
 // 		$reason_text = array(
 // 		'550' => 'no mailbox|account does not exist|user unknown|user is unknown|unknown user|unknown local part|unrouteable address|does not have an account here|no such user|user not listed|account has been disabled or discontinued|user disabled|unknown recipient|invalid recipient|recipient problem|recipient name is not recognized|mailbox unavailable|550 5\.1\.1 recipient|status: 5\.1\.1|delivery failed 550|550 requested action not taken|receiver not found|unknown or illegal alias|is unknown at host|is not a valid mailbox|no mailbox here by that name|we do not relay|5\.7\.1 unable to relay|cuenta no activa|inactive user|user is inactive|mailaddress is administratively disabled|not found in directory|not listed in public name & address book|destination addresses were unknown|rejected address|not listed in domino directory|domino directory entry does not',
@@ -235,8 +235,17 @@ class tx_t3m_bounce	{
 // 		'552' => 't find any host named|unrouteable mail domain|not reached for any host after a long failure period|domain invalid|host lookup did not complete: retry timeout exceeded|no es posible conectar correctamente',
 // 		'554' => 'error in header|header error|invalid message|invalid structure|header line format error');
 // 		t3lib_div::debug($reason_text);
-		$out['max_hardbounce'] = 2; //$this->myConf['max_hardbounce']
-		$out['max_softbounce'] = 3; //$this->myConf['max_softbounce']
+		if ($myConf['max_hardbounce']) {
+			$out['max_hardbounce'] = $myConf['max_hardbounce'];
+		} else {
+			$out['max_hardbounce'] = 2;
+		}
+		if ($myConf['max_softbounce']) {
+			$out['max_softbounce'] = $myConf['max_softbounce'];
+		} else {
+			$out['max_softbounce'] = 3;
+		}
+
 		return $out;
 	}
 

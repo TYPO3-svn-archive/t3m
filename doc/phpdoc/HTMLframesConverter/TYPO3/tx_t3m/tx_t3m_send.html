@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tx_t3m_send</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tx_t3m_send
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a32">32</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_class.tx_t3m_send.php.html">/class.tx_t3m_send.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class for showing some send options</h5>
+<ul>
+		<li><strong>author:</strong> - Stefan Koch &lt;<a href="mailto:t3m@stefkoch.de">t3m@stefkoch.de</a>&gt;</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformForSendingMailing" title="details" class="method-name">formForSendingMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodformForTestSendingMailing" title="details" class="method-name">formForTestSendingMailing</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$pid</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetSendingMails" title="details" class="method-name">getSendingMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetSentMails" title="details" class="method-name">getSentMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetUnsentMails" title="details" class="method-name">getUnsentMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetUnsentScheduledMails" title="details" class="method-name">getUnsentScheduledMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetUnsentUnscheduledMails" title="details" class="method-name">getUnsentUnscheduledMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodresendMails" title="details" class="method-name">resendMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsendMails" title="details" class="method-name">sendMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsendTestMails" title="details" class="method-name">sendTestMails</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForScheduledMails" title="details" class="method-name">tableForScheduledMails</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodtableForTestMails" title="details" class="method-name">tableForTestMails</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodformForSendingMailing" id="methodformForSendingMailing"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formForSendingMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a326">326</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formForSendingMailing(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for sending a mailing</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: of mailing</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a link for editing all extension settings</li>
+		</ul>
+</div>
+<a name="methodformForTestSendingMailing" id="methodformForTestSendingMailing"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method formForTestSendingMailing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a338">338</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>formForTestSendingMailing(
+int
+$pid)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a link for sending a mailing</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $pid</strong>: of mailing</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a link for editing all extension settings</li>
+		</ul>
+</div>
+<a name="methodgetSendingMails" id="methodgetSendingMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSendingMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a74">74</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getSendingMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns uids of mails which are currently being sent (60 seconds before pages.tx_tcdirectmail_senttime and after tx_tcdirectmail_sentlog.)</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - uids of mails which have been sent</li>
+		</ul>
+</div>
+<a name="methodgetSentMails" id="methodgetSentMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSentMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a39">39</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getSentMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns uids of mails which have been sent</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - uids of mails which have been sent</li>
+		</ul>
+</div>
+<a name="methodgetUnsentMails" id="methodgetUnsentMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getUnsentMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a182">182</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getUnsentMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns uids of mails which have not been sent</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - uids of mails which have not been sent</li>
+		</ul>
+</div>
+<a name="methodgetUnsentScheduledMails" id="methodgetUnsentScheduledMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getUnsentScheduledMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a241">241</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getUnsentScheduledMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns uids of mails which have not been sent</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - uids of mails which have not been sent</li>
+		</ul>
+</div>
+<a name="methodgetUnsentUnscheduledMails" id="methodgetUnsentUnscheduledMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getUnsentUnscheduledMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a211">211</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getUnsentUnscheduledMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns uids of mails which have not been sent</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - uids of mails which have not been sent</li>
+		</ul>
+</div>
+<a name="methodresendMails" id="methodresendMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method resendMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a150">150</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>resendMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsendMails" id="methodsendMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method sendMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a111">111</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>sendMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsendTestMails" id="methodsendTestMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method sendTestMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a164">164</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>sendTestMails(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtableForScheduledMails" id="methodtableForScheduledMails"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForScheduledMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a295">295</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForScheduledMails(
+array
+$pids)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for sending mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids</strong>: mailings</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table for sending mails</li>
+		</ul>
+</div>
+<a name="methodtableForTestMails" id="methodtableForTestMails"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForTestMails</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_send.php.html#a271">271</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>tableForTestMails(
+array
+$pids)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a table for sending test mails</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $pids</strong>: mailings</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - table for sending test mails</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 02 Jan 2007 19:45:48 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>

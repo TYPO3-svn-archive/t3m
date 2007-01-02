@@ -30,7 +30,6 @@
  * @subpackage	tx_t3m
  */
 class tx_t3m_spam	{
-	var $extKey, $rootTS, $myConf;
 
 	/**
 	* php4 constructor
@@ -75,8 +74,8 @@ class tx_t3m_spam	{
 	 * @return	string		an evaluation for spam
 	 */
 	function checkForSpam($pid)	{
-		$out = '<br />Checking for spam for page:'.$pid.' <br />
-			Script running: <br /> '.$this->myConf['spam_checker_script'].'<br />';
+		$out = '<br />'.$GLOBALS['LANG']->getLL('checkingForSpam').':';
+// 		$out .= '<br /> '.$GLOBALS['LANG']->getLL('runningScript').': '.$this->myConf['spam_checker_script'].'<br />';
 
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'*',
@@ -92,27 +91,22 @@ class tx_t3m_spam	{
 
 
 		if ($spamstring == '') {
-			$out .= 'Client spamc not responding correctly!';
+			$out .= $GLOBALS['LANG']->getLL('errorSpamc');
 		} elseif ($spamstring == '0/0') {
-			$out .= 'Daemon spamd not responding correctly!';
+			$out .= $GLOBALS['LANG']->getLL('errorSpamc');
 		} else {
 			$spamarray = explode('/',$spamstring);
-			if (floatval($spamarray[0]) > 0) { //positive value (negative values are ham anyway, right?)
-				$spamscore = floatval($spamarray[0])/floatval($spamarray[1]);
-				if ($spamscore > 1) {
-					$out .= '<br /><img src="'.$this->ICON_PATH.'icon_fatalerror.gif" /> '.$GLOBALS['LANG']->getLL('thisisspam');
-				} elseif ($spamscore > 0.5) {
-					$out .= '<br /><img src="'.$this->ICON_PATH.'icon_warning.gif" /> '.$GLOBALS['LANG']->getLL('thisisnearlyspam');
-				} else {
-					$out .= '<br /><img src="'.$this->ICON_PATH.'icon_ok2.gif" /> '.$GLOBALS['LANG']->getLL('thisisnotspam');
-				}
-
+			$spamscore = floatval($spamarray[0])/floatval($spamarray[1]);
+			$out .= tx_t3m_spam::imgSpamCheck($spamscore).'<br />';
+			if ($spamscore > 1) {
+				$out .= $GLOBALS['LANG']->getLL('thisisspam');
+			} elseif ($spamscore > 0.5) {
+				$out .= $GLOBALS['LANG']->getLL('thisisnearlyspam');
 			} else {
-				$spamscore = floatval($spamarray[0]);
-				$out .= '<br /><img src="'.$this->ICON_PATH.'icon_ok2.gif" /> '.$GLOBALS['LANG']->getLL('thisisnotspam');
+				$out .= $GLOBALS['LANG']->getLL('thisisnotspam');
 			}
 			tx_t3m_spam::saveSpamScore($pid, $spamscore);
-			$out .= '<br/>'.$spamstring.' : '.$spamscore; //'content:- '.strip_tags($mailcontent)
+			$out .= '<br/>'.$GLOBALS['LANG']->getLL('spamProbability').': '.$spamstring.' = '.$spamscore; //'content:- '.strip_tags($mailcontent)
 		}
 
 		return $out;
@@ -151,14 +145,8 @@ class tx_t3m_spam	{
 			);
 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 		$out = $row['tx_t3m_spam_score'];
-// 		if (floatval($row['tx_t3m_spam_score']) > 1) { //spam
-// 			$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif" title="'.$GLOBALS['LANG']->getLL('thisisspam').'" />';
-// 		} else { //nospam
-// 			$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif" title="'.$GLOBALS['LANG']->getLL('thisisnotspam').'" />';
-// 		}
 		return $out;
 	}
-
 
 
 	/**
@@ -171,12 +159,25 @@ class tx_t3m_spam	{
 		if ($spamscore == 0) { //not checked
 			$out .= '';
 		} elseif ($spamscore > 1) { //spam
-			$out .= '<img src="'.$this->ICON_PATH.'icon_fatalerror.gif" title="'.$GLOBALS['LANG']->getLL('thisisspam').'" />';
+			$out .= $this->iconImgError;
 		} elseif ($spamscore > 0.5) {
-			$out .= '<img src="'.$this->ICON_PATH.'icon_warning.gif" title="'.$GLOBALS['LANG']->getLL('thisisnearlyspam').'" />';
+			$out .= $this->iconImgWarning;
 		} else { //nospam
-			$out .= '<img src="'.$this->ICON_PATH.'icon_ok2.gif" title="'.$GLOBALS['LANG']->getLL('thisisnotspam').'" />';
+			$out .= $this->iconImgOk;
 		}
+		return $out;
+	}
+
+
+	/**
+	 * Returns a button for spamcheck
+	 *
+	 * @param	int		$pid: page uid
+	 * @return	string		button for spamcheck
+	 */
+	function formSpamCheck($pid)	{
+		$out = '<form><input type="submit" name="check_for_spam" value="'.$GLOBALS['LANG']->getLL('spamOrNot').'" />
+			<input type="hidden" name="id" value="'.intval($pid).'" /></form>';
 		return $out;
 	}
 

@@ -23,9 +23,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-
 require_once(t3lib_extMgm::extPath('pbimagegraph').'class.tx_pbimagegraph_ts.php');
-require_once(t3lib_extMgm::extPath('pbimagegraph').'Image/Graph/Datapreprocessor/class.tx_pbimagegraph_datapreprocessor_formatted.php');
 
 /**
  * Some statistical functions
@@ -41,8 +39,8 @@ class tx_t3m_stats	{
 	*
 	* @return	string	given name of the object (no purpose right now))
 	*/
-// 	function tx_t3m_main($name)	{
-// 		tx_t3m_main::__construct($name);
+// 	function tx_t3m_stats($name)	{
+// 		tx_t3m_stats::__construct($name);
 // 		return true;
 // 	}
 	/**
@@ -126,6 +124,38 @@ class tx_t3m_stats	{
 		$out = $row['icount'];
 		return $out;
 	}
+
+	/**
+	 * Returns number of users selected for an email
+	 *
+	 * @param	int		page uid
+	 * @return	int		number of unique email-adresses for a mail
+	 */
+	function countEmailUsers($uid)	{
+		require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_target.php');
+
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'tx_tcdirectmail_real_target',
+			'pages',
+			'uid='.intval($uid)
+			);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		if ($row['tx_tcdirectmail_real_target']) {
+			$targets = explode(',',$row['tx_tcdirectmail_real_target']);
+			foreach ($targets as $tuid) {
+				$target = tx_tcdirectmail_target::loadTarget($tuid);
+				while ($receiver = $target->getRecord()) {
+					$users[] = $receiver['email'];
+				}
+			}
+			$uniqueUsers = array_unique($users);
+			$out = count($uniqueUsers);
+		} else {
+			$out = 0;
+		}
+		return $out;
+	}
+
 
 	/**
 	 * Returns number contents of an email
@@ -216,9 +246,10 @@ class tx_t3m_stats	{
 	* @param	uid of the category
 	* @return	int	how many users have "ordered" that category
 	*/
-// 	function countCategoryUsers(){
-// 		return $out;
-// 	}
+	function updateCalculatedCategory($uid) {
+		$out = count(tx_t3m_addresses::getCategoryUsers(intval($uid)));
+ 		return $out;
+ 	}
 
 	/**
 	 * Returns int value how often links in that mail were clicked
@@ -297,7 +328,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		stats for one tcdirectmail
 	 */
-	function getStatsForTCDirectmail() {
+	function statsForTCDirectmail() {
 		// get details from tcstats ext
 	}
 
@@ -307,7 +338,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$uids: ...
 	 * @return	string		stats for all tcdirectmail
 	 */
-	function getStatsForTCDirectmails($uids)	{
+	function statsForTCDirectmails($uids)	{
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'pid, COUNT(receiver) as ireceiver', //, MAX(sendtime) as maxsendtime
 			'tx_tcdirectmail_sentlog',
@@ -323,65 +354,34 @@ class tx_t3m_stats	{
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Receivers').'</td></tr>';
 		foreach($receivers as $key => $val) {
-			$out .= '<tr><td valign="top">'.tx_t3m_main::getPageName($key).'</td><td>'.$val.'</td></tr>';
+			$out .= '<tr><td valign="top">'.tx_t3m_mailings::getPageName($key).'</td><td>'.$val.'</td></tr>';
 		}
 		$out .= '</table>';
 
-
-// 		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('stats').'</td></tr>';
-// 		if (!is_array($uids)) { //if no array given then get all tcdirectmailsonly (otherweise show only stats of the given pages - useful for campaign stats)
-// 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-// 				'uid,title',
-// 				'pages',
-// 				'doktype=189 AND deleted=0 AND hidden=0'
-// 				);
-// 			$i = 0;
-// 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-// 				$uids[$i]['uid'] = $row['uid'];
-// 				$uids[$i]['title'] = $row['title'];
-// 				$i++;
-// 			}
-// 		}
-// 		foreach ($uids as $uid) {
-// 			$out .= '<tr><td valign="top">'.$uid['title'].'</td><td>'.tx_t3m_stats::getStatsForTCDirectmail($uid['uid']).'</td></tr>';
-// 		}
-// 		$out .= '</table>';
-
-
-// 		$sql = "SELECT COUNT(uid) FROM tx_tcdirectmail_sentlog
-//                     WHERE begintime = $_REQUEST[detail_begintime]
-//                     AND pid = $_REQUEST[id]";
-//             $rs = $TYPO3_DB->sql_query($sql);
-//             list($total_receivers) = $TYPO3_DB->sql_fetch_row($rs);
-
 		return $out;
 	}
-
-
 
 	/**
 	 * Returns stats for campaigns
 	 *
 	 * @return	string		a table with stats for campaigns
 	 */
-	function getStatsForCampaigns()	{
+	function statsForCampaigns()	{
 		if (!$_REQUEST['campaign']) {
-			$_REQUEST['campaign'] = tx_t3m_main::getFirstCampaign();
+			$_REQUEST['campaign'] = tx_t3m_mailings::getFirstCampaign();
 		}
-		$out = tx_t3m_main::formCampaignSelector();
-		$out .= '<br /><h3>'.tx_t3m_main::getCampaignName($_REQUEST['campaign']).'</h3>';
-		$out .= tx_t3m_main::getCampaignDescription($_REQUEST['campaign']);
+		$out = tx_t3m_mailings::formCampaignSelector();
+		$out .= '<br /><h3>'.tx_t3m_mailings::getCampaignName($_REQUEST['campaign']).'</h3>';
+		$out .= tx_t3m_mailings::getCampaignDescription($_REQUEST['campaign']);
 
-		$mails = tx_t3m_main::getTCDirectmailsForCampaign($_REQUEST['campaign']);
+		$mails = tx_t3m_mailings::getCampaignMailings($_REQUEST['campaign']);
 		foreach ($mails as $mail) {
 			$pids[] = $mail['uid'];
 		}
 
 		// sent stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('sentstatistics').'</h3>';
-		$out .= tx_t3m_stats::getSentMailsTable($pids);
+		$out .= tx_t3m_stats::tableForSentMails($pids);
 
 		// opened stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('openstatistics').'</h3>';
@@ -393,45 +393,6 @@ class tx_t3m_stats	{
 		$out .= tx_t3m_stats::getClickedMailsTable($pids);
 		$out .= tx_t3m_stats::getNotClickedMailsTable($pids);
 
-
-// 		$out .= '<h3>'.$GLOBALS['LANG']->getLL('SentMails').'</h3>';
-// 		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Name').'</td>
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Description').'</td>
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('countEmails').'</td>
-// 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('sentmails').'</td></tr>';
-//
-// 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-// 			'uid,name,description',
-// 			'tx_'.$this->extKey.'_campaigns',
-// 			'deleted=0 AND hidden=0'
-// 			);
-// 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-// 			$tcdirectmails = tx_t3m_main::getTCDirectmailsForCampaign($row['uid']);
-// 			$out .= '<tr><td>'.$row['name'].'</td>
-// 				<td>'.$row['description'].'</td>
-// 				<td>'.count($tcdirectmails).'</td><td>';
-//
-// 			$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-// 				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-// 				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Sent').'?</td></tr>';
-//
-// 			foreach ($tcdirectmails as $tcdirectmail) {
-// 				$out .= '<tr><td>'.$tcdirectmail['title'].'</td>
-// 					<td>';
-// 				if (tx_t3m_stats::checkMailSent($tcdirectmail['uid'])) {
-// 					$out .= '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif" />';
-// 				} else {
-// 					$out .= '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif" />';
-// 				}
-// 				$out .= '</td></tr>';
-// 			}
-// 			$out .= '</table>';
-//
-// 	// 		$out .= tx_t3m_main::getStatsForTCDirectmails($tcdirectmails);
-// 			$out .= '</td></tr>';
-// 		}
-// 		$out .= '</table>';
 		return $out;
 	}
 
@@ -441,7 +402,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for newsletter
 	 */
-	function getStatsForNewsletters() {
+	function statsForNewsletters() {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('SentMails').'</h3>';
 		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
@@ -479,7 +440,7 @@ class tx_t3m_stats	{
 				}
 				$out .= '</table>';
 			} else {
-				$out .= 'E-Mail not sent, send now..';
+				$out .= tx_t3m_send::formForSendingMailing($row['uid']);
 			}
 			$out .= '</td></tr>';
 			$pids[] = $row['uid'];
@@ -508,7 +469,7 @@ class tx_t3m_stats	{
 	*
 	* @return	string stats for a tcdirectmail
 	*/
-// 	function getStatsForTCDirectmail($uid)	{
+// 	function statsForTCDirectmail($uid)	{
 // 		if (tx_t3m_stats::checkMailSent($uid)) {
 // 			// $out .= tx_tcdmailstats_modfunc1::viewStatistics(); // basically replace this function..
 // 			/* Get numbers for each session */
@@ -542,7 +503,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for single mailings
 	 */
-	function getStatsForOneOffMailings() {
+	function statsForOneOffMailings() {
 		// get one off mailings
 		$pids = '';
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -559,28 +520,206 @@ class tx_t3m_stats	{
 // 		t3lib_div::debug($pids);
 		// sent stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('sentstatistics').'</h3>';
-		$out .= tx_t3m_stats::getSentMailsTable($pids);
+		$out .= tx_t3m_stats::tableForSentMails($pids);
 
 		// opened stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('openstatistics').'</h3>';
-		$out .= tx_t3m_stats::getOpenedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotOpenedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForOpenedMails($pids);
+		$out .= tx_t3m_stats::tableForNotOpenedMails($pids);
 
 		// click stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('clickstatistics').'</h3>';
-		$out .= tx_t3m_stats::getClickedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotClickedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForClickedMails($pids);
+		$out .= tx_t3m_stats::tableForNotClickedMails($pids);
 
 		return $out;
 	}
 
+
 	/**
-	 * Returns yearly stats gfx
+	 * Returns user occurences of that year
+	 *
+	 * @param	[type]		$year: ...
+	 * @return	string		an image for user occurences of that year
+	 */
+	function yearlyStatsForUsers($year) {
+		// STATIC DATA:
+		// PLOTAREA
+		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/plot_step.txt';
+		$handle = fopen($filename, "r");
+		$contents = fread($handle, filesize($filename));
+		$ts = t3lib_div::makeInstance("t3lib_tsparser");
+		$ts->parse($contents); // now we should have it in $ts->setup
+		$static_plot_step = $ts->setup['lib.']['pbimagegraph.'];
+		fclose($handle);
+
+		// DYNAMIC DATA:
+		// what year? this year.
+		if (!($year)) {
+			$year = date('Y');
+		}
+		$month = date('n'); //1-12
+		$year_month = date('Y_m');
+
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'*',
+			'fe_users'
+			);
+		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{ // get all data
+			$usergroups = explode(',',$row['usergroup']);
+
+			//tstamp
+			$tmp_year_month_tstamp = date('Y_m',$row['tstamp']);
+			$count_activity[$tmp_year_month_tstamp] += 1;
+			$tmp_year_tstamp = date('Y',$row['tstamp']);
+			$count_activity[$tmp_year_tstamp] += 1;
+			$count[$tmp_year_tstamp] += 1;
+
+			//get users created that year (registrations)
+			$tmp_year_month_crdate = date('Y_m',$row['crdate']);
+			$count_created[$tmp_year_month_crdate] += 1;
+			$tmp_year_crdate = date('Y',$row['crdate']);
+			$count_created[$tmp_year_crdate] += 1;
+			$count[$tmp_year_crdate] += 1;
+
+
+			if ((in_array($this->myConf['groupRegistered'],$usergroups)) && (!($row['disable'])) && (!($row['deleted']))) {
+					$count_registered[$tmp_year_month_tstamp] += 1;
+					$count_registered[$tmp_year_tstamp] += 1;
+
+			}
+
+			//get users disabled that year (could be pending or bounce-related)
+			if ($row['disable']) {
+				$count_disabled[$tmp_year_month_tstamp] += 1;
+				$count_disabled[$tmp_year_tstamp] += 1;
+				if (in_array($this->myConf['groupPending'],$usergroups)) {
+					$count_pending[$tmp_year_month_tstamp] += 1;
+					$count_pending[$tmp_year_tstamp] += 1;
+				}
+				if (in_array($this->myConf['groupSoftbounces'],$usergroups)) {
+					$count_softbounces[$tmp_year_month_tstamp] += 1;
+					$count_softbounces[$tmp_year_tstamp] += 1;
+				}
+				if (in_array($this->myConf['groupHardbounces'],$usergroups)) {
+					$count_hardbounces[$tmp_year_month_tstamp] += 1;
+					$count_hardbounces[$tmp_year_tstamp] += 1;
+				}
+
+			}
+
+			//get users deleted that year (deregistered)
+			if ($row['deleted']) { //deregistered themselves or "deregistered" by backend user
+				$count_deleted[$tmp_year_month_tstamp] += 1;
+				$count_deleted[$tmp_year_tstamp] += 1;
+			}
+
+			if ($this->demo)  {
+				$count['2005'] = 1;
+				$count_registered['2005'] = 1000;
+
+				$count_registered['2005_1'] = 10;
+				$count_registered['2005_5'] = 20;
+				$count_registered['2005_6'] = 400;
+				$count_registered['2005_8'] = 100;
+
+				$count_pending['2005_1'] = 10;
+				$count_pending['2005_2'] = 10;
+				$count_pending['2005_5'] = 40;
+				$count_pending['2005_6'] = 100;
+				$count_pending['2005_7'] = 50;
+
+				$count_softbounces['2005_1'] = 100;
+				$count_softbounces['2005_2'] = 10;
+				$count_softbounces['2005_3'] = 10;
+				$count_softbounces['2005_6'] = 20;
+				$count_softbounces['2005_7'] = 10;
+				$count_softbounces['2005_8'] = 60;
+
+				$count_hardbounces['2005_4'] = 10;
+// 				$count_hardbounces['2005_6'] = 10;
+				$count_hardbounces['2005_7'] = 30;
+				$count_hardbounces['2005_8'] = 50;
+
+			}
+		}
+
+
+		$months=array (1=>"Jan", 2=>"Feb", 3=>"Mar", 4=>"Apr", 5=>"May", 6=>"Jun", 7=>"Jul", 8=>"Aug", 9=>"Sep",10=>"Oct",11=>"Nov",12=>"Dec"); //@todo: use some $GLOBALS['LANG'] or t3lib?
+
+
+		$plot_step_users_year = $static_plot_step;
+
+		$plot_step_users_year['10.']['10.']['text'] = $GLOBALS['LANG']->getLL('userBehavior').' '.$year;
+		$plot_step_users_year['10.']['20.']['10.']['axis.']['y.']['title'] = $GLOBALS['LANG']->getLL('User');
+
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['10'] = 'trivial';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['10.']['name'] = $GLOBALS['LANG']->getLL('registered');
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['1'] = 'addColor';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['1.']['color'] = 'green';
+
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['20'] = 'trivial';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['20.']['name'] = $GLOBALS['LANG']->getLL('pending');
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['2'] = 'addColor';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['2.']['color'] = 'yellow';
+
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['30'] = 'trivial';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['30.']['name'] = $GLOBALS['LANG']->getLL('softbounces');
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['3'] = 'addColor';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['3.']['color'] = 'orange';
+
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['40'] = 'trivial';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['40.']['name'] = $GLOBALS['LANG']->getLL('hardbounces');
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['4'] = 'addColor';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['4.']['color'] = 'red';
+
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['50'] = 'trivial';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['50.']['name'] = $GLOBALS['LANG']->getLL('deleted');
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['5'] = 'addColor';
+		$plot_step_users_year['10.']['20.']['10.']['10.']['fillStyle.']['5.']['color'] = 'black';
+
+		for ($i = 1; $i < 13; $i++) { // go through this year's data
+
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0'] = 'point';
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0.']['x'] = $months[$i];
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0.']['y'] = $count_registered[$year.'_'.$i];
+
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['20.'][$i.'0'] = 'point';
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['20.'][$i.'0.']['x'] = $months[$i];
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['20.'][$i.'0.']['y'] = $count_pending[$year.'_'.$i];
+
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['30.'][$i.'0'] = 'point';
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['30.'][$i.'0.']['x'] = $months[$i];
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['30.'][$i.'0.']['y'] = $count_softbounces[$year.'_'.$i];
+
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['40.'][$i.'0'] = 'point';
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['40.'][$i.'0.']['x'] = $months[$i];
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['40.'][$i.'0.']['y'] = $count_hardbounces[$year.'_'.$i];
+
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['50.'][$i.'0'] = 'point';
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['50.'][$i.'0.']['x'] = $months[$i];
+			$plot_step_users_year['10.']['20.']['10.']['10.']['dataset.']['50.'][$i.'0.']['y'] = $count_deleted[$year.'_'.$i];
+
+		}
+
+		if ($count[$year] > 0) { //something happened in that year
+			$out = ' <br />'.tx_pbimagegraph_ts::make($plot_step_users_year);
+
+		} else {
+// 			$out = 'no data for the year'.$year;
+		}
+
+		return $out;
+
+	}
+
+	/**
+	 * Returns an image for all mails of that year
 	 *
 	 * @param	[type]		$year: ...
 	 * @return	string		an image for all mails of that year
 	 */
-	function getYearlyStatsForMails($year) {
+	function yearlyStatsForMails($year) {
 
 		// STATIC DATA:
 		// PLOTAREA
@@ -612,12 +751,15 @@ class tx_t3m_stats	{
 			$tmp_year = date('Y',$row['sendtime']);
 			$count[$tmp_year] += 1;
 		}
-		// demo data:
-// 		$count['2005_3'] = 104;
-// 		$count['2005'] = 104;
-// 		$count['2006_6'] = 66;
 
-		$months=array (1=>"Jan", 2=>"Feb", 3=>"Mar", 4=>"Apr", 5=>"May", 6=>"Jun", 7=>"Jul", 8=>"Aug", 9=>"Sep",10=>"Oct",11=>"Nov",12=>"Dec"); //@todo: some $GLOBALS['LANG']!
+
+		if ($this->demo) {
+			$count['2005_3'] = 104;
+			$count['2005'] = 104;
+			$count['2006_6'] = 66;
+		}
+
+		$months=array (1=>"Jan", 2=>"Feb", 3=>"Mar", 4=>"Apr", 5=>"May", 6=>"Jun", 7=>"Jul", 8=>"Aug", 9=>"Sep",10=>"Oct",11=>"Nov",12=>"Dec"); //@todo: some $GLOBALS['LANG'] or some t3lib?
 
 // 		t3lib_div::debug($count);
 // 		t3lib_div::debug($static_plotarea);
@@ -626,8 +768,8 @@ class tx_t3m_stats	{
 		// now what we want is all data from that year
 		$plotarea_mails_year['10.']['10.']['text'] = 'E-Mails sent in '.$year;
 		$plotarea_mails_year['10.']['20.']['10.']['axis.']['y.']['title'] = 'E-Mails';
-		$plotarea_mails_year['10.']['20.']['10.']['10.']['title'] = 'Sent E-Mails';
-		for ($i = 1; $i < 13; $i++) { // go htrough this years data
+		$plotarea_mails_year['10.']['20.']['10.']['10.']['title'] = $GLOBALS['LANG']->getLL('SentMails');
+		for ($i = 1; $i < 13; $i++) { // go through this year's data
 			$plotarea_mails_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0'] = 'point';
 			$plotarea_mails_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0.']['x'] = $months[$i];
 			$plotarea_mails_year['10.']['20.']['10.']['10.']['dataset.']['10.'][$i.'0.']['y'] = $count[$year.'_'.$i];
@@ -648,7 +790,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for users
 	 */
-	function getStatsForUsers()	{
+	function statsForUsers()	{
 
 		// STATIC DATA:
 		// PIE
@@ -659,7 +801,6 @@ class tx_t3m_stats	{
 		$ts->parse($contents); // now we should have it in $ts->setup
 		$static_pie = $ts->setup['lib.']['pbimagegraph.'];
 		fclose($handle);
-
 
 
 		// SUBSCRIPTIONS
@@ -678,30 +819,32 @@ class tx_t3m_stats	{
 		$usercountOthers = $usercountAll - $usercountPending - $usercountRegistered;
 		$confirmedratio = round((($usercountRegistered/$usercountPending) * 100),2);
 
-		$out .= '<b>'.$usercountAll.'</b> total frontend users.<br />
-			<b>'.$usercountPending.'</b> pending mail users.<br />
-			<b>'.$usercountRegistered.'</b> registered mail users.<br />
-			<b>'.$usercountDeleted.'</b> deregistered mail users.<br />
-			<b>'.$confirmedratio.'%</b> ratio (confirmed compared to pending)<br />';
+		$out .= '<table class="typo3-dblist">';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('TotalUsers').'</td><td>'.$usercountAll.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('pending').'</td><td>'.$usercountPending.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('registered').'</td><td>'.$usercountRegistered.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('deleted').'</td><td>'.$usercountDeleted.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('confirmationRatio').'</td><td>'.$confirmedratio.'%</td></tr>';
+		$out .= '</table>';
 
 		// DYNAMIC DATA:
 		//pending / registered users
 
 		$pie_registrations = $static_pie;
-		$pie_registrations['10.']['10.']['text'] = 'Registered compared to pending and deregistered'; //some $GLOBALS['LANG']
+		$pie_registrations['10.']['10.']['text'] = $GLOBALS['LANG']->getLL('confirmationPie');
 
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
-		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = 'Registered: '.$usercountRegistered;
+		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('registered').': '.$usercountRegistered;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $usercountRegistered;
 		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
 
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
-		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = 'Pending: '.$usercountPending;
+		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('pending').': '.$usercountPending;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $usercountPending;
 		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'orange';
 
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30'] = 'point';
-		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30.']['x'] = 'Deleted: '.$usercountDeleted;
+		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30.']['x'] = $GLOBALS['LANG']->getLL('deleted').': '.$usercountDeleted;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30.']['y'] = $usercountDeleted;
 		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['3.']['endColor'] = 'red';
 
@@ -714,30 +857,36 @@ class tx_t3m_stats	{
 
 		// BOUNCES - softbounce / hardbounces
 		$out .= '<h3>'.$GLOBALS['LANG']->getLL('bounces').'</h3>';
-		$usercountSoftbounces = tx_t3m_stats::countUsers($this->myConf['groupSoftbounces']); //tx_t3m_bounce::getPreviousBounces();
+
+		$out .= '<br />'.$GLOBALS['LANG']->getLL('descriptionsoftbounce').'<br />
+			'.$GLOBALS['LANG']->getLL('descriptionhardbounce').'<br />';
+
+		$usercountSoftbounces = tx_t3m_stats::countUsers($this->myConf['groupSoftbounces']);
 		$usercountHardbounces = tx_t3m_stats::countUsers($this->myConf['groupHardbounces']);
 		$bounceratio = round((($usercountSoftbounces/$usercountHardbounces) * 100),2);
 
-		$out .= '<b>'.$usercountAll.'</b> total frontend users.<br />
-			<b>'.$usercountSoftbounces.'</b> soft bounces.<br />
-			<b>'.$usercountHardbounces.'</b> hard bounces.<br />
-			<b>'.$bounceratio.'%</b> bounce ratio (softbounces compared to hardbounces)<br />';
+		$out .= '<table class="typo3-dblist">';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('TotalUsers').'</td><td>'.$usercountAll.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('softbounces').'</td><td>'.$usercountSoftbounces.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('hardbounces').'</td><td>'.$usercountHardbounces.'</td></tr>';
+		$out .= '<tr><td>'.$GLOBALS['LANG']->getLL('bounceRatio').'</td><td>'.$bounceratio.'%</td></tr>';
+		$out .= '</table>';
 
 		$pie_bounces = $static_pie;
-		$pie_bounces['10.']['10.']['text'] = 'Bounces'; //some $GLOBALS['LANG']
+		$pie_bounces['10.']['10.']['text'] = $GLOBALS['LANG']->getLL('bouncePie');
 
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
-		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = 'Soft Bounces: '.$usercountSoftbounces;
+		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('softbounces').': '.$usercountSoftbounces;
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $usercountSoftbounces;
 		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'orange';
 
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
-		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = 'Hard Bounces: '.$usercountHardbounces;
+		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('hardbounces').': '.$usercountHardbounces;
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $usercountHardbounces;
+		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
 
 		$out .= '<br />'.tx_pbimagegraph_ts::make($pie_bounces);
 
-// 		$out.=tx_t3m_stats::getStatImageUsers();
 		return $out;
 	}
 
@@ -807,7 +956,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for opened mails
 	 */
-	function getStatsForOpenedMails()	{
+	function statsForOpenedMails()	{
 
 		$sentMailsCount = tx_t3m_stats::getSentMailsSingle();
 		$openedMailsCount = tx_t3m_stats::getOpenedMailsSingle();
@@ -837,24 +986,24 @@ class tx_t3m_stats	{
 		// opened /not opened
 
 		$pie_opened = $static_pie;
-		$pie_opened['10.']['10.']['text'] = 'Opened / not opened E-Mails'; //some $GLOBALS['LANG']
+		$pie_opened['10.']['10.']['text'] = $GLOBALS['LANG']->getLL('pageViewRatio');
 
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
-		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = 'Opened: '.$openedMailsCount;
+		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('OpenedMails').': '.$openedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $openedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
 
 
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
-		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = 'Not opened: '.$notOpenedMailsCount;
+		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('NotOpenedMails').': '.$notOpenedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $notOpenedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
 
 
 		$out .=' <br />'.tx_pbimagegraph_ts::make($pie_opened);
 
-		$out.= tx_t3m_stats::getOpenedMailsTable();
-		$out.= tx_t3m_stats::getNotOpenedMailsTable();
+		$out.= tx_t3m_stats::tableForOpenedMails();
+		$out.= tx_t3m_stats::tableForNotOpenedMails();
 
 		return $out;
 
@@ -900,7 +1049,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$pids: ...
 	 * @return	string		a table with stats for sent mails
 	 */
-	function getSentMailsTable($pids) {
+	function tableForSentMails($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('SentMails').'</h3>';
 // 		if ($pids) {
 // 			$pids = array_intersect(tx_t3m_stats::getSentMails(),$pids);
@@ -915,7 +1064,7 @@ class tx_t3m_stats	{
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('countEmails').'</td></tr>';
 		foreach ($pids as $pid) {
 			$out .= '<tr>';
-			$out .= '<td>'.tx_t3m_main::getPageName($pid).'</td><td>';
+			$out .= '<td>'.tx_t3m_mailings::getPageName($pid).'</td><td>';
 			if (tx_t3m_stats::checkMailSent($pid)) {
 				$out .= '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif" />';
 			} else {
@@ -1061,7 +1210,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$pids: ...
 	 * @return	string		a table with stats for opened mails
 	 */
-	function getOpenedMailsTable($pids) {
+	function tableForOpenedMails($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('OpenedMails').'</h3>';
 		if ($pids) {
 			$pids = array_intersect(tx_t3m_stats::getOpenedMails(),$pids);
@@ -1077,8 +1226,8 @@ class tx_t3m_stats	{
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageViewRatio').'</td>
 			</tr>';
 		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_main::getPageName($pid).'</td>
-				<td>'.tx_t3m_main::viewPage($pid).'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
 				<td>'.tx_t3m_stats::getOpenedSentTime($pid).'</td>
 				<td>'.tx_t3m_stats::getOpenedCountForPage($pid).'</td>
 				<td>'.round(((tx_t3m_stats::getOpenedCountForPage($pid) / tx_t3m_stats::getSendCountForPage($pid)) * 100),2).'%</td>
@@ -1095,7 +1244,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$pids: ...
 	 * @return	string		a table with stats for not opened mails
 	 */
-	function getNotOpenedMailsTable($pids) {
+	function tableForNotOpenedMails($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('NotOpenedMails').'</h3>';
 		if ($pids) {
 			$pids = array_intersect(tx_t3m_stats::getNotOpenedMails(),$pids);
@@ -1109,8 +1258,8 @@ class tx_t3m_stats	{
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
 			</tr>';
 		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_main::getPageName($pid).'</td>
-				<td>'.tx_t3m_main::viewPage($pid).'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
 				<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td>
 				</tr>';
 		}
@@ -1131,8 +1280,9 @@ class tx_t3m_stats	{
 			'opened > 0',
 			'sentlog'
 		);
-		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
-		$out = $row['icount'];
+// 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+// 		$out = $row['icount'];
+		$out = $GLOBALS['TYPO3_DB']->sql_affected_rows();
 		return $out;
 	}
 
@@ -1182,7 +1332,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$pids: ...
 	 * @return	string		a table with stats for clicked mails
 	 */
-	function getClickedMailsTable($pids) {
+	function tableForClickedMails($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('ClickedMails').'</h3>';
 		if ($pids) {
 			$pids = array_intersect(tx_t3m_stats::getClickedMails(),$pids);
@@ -1209,8 +1359,8 @@ class tx_t3m_stats	{
 // 		t3lib_div::debug($pidClickCount);
 		//now get all the clicks for the pids.
 		foreach ($pidClickCount as $key => $val) {
-			$out .= '<tr><td>'.tx_t3m_main::getPageName($key).'</td>
-				<td>'.tx_t3m_main::viewPage($key).'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($key).'</td>
+				<td>'.tx_t3m_mailings::viewPage($key).'</td>
 				<td>'.tx_t3m_stats::getOpenedSentTime($key).'</td>
 				<td>'.$val.'</td>
 				<td>';
@@ -1254,8 +1404,8 @@ class tx_t3m_stats	{
 // 			);
 // 			while($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))	{
 // 				if (!($hadPageBefore[$row2['pid']])) {
-// 					$out .= '<tr><td>'.tx_t3m_main::getPageName($row2['pid']).'</td>
-// 						<td>'.tx_t3m_main::viewPage($row2['pid']).'</td>
+// 					$out .= '<tr><td>'.tx_t3m_mailings::getPageName($row2['pid']).'</td>
+// 						<td>'.tx_t3m_mailings::viewPage($row2['pid']).'</td>
 // 						<td>'.t3lib_BEfunc::datetime($row2['sendtime']).'</td>
 // 						<td>'.tx_t3m_stats::mailClicks($row2['pid']).'</td>
 // 						<td>'.tx_t3m_stats::mailClickedLinks($row2['pid']).'</td>
@@ -1274,7 +1424,7 @@ class tx_t3m_stats	{
 	 * @param	[type]		$pids: ...
 	 * @return	string		a table with stats for clicked mails
 	 */
-	function getNotClickedMailsTable($pids) {
+	function tableForNotClickedMails($pids) {
 		$out = '<h3>'.$GLOBALS['LANG']->getLL('NotClickedMails').'</h3>';
 		if ($pids) {
 			$pids = array_intersect(tx_t3m_stats::getNotClickedMails(),$pids);
@@ -1287,8 +1437,8 @@ class tx_t3m_stats	{
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
 			</tr>';
 		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_main::getPageName($pid).'</td>
-				<td>'.tx_t3m_main::viewPage($pid).'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
 				<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td></tr>';
 		}
 		$out .= '</table>';
@@ -1300,7 +1450,7 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for clicked mails
 	 */
-	function getStatsForClickedMails() {
+	function statsForClickedMails() {
 
 		// get all urls and clicks
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -1338,15 +1488,15 @@ class tx_t3m_stats	{
 
 		// clicked / not clicked
 		$pie_clicked = $static_pie;
-		$pie_clicked['10.']['10.']['text'] = 'Clicked / not clicked E-Mails'; //some $GLOBALS['LANG']
+		$pie_clicked['10.']['10.']['text'] = $GLOBALS['LANG']->getLL('ClickedMails').' / '.$GLOBALS['LANG']->getLL('NotClickedMails');
 
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
-		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = 'Clicked: '.$clickedMailsCount;
+		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('ClickedMails').': '.$clickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $clickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
 
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
-		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = 'Not Clicked: '.$notClickedMailsCount;
+		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('NotClickedMails').': '.$notClickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $notClickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
 
@@ -1354,9 +1504,8 @@ class tx_t3m_stats	{
 
 
 
-// 		$out .= tx_t3m_stats::getClickedMailsTable($clickedMails);
-		$out .= tx_t3m_stats::getClickedMailsTable();
-		$out .= tx_t3m_stats::getNotClickedMailsTable();
+		$out .= tx_t3m_stats::tableForClickedMails();
+		$out .= tx_t3m_stats::tableForNotClickedMails();
 
 
 		// 2do;
@@ -1408,10 +1557,64 @@ class tx_t3m_stats	{
 	 *
 	 * @return	string		a table with stats for bounces
 	 */
-	function getStatsForBounces() {
+	function statsForBounces() {
 		$out = true;
 		return $out;
 	}
+
+
+	/**
+	 * Return table for clearing invalid logs encountered by tcdirectmail
+	 *
+	 * @return	table for clearing invalid logs encountered by tcdirectmail
+	 * @todo	better integration into tcdirectmail (function calls - return values? - find log errors globally !)
+	 */
+	function maintenanceLogs() {
+		$out = '<h3>'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'@todo...</h3>';
+		$mails = tx_t3m_send::getSentMails(); //@todo: change to pages for which invalid log data is found
+		$out .= tx_t3m_settings::tableForLogdataMaintenance($mails);
+
+		return $out;
+	}
+
+
+	/**
+	 * Function for clearing invalig logs
+	 *
+	 * @param	array		$pids: mail ids
+	 * @return	string		table for clearing invalig logs and check validity
+	 */
+	function tableForLogdataMaintenance($pids) {
+		if (count($pids) > 0) {
+			$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'</td></tr>';
+			foreach($pids as $pid) {
+				$out .= '<tr><td>'.$pid['title'].'</td>
+					<td><form><input type="submit" name="clear_invalid" value="'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'" />
+					<input type="hidden" name="id" value="'.$pid['uid'].'" /></form></td></tr>';
+			}
+			$out .= '</table>';
+		} else {
+			$out = $GLOBALS['LANG']->getLL('nomails');
+		}
+		return $out;
+	}
+
+
+	/**
+	 * Function for clearing invalig logs
+	 *
+	 * @param	array		$pids: array with uids of pages
+	 * @return	boolean		if clearing invalig logs went ok
+	 */
+	function clearInvalidLogdata($pid) { //rewrite of tcdirectmail?
+		if ($pid) { //
+		} else { // clear all log data
+		}
+	}
+
+
 
 }
 

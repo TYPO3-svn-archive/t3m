@@ -90,7 +90,7 @@
 <body bgcolor="#ffffff" ><!-- Start of Class Data -->
 <h2>
 	Class tx_t3m_settings
-</h2> (line <span class="linenumber">31</span>)
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a31">31</a></span>)
 <div class="tab-pane" id="tabPane1">
 <script type="text/javascript">
 tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
@@ -139,7 +139,17 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
         </div>
     <div class="method-definition">
             <span class="method-result">string</span>
+        <a href="#methodcheckCronjobs" title="details" class="method-name">checkCronjobs</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
         <a href="#methodcheckExternalSettings" title="details" class="method-name">checkExternalSettings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodcheckForBounceAccount" title="details" class="method-name">checkForBounceAccount</a>
         ()
         </div>
     <div class="method-definition">
@@ -154,16 +164,6 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
         </div>
     <div class="method-definition">
             <span class="method-result">string</span>
-        <a href="#methodcheckSystemSettings" title="details" class="method-name">checkSystemSettings</a>
-        ()
-        </div>
-    <div class="method-definition">
-            <span class="method-result">boolean</span>
-        <a href="#methodclearInvalidLogdata" title="details" class="method-name">clearInvalidLogdata</a>
-        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
-        </div>
-    <div class="method-definition">
-            <span class="method-result">string</span>
         <a href="#methodeditExternalExtensionConfig" title="details" class="method-name">editExternalExtensionConfig</a>
         ()
         </div>
@@ -173,34 +173,29 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
         ()
         </div>
     <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetExtensionConfig" title="details" class="method-name">getExtensionConfig</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetExtensionConfigs" title="details" class="method-name">getExtensionConfigs</a>
+        ()
+        </div>
+    <div class="method-definition">
             <span class="method-result">string</span>
         <a href="#methodgetExternalSetting" title="details" class="method-name">getExternalSetting</a>
         (<span class="var-type"></span>&nbsp;<span class="var-name">$setting</span>, <span class="var-type">[type]</span>&nbsp;<span class="var-name">$setting:</span>)
         </div>
     <div class="method-definition">
             <span class="method-result">array</span>
-        <a href="#methodgetInvalidUsers" title="details" class="method-name">getInvalidUsers</a>
-        (<span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
+        <a href="#methodgetTSConstants" title="details" class="method-name">getTSConstants</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$pid</span>)
         </div>
     <div class="method-definition">
             <span class="method-result">boolean</span>
         <a href="#methodhandlePostVars" title="details" class="method-name">handlePostVars</a>
         ()
-        </div>
-    <div class="method-definition">
-            <span class="method-result">table</span>
-        <a href="#methodmaintenance" title="details" class="method-name">maintenance</a>
-        ()
-        </div>
-    <div class="method-definition">
-            <span class="method-result">string</span>
-        <a href="#methodtableForLogdataMaintenance" title="details" class="method-name">tableForLogdataMaintenance</a>
-        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
-        </div>
-    <div class="method-definition">
-            <span class="method-result">string</span>
-        <a href="#methodtableForMailMaintenance" title="details" class="method-name">tableForMailMaintenance</a>
-        (<span class="var-type"></span>&nbsp;<span class="var-name">$pids</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$pids:</span>)
         </div>
 </div>
 <hr />
@@ -209,7 +204,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 
 <a name="methodchangeExtensionSettings" id="methodchangeExtensionSettings"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method changeExtensionSettings</strong> (line <span class="linenumber">191</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method changeExtensionSettings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a259">259</a></span>)
  </h4> 
 <h4><i>string</i> <strong>changeExtensionSettings(
 
@@ -233,9 +228,24 @@ $settings:)</strong></h4>
 			<li><strong>return</strong> - status about the creation task</li>
 		</ul>
 </div>
-<a name="methodcheckExternalSettings" id="methodcheckExternalSettings"><!-- --></a>
+<a name="methodcheckCronjobs" id="methodcheckCronjobs"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkExternalSettings</strong> (line <span class="linenumber">72</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkCronjobs</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a97">97</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>checkCronjobs(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Check cron job config</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - status about the cron jobs</li>
+		</ul>
+</div>
+<a name="methodcheckExternalSettings" id="methodcheckExternalSettings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkExternalSettings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a115">115</a></span>)
  </h4> 
 <h4><i>string</i> <strong>checkExternalSettings(
 )</strong></h4>
@@ -248,15 +258,30 @@ $settings:)</strong></h4>
 			<li><strong>return</strong> - an evaluation for 3rdparty module setting values</li>
 		</ul>
 </div>
+<a name="methodcheckForBounceAccount" id="methodcheckForBounceAccount"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkForBounceAccount</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a61">61</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>checkForBounceAccount(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an evaluation  if a bounce account is configured correctly</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - a status if a bounce account is configured correct</li>
+		</ul>
+</div>
 <a name="methodcheckForSpamProgram" id="methodcheckForSpamProgram"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkForSpamProgram</strong> (line <span class="linenumber">38</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkForSpamProgram</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a38">38</a></span>)
  </h4> 
 <h4><i>string</i> <strong>checkForSpamProgram(
 )</strong></h4>
 
 	<!-- ========== Info from phpDoc block ========= -->
-<h5>Returns an evaluation  if spam checking is configured correct</h5>
+<h5>Returns an evaluation if spam checking is configured correctly</h5>
 		
 	<h4>Info</h4>
 	<ul>
@@ -265,7 +290,7 @@ $settings:)</strong></h4>
 </div>
 <a name="methodcheckOwnSettings" id="methodcheckOwnSettings"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkOwnSettings</strong> (line <span class="linenumber">100</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkOwnSettings</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a143">143</a></span>)
  </h4> 
 <h4><i>string</i> <strong>checkOwnSettings(
 )</strong></h4>
@@ -278,46 +303,9 @@ $settings:)</strong></h4>
 			<li><strong>return</strong> - setting value</li>
 		</ul>
 </div>
-<a name="methodcheckSystemSettings" id="methodcheckSystemSettings"><!-- --></a>
-<div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkSystemSettings</strong> (line <span class="linenumber">63</span>)
- </h4> 
-<h4><i>string</i> <strong>checkSystemSettings(
-)</strong></h4>
-
-	<!-- ========== Info from phpDoc block ========= -->
-<h5>Main function for copying example files</h5>
-		
-	<h4>Info</h4>
-	<ul>
-			<li><strong>return</strong> - status about the copy task</li>
-		</ul>
-</div>
-<a name="methodclearInvalidLogdata" id="methodclearInvalidLogdata"><!-- --></a>
-<div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method clearInvalidLogdata</strong> (line <span class="linenumber">383</span>)
- </h4> 
-<h4><i>boolean</i> <strong>clearInvalidLogdata(
-
-$pid, array
-$pids:)</strong></h4>
-
-	<!-- ========== Info from phpDoc block ========= -->
-<h5>Function for clearing invalig logs</h5>
-		<h4>Parameters</h4>
-	<ul>
-			<li><strong>array $pids:</strong>: array with uids of pages</li>
-			<li><strong> $pid</strong>: </li>
-		</ul>
-		
-	<h4>Info</h4>
-	<ul>
-			<li><strong>return</strong> - if clearing invalig logs went ok</li>
-		</ul>
-</div>
 <a name="methodeditExternalExtensionConfig" id="methodeditExternalExtensionConfig"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editExternalExtensionConfig</strong> (line <span class="linenumber">159</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editExternalExtensionConfig</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a202">202</a></span>)
  </h4> 
 <h4><i>string</i> <strong>editExternalExtensionConfig(
 )</strong></h4>
@@ -332,7 +320,7 @@ $pids:)</strong></h4>
 </div>
 <a name="methodeditOwnExtensionConfig" id="methodeditOwnExtensionConfig"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editOwnExtensionConfig</strong> (line <span class="linenumber">178</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method editOwnExtensionConfig</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a246">246</a></span>)
  </h4> 
 <h4><i>string</i> <strong>editOwnExtensionConfig(
 )</strong></h4>
@@ -345,9 +333,39 @@ $pids:)</strong></h4>
 			<li><strong>return</strong> - a link for editing all extension settings</li>
 		</ul>
 </div>
+<a name="methodgetExtensionConfig" id="methodgetExtensionConfig"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getExtensionConfig</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a222">222</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getExtensionConfig(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns out module settings</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the extension setting</li>
+		</ul>
+</div>
+<a name="methodgetExtensionConfigs" id="methodgetExtensionConfigs"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getExtensionConfigs</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a232">232</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>getExtensionConfigs(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns all required modules' settings</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the extension setting</li>
+		</ul>
+</div>
 <a name="methodgetExternalSetting" id="methodgetExternalSetting"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getExternalSetting</strong> (line <span class="linenumber">149</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getExternalSetting</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a192">192</a></span>)
  </h4> 
 <h4><i>string</i> <strong>getExternalSetting(
 
@@ -367,29 +385,29 @@ $setting:)</strong></h4>
 			<li><strong>return</strong> - setting value</li>
 		</ul>
 </div>
-<a name="methodgetInvalidUsers" id="methodgetInvalidUsers"><!-- --></a>
+<a name="methodgetTSConstants" id="methodgetTSConstants"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getInvalidUsers</strong> (line <span class="linenumber">363</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTSConstants</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a361">361</a></span>)
  </h4> 
-<h4><i>array</i> <strong>getInvalidUsers(
-array
-$pids:)</strong></h4>
+<h4><i>array</i> <strong>getTSConstants(
+
+$pid)</strong></h4>
 
 	<!-- ========== Info from phpDoc block ========= -->
-<h5>Function for clearing invalig logs</h5>
+<h5>Returns an array with the typoscript constants of the template of the root page of the website</h5>
 		<h4>Parameters</h4>
 	<ul>
-			<li><strong>array $pids:</strong>: mail ids</li>
+			<li><strong> $pid</strong>: </li>
 		</ul>
 		
 	<h4>Info</h4>
 	<ul>
-			<li><strong>return</strong> - invalid users</li>
+			<li><strong>return</strong> - &quot;global&quot; typoscript constants array to be used by other functions</li>
 		</ul>
 </div>
 <a name="methodhandlePostVars" id="methodhandlePostVars"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handlePostVars</strong> (line <span class="linenumber">266</span>)
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handlePostVars</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_TYPO3_tx_t3m_class.tx_t3m_settings.php.html#a334">334</a></span>)
  </h4> 
 <h4><i>boolean</i> <strong>handlePostVars(
 )</strong></h4>
@@ -401,66 +419,6 @@ $pids:)</strong></h4>
 	<ul>
 			<li><strong>return</strong> - true if actions took place ok.</li>
 			<li><strong>todo</strong> - implement some checks (return value evaluation)</li>
-		</ul>
-</div>
-<a name="methodmaintenance" id="methodmaintenance"><!-- --></a>
-<div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method maintenance</strong> (line <span class="linenumber">293</span>)
- </h4> 
-<h4><i>table</i> <strong>maintenance(
-)</strong></h4>
-
-	<!-- ========== Info from phpDoc block ========= -->
-<h5>Return table for clearing invalig logs and checking validity on mails</h5>
-		
-	<h4>Info</h4>
-	<ul>
-			<li><strong>return</strong> - for clearing log data and checking validity on mails</li>
-			<li><strong>todo</strong> - better integration into tcdirectmail (function calls?)</li>
-		</ul>
-</div>
-<a name="methodtableForLogdataMaintenance" id="methodtableForLogdataMaintenance"><!-- --></a>
-<div style="background='#eeeeee'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForLogdataMaintenance</strong> (line <span class="linenumber">340</span>)
- </h4> 
-<h4><i>string</i> <strong>tableForLogdataMaintenance(
-
-$pids, array
-$pids:)</strong></h4>
-
-	<!-- ========== Info from phpDoc block ========= -->
-<h5>Function for clearing invalig logs</h5>
-		<h4>Parameters</h4>
-	<ul>
-			<li><strong>array $pids:</strong>: mail ids</li>
-			<li><strong> $pids</strong>: </li>
-		</ul>
-		
-	<h4>Info</h4>
-	<ul>
-			<li><strong>return</strong> - table for clearing invalig logs and check validity</li>
-		</ul>
-</div>
-<a name="methodtableForMailMaintenance" id="methodtableForMailMaintenance"><!-- --></a>
-<div style="background='#ffffff'"><h4>
-<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tableForMailMaintenance</strong> (line <span class="linenumber">316</span>)
- </h4> 
-<h4><i>string</i> <strong>tableForMailMaintenance(
-
-$pids, array
-$pids:)</strong></h4>
-
-	<!-- ========== Info from phpDoc block ========= -->
-<h5>Function for clearing invalig logs</h5>
-		<h4>Parameters</h4>
-	<ul>
-			<li><strong>array $pids:</strong>: mail ids</li>
-			<li><strong> $pids</strong>: </li>
-		</ul>
-		
-	<h4>Info</h4>
-	<ul>
-			<li><strong>return</strong> - table for clearing invalig logs and check validity</li>
 		</ul>
 </div>
 <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
@@ -490,7 +448,7 @@ setupAllTabs();
 </script>
 	<div id="credit">
 		<hr />
-		Documentation generated on Mon, 11 Dec 2006 13:34:20 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+		Documentation generated on Tue, 02 Jan 2007 19:45:51 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
 	</div>
 </body>
 </html>

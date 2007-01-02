@@ -31,7 +31,7 @@
 class tx_t3m_settings	{
 
 	/**
-	 * Returns an evaluation  if spam checking is configured correct
+	 * Returns an evaluation if spam checking is configured correctly
 	 *
 	 * @return	string		a status if spam checking is configured correct
 	 */
@@ -40,28 +40,71 @@ class tx_t3m_settings	{
 // 		$spamstring = exec('echo \' test \' | thisisnotaprogram');
 		switch ($spamstring) {
 			case '0/0':
-				$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif">&nbsp;Daemon spamd not responding correctly!';
+				$out = $this->iconImgError.'&nbsp;Daemon spamd not responding correctly!';
 			break;
 			case '':
-				$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif">&nbsp;Client spamc not responding correctly!';
+				$out = $this->iconImgError.'&nbsp;Client spamc not responding correctly!';
 			break;
 			default :
-				$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif">&nbsp;Client and daemon working ok.';
+				$out = $this->iconImgOk.'&nbsp;Client and daemon working ok.';
 			break;
 		}
 		$out .= '&nbsp;<b>('.$this->myConf['spam_checker_script'].')</b></br>';
 		return $out;
 	}
 
+	/**
+	 * Returns an evaluation  if a bounce account is configured correctly
+	 *
+	 * @return	string		a status if a bounce account is configured correct
+	 */
+	function checkForBounceAccount()	{
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'*',
+			'tx_tcdirectmail_bounceaccount',
+			'email=\''.$this->myConf['sender_email'].'\''
+		);
+		if ($GLOBALS['TYPO3_DB']->sql_affected_rows($res) < 1) {
+			$conf = explode('@',$this->myConf['sender_email']);
+			$user = $conf[0];
+			$server = $conf[1];
+			$insertFields = array(
+				'tstamp' => time(),
+				'email' => $this->myConf['sender_email'],
+				'servertype' => $this->myConf['tcdirectmail_servertype'],
+				'server' => $server,
+				'username' => $user,
+				'passwd' => $this->myConf['email_password']
+			);
+			$GLOBALS['TYPO3_DB']->exec_INSERTquery(
+				'tx_tcdirectmail_bounceaccount',
+				$insertFields
+			);
+			$out .= $this->iconImgWarning.' Bounce account created. Please reload page.';
+		} else {
+			$out .= $this->iconImgOk.' Bounce account OK.';
+		}
+		return $out;
+	}
+
 
 
 	/**
-	 * Main function for copying example files
+	 * Check cron job config
 	 *
-	 * @return	string		status about the copy task
+	 * @return	string		status about the cron jobs
 	 */
-	function checkSystemSettings() {
-		//lynx, fetchmail, cronjobs
+	function checkCronjobs() {
+
+		foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tcdirectmail']['cliScripts'] as $script => $dummy) {
+		exec('cat /etc/crontab | grep '.$script, $output); //.$script
+				if (!($output)) {
+					$out .= $this->iconImgWarning.' Script '.$script.' seems NOT to run as cronjob <br />';
+				} else {
+					$out .= $this->iconImgOk.' Script '.$script.' seems to run as cronjob <br />';
+				}
+		}
+		return $out;
 	}
 
 	/**
@@ -70,7 +113,7 @@ class tx_t3m_settings	{
 	 * @return	string		an evaluation for 3rdparty module setting values
 	 */
 	function checkExternalSettings()	{
-		$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/wizard_tsconfig_s.gif"> Checking relevant root-TypoScript values:';
+		$out = '<img'.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/wizard_tsconfig_s.gif').' title="'.$GLOBALS['LANG']->getLL('Edit').'" alt="'.$GLOBALS['LANG']->getLL('Edit').'" /> Checking relevant root-TypoScript values:';
 		$settingsToCheck = array(
 			'plugin.tx_srfeuserregister_pi1.userGroupUponRegistration',
 			'plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation',
@@ -83,9 +126,9 @@ class tx_t3m_settings	{
 			);
 		foreach($settingsToCheck as $value) {
 			if ($this->rootTS[$value]['value']) {
-				$out .= '<br /><img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif" /> &nbsp;'.$value.':&nbsp;'.$this->rootTS[$value]['value'].'&nbsp;'.$GLOBALS['LANG']->getLL('OK');
+				$out .= '<br />'.$this->iconImgOk.'&nbsp;'.$value.':&nbsp;'.$this->rootTS[$value]['value'].'&nbsp;'.$GLOBALS['LANG']->getLL('OK');
 			} else	{
-				$out .= '<br /><img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif" /> &nbsp;'.$value.':&nbsp;'.$this->rootTS[$value]['value'].'&nbsp;'.$GLOBALS['LANG']->getLL('notOK');
+				$out .= '<br />'.$this->iconImgError.'&nbsp;'.$value.':&nbsp;'.$this->rootTS[$value]['value'].'&nbsp;'.$GLOBALS['LANG']->getLL('notOK');
 			}
 		}
 		return $out;
@@ -129,12 +172,12 @@ class tx_t3m_settings	{
 		foreach($settingsToCheck as $value) {
 			if ($this->myConf[$value]) {
 				if (($this->myConf[$value]) == 'NULL') {
-					$out .= '<br /><img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_note.gif">&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('Warning');
+					$out .= '<br />'.$this->iconImgWarning.'&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('Warning');
 				} else {
-					$out .= '<br /><img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_ok2.gif">&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('OK');
+					$out .= '<br />'.$this->iconImgOk.'&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('OK');
 				}
 			} else	{
-				$out .= '<br /><img src="'.$GLOBALS['BACK_PATH'].'gfx/icon_fatalerror.gif">&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('notOK');
+				$out .= '<br />'.$this->iconImgError.'&nbsp;'.$value.':&nbsp;'.$this->myConf[$value].':&nbsp;'.$GLOBALS['LANG']->getLL('notOK');
 			}
 		}
 		return $out;
@@ -165,10 +208,35 @@ class tx_t3m_settings	{
 			'tcdirectmail'
 			);
 		foreach($extensions as $extension) {
-			$out .= '<img src="'.$GLOBALS['BACK_PATH'].'gfx/i/sys_action.gif" />&nbsp;<a href="'.$GLOBALS['BACK_PATH'].'mod/tools/em/index.php?CMD[showExt]='.$extension.'&SET[singleDetails]=info">'.$extension.'\'s&nbsp;'.$GLOBALS['LANG']->getLL('ExtensionSettings').'</a>&nbsp;<br />';
+			$out .= '<img'.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/i/sys_action.gif').' title="'.$GLOBALS['LANG']->getLL('Edit').'" alt="'.$GLOBALS['LANG']->getLL('Edit').'" />&nbsp;<a href="'.$GLOBALS['BACK_PATH'].'mod/tools/em/index.php?CMD[showExt]='.$extension.'&SET[singleDetails]=info">'.$extension.'\'s&nbsp;'.$GLOBALS['LANG']->getLL('ExtensionSettings').'</a>&nbsp;<br />';
 		}
 		return $out;
 	}
+
+
+	/**
+	 * Returns out module settings
+	 *
+	 * @return	array		the extension setting
+	 */
+	function getExtensionConfig()	{
+		$out = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
+		return $out;
+	}
+
+	/**
+	 * Returns all required modules' settings
+	 *
+	 * @return	array		the extension setting
+	 */
+	function getExtensionConfigs()	{
+		foreach($requiredExtensions as $value) {
+			$out[$value] = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$value]);
+		}
+		return $out;
+	}
+
+
 
 	/**
 	 * Returns a link for editing all extension settings
@@ -176,7 +244,7 @@ class tx_t3m_settings	{
 	 * @return	string		a link for editing all extension settings
 	 */
 	function editOwnExtensionConfig()	{
-		$out = '<img src="'.$GLOBALS['BACK_PATH'].'gfx/i/sys_action.gif" />&nbsp;';
+		$out = '<img'.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/i/sys_action.gif').' title="'.$GLOBALS['LANG']->getLL('Edit').'" alt="'.$GLOBALS['LANG']->getLL('Edit').'" />&nbsp;';
 		$out .= '<a href="'.$GLOBALS['BACK_PATH'].'mod/tools/em/index.php?CMD[showExt]='.$this->extKey.'&SET[singleDetails]=info">'.$GLOBALS['LANG']->getLL('ExtensionSettings').'</a>';
 		return $out;
 	}
@@ -284,106 +352,42 @@ class tx_t3m_settings	{
 	}
 
 
-	/**
-	 * Return table for clearing invalig logs and checking validity on mails
-	 *
-	 * @return	table for clearing log data and checking validity on mails
-	 * @todo	better integration into tcdirectmail (function calls?)
-	 */
-	function maintenance() {
-		$out .= '<h3>'.$GLOBALS['LANG']->getLL('maintenanceUsers').'</h3>';
-		$users = tx_t3m_settings::getInvalidUsers(); //@todo: apart from not having email, what else? bounces?
-		$out .= tx_t3m_main::tableForFeusers($users);
-		t3lib_div::debug($users);
-
-		$out = '<h3>'.$GLOBALS['LANG']->getLL('maintenanceMails').'@todo...</h3>';
-/*		$mails = tx_t3m_main::getUnsentMails(); //@todo: change to pages for which warnings are found
-		$out .= tx_t3m_settings::tableForMailMaintenance($mails);*/
-
-		$out .= '<h3>'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'@todo...</h3>';
-// 		$mails = tx_t3m_main::getSentMails(); //@todo: change to pages for which invalid log data is found
-// 		$out .= tx_t3m_settings::tableForLogdataMaintenance($mails);
-
-		return $out;
-	}
 
 	/**
-	 * Function for clearing invalig logs
-	 *
-	 * @param	array		$pids: mail ids
-	 * @return	string		table for clearing invalig logs and check validity
-	 */
-	function tableForMailMaintenance($pids) {
-		if (count($pids) > 0) {
-			$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
-				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('maintenanceMails').'</td></tr>';
-			foreach($pids as $pid) {
-				$out .= '<tr><td>'.$pid['title'].'</td>
-					<td><form><input type="submit" name="check_validity" value="'.$GLOBALS['LANG']->getLL('maintenanceMails').'" />
-					<input type="hidden" name="id" value="'.$pid['uid'].'" /></form></td></tr>';
-			}
-			$out .= '</table>';
+	* Returns an array with the typoscript constants of the template of the root page of the website
+	*
+	* @return	array	"global" typoscript constants array to be used by other functions
+	*/
+	function getTSConstants($pid)	{ 	//	$PageTSconfig = t3lib_BEfunc::getPagesTSconfig('0'); does not work
+		require_once(PATH_t3lib.'class.t3lib_tsparser_ext.php');
+// 		var $pageId, $templateId;
+		$ts = t3lib_div::makeInstance('t3lib_tsparser_ext');
+// 		$ts->init();
+
+		if (!($pid)) {
+			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery( //from pages: "is_siteroot=1" is not needed (not always the case), a roottemplate should be there however
+				'uid,pid',
+				'sys_template',
+				'root=1 '.t3lib_BEfunc::deleteClause('sys_template')
+			);
 		} else {
-			$out = $GLOBALS['LANG']->getLL('nomails');
+			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+				'uid,pid',
+				'sys_template',
+				'pid='.intval($pid)
+			);
 		}
-		return $out;
-	}
-
-
-	/**
-	 * Function for clearing invalig logs
-	 *
-	 * @param	array		$pids: mail ids
-	 * @return	string		table for clearing invalig logs and check validity
-	 */
-	function tableForLogdataMaintenance($pids) {
-		if (count($pids) > 0) {
-			$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
-				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'</td></tr>';
-			foreach($pids as $pid) {
-				$out .= '<tr><td>'.$pid['title'].'</td>
-					<td><form><input type="submit" name="clear_invalid" value="'.$GLOBALS['LANG']->getLL('maintenanceLogdata').'" />
-					<input type="hidden" name="id" value="'.$pid['uid'].'" /></form></td></tr>';
-			}
-			$out .= '</table>';
-		} else {
-			$out = $GLOBALS['LANG']->getLL('nomails');
-		}
-		return $out;
-	}
-
-	/**
-	 * Function for clearing invalig logs
-	 *
-	 * @param	array		$pids: mail ids
-	 * @return	array		invalid users
-	 */
-	function getInvalidUsers() {
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'uid,username,gender,email,date_of_birth,tx_t3m_categories',
-			'fe_users',
-			'deleted=0' //' AND disable=0'
-		);
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-			if (!($row['email'])) {
-				$out[] = $row;
-			}
+			$pageId = $row['pid'];
+			$templateId = $row['uid'];
 		}
-		return $out;
-	}
-
-	/**
-	 * Function for clearing invalig logs
-	 *
-	 * @param	array		$pids: array with uids of pages
-	 * @return	boolean		if clearing invalig logs went ok
-	 */
-	function clearInvalidLogdata($pid) { //rewrite of tcdirectmail?
-		if ($pid) { //
-		} else { // clear all log data
-		}
+// 		$tplRow = $tmpl->ext_getFirstTemplate($pageId,$template_uid);
+// 		$sys_page = t3lib_div::makeInstance('t3lib_pageSelect');
+		$rootLine = t3lib_BEfunc::BEgetRootLine($pageId); //$sys_page->getRootLine($pageId);
+		$ts->runThroughTemplates($rootLine,$templateId);	// This generates the constants/config + hierarchy info for the template.
+		$theConstants = $ts->generateConfig_constants();	// The editable constants are returned in an array.
+		$ts->ext_categorizeEditableConstants($theConstants);	// The returned constants are sorted in categories, that goes into the $tmpl->categories array
+		return $theConstants;
 	}
 
 }
