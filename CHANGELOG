@@ -1,4 +1,9 @@
 Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2007-01-12
+Version: 0.2.0
+Comment: first release, lots of bug fixes, split some functions into 3 "mvc-like" functions
+
+Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-12-24
 Version: 0.1.13
 Comment: code restructure - moved functions out of main	into separate smaller class files
@@ -11,7 +16,7 @@ Comment: view receiver list users
 Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-12-08
 Version: 0.1.9
-Comment: personalized mails (gender, salutations))
+Comment: personalized mails (gender, salutations)
 
 Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2006-11-28

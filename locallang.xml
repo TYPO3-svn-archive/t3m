@@ -52,7 +52,7 @@
 			<label index="importfeusers">Import of website users</label>
 			<label index="importreceivers">Import of receivers</label>
 			<label index="descriptionImport">Import users directly. No Double Opt-In process here!</label>
-			<label index="descriptionImportReceivers">Import users into a separate receiver group. Users do not become users of the website. Theri only purpose is to be used in that receiver list. No target group definitions or redundancy check possible here.</label>
+			<label index="descriptionImportReceivers">Import users into a separate receiver group. Users do not become users of the website. Their only purpose is to be used in that receiver list. No target group definitions or redundancy check possible here.</label>
 			<label index="descriptionImportFeusers">Import users into a website user group.</label>
 			<label index="csvfile">CSV file upload</label>
 			<label index="csvlist">CSV direct input</label>
@@ -240,7 +240,6 @@
 			<label index="editPage">Edit pages</label>
 			<label index="editContent">Edit contents</label>
 			<label index="editSalutations">Edit a salutation</label>
-			<label index=""></label>
 
 			<label index="deleteCampaign">Delete campaign</label>
 			<label index="deletePage">Delete page</label>
@@ -261,7 +260,6 @@
 			<label index="scheduledmails">Scheduled e-mails</label>
 			<label index="unscheduledmails">Unscheduled e-mails</label>
 			<label index="currentlysendingmails">Currently sending e-mails</label>
-
 
 			<label index="schedule">Schedule</label>
 
@@ -426,14 +424,13 @@
 			<label index="importusers">CSV Benutzerimport</label>
 			<label index="importfeusers">Import von Webseitenbenutzern</label>
 			<label index="importreceivers">Import einer Empfängerliste</label>
-			<label index="descriptionImport">Importieren von Benutzern ohne Double-Opt-In-Verfahren. Benutzerdaten liegen als CSV-Datei vor.</label>
-			<label index="descriptionImportReceivers">Benutzerimport in eine separate Empfängerliste. Die Benutzer werden keine Benutzer der Webseite. Ihr einzieger Zweck ist die Verwendung als eigene Versandliste. Keine Zielgruppen und keine Dublettencheck möglich.</label>
+			<label index="descriptionImport">Importieren von Benutzern ohne Double-Opt-In-Verfahren. Benutzerdaten müssen in Form einer sog. CSV-Datei vorliegen.  "CSV" steht für "kommaseparierte Liste". Als Trennzeichen zwischen den E-Mail-Adressen können aber auch andere Zeichen verwendet werden.</label>
+			<label index="descriptionImportReceivers">Benutzerimport in eine separate Empfängerliste. Die Benutzer werden keine Benutzer der Webseite. Ihr einziger Zweck ist die Verwendung als eigene Versandliste. Keine Zielgruppen und keine Dublettencheck möglich.</label>
 			<label index="descriptionImportUsers">Benutzerimport in bestehende Frontendgruppen. Die Benutzer können sich z.B. einloggen und Zielgruppen zugeordnet werden.</label>
 
 			<label index="csvlist">CSV Direkt-Eingabefeld (copy paste)</label>
 			<label index="csvfile">CSV Datei hochladen</label>
 			<label index="csvurl">CSV Datei URL angeben</label>
-
 
 			<label index="descriptionCreate">Hier können Sie Gruppen erstellen und neue Benutzer für die Gruppen erstellen.</label>
 			<label index="descriptionCreate">Hier können Sie einzeln neue Benutzer anlegen.</label>
@@ -445,7 +442,6 @@
 
 			<label index="NewUser">Neuer Benutzer</label>
 			<label index="NewGroup">Neue Benutzergruppe</label>
-
 
 			<label index="errorSubscriptionExtension">Fehler: Extension EXT:sr_feuser_register scheint nicht korrekt konfiguriert zu sein.</label>
 
@@ -571,7 +567,7 @@
 			<label index="email">E-Mail</label>
 			<label index="testemail">Test E-Mail</label>
 			<label index="emails">E-Mails</label>
-			<label index="nomails">No E-Mails</label>
+			<label index="nomails">Keine E-Mails</label>
 			<label index="getEmails">Auflistung der E-Mails</label>
 			<label index="countEmails">Anzahl an E-Mails</label>
 
@@ -625,7 +621,6 @@
 			<label index="editPage">Seite bearbeiten</label>
 			<label index="editContent">Inhalte bearbeiten</label>
 			<label index="editSalutations">Begrüßung bearbeiten</label>
-			<label index=""></label>
 			<label index="deleteCampaign">Kampagne löschen</label>
 			<label index="deletePage">Seite löschen</label>
 			<label index="deleteContent">Inhaltsblock löschen</label>
@@ -642,7 +637,7 @@
 			<label index="unsentmails">Ungesendete E-Mails</label>
 			<label index="scheduledmails">Geplante Aussendungen</label>
 			<label index="unscheduledmails">Noch nicht geplante Aussendungen</label>
-			<label index="currentlysendingmails">Currently sending E-Mails</label>
+			<label index="currentlysendingmails">Derzeit werden versendet</label>
 
 
 			<label index="schedule">Sendezeitpunkt festlegen</label>
@@ -697,15 +692,15 @@
 
 			<label index="bouncestatistics">Bounce-Statistiken</label>
 			<label index="userstatistics">Benutzer-Statistiken</label>
-			<label index="descriptionyearlyuserstatistics">Der Graph zeigt die Veränderungen der Benutzerbasis für jeden Monat an. Basierend auf dem Änderungsdatum in der Datenbank werden die Benutzer als angemeldet, pending, bounced oder gelöscht eingestuft. Grün: Anmeldungen (Double-Opt-In), Gelb: Pending (ausstehende Anmeldungen), Orange: Soft Bounces, Rot: Hard Bounces, Schwarz gelöschte Benutzer</label>
+			<label index="descriptionyearlyuserstatistics">Der Graph zeigt die Veränderungen der Benutzerbasis für jeden Monat an. Basierend auf dem Änderungsdatum in der Datenbank werden die Benutzer als angemeldet, pending, bounced oder gelöscht eingestuft.</label>
 			<label index="TotalUsers">Benutzer insgesamt</label>
 			<label index="registered">Angemeldet</label>
-			<label index="deleted">Gelöscht</label>
+			<label index="deleted">Geloescht</label>
 			<label index="confirmationRatio">Anmeldungsverhältnis (bestätigt / pending)</label>
-			<label index="confirmationPie">Verhältnis von bestätigten, pending und abgemeldeten Benutzern</label>
-			<label index="bouncePie">Verhältnis von Hard and Soft Bounces</label>
+			<label index="confirmationPie">Verhaeltnis von angemeldeten, pending und abgemeldeten Benutzern</label>
+			<label index="bouncePie">Verhaeltnis von Hard and Soft Bounces</label>
 			<label index="bounceRatio">Bounceverhältnis (soft / hard bounces)</label>
-			<label index="descriptionuserstatistics">Hier sehen Sie einen Jahresverlauf über die Aktivitäten bezgl. der Nutzerdatenbasis und einen derzeitgen Stand über das Verhältnis der sich derzeit im System befindenden Benutzer.</label>
+			<label index="descriptionuserstatistics">Hier sehen Sie einen Jahresverlauf über die Aktivitäten bezgl. der Nutzerdatenbasis und einen derzeitigen Stand über das Verhältnis der sich derzeit im System befindenden Benutzer.</label>
 
 
 			<label index="Visited">Besucherzahl</label>
@@ -731,8 +726,6 @@
 			<label index="attachments">E-Mail-Anhänge</label>
 			<label index="createAttachment">Neuen E-Mail-Anhang erstellen</label>
 			<label index="editAttachments">E-Mail-Anhänge bearbeiten</label>
-
-			<label index=""></label>
 
 			<label index="statistics">Statistiken</label>
 			<label index="infos">Informationen</label>

@@ -385,13 +385,13 @@ class tx_t3m_stats	{
 
 		// opened stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('openstatistics').'</h3>';
-		$out .= tx_t3m_stats::getOpenedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotOpenedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForOpenedMails($pids);
+		$out .= tx_t3m_stats::tableForNotOpenedMails($pids);
 
 		// click stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('clickstatistics').'</h3>';
-		$out .= tx_t3m_stats::getClickedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotClickedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForClickedMails($pids);
+		$out .= tx_t3m_stats::tableForNotClickedMails($pids);
 
 		return $out;
 	}
@@ -450,13 +450,13 @@ class tx_t3m_stats	{
 
 		// opened stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('openstatistics').'</h3>';
-		$out .= tx_t3m_stats::getOpenedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotOpenedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForOpenedMails($pids);
+		$out .= tx_t3m_stats::tableForNotOpenedMails($pids);
 
 		// click stats
 		//$out .= '<h3>'.$GLOBALS['LANG']->getLL('clickstatistics').'</h3>';
-		$out .= tx_t3m_stats::getClickedMailsTable($pids);
-		$out .= tx_t3m_stats::getNotClickedMailsTable($pids);
+		$out .= tx_t3m_stats::tableForClickedMails($pids);
+		$out .= tx_t3m_stats::tableForNotClickedMails($pids);
 
 
 		return $out;
@@ -614,8 +614,8 @@ class tx_t3m_stats	{
 				$count_deleted[$tmp_year_tstamp] += 1;
 			}
 
-			if ($this->demo)  {
-				$count['2005'] = 1;
+			if ($this->demo)  { // i know its a bad place here... :-(
+				$count['2005'] = 10;
 				$count_registered['2005'] = 1000;
 
 				$count_registered['2005_1'] = 10;
@@ -702,8 +702,9 @@ class tx_t3m_stats	{
 
 		}
 
-		if ($count[$year] > 0) { //something happened in that year
+		if ($count[$year] > 1) { //something happened in that year
 			$out = ' <br />'.tx_pbimagegraph_ts::make($plot_step_users_year);
+// 			t3lib_div::debug($count[$year]);
 
 		} else {
 // 			$out = 'no data for the year'.$year;

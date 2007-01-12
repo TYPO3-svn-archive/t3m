@@ -139,7 +139,7 @@ class tx_t3m_main {
 		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_postinstall.php');
 
 		$this->extKey = 't3m'; // how to get dynamically? $_EXTKEY is wrong and $EM_CONF empty..
-		$this->demo = 1; //enable or disable demo data
+		$this->demo = 0; //enable or disable demo data
 		$this->debug = 1; //enable or disable debugging
 
 		$this->myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
