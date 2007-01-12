@@ -114,7 +114,7 @@
 			<label index="descriptionsoftbounce">A Soft Bounce is a user whose email account is temporarily full or cannot be reached for a while.</label>
 			<label index="hardbounces">Hard bounces</label>
 			<label index="descriptionhardbounce">A Hard Bounce is a user whose email account or email server does not exist or is permanently unavailable.</label>
-			<label index="descriptionNewMail">Here you can create an e-mail directly for a receiver group. After you created a mailing, have a look into "newsletters", "one-off-mailings" or "campaing mails" in order to add the content,</label>
+			<label index="descriptionNewMail">Here you can create an e-mail directly for a receiver group. After you created a mailing, have a look into "newsletters", "one-off-mailings" or "campaing mails" in order to add the content.</label>
 
 			<label index="targetgroupdefinitions">Target groups definitions</label>
 			<label index="descriptionTargetgroupDefinitions">Target groups are dynamic groups whose users can be chosen by their attributes. E.g. sex, age, zip code or their interests. If you chose an attribute, the user must fit into that schema. For interest groups, he must at least have chosen one of the categories. Depending on the quality of the userbase these groups are automatically put together. If you click on the name of a targetgroup the users of that group will be shown below.</label>
