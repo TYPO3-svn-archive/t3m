@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for class.tx_t3m_debug.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file class.tx_t3m_debug.php</h1>
+<p>Documentation is available at <a href="../TYPO3/tx_t3m/_class.tx_t3m_debug.php.html">class.tx_t3m_debug.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a><font color="#009999">/*************************************************************</font></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">*&nbsp;&nbsp;Copyright&nbsp;notice</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">*</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">*&nbsp;&nbsp;(c)&nbsp;2006&nbsp;Stefan&nbsp;Koch&nbsp;&lt;t3m@stefkoch.de&gt;</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">*&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">*</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">*&nbsp;&nbsp;This&nbsp;script&nbsp;is&nbsp;part&nbsp;of&nbsp;the&nbsp;TYPO3&nbsp;project.&nbsp;The&nbsp;TYPO3&nbsp;project&nbsp;is</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">*&nbsp;&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">*&nbsp;&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">*&nbsp;&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">*&nbsp;&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">*</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">*&nbsp;&nbsp;The&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;can&nbsp;be&nbsp;found&nbsp;at</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">*&nbsp;&nbsp;http://www.gnu.org/copyleft/gpl.html.</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">*</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">*&nbsp;&nbsp;This&nbsp;script&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">*&nbsp;&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">*&nbsp;&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">*&nbsp;&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">*</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">*&nbsp;&nbsp;This&nbsp;copyright&nbsp;notice&nbsp;MUST&nbsp;APPEAR&nbsp;in&nbsp;all&nbsp;copies&nbsp;of&nbsp;the&nbsp;script!</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">***************************************************************/</font></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a><font color="blue">require_once</font><strong>(</strong>t3lib_extMgm<strong>::</strong>extPath<strong>(</strong><font color="#66cccc">'tcdirectmail'</font><strong>)</strong>.<font color="#66cccc">'class.tx_tcdirectmail_target_array.php'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="blue">require_once</font><strong>(</strong>t3lib_extMgm<strong>::</strong>extPath<strong>(</strong><font color="#66cccc">'t3m'</font><strong>)</strong>.<font color="#66cccc">'class.tx_t3m_main.php'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="blue">require_once</font><strong>(</strong>t3lib_extMgm<strong>::</strong>extPath<strong>(</strong><font color="#66cccc">'t3m'</font><strong>)</strong>.<font color="#66cccc">'class.tx_t3m_bounce.php'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;Debug&nbsp;class</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;Stefan&nbsp;Koch&nbsp;&lt;t3m@stefkoch.de&gt;</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;TYPO3</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@subpackage</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;tx_t3m</font></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="blue">class&nbsp;</font><a href="../TYPO3/tx_t3m/tx_t3m_debug.html">tx_t3m_debug</a>&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a40"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;some&nbsp;system&nbsp;infos</font></div></li>
+<li><div class="src-line"><a name="a41"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a42"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>string&nbsp;</em><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;some&nbsp;interesting&nbsp;stuff</font></div></li>
+<li><div class="src-line"><a name="a43"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../TYPO3/tx_t3m/tx_t3m_debug.html#methodtestSomeStuff">testSomeStuff</a><strong>(</strong><strong>)&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;($i&nbsp;=&nbsp;0;&nbsp;$i&nbsp;&lt;&nbsp;20;&nbsp;$i++)&nbsp;{</font></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$out</strong><strong>[</strong><strong>]&nbsp;</strong>=&nbsp;<a href="../TYPO3/tx_t3m/tx_t3m_stats.html">tx_t3m_stats</a><strong>::</strong><a href="../TYPO3/tx_t3m/tx_t3m_stats.html#methodcountEmailUsers">countEmailUsers</a><strong>(</strong>91<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a48"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a50"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$var&nbsp;=&nbsp;tx_t3m_main::getTimestampFromAge(36);</font></div></li>
+<li><div class="src-line"><a name="a51"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$var2&nbsp;=&nbsp;tx_t3m_main::getTimestampFromAge(37);</font></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//$GLOBALS['BE_USER'];$GLOBALS['TYPO3_DB'],&nbsp;t3lib_extMgm,&nbsp;$BE_USER,&nbsp;'t3lib_BEfunc',&nbsp;$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m'];&nbsp;$GLOBALS['_EXTKEY'],&nbsp;$GLOBALS['MCONF'],&nbsp;$GLOBALS['EM_CONF']['t3m'],&nbsp;$GLOBALS['ICON_PATH']$this-&gt;myConf</font></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$class&nbsp;=&nbsp;$GLOBALS['TYPO3_DB'];&nbsp;&nbsp;//t3lib_extMgmt3lib_BEfunc't3lib_iconWorks';</font></div></li>
+<li><div class="src-line"><a name="a55"></a><font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a56"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out[0]&nbsp;=&nbsp;get_declared_classes();</font></div></li>
+<li><div class="src-line"><a name="a57"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out[1]&nbsp;=&nbsp;get_class_methods($class);</font></div></li>
+<li><div class="src-line"><a name="a58"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out[2]&nbsp;=&nbsp;get_defined_constants();</font></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a60"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALS['TYPO3_DB']-&gt;exec_SELECTquery(&nbsp;//from&nbsp;pages:&nbsp;&quot;is_siteroot=1&quot;&nbsp;is&nbsp;not&nbsp;needed&nbsp;(not&nbsp;always&nbsp;the&nbsp;case),&nbsp;a&nbsp;roottemplate&nbsp;should&nbsp;be&nbsp;there&nbsp;however</font></div></li>
+<li><div class="src-line"><a name="a61"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'*',</font></div></li>
+<li><div class="src-line"><a name="a62"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'be_groups',</font></div></li>
+<li><div class="src-line"><a name="a63"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'uid=10'</font></div></li>
+<li><div class="src-line"><a name="a64"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</font></div></li>
+<li><div class="src-line"><a name="a65"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$row&nbsp;=&nbsp;$GLOBALS['TYPO3_DB']-&gt;sql_fetch_assoc($res);</font></div></li>
+<li><div class="src-line"><a name="a66"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out[3]&nbsp;=&nbsp;$GLOBALS['TYPO3_DB']-&gt;sql_affected_rows();</font></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a68"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out&nbsp;=&nbsp;t3lib_div::stdAuthCode(4);</font></div></li>
+<li><div class="src-line"><a name="a69"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$out&nbsp;=&nbsp;tx_t3m_main::getFeGroupUsers(2);</font></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t3lib_div<strong>::</strong>debug<strong>(</strong><strong>$out</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a71"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t3lib_div::debug($GLOBALS['TCA']);&nbsp;//['tt_content']['ctrl']['typeicons']);$GLOBALS['TBE_STYLES'</font></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$filename&nbsp;</strong>=&nbsp;t3lib_extMgm<strong>::</strong>extPath<strong>(</strong><font color="#66cccc">'t3m'</font><strong>)</strong>.<font color="#66cccc">'res/pbimagegraph/plot_step2.txt'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$handle&nbsp;</strong>=&nbsp;<a href="http://www.php.net/fopen">fopen</a><strong>(</strong><strong>$filename</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;r&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$contents&nbsp;</strong>=&nbsp;<a href="http://www.php.net/fread">fread</a><strong>(</strong><strong>$handle</strong><strong>,&nbsp;</strong><a href="http://www.php.net/filesize">filesize</a><strong>(</strong><strong>$filename</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ts&nbsp;</strong>=&nbsp;t3lib_div<strong>::</strong>makeInstance<strong>(</strong><font color="#66cccc">&quot;t3lib_tsparser&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ts</strong><strong>-&gt;</strong>parse<strong>(</strong><strong>$contents</strong><strong>)</strong><strong>;&nbsp;</strong><font color="green">//&nbsp;now&nbsp;we&nbsp;should&nbsp;have&nbsp;it&nbsp;in&nbsp;$ts-&gt;setup</font></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$plot_step2&nbsp;</strong>=&nbsp;<strong>$ts</strong><strong>-&gt;</strong>setup<strong>[</strong><font color="#66cccc">'lib.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'pbimagegraph.'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/fclose">fclose</a><strong>(</strong><strong>$handle</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$plot_step2</strong><strong>[</strong><font color="#66cccc">'10.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'20.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'10.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'10.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'dataset.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'10.'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'name'</font><strong>]&nbsp;</strong>=&nbsp;<font color="#66cccc">'sssDeleted'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$out&nbsp;</strong>=&nbsp;<font color="#66cccc">'&nbsp;&lt;br&nbsp;/&gt;'</font>.tx_pbimagegraph_ts<strong>::</strong>make<strong>(</strong><strong>$plot_step2</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$out</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a91"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a93"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 02 Jan 2007 19:45:35 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0</a>
+	</div>
+</body>
+</html>
