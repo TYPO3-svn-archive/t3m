@@ -40,16 +40,48 @@ class tx_t3m_settings	{
 // 		$spamstring = exec('echo \' test \' | thisisnotaprogram');
 		switch ($spamstring) {
 			case '0/0':
-				$out = $this->iconImgError.'&nbsp;Daemon spamd not responding correctly!';
+				$out = $this->iconImgError.'&nbsp;'.$GLOBALS['LANG']->getLL('errorSpamd');
 			break;
 			case '':
-				$out = $this->iconImgError.'&nbsp;Client spamc not responding correctly!';
+				$out = $this->iconImgError.'&nbsp;'.$GLOBALS['LANG']->getLL('errorSpamc');
 			break;
 			default :
-				$out = $this->iconImgOk.'&nbsp;Client and daemon working ok.';
+				$out = $this->iconImgOk.'&nbsp;'.$GLOBALS['LANG']->getLL('spamScriptOK');
 			break;
 		}
 		$out .= '&nbsp;<b>('.$this->myConf['spam_checker_script'].')</b></br>';
+		return $out;
+	}
+
+	/**
+	 * Returns an evaluation if lynx is available
+	 *
+	 * @return	string		a status if lynx is available
+	 */
+	function checkForLynx()	{
+		$theConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['tcdirectmail']);
+		if (file_exists($theConf['path_to_lynx'])) {
+			$out = $this->iconImgOk.'&nbsp;'.$GLOBALS['LANG']->getLL('lynx_found');
+		} else {
+			$out = $this->iconImgError.'&nbsp;'.$GLOBALS['LANG']->getLL('lynx_not_found');
+		}
+		$out .= '&nbsp;<b>('.$theConf['path_to_lynx'].')</b></br>';
+		return $out;
+	}
+
+	/**
+	 * Returns an evaluation if fetchmail is available
+	 *
+	 * @return	string		a status if fetchmail is available
+	 */
+	function checkForFetchmail()	{
+		$theConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['tcdirectmail']);
+		if (file_exists($theConf['path_to_fetchmail'])) {
+			$out = $this->iconImgOk.'&nbsp;'.$GLOBALS['LANG']->getLL('fetchmail_found');
+		} else {
+			$out = $this->iconImgError.'&nbsp;'.$GLOBALS['LANG']->getLL('fetchmail_not_found');
+		}
+		$out .= '&nbsp;<b>('.$theConf['path_to_fetchmail'].')</b></br>';
 		return $out;
 	}
 
@@ -80,14 +112,13 @@ class tx_t3m_settings	{
 				'tx_tcdirectmail_bounceaccount',
 				$insertFields
 			);
-			$out .= $this->iconImgWarning.' Bounce account created. Please reload page.';
+			$out .= $this->iconImgWarning.''.$GLOBALS['LANG']->getLL('bounceAccountCreated');
 		} else {
-			$out .= $this->iconImgOk.' Bounce account OK.';
+			$out .= $this->iconImgOk.' '.$GLOBALS['LANG']->getLL('bounceAccountOK');
 		}
+		$out .= '&nbsp;<b>('.$this->myConf['sender_email'].')</b></br>';
 		return $out;
 	}
-
-
 
 	/**
 	 * Check cron job config
@@ -96,14 +127,26 @@ class tx_t3m_settings	{
 	 */
 	function checkCronjobs() {
 
-		foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tcdirectmail']['cliScripts'] as $script => $dummy) {
-		exec('cat /etc/crontab | grep '.$script, $output); //.$script
-				if (!($output)) {
-					$out .= $this->iconImgWarning.' Script '.$script.' seems NOT to run as cronjob <br />';
-				} else {
-					$out .= $this->iconImgOk.' Script '.$script.' seems to run as cronjob <br />';
-				}
+		//foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tcdirectmail']['cliScripts'] as $script => $dummy) {
+		$script = t3lib_extMgm::extPath('tcdirectmail').'mailer.php';
+		exec('cat /etc/crontab | grep '.$script, $output);
+		if (!($output)) {
+			$out .= $this->iconImgWarning.'&nbsp;'.$GLOBALS['LANG']->getLL('mailer_cronjob_not_found');
+		} else {
+			$out .= $this->iconImgOk.'&nbsp;'.$GLOBALS['LANG']->getLL('mailer_cronjob_found');
 		}
+		$out .= '&nbsp;<b>('.$script.')</b></br>';
+
+		$script = t3lib_extMgm::extPath('tcdirectmail').'bounce.php';
+		exec('cat /etc/crontab | grep '.$script, $output);
+		if (!($output)) {
+			$out .= $this->iconImgWarning.'&nbsp;'.$GLOBALS['LANG']->getLL('bounce_cronjob_not_found');
+		} else {
+			$out .= $this->iconImgOk.'&nbsp;'.$GLOBALS['LANG']->getLL('bounce_cronjob_found');
+		}
+		$out .= '&nbsp;<b>('.$script.')</b></br>';
+
+
 		return $out;
 	}
 
@@ -113,7 +156,8 @@ class tx_t3m_settings	{
 	 * @return	string		an evaluation for 3rdparty module setting values
 	 */
 	function checkExternalSettings()	{
-		$out = '<img'.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/wizard_tsconfig_s.gif').' title="'.$GLOBALS['LANG']->getLL('Edit').'" alt="'.$GLOBALS['LANG']->getLL('Edit').'" /> Checking relevant root-TypoScript values:';
+		$out ='<h3>sr_feuser_register</h3>';
+		$out .= '<img'.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/wizard_tsconfig_s.gif').' title="'.$GLOBALS['LANG']->getLL('Edit').'" alt="'.$GLOBALS['LANG']->getLL('Edit').'" /> '.$GLOBALS['LANG']->getLL('CheckingTS');
 		$settingsToCheck = array(
 			'plugin.tx_srfeuserregister_pi1.userGroupUponRegistration',
 			'plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation',
@@ -131,6 +175,37 @@ class tx_t3m_settings	{
 				$out .= '<br />'.$this->iconImgError.'&nbsp;'.$value.':&nbsp;'.$this->rootTS[$value]['value'].'&nbsp;'.$GLOBALS['LANG']->getLL('notOK');
 			}
 		}
+
+		$out.='<h3>tcdirectmail</h3>';
+		$out.=$GLOBALS['LANG']->getLL('checkForBounceAccount');
+		$out.='<br />'.tx_t3m_settings::checkForBounceAccount();
+
+		return $out;
+	}
+
+	/**
+	 * Returns an evaluation for system setting values
+	 *
+	 * @return	string		an evaluation for system setting values
+	 */
+	function checkSystemSettings()	{
+
+		$out='<h3>'.$GLOBALS['LANG']->getLL('checkForCronjobs').'</h3>';
+		$out.=tx_t3m_settings::checkCronjobs();
+
+// 		deprecated tcdirectmail code (code not usable - migration pointless)
+// 		require_once(t3lib_extMgm::extPath('t3m').'class.tx_tcdirectmail_sysstat.php');
+// 		$out.=tx_tcdirectmail_sysstat::viewSysStatus(); //lynx, fetchmail, cronjobs
+
+		$out.='<h3>'.$GLOBALS['LANG']->getLL('checkForLynx').'</h3>';
+		$out.=tx_t3m_settings::checkForLynx();
+
+		$out.='<h3>'.$GLOBALS['LANG']->getLL('checkForFetchmail').'</h3>';
+		$out.=tx_t3m_settings::checkForFetchmail();
+
+		$out.='<h3>'.$GLOBALS['LANG']->getLL('checkForSpamProgram').'</h3>';
+		$out.=tx_t3m_settings::checkForSpamProgram();
+
 		return $out;
 	}
 
@@ -252,8 +327,8 @@ class tx_t3m_settings	{
 	/**
 	 * Main function for changing an extensions setting in localconf file, BTW should work for all other extensions (similar t3lib_function please!)
 	 *
-	 * @param	string		$extension: extension key
-	 * @param	array		$settings: key-value array of settings
+	 * @param	string		extension key
+	 * @param	array		key-value array of settings
 	 * @return	string		status about the creation task
 	 */
 	function changeExtensionSettings($extKey, $settings) {

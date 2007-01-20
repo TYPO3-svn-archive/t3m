@@ -110,6 +110,8 @@
 			<label index="bounced">Bounced</label>
 			<label index="bounces">Bounces</label>
 			<label index="bouncesettings">Bounce settings</label>
+			<label index="bounceAccountCreated">Bounce account created. Please reload page.</label>
+			<label index="bounceAccountOK">Bounce account entry according to the configured sender found.</label>
 			<label index="softbounces">Soft bounces</label>
 			<label index="descriptionsoftbounce">A Soft Bounce is a user whose email account is temporarily full or cannot be reached for a while.</label>
 			<label index="hardbounces">Hard bounces</label>
@@ -302,6 +304,8 @@
 			<label index="checkingForSpam">Checking for spam...</label>
 			<label index="runningScript">Running script</label>
 			<label index="spamProbability">Calculated spam probability</label>
+			<label index="spamScriptOK">Client and daemon working ok!</label>
+
 			<label index="errorSpamc">Error: Configured spam client program does not respond as suspected. Please configure client script correctly!</label>
 			<label index="errorSpamd">Error: Configured spam daemon program does not respond as suspected. Please configure the server script correctly!</label>
 			<label index="spamOrNot">Spam?</label>
@@ -325,20 +329,50 @@
 
 			<label index="settings">Settings</label>
 			<label index="descriptionSettings">Here users can view and admins can also change important extension's and system settings.</label>
+			<label index="own">T3M</label>
+			<label index="ownsettings">T3M settings</label>
+			<label index="descriptionOwnSettings">Here users can view and admins can also change important settings of this extension.</label>
+			<label index="other">Other extensions</label>
+			<label index="othersettings">Other extension's settings</label>
+			<label index="descriptionOtherSettings">Here users can view and admins can also change important settings of needed extensions.</label>
+			<label index="system">System</label>
+			<label index="systemsettings">System settings</label>
+			<label index="descriptionSystemSettings">Here admins can view system settings and get hints about how to implement a correct system behaviour.</label>
+			<label index="setup">Setup T3M</label>
+			<label index="descriptionSetupT3M">Here Admins can create typical backend groups and users who can then only use T3M. Usually only done once.</label>
 
 			<label index="OK">OK.</label>
 			<label index="Warning">Warning.</label>
 			<label index="notOK">not OK.</label>
 			<label index="Note">Note.</label>
 			<label index="Error">Error.</label>
-			<label index="CheckingSettings">Cecking settings ...</label>
+			<label index="CheckingSettings">Checking settings ...</label>
 			<label index="checkExternalSettings">Other extension's settings</label>
+			<label index="CheckingTS">Checking relevant TypoScript values</label>
 			<label index="checkOwnSettings">Own extension settings</label>
 			<label index="checkSystemSettings">System settings</label>
 			<label index="checkForSpamProgram">Spam check CLI server+client</label>
 			<label index="checkForBounceAccount">Bounce account check</label>
-			<label index="checkForCronjobs">Cronjob check</label>
 
+			<label index="checkForCronjobs">Cronjob check</label>
+			<label index="cronjob_found">The cronjob seems to run on your system!</label>
+			<label index="cronjob_not_found">The cronjob does not seem to run on your system!</label>
+			<label index="mailer_cronjob_found">The mailer cronjob seems to run on your system!</label>
+			<label index="mailer_cronjob_not_found">The mailer cronjob does not seem to run on your system!</label>
+			<label index="bounce_cronjob_found">The bounce mail checker cronjob seems to run on your system!</label>
+			<label index="bounce_cronjob_not_found">The bounce mail checker cronjob does not seem to run on your system!</label>
+
+			<label index="checkForLynx">Lynx check</label>
+			<label index="lynx_found">Lynx was found on your system!</label>
+			<label index="lynx_not_found">Lynx was not found on your system!</label>
+
+			<label index="checkForFetchmail">Fetchmail check</label>
+			<label index="fetchmail_found">Fetchmail was on your system!</label>
+			<label index="fetchmail_not_found">Fetchmail was not found on your system!</label>
+
+
+			<label index="checkForLynx">Lynx check</label>
+			<label index="checkForFetchmail">Fetchmail check</label>
 
 			<label index="actions">Actions</label>
 			<label index="infos">Infos</label>
@@ -483,6 +517,9 @@
 			<label index="bounced">Bounced</label>
 			<label index="bounces">Bounces</label>
 			<label index="bouncesettings">Bounce Einstellungen</label>
+			<label index="bounceAccountCreated">Bounce account eingefügt. Bitte die Seite neu laden.</label>
+			<label index="bounceAccountOK">Eintrag für einen Bounce account entsprechend des konfigurierten Absenders gefunden.</label>
+
 			<label index="softbounces">Soft bounces</label>
 			<label index="descriptionsoftbounce">Ein Soft Bounce ist ein Benutzer dessen E-Mail Account or E-Mail Server voll ist und vorübergehend nicht erreichbar ist.</label>
 			<label index="hardbounces">Hard bounces</label>
@@ -585,7 +622,7 @@
 			<label index="directmails">Direct Mails</label>
 
 			<label index="createCategory">Kategorien erstellen</label>
-			<label index="newCategory">Neue Kategorie</label>
+			<label index="NewCategory">Neue Kategorie</label>
 			<label index="createCampaign">Kampagne erstellen</label>
 			<label index="NewCampaign">Neue Kampagne</label>
 			<label index="createPage">Seite erstellen</label>
@@ -661,17 +698,17 @@
 			<label index="contentstatistics">Inhalts-Statistiken</label>
 			<label index="PageView">Page view</label>
 			<label index="PageViewRatio">Page-View Rate</label>
-			<label index="pageViewRatio">Page-View Rate (geöffnete / nicht geöffnete E-Mails)</label>
+			<label index="pageViewRatio">Page-View Rate (geoeffnete / nicht geoeffnete E-Mails)</label>
 			<label index="PageSends">Aussendungen</label>
 			<label index="TotalPageSends">Gesamte Aussendungen (einzelne E-Mails)</label>
 			<label index="PageClicks">Klicks in E-Mails</label>
 			<label index="TotalPageClicks">Gesamt Klicks</label>
 			<label index="PageClickRatio">Page-Klick Rate</label>
 			<label index="ClickedMails">E-Mails mit Klicks</label>
-			<label index="OpenedMails">Geöffnete E-Mails</label>
+			<label index="OpenedMails">Geoeffnete E-Mails</label>
 			<label index="descriptionOpenedMails">Von den Aussendungen (den 'E-Mailings') geöffnete einzelne E-Mails</label>
 
-			<label index="NotOpenedMails">Nicht geöffnete E-Mails</label>
+			<label index="NotOpenedMails">Nicht geoeffnete E-Mails</label>
 			<label index="NotClickedMails">E-Mails ohne Klicks</label>
 			<label index="LinksClicked">Geklickte Links</label>
 			<label index="clicks">Anzahl Klicks</label>
@@ -681,6 +718,7 @@
 			<label index="checkForSpam">Spamcheck</label>
 			<label index="checkingForSpam">Überprüfe nach Spam...</label>
 			<label index="runningScript">Führe Script aus</label>
+			<label index="spamScriptOK">Client und Daemon arbeiten einwandfrei!</label>
 			<label index="spamProbability">Errechnete Spam-Wahrscheinlichkeit</label>
 			<label index="errorSpamc">Fehler: Eingestelltes Spam-Client-Program funktioniert nicht wie erwartet. Bitte richten Sie das Spam Clientscript richtig ein!</label>
 			<label index="errorSpamd">Fehler: Eingestelltes Spam-Daemon-Program funktioniert nicht wie erwartet. Bitte richten Sie das Spam Daemonscript richtig ein bzw. benutzen einen korekt funktionierenden Server!</label>
@@ -707,6 +745,19 @@
 
 			<label index="settings">Einstellungen</label>
 			<label index="descriptionSettings">Hier können Benutzer Systeminformationen einsehen und Admins Einstellungen für Extensions oder am System vornehmen.</label>
+			<label index="own">T3M</label>
+			<label index="ownsettings">T3M Einstellungen</label>
+			<label index="descriptionOwnSettings">Hier können Benutzer die wichtigsten Einstellungen dieser Extension einsehen und Admins können Änderungen an T3M vornehmen.</label>
+			<label index="other">Andere Extensions</label>
+			<label index="othersettings">Einstellungen anderer Extensions</label>
+			<label index="descriptionOtherSettings">Hier können Benutzer die wichtigsten Einstellungen anderer relevanter Extension einsehen und Admins können Änderungen an ihnen vornehmen.</label>
+			<label index="system">System</label>
+			<label index="systemsettings">System Einstellungen</label>
+			<label index="descriptionSystemSettings">Hier erhalten Administratoren einen Überblick über die wichtigsten System-Einstellungen und Hinweise für die korrekte Einrichtung.</label>
+			<label index="setup">Setup</label>
+			<label index="descriptionSetupT3M">Hier erhalten Administratoren eine Hilfestellung für das erste Einrichten der T3M-Extension. Es können z.B. per Button Backend-Gruppen und Benutzer angelegt werden. Dies geschieht in der Regel nur einmal.</label>
+
+
 			<label index="OK">OK.</label>
 			<label index="Note">Hinweis</label>
 			<label index="Warning">Warnung</label>
@@ -714,11 +765,29 @@
 			<label index="Error">Fehler.</label>
 			<label index="CheckingSettings">Überprüfe Einstellungen ...</label>
 			<label index="checkExternalSettings">Andere Extensions</label>
+			<label index="CheckingTS">Überprüfe relevante TypoScript-Konfiguration</label>
 			<label index="checkOwnSettings">T3M Einstellungen</label>
 			<label index="checkSystemSettings">Systemeinstellungen</label>
 			<label index="checkForSpamProgram">Spam-Check Server- und Client-Programme</label>
 			<label index="checkForBounceAccount">Bounce-Account Einstellungen</label>
-			<label index="checkForCronjobs">Cronjob check</label>
+
+			<label index="checkForCronjobs">Cronjob Test</label>
+			<label index="cronjob_found">Der Cronjob läuft scheinbar auf Ihrem System!</label>
+			<label index="cronjob_not_found">Der Cronjob läuft scheinbar nicht auf Ihrem System!</label>
+			<label index="mailer_cronjob_found">Der Mailer-Cronjob läuft scheinbar auf Ihrem System!</label>
+			<label index="mailer_cronjob_not_found">Der Mailer-Cronjob läuft scheinbar nicht auf Ihrem System!</label>
+			<label index="bounce_cronjob_found">Der Bounce-Mail-Checker-Cronjob läuft scheinbar auf Ihrem System!</label>
+			<label index="bounce_cronjob_not_found">Der Bounce-Mail-Checker-Cronjob läuft scheinbar nicht auf Ihrem System!</label>
+
+			<label index="checkForLynx">Lynx Test</label>
+			<label index="lynx_found">Das Programm zum Generieren von Text-E-Mails wurde auf Ihrem System gefunden!</label>
+			<label index="lynx_not_found">Das Programm zum Generieren von Text-E-Mails wurde nicht auf Ihrem System gefunden!</label>
+
+			<label index="checkForFetchmail">Fetchmail Test</label>
+			<label index="fetchmail_found">Das Programm zum Abholen von Bounce-E-Mails wurde auf Ihrem System gefunden!</label>
+			<label index="fetchmail_not_found">Das Programm zum Abholen von Bounce-E-Mails wurde auf Ihrem System nicht gefunden!</label>
+
+
 
 			<label index="actions">Actions</label>
 			<label index="infos">Infos</label>
@@ -743,14 +812,14 @@
 			<label index="descriptionPostinstalls">Nach der Installation kann die Konfiguration durch folgende Aktionen erleichtert werden. Es verändert unsere Konfiguration in typo3conf/localconf.php. Bitte nur einmal am Anfang durchführen.</label>
 			<label index="performingPostinstalls">Führe Postinstall-Aktionen durch...</label>
 
-			<label index="createSysfolders">Erstelle Sysfolder Struktur um Kampagnen, Mailings, Benutzer, Zielgruppen und Begrüßungencampaigns zu speichern.</label>
+			<label index="createSysfolders">Erstelle Sysfolder-Struktur, in der Kampagnen, Mailings, Benutzer, Zielgruppen und Begrüßungen gespeichert werden können.</label>
 			<label index="createFegroups">Erstelle Frontend Benutzergruppen für Registrierungen, Tests und Bounces und eine Test-Empfängerliste.</label>
 			<label index="createBegroupsAndUsers">Erstelle Backend Benutzergruppen und Benutzer.</label>
 			<label index="createTargetgroups">Erstelle Test-Empfängerliste.</label>
 			<label index="createDemocontent">Erstelle Demo-Inhalte (Newsletter, Kampagnen, One-off-mails, Begrüßungen).</label>
 			<label index="createReceivers">Erstelle eine Test-Empfängerliste.</label>
 
-			<label index="createAll">Tu alles o.g.!!!</label>
+			<label index="createAll">Führe alles o.g. durch!!!</label>
 			<label index="Created">erstellt</label>
 
 			<label index="maintenance">Datenpflege</label>

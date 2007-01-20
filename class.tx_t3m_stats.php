@@ -837,17 +837,20 @@ class tx_t3m_stats	{
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('registered').': '.$usercountRegistered;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $usercountRegistered;
-		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['1'] = 'addColor';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['1.']['color'] = 'green';
 
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('pending').': '.$usercountPending;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $usercountPending;
-		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'orange';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['2'] = 'addColor';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['2.']['color'] = 'orange';
 
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30'] = 'point';
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30.']['x'] = $GLOBALS['LANG']->getLL('deleted').': '.$usercountDeleted;
 		$pie_registrations['10.']['20.']['10.']['10.']['dataset.']['10.']['30.']['y'] = $usercountDeleted;
-		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['3.']['endColor'] = 'red';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['3'] = 'addColor';
+		$pie_registrations['10.']['20.']['10.']['10.']['fillStyle.']['3.']['color'] = 'red';
 
 
 // 		t3lib_div::debug($static_pie);
@@ -879,12 +882,14 @@ class tx_t3m_stats	{
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('softbounces').': '.$usercountSoftbounces;
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $usercountSoftbounces;
-		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'orange';
+		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['1'] = 'addColor';
+		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['1.']['color'] = 'orange';
 
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('hardbounces').': '.$usercountHardbounces;
 		$pie_bounces['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $usercountHardbounces;
-		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
+		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['2'] = 'addColor';
+		$pie_bounces['10.']['20.']['10.']['10.']['fillStyle.']['2.']['color'] = 'red';
 
 		$out .= '<br />'.tx_pbimagegraph_ts::make($pie_bounces);
 
@@ -992,13 +997,15 @@ class tx_t3m_stats	{
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('OpenedMails').': '.$openedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $openedMailsCount;
-		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
+		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['1'] = 'addColor';
+		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['1.']['color'] = 'green';
 
 
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('NotOpenedMails').': '.$notOpenedMailsCount;
 		$pie_opened['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $notOpenedMailsCount;
-		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
+		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['2'] = 'addColor';
+		$pie_opened['10.']['20.']['10.']['10.']['fillStyle.']['2.']['color'] = 'red';
 
 
 		$out .=' <br />'.tx_pbimagegraph_ts::make($pie_opened);
@@ -1494,27 +1501,16 @@ class tx_t3m_stats	{
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10'] = 'point';
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['x'] = $GLOBALS['LANG']->getLL('ClickedMails').': '.$clickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['10.']['y'] = $clickedMailsCount;
-		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['1.']['endColor'] = 'green';
+		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['1'] = 'addColor';
+		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['1.']['color'] = 'green';
 
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20'] = 'point';
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['x'] = $GLOBALS['LANG']->getLL('NotClickedMails').': '.$notClickedMailsCount;
 		$pie_clicked['10.']['20.']['10.']['10.']['dataset.']['10.']['20.']['y'] = $notClickedMailsCount;
-		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['2.']['endColor'] = 'red';
+		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['2'] = 'addColor';
+		$pie_clicked['10.']['20.']['10.']['10.']['fillStyle.']['2.']['color'] = 'red';
 
 		$out .=' <br />'.tx_pbimagegraph_ts::make($pie_clicked);
-
-
-
-		$out .= tx_t3m_stats::tableForClickedMails();
-		$out .= tx_t3m_stats::tableForNotClickedMails();
-
-
-		// 2do;
-		// VISITS, ADLEADS, ADSALES possible ??? and how?
-
-		// - 'cost' related
-		// - 'performance', 'KPI', 'management ratio'
-		// - graph showing total deliveries vs opened vs clicked
 
 
 		$out .= '<h3>Total URLs clicked </h3>'; // limit to top ten?
@@ -1529,6 +1525,19 @@ class tx_t3m_stats	{
 				<td>'.$clickcount['urls'][$url].'</td></tr>';
 		}
 		$out .= '</table>';
+
+
+		$out .= tx_t3m_stats::tableForClickedMails();
+		$out .= tx_t3m_stats::tableForNotClickedMails();
+
+
+		// 2do;
+		// VISITS, ADLEADS, ADSALES possible ??? and how?
+
+		// - 'cost' related
+		// - 'performance', 'KPI', 'management ratio'
+		// - graph showing total deliveries vs opened vs clicked
+
 
 		return $out;
 	}

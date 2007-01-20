@@ -125,22 +125,22 @@ class tx_t3m_main {
 		require_once(t3lib_extMgm::extPath('tcdmailstats').'modfunc1/class.tx_tcdmailstats_modfunc1.php');
 		require_once(t3lib_extMgm::extPath('tcdirectmail').'class.tx_tcdirectmail_tools.php');
 
-		require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_addresses.php');
+		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_addresses.php');
 
-		require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_mailings.php');
+		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_mailings.php');
 		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_spam.php');
 
-		require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_send.php');
+		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_send.php');
 
 		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_bounce.php');
-		require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_stats.php');
+		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_stats.php');
 
-		require_once (t3lib_extMgm::extPath('t3m').'class.tx_t3m_settings.php');
+		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_settings.php');
 		require_once(t3lib_extMgm::extPath('t3m').'class.tx_t3m_postinstall.php');
 
 		$this->extKey = 't3m'; // how to get dynamically? $_EXTKEY is wrong and $EM_CONF empty..
 		$this->demo = 0; //enable or disable demo data
-		$this->debug = 1; //enable or disable debugging
+		$this->debug = 0; //enable or disable debugging
 
 		$this->myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
 // 		$this->requiredExtensions  = array( //$EM_CONF[t3m]['constraints']['depends'] does NOT work!
@@ -164,7 +164,7 @@ class tx_t3m_main {
 		$this->tcColumnsOnly = '&columnsOnly=title,tx_tcdirectmail_senttime,doktype,hidden,tx_tcdirectmail_repeat,tx_tcdirectmail_sendername,tx_tcdirectmail_senderemail,tx_tcdirectmail_test_target,tx_tcdirectmail_real_target,tx_tcdirectmail_spy,tx_tcdirectmail_register_clicks,tx_tcdirectmail_dotestsend,tx_tcdirectmail_attachfiles,tx_tcdirectmail_plainconvert';
 		$this->tcDefVals =  '&defVals[pages][doktype]=189&defVals[pages][hidden]=0&defVals[pages][tx_tcdirectmail_sendername]='.$this->myConf['sender_name'].'&defVals[pages][tx_tcdirectmail_senderemail]='.$this->myConf['sender_email'].'&defVals[pages][tx_tcdirectmail_test_target]=tx_tcdirectmail_targets_'.$this->myConf['targetTest'].'&defVals[pages][tx_tcdirectmail_spy]='.$this->myConf['tcdirectmail_spy'].'&defVals[pages][tx_tcdirectmail_register_clicks]='.$this->myConf['tcdirectmail_register_clicks'].'&defVals[pages][tx_tcdirectmail_dotestsend]='.$this->myConf['tx_tcdirectmail_dotestsend'].'&defVals[pages][tx_tcdirectmail_plainconvert]='.$this->myConf['tcdirectmail_plain'];
 
-		$this->tcOverrideVals =  '&overrideVals[pages][doktype]=189&overrideVals[pages][hidden]=0&overrideVals[pages][tx_tcdirectmail_sendername]='.$this->myConf['sender_name'].'&overrideVals[pages][tx_tcdirectmail_senderemail]='.$this->myConf['sender_email'].'&overrideVals[pages][tx_tcdirectmail_test_target]=tx_tcdirectmail_targets_'.$this->myConf['targetTest'].'&overrideVals[pages][tx_tcdirectmail_dotestsend]='.$this->myConf['tx_tcdirectmail_dotestsend'].'&overrideVals[pages][tx_tcdirectmail_plainconvert]='.$this->myConf['tcdirectmail_plain'];
+		$this->tcOverrideVals =  '&overrideVals[pages][doktype]=189&overrideVals[pages][hidden]=0&overrideVals[pages][tx_tcdirectmail_sendername]='.$this->myConf['sender_name'].'&overrideVals[pages][tx_tcdirectmail_senderemail]='.$this->myConf['sender_email'].'&overrideVals[pages][tx_tcdirectmail_test_target]=tx_tcdirectmail_targets_'.$this->myConf['targetTest'].'&overrideVals[pages][tx_tcdirectmail_dotestsend]='.$this->myConf['tx_tcdirectmail_dotestsend'].'&overrideVals[pages][tx_tcdirectmail_plainconvert]='.$this->myConf['tcdirectmail_plain'].'&overrideVals[pages][tx_tcdirectmail_spy]='.$this->myConf['tcdirectmail_spy'].'&overrideVals[pages][tx_tcdirectmail_register_clicks]='.$this->myConf['tcdirectmail_register_clicks'];
 
 		$this->columnsOnlyFeuser = '&columnsOnly=gender,first_name,last_name,telephone,fax,email,company,address,zip,city,tx_t3m_country,date_of_birth,username,password,usergroup,tx_t3m_categories,module_sys_dmail_html,disable,deleted,tx_t3m_salutation';
 		$this->defValsFeuser = '&defVals[fe_users][tx_t3m_country]='.$this->myConf['static_countries_uid'];

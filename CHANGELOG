@@ -1,4 +1,9 @@
 Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2007-01-15
+Version: 0.2.1
+Comment: some bug fixes, new settings structure, got rid of some tcdirectmailcode
+
+Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2007-01-12
 Version: 0.2.0
 Comment: first release, lots of bug fixes, split some functions into 3 "mvc-like" functions

@@ -646,7 +646,7 @@ class tx_t3m_mailings {
 	 */
 	function createTCDirectmailForReceivergroup($uid) {
 
-		$columnsOnly = $this->tcColumnsOnly;
+		$columnsOnly = $this->tcColumnsOnly.',tx_t3m_campaign';
 // 		$columnsOnly = '&columnsOnly=title,tx_tcdirectmail_senttime,doktype,hidden,tx_tcdirectmail_repeat,tx_tcdirectmail_sendername,tx_tcdirectmail_senderemail,tx_tcdirectmail_test_target,tx_tcdirectmail_spy,tx_tcdirectmail_register_clicks,tx_tcdirectmail_dotestsend,tx_tcdirectmail_attachfiles,tx_tcdirectmail_plainconvert,tx_tcdirectmail_repeat,tx_t3m_campaign,tx_tcdirectmail_real_target';
 		$defVals = $this->tcDefVals.'&defVals[pages][tx_tcdirectmail_real_target]='.intval($uid);
 		$overrideVals = $this->tcOverrideVals.'&OverrideVals[pages][tx_tcdirectmail_real_target]='.intval($uid);
@@ -736,7 +736,7 @@ class tx_t3m_mailings {
 	function createCampaignMailing($cid, $pid)	{
 		$columnsOnly = $this->tcColumnsOnly.',tx_t3m_campaign';
 		$defVals = $this->tcDefVals.'&defVals[pages][tx_t3m_campaign]='.intval($cid);
-		$overrideVals = $this->tcOverrideVals.'&overrideVals=[pages][tx_tcdirectmail_repeat]=0';
+		$overrideVals = $this->tcOverrideVals.'&overrideVals[pages][tx_tcdirectmail_repeat]=0';
 		if (!intval($pid)) {
 			$pid = $this->myConf['mailings_Sysfolder'];
 		}
@@ -865,29 +865,15 @@ class tx_t3m_mailings {
 	}
 
 	/**
-	 * Creates a link for editing a content element
+	 * Creates a link for editing the contents of a page
 	 *
-	 * @param	int		uid of the content element
-	 * @return	string		link for editing a content element
+	 * @param	int		uid of a page
+	 * @return	string		link for editing the content elements of a page
 	 */
 	function editContents($uid)	{
 		$out = '<a href="'.$GLOBALS['BACK_PATH'].'db_list.php?id='.intval($uid).'">'.$this->iconImgEdit.'</a><br/>';
 		return $out;
 	}
-
-
-	/**
-	* Creates a link for editing the contents of a page
-	*
-	* @param	int	pid of the contents of a page
-	* @return	string	links for editing the content elements
-	*/
-// 	function editContents($pid)	{
-// 		$params = '&edit[tt_content]['.intval($uid).']=edit';
-// 		$out = '<a href="#" onclick="'.htmlspecialchars(t3lib_BEfunc::editOnClick($params,$GLOBALS['BACK_PATH'])).'">'.$this->iconImgEdit.'</a><br/>';
-// 		return $out;
-// 	}
-
 
 
 	/**

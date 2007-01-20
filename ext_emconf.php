@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'typo3-macher',
-	'version' => '0.2.0',
+	'version' => '0.2.1',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '4.0.0-',
@@ -39,7 +39,9 @@ $EM_CONF[$_EXTKEY] = array(
 			'sr_feuser_register'   => '2.5.1-',
 			'static_info_tables' => '2.0.0-',
 			'static_info_tables_de' => '2.0.0-',
-			'erotea_date2cal' => '1.2.0-',
+/** @todo: test */
+//			'erotea_date2cal' => '1.2.0-',
+			'date2cal' => '5.0.2-',
 /** @todo: test these extensions for calendars */
 // 			'kj_becalendar'  => '1.0.2',
 // 			'date2cal' => '1.1.1-',
