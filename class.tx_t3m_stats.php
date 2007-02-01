@@ -226,10 +226,11 @@ class tx_t3m_stats	{
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid',
 			'pages',
-			'tx_t3m_campaign = '.intval($uid)
+			'tx_t3m_campaign = '.intval($uid).' AND deleted=0'
 			);
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-			$sent =  tx_t3m_stats::checkMailSent(intval($row['uid']));
+			$sent = tx_t3m_stats::checkMailSent(intval($row['uid']));
+			//$out .= 'sent:'.$sent.' ';
 			if ($sent) {
 				$out = $GLOBALS['LANG']->getLL('campaignfinished'); // ok this one is sent, now look for next one.
 			} else {
@@ -1225,23 +1226,27 @@ class tx_t3m_stats	{
 		} else {
 			$pids = tx_t3m_stats::getOpenedMails();
 		}
-		// else get all pids
-		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageView').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageViewRatio').'</td>
-			</tr>';
-		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
-				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
-				<td>'.tx_t3m_stats::getOpenedSentTime($pid).'</td>
-				<td>'.tx_t3m_stats::getOpenedCountForPage($pid).'</td>
-				<td>'.round(((tx_t3m_stats::getOpenedCountForPage($pid) / tx_t3m_stats::getSendCountForPage($pid)) * 100),2).'%</td>
+		if (!$pids) {
+			$out .= $GLOBALS['LANG']->getLL('nomails');
+		} else {
+			// else get all pids
+			$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageView').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageViewRatio').'</td>
 				</tr>';
+			foreach ($pids as $pid) {
+				$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+					<td>'.tx_t3m_mailings::viewPage($pid).'</td>
+					<td>'.tx_t3m_stats::getOpenedSentTime($pid).'</td>
+					<td>'.tx_t3m_stats::getOpenedCountForPage($pid).'</td>
+					<td>'.round(((tx_t3m_stats::getOpenedCountForPage($pid) / tx_t3m_stats::getSendCountForPage($pid)) * 100),2).'%</td>
+					</tr>';
+			}
+			$out .= '</table>';
 		}
-		$out .= '</table>';
 		return $out;
 	}
 
@@ -1259,19 +1264,23 @@ class tx_t3m_stats	{
 		} else {
 			$pids = tx_t3m_stats::getNotOpenedMails();
 		}
-		// else get all pids
-		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
-			</tr>';
-		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
-				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
-				<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td>
+		if (!$pids) {
+			$out .= $GLOBALS['LANG']->getLL('nomails');
+		} else {
+			// else get all pids
+			$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
 				</tr>';
+			foreach ($pids as $pid) {
+				$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+					<td>'.tx_t3m_mailings::viewPage($pid).'</td>
+					<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td>
+					</tr>';
+			}
+			$out .= '</table>';
 		}
-		$out .= '</table>';
 		return $out;
 	}
 
@@ -1347,82 +1356,85 @@ class tx_t3m_stats	{
 		} else {
 			$pids = tx_t3m_stats::getClickedMails();
 		}
-
-		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageClicks').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('LinksClicked').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageClickRatio').'</td>
-			</tr>';
-
-
-		// sort pids by clicks:
-		foreach ($pids as $pid) {
-			$pidClickCount[$pid] = tx_t3m_stats::mailClicks($pid);
-		}
-		arsort($pidClickCount);
-
-// 		t3lib_div::debug($pidClickCount);
-		//now get all the clicks for the pids.
-		foreach ($pidClickCount as $key => $val) {
-			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($key).'</td>
-				<td>'.tx_t3m_mailings::viewPage($key).'</td>
-				<td>'.tx_t3m_stats::getOpenedSentTime($key).'</td>
-				<td>'.$val.'</td>
-				<td>';
-			$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-				'uid',
-				'tx_tcdirectmail_sentlog',
-				'pid = '.$key
-			);
+		if (!$pids) {
+			$out .= $GLOBALS['LANG']->getLL('nomails');
+		} else {
 			$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-				<td class="c-headLineTable">URL</td>
-				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('clicks').'</td></tr>';
-			while($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))	{
-// 				$out .= $row2['uid'];
-				$res3 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-					'url,SUM(opened) as iopened',
-					'tx_tcdirectmail_clicklinks',
-					'opened > 0 AND sentlog = '.$row2['uid'],
-					'url'
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageClicks').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('LinksClicked').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('PageClickRatio').'</td>
+				</tr>';
+
+
+			// sort pids by clicks:
+			foreach ($pids as $pid) {
+				$pidClickCount[$pid] = tx_t3m_stats::mailClicks($pid);
+			}
+			arsort($pidClickCount);
+
+	// 		t3lib_div::debug($pidClickCount);
+			//now get all the clicks for the pids.
+			foreach ($pidClickCount as $key => $val) {
+				$out .= '<tr><td>'.tx_t3m_mailings::getPageName($key).'</td>
+					<td>'.tx_t3m_mailings::viewPage($key).'</td>
+					<td>'.tx_t3m_stats::getOpenedSentTime($key).'</td>
+					<td>'.$val.'</td>
+					<td>';
+				$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+					'uid',
+					'tx_tcdirectmail_sentlog',
+					'pid = '.$key
 				);
-				// if we have a click for this sentlog then save click count for the links
-				while($row3 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res3))	{
-					$links[$row3['url']] +=  $row3['iopened'];
-					//$opened['url'] =  $row3['iopened'];
-					//$out .=	'<td>'.tx_t3m_stats::mailClickedLinks($row2['pid']).'</td>';
+				$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
+					<td class="c-headLineTable">URL</td>
+					<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('clicks').'</td></tr>';
+				while($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))	{
+	// 				$out .= $row2['uid'];
+					$res3 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+						'url,SUM(opened) as iopened',
+						'tx_tcdirectmail_clicklinks',
+						'opened > 0 AND sentlog = '.$row2['uid'],
+						'url'
+					);
+					// if we have a click for this sentlog then save click count for the links
+					while($row3 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res3))	{
+						$links[$row3['url']] +=  $row3['iopened'];
+						//$opened['url'] =  $row3['iopened'];
+						//$out .=	'<td>'.tx_t3m_stats::mailClickedLinks($row2['pid']).'</td>';
+					}
 				}
+				foreach ($links as $key2 => $val2) {
+					$out .= '<tr><td>'.$key2.'</td>
+						<td>'.$val2.'</td></tr>';
+				}
+				$out .=	'</table>';
+				$out .=	'</td><td>'.round((($val / tx_t3m_stats::getSendCountForPage($key)) * 100),2).'%</td></tr>';
+				$links = '';
 			}
-			foreach ($links as $key2 => $val2) {
-				$out .= '<tr><td>'.$key2.'</td>
-					<td>'.$val2.'</td></tr>';
-			}
-			$out .=	'</table>';
-			$out .=	'</td><td>'.round((($val / tx_t3m_stats::getSendCountForPage($key)) * 100),2).'%</td></tr>';
-			$links = '';
+
+	// 			$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+	// 				'pid,sendtime,beenthere',
+	// 				'tx_tcdirectmail_sentlog',
+	// 				'uid = '.$row['sentlog'],
+	// 				'pid'
+	// 			);
+	// 			while($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))	{
+	// 				if (!($hadPageBefore[$row2['pid']])) {
+	// 					$out .= '<tr><td>'.tx_t3m_mailings::getPageName($row2['pid']).'</td>
+	// 						<td>'.tx_t3m_mailings::viewPage($row2['pid']).'</td>
+	// 						<td>'.t3lib_BEfunc::datetime($row2['sendtime']).'</td>
+	// 						<td>'.tx_t3m_stats::mailClicks($row2['pid']).'</td>
+	// 						<td>'.tx_t3m_stats::mailClickedLinks($row2['pid']).'</td>
+	// 						</tr>';
+	// 					$hadPageBefore[$row2['pid']] = true;
+	// 				}
+	// 			}
+
+			$out .= '</table>';
 		}
-
-// 			$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-// 				'pid,sendtime,beenthere',
-// 				'tx_tcdirectmail_sentlog',
-// 				'uid = '.$row['sentlog'],
-// 				'pid'
-// 			);
-// 			while($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))	{
-// 				if (!($hadPageBefore[$row2['pid']])) {
-// 					$out .= '<tr><td>'.tx_t3m_mailings::getPageName($row2['pid']).'</td>
-// 						<td>'.tx_t3m_mailings::viewPage($row2['pid']).'</td>
-// 						<td>'.t3lib_BEfunc::datetime($row2['sendtime']).'</td>
-// 						<td>'.tx_t3m_stats::mailClicks($row2['pid']).'</td>
-// 						<td>'.tx_t3m_stats::mailClickedLinks($row2['pid']).'</td>
-// 						</tr>';
-// 					$hadPageBefore[$row2['pid']] = true;
-// 				}
-// 			}
-
-		$out .= '</table>';
 		return $out;
 	}
 
@@ -1439,17 +1451,21 @@ class tx_t3m_stats	{
 		} else {
 			$pids = tx_t3m_stats::getNotClickedMails();
 		}
-		$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
-			</tr>';
-		foreach ($pids as $pid) {
-			$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
-				<td>'.tx_t3m_mailings::viewPage($pid).'</td>
-				<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td></tr>';
+		if (!$pids) {
+			$out .= $GLOBALS['LANG']->getLL('nomails');
+		} else {
+			$out .= '<table class="typo3-dblist"><tr class="c-headLineTable">
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Title').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('View').'</td>
+				<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('SendDate').'</td>
+				</tr>';
+			foreach ($pids as $pid) {
+				$out .= '<tr><td>'.tx_t3m_mailings::getPageName($pid).'</td>
+					<td>'.tx_t3m_mailings::viewPage($pid).'</td>
+					<td>'.tx_t3m_stats::getNotOpenedSentTime($pid).'</td></tr>';
+			}
+			$out .= '</table>';
 		}
-		$out .= '</table>';
 		return $out;
 	}
 
