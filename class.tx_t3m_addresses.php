@@ -890,23 +890,25 @@ class tx_t3m_addresses {
 // 		}
 // 		return $out;
 // 	}
+
+
 	/**
 	 * Returns user ids who chose a category
 	 *
 	 * @param	int		uid of category
-	 * @return	array		user ids who chose a category
+	 * @return	array		users who chose a category
 	 * @todo	Traversal through subcategories
 	 */
  	function getCategoryUsers($uid) {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'uid,tx_t3m_categories',
+			'uid,tx_t3m_categories,username,gender,email,date_of_birth',
 			'fe_users'
 		);
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
 			if ($row['tx_t3m_categories'] != '' ) { //user has chosen at least one category
 				$categories = explode(',',$row['tx_t3m_categories']);
 				if (in_array($uid, $categories)) {
-					$out[] = $row['uid'];
+					$out[] = $row;
 				}
 			}
 		}
@@ -1003,6 +1005,49 @@ class tx_t3m_addresses {
 		$out .= '</table>';
 		return $out;
 	}
+
+	/**
+	 * Returns a list of users who chose a category
+	 *
+	 * @param	array		$users: users with data
+	 * @return	string		list of users
+	 */
+	function tableForCategoryFeusers($users)	{
+		$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Name').'</td>
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('gender').'</td>
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('email').'</td>
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('date_of_birth').'</td>
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('tx_t3m_categories').'</td>
+			</tr>'; //<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('EditDelete').'</td>
+		foreach ($users as $row) {
+			$out .= '<tr><td>'.$row['username'].'</td>
+				<td>'.$GLOBALS['LANG']->getLL('tx_t3m_targetgroups.gender.I.'.$row['gender']).'</td>
+				<td><a href="mailto:'.$row['email'].'">'.$row['email'].'</a></td>
+				<td>';
+			if (intval($row['date_of_birth']) != 0) {
+				$out .= date('d-m-Y',intval($row['date_of_birth'])); //t3lib_BEfunc::date
+			}
+			$out .= '</td><td>';
+			$resCategories = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+				'uid,name',
+				'tx_'.$this->extKey.'_categories',
+				'uid = '.implode(' OR uid = ',explode(',',$row['tx_t3m_categories']))
+			);
+			while($rowCategories = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resCategories))	{
+				$out .= $rowCategories['name'].'<br />';
+			}
+			$out .= '</td></tr>';
+				// <td>'.tx_t3m_addresses::editUser($row['uid']).'</td>	<td>'.tx_t3m_addresses::deleteUser($row['uid']).'</td>
+		}
+		$out .= '</table>';
+		return $out;
+	}
+
+
+
+
+
 
 	/**
 	 * Returns a list of users who are disabled

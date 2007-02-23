@@ -1,0 +1,3 @@
+cvsfile1,cvsfile1@localhost
+cvsfile2,cvsfile2@localhost
+cvsfile3,cvsfile3@localhost

@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'T3M [typo3-macher] E-Mail Marketing Tool',
-	'description' => 'E-Mail Marketing Extension similar to Direct Mail. provided by typo3macher',
+	'description' => 'E-Mail Marketing Extension based on tcdirectmail and pbimagegraph. provided by typo3macher',
 	'category' => 'be',
 	'author' => 'Stefan Koch',
 	'author_email' => 'typo3@stefkoch.de',
@@ -20,7 +20,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
-	'module' => 'mod0,mod1,mod2,mod3,mod4,mod5,mod6',
+	'module' => 'mod0,mod1,mod2,mod3,mod4,mod5',
 	'state' => 'alpha',
 	'internal' => '',
 	'uploadfolder' => 1,
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'typo3-macher',
-	'version' => '0.2.1',
+	'version' => '0.2.2',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '4.0.0-',
@@ -52,7 +52,7 @@ $EM_CONF[$_EXTKEY] = array(
 // 			'mh_omdbchart' => '0.9.6-',
 			'pbimagegraph' => '1.0.4-',
 			'tcdirectmail' => '1.1.1-',
-// 			'tcdmailstats' => '0.0.1-',
+			'tcdmailstats' => '0.0.1-',
 		),
 		'conflicts' => array(
 		),

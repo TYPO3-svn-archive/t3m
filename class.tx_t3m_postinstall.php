@@ -73,7 +73,7 @@ class tx_t3m_postinstall	{
 		//getting old config
 		$settings = $this->myConf;
 
-		t3lib_div::debug($settings);
+		//t3lib_div::debug($settings);
 		if (t3lib_div::_GP('createSysfolders')) {
 			$out .= tx_t3m_postinstall::createSysfolders();
 		}
@@ -90,7 +90,7 @@ class tx_t3m_postinstall	{
 //
 // 		}
 		if (t3lib_div::_GP('createAll')) {
-			$out = tx_t3m_postinstall::createSysfolders();
+			$out .= tx_t3m_postinstall::createSysfolders();
 			$out .= tx_t3m_postinstall::createFegroups();
 			$out .= tx_t3m_postinstall::createBeGroups();
 			$out .= tx_t3m_postinstall::createTargetgroups();
@@ -261,7 +261,7 @@ class tx_t3m_postinstall	{
 
 
 		//admin
-		$userMods = 'tools_txrsuserimpM1,txt3mM0,txt3mM0_txt3mM1,txt3mM0_txt3mM2,txt3mM0_txt3mM3,txt3mM0_txt3mM4,txt3mM0_txt3mM5'; // can do all
+		$userMods = 'tools,tools_txrsuserimpM1,txt3mM0,txt3mM0_txt3mM1,txt3mM0_txt3mM2,txt3mM0_txt3mM3,txt3mM0_txt3mM4,txt3mM0_txt3mM5'; // can do all
 		$user = 't3madmin';
 		$insertArray = array('pid' => 0,'username' => $user,'password' => md5($user),'disable' => 0,'usergroup' => $settings['beGroupAdmins'], 'admin' => 0, 'userMods'  => $userMods);
 		$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery('be_users', $insertArray);

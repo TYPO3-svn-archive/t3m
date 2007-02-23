@@ -169,6 +169,8 @@
 			<label index="descriptionCategories">Here you can define categories of interests which users can later choose when they edit their profile. Or you can let them choose when they register.</label>
 
 			<label index="getCategories">List categories</label>
+			<label index="categoryUsers">List category users</label>
+
 
 			<label index="campaign">Campaign</label>
 			<label index="campaigns">Campaigns</label>
@@ -528,7 +530,7 @@
 
 			<label index="targetgroupdefinitions">Zielgruppendefinitionen</label>
 			<label index="createTargetgroupdefinition">Zielgruppendefinition erstellen</label>
-			<label index="descriptionTargetgroupDefinitions">Zielgruppen sind dynamische Gruppen von Webseitenbenutzern, die anhand ihrer Eigenschaften ausgewählt werden können. Z.B. Geschlecht, Alter oder PLZ. Wenn Sie in der Zeilgruppendefinition eins der Merkmale hinzufügen muss der Benutzer diesem entsprechen, um dazugezählt zu werden. Bei den Kategorien muss er mindestens eine ausgewählt haben. Entsprechend der Qualität der Datenbasis sollten mehr oder weniger Attribute verwendet werden. Beim Klicken auf den Namen der Zielgruppe werden die betroffenen Benutzer in einer eigenen Tabelle angezeigt.</label>
+			<label index="descriptionTargetgroupDefinitions">Zielgruppen sind dynamische Listen von Webseitenbenutzern, die anhand ihrer Eigenschaften hinzugezählt werden. Wenn Sie in der Zielgruppendefinition eines der Merkmale hinzufügen, muss der Benutzer diesem entsprechen, um dazugezählt zu werden. Bei den Kategorien muss er mind. eine passende ausgewählt haben. Entsprechend der Qualität der Datenbasis sollten hier mehr oder weniger Attribute verwendet werden. Beim Klicken auf den Namen der Zielgruppe werden die betroffenen Benutzer in einer eigenen Tabelle angezeigt.</label>
 			<label index="newTargetgroupdefinition">Neue Zielgruppendefinition</label>
 			<label index="getTargetgroupdefinitions">Auflistung von Zielgruppendefinitionen</label>
 
@@ -590,6 +592,7 @@
 			<label index="category">Kategorie</label>
 			<label index="categories">Kategorien</label>
 			<label index="getCategories">Auflistung der Kategorien</label>
+			<label index="categoryUsers">Auflistung der betroffenen Benutzer</label>
 
 			<label index="campaign">Kampagne</label>
 			<label index="campaigns">Kampagnen</label>
@@ -615,7 +618,7 @@
 
 			<label index="salutation">Begrüßung</label>
 			<label index="salutations">Begrüßungen</label>
-			<label index="descriptionSalutations">Erstellen Sie eine Anrede und wählen Sie "Begrüßung" als Überschriftstyp beim erstellen eines E-Mail-Inhaltes aus. Die Begrüßung wird dann nach der Überschrift eingebaut. Sind für den Benutzern Vorname, Nachname und Geschlecht und eine Begrüßung definiert, wird die E-Mail personalisiert nach diesen Merkmalen.</label>
+			<label index="descriptionSalutations">Erstellen Sie eine Anrede und wählen Sie "Begrüßung" als Überschriftstyp beim Erstellen eines E-Mail-Inhalts aus. Sind für den Benutzer die Felder "Vorname", "Nachname" und "Geschlecht" sowie eine Begrüßung definiert, so wird  beim Generieren der E-Mail dynamisch die passende Anrede direkt hinter der Überschrift platziert.</label>
 			<label index="getSalutations">Auflistung der Begrüßungen</label>
 
 			<label index="directmail">Direct Mail</label>

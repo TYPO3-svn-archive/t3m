@@ -363,6 +363,28 @@ class tx_t3m_stats	{
 	}
 
 	/**
+	 * Returns campaign selector
+	 *
+	 * @return	string		campaign selector box
+	 */
+	function formCampaignSelector()	{
+		$out = '<select onchange="document.location=\'index.php?campaign=\' + options[selectedIndex].value">';  //&SET[function]=group is set anyway
+		$campaigns = tx_t3m_mailings::getCampaigns(); //gives: array(uid => name)
+// 		ksort ($groups);
+		asort($campaigns);
+		foreach ($campaigns as $key => $val) {
+			if ($_REQUEST['campaign'] == $val['uid']) {
+				$out .= '<option selected value="'.$val['uid'].'">'.$val['name'].'</option>';
+			} else {
+				$out .= '<option value="'.$val['uid'].'">'.$val['name'].'</option>';
+			}
+		}
+                $out .= '</select>';
+		return $out;
+	}
+
+
+	/**
 	 * Returns stats for campaigns
 	 *
 	 * @return	string		a table with stats for campaigns
@@ -371,7 +393,7 @@ class tx_t3m_stats	{
 		if (!$_REQUEST['campaign']) {
 			$_REQUEST['campaign'] = tx_t3m_mailings::getFirstCampaign();
 		}
-		$out = tx_t3m_mailings::formCampaignSelector();
+		$out = tx_t3m_stats::formCampaignSelector();
 		$out .= '<br /><h3>'.tx_t3m_mailings::getCampaignName($_REQUEST['campaign']).'</h3>';
 		$out .= tx_t3m_mailings::getCampaignDescription($_REQUEST['campaign']);
 

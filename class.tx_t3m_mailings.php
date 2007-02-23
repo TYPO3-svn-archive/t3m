@@ -78,7 +78,7 @@ class tx_t3m_mailings {
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('createEmail').'</td>
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('campaignfinishedornot').'</td></tr>';
 		foreach($cids as $cid)	{
-			$out .= '<tr><td>'.$cid['name'].'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::formCampaignSelector($cid['uid']).'</td>
 				<td>'.$cid['description'].'</td>
 				<td>'.tx_t3m_mailings::editCampaign($cid['uid']).'</td>
 				<td>'.tx_t3m_stats::countEmails($cid['uid']).'</td>
@@ -369,11 +369,22 @@ class tx_t3m_mailings {
 	 *
 	 * @return	string		a table with created directmails and edit buttons
 	 */
-	function campaignMailings()	{
-		$campaigns = tx_t3m_mailings::getCampaigns();
-		foreach ($campaigns as $campaign) {
-			foreach (tx_t3m_mailings::getCampaignMailings($campaign['uid']) as $cpids) {
+	function campaignMailings($uid)	{
+		if ($uid) { // get requested campaign mails from function call
+			foreach (tx_t3m_mailings::getCampaignMailings($uid) as $cpids) {
 				$pids[] = $cpids;
+			}
+		}
+		elseif ($_REQUEST['campaign']) { // get only selected campaign mails by postvar
+			foreach (tx_t3m_mailings::getCampaignMailings($_REQUEST['campaign']) as $cpids) {
+				$pids[] = $cpids;
+			}
+		} else { // get all campaign mails for a start
+			$campaigns = tx_t3m_mailings::getCampaigns();
+			foreach ($campaigns as $campaign) {
+				foreach (tx_t3m_mailings::getCampaignMailings($campaign['uid']) as $cpids) {
+					$pids[] = $cpids;
+				}
 			}
 		}
 		foreach ($pids as $pid) {
@@ -381,7 +392,22 @@ class tx_t3m_mailings {
 				$notmailedPids[] = $pid;
 			}
 		}
-		$out = tx_t3m_mailings::tableForCampaignMailings($notmailedPids);
+		if (!$notmailedPids) {
+			$out = $GLOBALS['LANG']->getLL('nomails');
+		} else {
+			$out = tx_t3m_mailings::tableForCampaignMailings($notmailedPids);
+		}
+		return $out;
+	}
+
+	/**
+	 * Returns campaign selector
+	 *
+	 * @param	int		$uid: campaign id
+	 * @return	string		campaign selector link
+	 */
+	function formCampaignSelector($uid)	{
+		$out = '<a href="#" onclick="document.location=\'index.php?campaign=\' + '.intval($uid).'">'.tx_t3m_mailings::getCampaignName(intval($uid)).'</a>';
 		return $out;
 	}
 
@@ -441,40 +467,7 @@ class tx_t3m_mailings {
 	}
 
 
-
 	/**
-	 * Update usercount for all targetgroups
-	 *
-	 * @param	int		$uid: category uid
-	 * @return	boolean		true if it went ok
-	 */
-	function updateCalculatedCategory($uid) {
-		$count = count(tx_t3m_addresses::getCategoryUsers(intval($uid)));
-		$GLOBALS['TYPO3_DB']->sql_query('UPDATE tx_t3m_categories SET calculated_receivers = '.$count.' WHERE uid = '.intval($uid));
-	}
-
-
-
-	/**
-	 * Update usercount for all targetgroups
-	 *
-	 * @return	boolean		true if it went ok
-	 */
-	function updateAllCalculatedCategories() {
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'uid',
-			'tx_t3m_categories',
-			'deleted=0'
-			);
-		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-			tx_t3m_addresses::updateCalculatedCategory($row['uid']);
-		}
-		return true;
-	}
-
-
-
-/**
 	 * Returns a list of receiver definitions
 	 *
 	 * @return	string		table with receiver lists
@@ -560,13 +553,62 @@ class tx_t3m_mailings {
 			'calculated_receivers DESC'
 			);
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-			$out .= '<tr><td>'.$row['name'].'</td>
+			$out .= '<tr><td>'.tx_t3m_mailings::formCategorySelector($row['uid']).'</td>
 				<td>'.$row['calculated_receivers'].'</td>
 				<td>'.tx_t3m_mailings::editCategory($row['uid']).'</td></tr>';
 		}
 		$out .= '</table>';
 		return $out;
 	}
+
+	/**
+	 * Returns category users
+	 *
+	 * @param	int		$uid: category id
+	 * @return	string		a table with category users
+	 */
+	function categoryUsers($uid)	{
+		if (!$uid) {
+			$uid = intval($_REQUEST['category']);
+		}
+		$users = tx_t3m_addresses::getCategoryUsers($uid);
+		if (!$users) {
+			$out = $GLOBALS['LANG']->getLL('noUsers');
+		} else {
+			$out = tx_t3m_addresses::tableForCategoryFeusers($users);
+		}
+		return $out;
+	}
+
+
+	/**
+	 * Returns category selector
+	 *
+	 * @param	int		$uid: category id
+	 * @return	string		category selector link
+	 */
+	function formCategorySelector($uid)	{
+		$out = '<a href="#" onclick="document.location=\'index.php?category=\' + '.intval($uid).'">'.tx_t3m_mailings::getCategoryName(intval($uid)).'</a>';
+		return $out;
+	}
+
+	/**
+	 * Returns name of a category
+	 *
+	 * @param	int		uid of category
+	 * @return	string		category name
+	 */
+ 	function getCategoryName($uid) {
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+			'uid,name',
+			'tx_t3m_categories',
+			'uid='.intval($uid)
+		);
+		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+		$out = $row['name'];
+		return $out;
+	}
+
 
 	/**
 	 * Returns contents and edit buttons
@@ -612,30 +654,6 @@ class tx_t3m_mailings {
 		$out = $row['imin'];
 		return $out;
 	}
-
-
-
-	/**
-	 * Returns campaign selector
-	 *
-	 * @return	string		campaign selector box
-	 */
-	function formCampaignSelector()	{
-		$out = '<select onchange="document.location=\'index.php?campaign=\' + options[selectedIndex].value">';  //&SET[function]=group is set anyway
-		$campaigns = tx_t3m_mailings::getCampaigns(); //gives: array(uid => name)
-// 		ksort ($groups);
-		asort($campaigns);
-		foreach ($campaigns as $key => $val) {
-			if ($_REQUEST['campaign'] == $val['uid']) {
-				$out .= '<option selected value="'.$val['uid'].'">'.$val['name'].'</option>';
-			} else {
-				$out .= '<option value="'.$val['uid'].'">'.$val['name'].'</option>';
-			}
-		}
-                $out .= '</select>';
-		return $out;
-	}
-
 
 
 	/**
