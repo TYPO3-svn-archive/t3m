@@ -443,7 +443,7 @@ class tx_t3m_settings	{
 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery( //from pages: "is_siteroot=1" is not needed (not always the case), a roottemplate should be there however
 				'uid,pid',
 				'sys_template',
-				'root=1 '.t3lib_BEfunc::deleteClause('sys_template')
+				'root=1 AND pid!=-1 '.t3lib_BEfunc::deleteClause('sys_template')
 			);
 		} else {
 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -455,6 +455,7 @@ class tx_t3m_settings	{
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
 			$pageId = $row['pid'];
 			$templateId = $row['uid'];
+			//t3lib_div::debug($row);
 		}
 // 		$tplRow = $tmpl->ext_getFirstTemplate($pageId,$template_uid);
 // 		$sys_page = t3lib_div::makeInstance('t3lib_pageSelect');
@@ -462,6 +463,7 @@ class tx_t3m_settings	{
 		$ts->runThroughTemplates($rootLine,$templateId);	// This generates the constants/config + hierarchy info for the template.
 		$theConstants = $ts->generateConfig_constants();	// The editable constants are returned in an array.
 		$ts->ext_categorizeEditableConstants($theConstants);	// The returned constants are sorted in categories, that goes into the $tmpl->categories array
+		//t3lib_div::debug($theConstants);
 		return $theConstants;
 	}
 
