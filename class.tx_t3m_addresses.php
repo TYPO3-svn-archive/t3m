@@ -742,7 +742,8 @@ class tx_t3m_addresses {
 			);
 			$i = 0;
 			while($rowFeUser = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resFeUsers))	{
-				if (in_array(intval($myConf['groupBlocked']),explode(',',$rowFeUser['usergroup']))) { // do not add if user is in robinson (blocked) group
+				$usergroup = explode(',',$rowFeUser['usergroup']);
+				if (in_array(intval($myConf['groupBlocked']),$usergroup) || in_array(intval($myConf['groupPending']),$usergroup)) { // do not add if user is in robinson (blocked) or pending group
 				} else {
 					if ($rowTargetgroup['categories_uid'] != '' ) { //user has chosen at least one category
 						$categoriesTargetgroup = explode(',',$rowTargetgroup['categories_uid']);
