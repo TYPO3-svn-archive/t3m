@@ -11,9 +11,9 @@
 			<label index="mlang_labels_tabdescr">here you can import, export and manage addresses to which you send the e-mails and define target groups.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="mlang_tabs_tab">Addressen</label>
-			<label index="mlang_labels_tablabel">Addressenmanagement</label>
-			<label index="mlang_labels_tabdescr">Hier können sie Adressen importieren, exportieren, dynamische Zielgruppen definieren und Empfängerlisten aus verschiedenen Quellen zusammenstellen.</label>
+			<label index="mlang_tabs_tab">Adressen</label>
+			<label index="mlang_labels_tablabel">Adressenmanagement</label>
+			<label index="mlang_labels_tabdescr">Hier können Sie Adressen importieren, exportieren, dynamische Zielgruppen definieren und Empfängerlisten aus verschiedenen Quellen zusammenstellen.</label>
 		</languageKey>
 	</data>
 </T3locallang>
