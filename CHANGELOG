@@ -1,4 +1,9 @@
 Author: Stefan Koch  <t3m@stefkoch.de>
+Date: 2007-02-25
+Version: 0.2.3
+Comment: little localization changes, subscription form and implemented robinson (blocked) list correctly
+
+Author: Stefan Koch  <t3m@stefkoch.de>
 Date: 2007-02-21
 Version: 0.2.2
 Comment: small campaign usability improvement, added tcdirectmail-diff

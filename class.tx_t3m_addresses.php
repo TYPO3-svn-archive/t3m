@@ -690,10 +690,11 @@ class tx_t3m_addresses {
 	 * @return	array		list of receivers
 	 */
 	function getTargetgroupUsers($uid) {
+		$myConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']); //need this for calls from outside t3m-module
 		$resTargetgroups = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid,name,gender,age_from,age_to,country,zone,zip,salutations_uid,categories_uid',
 			'tx_t3m_targetgroups',
-			'uid = '.intval($uid).' AND deleted=0 AND hidden=0'
+			'uid='.intval($uid).' AND deleted=0 AND hidden=0'
 			);
 		while($rowTargetgroup = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resTargetgroups))	{
 			$userArray = NULL;
@@ -735,30 +736,33 @@ class tx_t3m_addresses {
 			$where = '';
 // 			t3lib_div::debug($whereString);
 			$resFeUsers = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-				'uid,email,tx_t3m_categories,module_sys_dmail_html',
+				'uid,email,tx_t3m_categories,module_sys_dmail_html,usergroup',
 				'fe_users',
 				$whereString
 			);
 			$i = 0;
 			while($rowFeUser = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resFeUsers))	{
-				if ($rowTargetgroup['categories_uid'] != '' ) { //user has chosen at least one category
-					$categoriesTargetgroup = explode(',',$rowTargetgroup['categories_uid']);
-// 					t3lib_div::debug($categoriesTargetgroup);
-					$categoriesUser = explode(',',$rowFeUser['tx_t3m_categories']);
-// 					t3lib_div::debug($categoriesUser);
-					foreach($categoriesUser as $category) {
-						if (in_array($category, $categoriesTargetgroup)) {
-							$userArray[$i]['uid'] = $rowFeUser['uid'];
-							$userArray[$i]['email'] = $rowFeUser['email'];
-							$userArray[$i]['plain_only'] = !$rowFeUser['module_sys_dmail_html'];
+				if (in_array(intval($myConf['groupBlocked']),explode(',',$rowFeUser['usergroup']))) { // do not add if user is in robinson (blocked) group
+				} else {
+					if ($rowTargetgroup['categories_uid'] != '' ) { //user has chosen at least one category
+						$categoriesTargetgroup = explode(',',$rowTargetgroup['categories_uid']);
+	// 					t3lib_div::debug($categoriesTargetgroup);
+						$categoriesUser = explode(',',$rowFeUser['tx_t3m_categories']);
+	// 					t3lib_div::debug($categoriesUser);
+						foreach($categoriesUser as $category) {
+							if (in_array($category, $categoriesTargetgroup)) {
+								$userArray[$i]['uid'] = $rowFeUser['uid'];
+								$userArray[$i]['email'] = $rowFeUser['email'];
+								$userArray[$i]['plain_only'] = !$rowFeUser['module_sys_dmail_html'];
+							}
 						}
+					} else { //user has chosen no category
+						$userArray[$i]['uid'] = $rowFeUser['uid'];
+						$userArray[$i]['email'] = $rowFeUser['email'];
+						$userArray[$i]['plain_only'] = !$rowFeUser['module_sys_dmail_html'];
 					}
-				} else { //user has chosen no category
-					$userArray[$i]['uid'] = $rowFeUser['uid'];
-					$userArray[$i]['email'] = $rowFeUser['email'];
-					$userArray[$i]['plain_only'] = !$rowFeUser['module_sys_dmail_html'];
+					$i++;
 				}
-				$i++;
 			}
 		}
 		return $userArray;

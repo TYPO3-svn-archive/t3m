@@ -45,6 +45,7 @@ class tx_t3m_target1 extends tx_tcdirectmail_target_array {
 		//multiple targetgroups enabled;
 		$targetgroups = explode(',',$this->fields['tx_t3m_target']); // (uids from our targetgroup table)
 		$i = 0;
+		//$sentusers = [];
 		foreach ($targetgroups as $targetgroup) {
 			$tmpusers = tx_t3m_addresses::getTargetgroupUsers($targetgroup);
 			foreach ($tmpusers as $tmpuser) {
