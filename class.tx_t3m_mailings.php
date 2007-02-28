@@ -970,7 +970,7 @@ class tx_t3m_mailings {
 			$out .= '<tr><td>'.$row['title'].'</td>
 				<td>'.tx_t3m_mailings::viewPage($row['uid']).'</td>
 				<td>'.tx_t3m_mailings::editPage($row['uid']).'</td>
-				<td>'.tx_t3m_mailings::getContents($row['uid']).'</td></tr>';
+				<td>'.tx_t3m_mailings::editContents($row['uid']).'</td></tr>';
 		}
 		$out .= '</table>';
 		return $out;

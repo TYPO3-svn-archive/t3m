@@ -73,11 +73,13 @@
 
 			<label index="errorSubscriptionExtension">Error: Extension EXT:sr_feuser_register seems not to be configured correctly. (follow configuration steps in manual: insert static sr_feuser_register-css-template on your site-template, create sysfolder, registrationpage, editpage and usergroups for pending and registered users und configure these 5 values in the template constants!)</label>
 
+			<label index="subscriptionform">Subscription form</label>
 			<label index="subscriptionforms">Subscription forms</label>
-			<label index="descriptionSubscriptionforms">Here you can view and edit the TYPO3 pages which are responsible for the subscription process. If you do not see any content in the tables please refer to the manual of the extension EXT:sr_feuser_register.</label>
+			<label index="descriptionSubscriptionform">Here you can view and edit the TYPO3 pages which are responsible for the subscription process. If you do not see any content in the tables please refer to the manual of the extension EXT:sr_feuser_register.</label>
 
 			<label index="subscriptionformtemplate">Subscription form template</label>
 			<label index="descriptionSubscriptionformTemplate">Here you can change the Template responsible for the created e-mails.</label>
+			<label index="subscriptionpageFormfields">Form fields</label>
 
 			<label index="subscriptionpage">Subscription page</label>
 			<label index="descriptionSubscriptionPage">The page on which interested users can fill out a form and register in order to receiver information.</label>
@@ -481,6 +483,7 @@
 
 			<label index="errorSubscriptionExtension">Fehler: Extension EXT:sr_feuser_register scheint nicht korrekt konfiguriert zu sein.</label>
 
+			<label index="subscriptionform">Anmeldeformular</label>
 			<label index="subscriptionforms">Anmeldeformulare</label>
 			<label index="descriptionSubscriptionforms">Der Anmeldeprozess erfolgt nach dem Double-Opt-In-Prinzip. Die Webseite stellt Besuchern ein Formular zum Anmelden bereit. Der Benutzer bekommt eine E-Mail mit einem Bestätigungslink. Erst nach Klick auf den Link ist der Benutzer angemeldet. Es wird hier auf die Extension sr_feuser_register zurückgefriffen. Diese Übersicht bietet einen Überblick über die wichtigsten Bestandteile des Prozesses und einige wenige Einstellmöglichkeiten. Bei Problemen sehen Sie bitte in der Anleitung der Extension nach.</label>
 
@@ -489,6 +492,7 @@
 
 			<label index="subscriptionpage">Anmeldeseite </label>
 			<label index="descriptionSubscriptionPage">Die Seite mit dem Anmeldeformular.</label>
+			<label index="subscriptionpageFormfields">Felder des Formulars</label>
 
 			<label index="confirmationpage">Bestätigungsseite des Anmeldeprozesses</label>
 			<label index="descriptionConfirmationPage">Die Seite, die nach erfolgreichem Anmelden durch den Benutzer, also nach Abschluss des Double-Opt-Ins, angezeigt wird.</label>

@@ -74,7 +74,7 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 
 		$this->MOD_MENU['function'] += Array (
 				'create' => $LANG->getLL('Create'),
-				'subscriptionforms' => $LANG->getLL('subscriptionforms'),
+				'subscriptionform' => $LANG->getLL('subscriptionform'),
 				'salutations' => $LANG->getLL('salutations'),
 				'groups'  => $LANG->getLL('Groups'),
 				'targetgroups' => $LANG->getLL('targetgroups'),
@@ -159,15 +159,15 @@ class  tx_t3m_module1 extends t3lib_SCbase {
 
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
-			case subscriptionforms:
+			case subscriptionform:
 				// ideas -
 				// 1:show currently available fields
 				// 2:link for editing the whole template constants of the template (find template+edit)
 				// 3:form for direct altering (involving lots of regex and parse TS)
 				// 4:form for setting it in an extension's setting value
 
-				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('subscriptionforms').'</h2>';
-				$content.=$LANG->getLL('descriptionSubscriptionforms').'<br />';
+				$content='<h2><img src="'.$GLOBALS['BACK_PATH'].'gfx/i/fe_users.gif" />'.$LANG->getLL('subscriptionform').'</h2>';
+				$content.=$LANG->getLL('descriptionSubscriptionform').'<br />';
 
 				$content.='<h3>'.$LANG->getLL('subscriptionformtemplate').'</h3>';
 				$content.=$LANG->getLL('descriptionSubscriptionformTemplate').'<br />';

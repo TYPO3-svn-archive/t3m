@@ -133,7 +133,7 @@ class tx_t3m_addresses {
 			$tmpl = t3lib_div::makeInstance("t3lib_tsparser_ext");
 			$first = $tmpl->ext_prevPageWithTemplate($uid,$this->perms_clause);
 			$ts = tx_t3m_settings::getTSConstants($first['uid']);
-			$out .= 'Form fields: <a href="'.$GLOBALS['BACK_PATH'].'sysext/tstemplate/ts/index.php?id='.$first['uid'].'&e[constants]=1">'.$this->iconImgEdit.'</a><br/><b>'.$ts['plugin.tx_srfeuserregister_pi1.formFields']['value'].'</b>';
+			$out .= $GLOBALS['LANG']->getLL('subscriptionpageFormfields').': <a href="'.$GLOBALS['BACK_PATH'].'sysext/tstemplate/ts/index.php?id='.$first['uid'].'&e[constants]=1">'.$this->iconImgEdit.'</a><br/><b>'.$ts['plugin.tx_srfeuserregister_pi1.formFields']['value'].'</b>';
 			$out .= tx_t3m_mailings::page($uid);
 		}
 		return $out;
