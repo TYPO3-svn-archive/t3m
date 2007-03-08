@@ -43,47 +43,12 @@ class tx_t3m_debug {
 	 */
 	function testSomeStuff()	{
 
-// 		for ($i = 0; $i < 20; $i++) {
-			$out[] = tx_t3m_stats::countEmailUsers(91);
-// 		}
-
-// 		$var = tx_t3m_main::getTimestampFromAge(36);
-// 		$var2 = tx_t3m_main::getTimestampFromAge(37);
-		//$GLOBALS['BE_USER'];$GLOBALS['TYPO3_DB'], t3lib_extMgm, $BE_USER, 't3lib_BEfunc', $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3m']; $GLOBALS['_EXTKEY'], $GLOBALS['MCONF'], $GLOBALS['EM_CONF']['t3m'], $GLOBALS['ICON_PATH']$this->myConf
-
-// 		$class = $GLOBALS['TYPO3_DB'];  //t3lib_extMgmt3lib_BEfunc't3lib_iconWorks';
-//
-//  		$out[0] = get_declared_classes();
-// 		$out[1] = get_class_methods($class);
-// 		$out[2] = get_defined_constants();
-
-// 		$GLOBALS['TYPO3_DB']->exec_SELECTquery( //from pages: "is_siteroot=1" is not needed (not always the case), a roottemplate should be there however
-// 			'*',
-// 			'be_groups',
-// 			'uid=10'
-// 		);
-// 		$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
-// 		$out[3] = $GLOBALS['TYPO3_DB']->sql_affected_rows();
-
-// 		$out = t3lib_div::stdAuthCode(4);
-// 		$out = tx_t3m_main::getFeGroupUsers(2);
- 		t3lib_div::debug($out);
-//  		t3lib_div::debug($GLOBALS['TCA']); //['tt_content']['ctrl']['typeicons']);$GLOBALS['TBE_STYLES'
-
-
-
-
-				$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/plot_step2.txt';
-				$handle = fopen($filename, "r");
-				$contents = fread($handle, filesize($filename));
-				$ts = t3lib_div::makeInstance("t3lib_tsparser");
-				$ts->parse($contents); // now we should have it in $ts->setup
-				$plot_step2 = $ts->setup['lib.']['pbimagegraph.'];
-				fclose($handle);
-				$plot_step2['10.']['20.']['10.']['10.']['dataset.']['10.']['name'] = 'sssDeleted';
-				$out = ' <br />'.tx_pbimagegraph_ts::make($plot_step2);
-
-
+		$class = $GLOBALS['TYPO3_DB'];  //t3lib_extMgmt3lib_BEfunc't3lib_iconWorks';//
+ 		$out[0] = get_declared_classes();
+		$out[1] = get_class_methods($class);
+		$out[2] = get_defined_constants();
+		$out[3] = $GLOBALS['TYPO3_CONF_VARS']; //$GLOBALS['TCA']. $GLOBALS['TBE_STYLES']
+		t3lib_div::debug($out);
 
 		return $out;
 	}
