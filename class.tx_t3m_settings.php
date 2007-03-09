@@ -227,7 +227,7 @@ class tx_t3m_settings	{
 			'groupSoftbounces',
 			'groupHardbounces',
 			'groupTest',
-			'targetTest',
+			'receiversTest',
 			'T3M_Sysfolder',
 			'registrations_Sysfolder',
 			'userarea_Sysfolder',
@@ -432,10 +432,10 @@ class tx_t3m_settings	{
 	* Returns an array with the typoscript constants of the template of the root page of the website
 	*
 	* @return	array	"global" typoscript constants array to be used by other functions
+	* @todo 	use $pageId or $templateId as parameter to make it more flexible, or use some $GLOBALS['TYPO3_CONF_VARS']['EXT']?
 	*/
-	function getTSConstants($pid)	{ 	//	$PageTSconfig = t3lib_BEfunc::getPagesTSconfig('0'); does not work
+	function getTSConstants()	{ 	//	$PageTSconfig = t3lib_BEfunc::getPagesTSconfig('0'); does not work
 		require_once(PATH_t3lib.'class.t3lib_tsparser_ext.php');
-// 		var $pageId, $templateId;
 		$ts = t3lib_div::makeInstance('t3lib_tsparser_ext');
 // 		$ts->init();
 
