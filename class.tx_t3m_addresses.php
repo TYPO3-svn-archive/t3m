@@ -460,8 +460,8 @@ class tx_t3m_addresses {
 		$out = '<table class="typo3-dblist"><tr class="c-headLineTable">
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('Name').'</td>
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('tx_t3m_targetgroups.gender.I.1').'</td>
-			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('tx_t3m_targetgroups.gender.I.2').'</td>
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('tx_t3m_targetgroups.gender.I.0').'</td>
+			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('tx_t3m_targetgroups.gender.I.2').'</td>
 			<td class="c-headLineTable">'.$GLOBALS['LANG']->getLL('EditDelete').'</td></tr>'; // maybe use tx_t3m_salutations.single_female
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid,name,single_female,single_male,plural',
