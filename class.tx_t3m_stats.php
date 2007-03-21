@@ -566,6 +566,7 @@ class tx_t3m_stats	{
 	 * @return	string		an image for user occurences of that year
 	 */
 	function yearlyStatsForUsers($year) {
+
 		// STATIC DATA:
 		// PLOTAREA
 		$filename = t3lib_extMgm::extPath('t3m').'res/pbimagegraph/plot_step.txt';
@@ -577,12 +578,12 @@ class tx_t3m_stats	{
 		fclose($handle);
 
 		// DYNAMIC DATA:
-		// what year? this year.
-		if (!($year)) {
+		// what year? this year if not set otherwise
+		if (!isset($year)) {
 			$year = date('Y');
 		}
 		$month = date('n'); //1-12
-		$year_month = date('Y_m');
+		$year_month = date('Y_n');
 
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'*',
@@ -592,14 +593,14 @@ class tx_t3m_stats	{
 			$usergroups = explode(',',$row['usergroup']);
 
 			//tstamp
-			$tmp_year_month_tstamp = date('Y_m',$row['tstamp']);
+			$tmp_year_month_tstamp = date('Y_n',$row['tstamp']);
 			$count_activity[$tmp_year_month_tstamp] += 1;
 			$tmp_year_tstamp = date('Y',$row['tstamp']);
 			$count_activity[$tmp_year_tstamp] += 1;
 			$count[$tmp_year_tstamp] += 1;
 
 			//get users created that year (registrations)
-			$tmp_year_month_crdate = date('Y_m',$row['crdate']);
+			$tmp_year_month_crdate = date('Y_n',$row['crdate']);
 			$count_created[$tmp_year_month_crdate] += 1;
 			$tmp_year_crdate = date('Y',$row['crdate']);
 			$count_created[$tmp_year_crdate] += 1;
@@ -607,8 +608,8 @@ class tx_t3m_stats	{
 
 
 			if ((in_array($this->myConf['groupRegistered'],$usergroups)) && (!($row['disable'])) && (!($row['deleted']))) {
-					$count_registered[$tmp_year_month_tstamp] += 1;
-					$count_registered[$tmp_year_tstamp] += 1;
+				$count_registered[$tmp_year_month_tstamp] += 1;
+				$count_registered[$tmp_year_tstamp] += 1;
 
 			}
 
@@ -726,8 +727,8 @@ class tx_t3m_stats	{
 		}
 
 		if ($count[$year] > 1) { //something happened in that year
-			$out = ' <br />'.tx_pbimagegraph_ts::make($plot_step_users_year);
-// 			t3lib_div::debug($count[$year]);
+			$out .= ' <br />'.tx_pbimagegraph_ts::make($plot_step_users_year);
+//   			t3lib_div::debug($plot_step_users_year);
 
 		} else {
 // 			$out = 'no data for the year'.$year;
@@ -762,7 +763,7 @@ class tx_t3m_stats	{
 			$year = date('Y');
 		}
 		$month = date('n'); //1-12
-		$year_month = date('Y_m');
+		$year_month = date('Y_n');
 
 		// get mails of the given year:
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -770,7 +771,7 @@ class tx_t3m_stats	{
 			'tx_tcdirectmail_sentlog'
 			);
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{ // get all data
-			$tmp_year_month = date('Y_m',$row['sendtime']);
+			$tmp_year_month = date('Y_n',$row['sendtime']);
 			$count[$tmp_year_month] += 1; // every sending results in the counter going up
 			$tmp_year = date('Y',$row['sendtime']);
 			$count[$tmp_year] += 1;

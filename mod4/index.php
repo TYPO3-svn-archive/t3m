@@ -132,11 +132,12 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 				$content='<h2>'.$LANG->getLL('sendstatistics').'</h2>';
 				$content.=$LANG->getLL('descriptionsendstatistics');
 				$content.='<h3>'.$LANG->getLL('yearlystatistics').'</h3>'; // get data for last 3 years
-				$year = (date('Y')-2);
+ 				$year = (date('Y')-2);
+ 				$content.=tx_t3m_stats::yearlyStatsForMails($year);
+ 				$year = (date('Y')-1);
+ 				$content.=tx_t3m_stats::yearlyStatsForMails($year);
+				$year = date('Y');
 				$content.=tx_t3m_stats::yearlyStatsForMails($year);
-				$year = (date('Y')-1);
-				$content.=tx_t3m_stats::yearlyStatsForMails($year);
-				$content.=tx_t3m_stats::yearlyStatsForMails();
 				$content.='<h3>'.$LANG->getLL('statsMostReceivers').'</h3>';
 				$content.=tx_t3m_stats::statsForTCDirectmails();
 				$this->content.=$this->doc->section('',$content,0,1);
@@ -173,7 +174,8 @@ class  tx_t3m_module4 extends t3lib_SCbase {
 				$content.=tx_t3m_stats::yearlyStatsForUsers($year);
 				$year = (date('Y')-1);
 				$content.=tx_t3m_stats::yearlyStatsForUsers($year);
-				$content.=tx_t3m_stats::yearlyStatsForUsers();
+				$year = date('Y');
+				$content.=tx_t3m_stats::yearlyStatsForUsers($year);
 				$content.=tx_t3m_stats::statsForUsers();
 				$this->content.=$this->doc->section('',$content,0,1);
 			break;
